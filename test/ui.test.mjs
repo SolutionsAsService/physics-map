@@ -4,8 +4,9 @@ import { readFile } from 'node:fs/promises';
 import { JSDOM, VirtualConsole } from 'jsdom';
 
 test('search, focus, source records and learning routes work on the full atlas', async () => {
-  const [html, networkScript, script, atlas, styles] = await Promise.all([
+  const [html, keyScript, networkScript, script, atlas, styles] = await Promise.all([
     readFile(new URL('../index.html', import.meta.url), 'utf8'),
+    readFile(new URL('../src/map-key.js', import.meta.url), 'utf8'),
     readFile(new URL('../src/network.js', import.meta.url), 'utf8'),
     readFile(new URL('../src/app.js', import.meta.url), 'utf8'),
     readFile(new URL('../data/atlas.json', import.meta.url), 'utf8'),
@@ -22,10 +23,13 @@ test('search, focus, source records and learning routes work on the full atlas',
   const scrolled = [];
   dom.window.HTMLElement.prototype.scrollIntoView = function () { scrolled.push(this.id); };
   const circles = [];
+  const dashPatterns = new Set();
   dom.window.HTMLCanvasElement.prototype.getContext = () => ({
     setTransform() {}, clearRect() {}, beginPath() {}, moveTo() {}, lineTo() {}, stroke() {},
+    setLineDash(pattern) { dashPatterns.add(pattern.join(',')); },
     arc(x, y) { circles.push([x, y]); }, fill() {}, fillText() {}
   });
+  dom.window.eval(keyScript);
   dom.window.eval(networkScript);
   dom.window.eval(script);
   await new Promise(resolve => setTimeout(resolve, 150));
@@ -38,6 +42,10 @@ test('search, focus, source records and learning routes work on the full atlas',
   assert.ok(Math.min(...rendered.map(([, y]) => y)) <= 25);
   assert.ok(Math.max(...rendered.map(([, y]) => y)) >= 595);
   assert.ok(document.querySelector('#map-count').textContent.includes(`${graph.summary.concepts.toLocaleString()} nodes`));
+  assert.equal(document.querySelectorAll('#domain-key .domain-item').length, 10);
+  assert.equal(document.querySelectorAll('#relation-key .relation-key-item').length, 6);
+  assert.ok(document.querySelector('#domain-key').textContent.includes('Relativity'));
+  assert.ok(dashPatterns.size >= 5);
   assert.equal(document.querySelector('#details-jump').hidden, true);
   assert.equal(document.querySelector('#map-preview').hidden, true);
 
@@ -53,6 +61,14 @@ test('search, focus, source records and learning routes work on the full atlas',
   assert.equal(document.querySelector('#map-preview').hidden, false);
   assert.ok(document.querySelector('#map-preview h3').textContent.toLowerCase().includes('entropy'));
   assert.ok(document.querySelector('#map-preview').textContent.includes('SOURCE EXCERPT'));
+  const sample = document.querySelector('#map-preview .preview-link');
+  assert.ok(sample);
+  assert.ok(sample.querySelector('svg path').getAttribute('stroke-dasharray'));
+  assert.ok(graph.edges.filter(edge => (edge.source === 'entropy' && edge.target === sample.dataset.concept) || (edge.target === 'entropy' && edge.source === sample.dataset.concept)).some(edge => sample.textContent.toLowerCase().includes(edge.relation.replaceAll('_', ' ').toLowerCase())));
+  assert.ok(document.querySelector('#inspector .relation-style svg'));
+  assert.ok(document.querySelector('#inspector').textContent.includes('Original relation:'));
+  sample.click();
+  assert.equal(document.querySelector('#inspector h3').textContent, graph.nodes.find(node => node.id === sample.dataset.concept).label);
   document.querySelector('#preview-read').click();
   assert.equal(scrolled.at(-1), 'inspector');
   assert.ok(document.querySelector('#inspector .relation-list').children.length > 0);

@@ -2,7 +2,7 @@ const state = { atlas: null, byId: new Map(), edgesById: new Map(), searchText: 
 const $ = selector => document.querySelector(selector);
 const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 const humanize = value => String(value || '').replaceAll('_', ' ').replace(/\b\w/g, letter => letter.toUpperCase());
-const category = node => node?.claim ? 'claim' : node?.topics?.some(topic => topic.includes('ionic_bonding')) ? 'bonding' : node?.topics?.some(topic => topic.startsWith('matter_')) ? 'matter' : node?.topics?.some(topic => topic.startsWith('ion_')) ? 'ion' : node?.topics?.some(topic => topic.includes('quantum_mechanics')) ? 'quantum' : node?.topics?.some(topic => topic.includes('physical_chemistry')) ? 'chemistry' : node?.topics?.some(topic => topic.includes('thermodynamics')) ? 'thermo' : 'physics';
+const category = node => window.PhysicsMapKey.groupOf(node);
 
 function connectIndexes(atlas) {
   state.byId = new Map(atlas.nodes.map(node => [node.id, node]));
@@ -95,6 +95,16 @@ function sourceTitle(file) {
   return state.atlas.documents.find(document => document.file === file)?.title || file;
 }
 
+function lineSample(style) {
+  return `<svg class="line-sample" viewBox="0 0 42 10" width="42" height="10" aria-hidden="true"><path d="M1 5 H41" fill="none" stroke="${style.color}" stroke-width="2.2" stroke-dasharray="${style.dash.join(' ') || 'none'}"/></svg>`;
+}
+
+function renderMapKey() {
+  const key = window.PhysicsMapKey;
+  $('#domain-key').innerHTML = `<span class="key-title">POINTS / DOMAINS</span>${key.domains.map(domain => `<span class="domain-item"><i style="--domain-color:${domain.color}" aria-hidden="true"></i>${escapeHtml(domain.label)}</span>`).join('')}`;
+  $('#relation-key').innerHTML = key.relationships.map(style => `<span class="relation-key-item" title="${escapeHtml(style.description)}">${lineSample(style)}${escapeHtml(style.label)}</span>`).join('') + '<span class="key-note">Visual groupings, not new scientific claims. Select a point for the original relation and source.</span>';
+}
+
 function renderPreview() {
   const host = $('#map-preview');
   const node = state.selected && state.byId.get(state.selected);
@@ -104,9 +114,28 @@ function renderPreview() {
   const preface = sourceExcerpt || node.note?.intuition || 'No prose definition is supplied by the source graphs. The recorded connections and original fields appear in the full entry.';
   const provenance = sourceExcerpt ? 'SOURCE EXCERPT' : node.note?.intuition ? 'CURATED TEACHING NOTE' : 'CONNECTION-ONLY RECORD';
   const sources = [...new Set(node.variants.map(variant => sourceTitle(variant.document)))];
-  host.innerHTML = `<div class="preview-heading"><span class="label-chip ${category(node)}">${escapeHtml(humanize(node.type))}</span><button type="button" id="preview-close" aria-label="Clear concept selection">×</button></div><p class="preview-kicker">${provenance}</p><h3>${escapeHtml(node.label)}</h3><p class="preview-id">${escapeHtml(node.id)}</p><p class="preview-preface">${escapeHtml(preface)}</p><div class="preview-meta"><span>${state.edgesById.get(node.id)?.length || 0} recorded links</span><span>${sources.length} sources</span></div><p class="preview-sources">${sources.length ? escapeHtml(sources.slice(0, 2).join(' · ')) + (sources.length > 2 ? ` · +${sources.length - 2} more` : '') : 'Curriculum addition; no original source record'}</p><button type="button" id="preview-read">Read full entry ↓</button>`;
+  const connections = state.edgesById.get(node.id) || [];
+  const examples = [];
+  const seen = new Set();
+  for (const edge of connections) {
+    const family = window.PhysicsMapKey.classify(edge).id;
+    if (!seen.has(family) && examples.length < 4) { examples.push(edge); seen.add(family); }
+  }
+  for (const edge of connections) {
+    if (examples.length >= 4) break;
+    if (!examples.includes(edge)) examples.push(edge);
+  }
+  const why = examples.map(edge => {
+    const { other, direction } = relationDescription(edge, node.id);
+    if (!other) return '';
+    const style = window.PhysicsMapKey.classify(edge);
+    return `<button type="button" class="preview-link" data-concept="${escapeHtml(other.id)}"><span class="preview-link-top">${lineSample(style)}<span>${escapeHtml(style.label)}</span></span><strong>${direction} ${escapeHtml(other.label)}</strong><span class="preview-link-reason">${escapeHtml(humanize(edge.relation))}${edge.semantic ? ` · ${escapeHtml(edge.semantic)}` : ''}</span><small>${escapeHtml(sourceTitle(edge.document))}</small></button>`;
+  }).join('');
+  host.innerHTML = `<div class="preview-heading"><span class="label-chip ${category(node)}">${escapeHtml(humanize(node.type))}</span><button type="button" id="preview-close" aria-label="Clear concept selection">×</button></div><p class="preview-kicker">${provenance}</p><h3>${escapeHtml(node.label)}</h3><p class="preview-id">${escapeHtml(node.id)}</p><p class="preview-preface">${escapeHtml(preface)}</p><div class="preview-meta"><span>${connections.length} recorded links</span><span>${sources.length} sources</span></div><p class="preview-sources">${sources.length ? escapeHtml(sources.slice(0, 2).join(' · ')) + (sources.length > 2 ? ` · +${sources.length - 2} more` : '') : 'Curriculum addition; no original source record'}</p>${why ? `<div class="preview-why"><span class="preview-kicker">WHY THESE POINTS CONNECT</span>${why}<p>Showing ${examples.length} of ${connections.length} recorded links. All links and evidence appear in the full entry.</p></div>` : ''}<button type="button" id="preview-read">Read full entry ↓</button>`;
+  host.scrollTop = 0;
   $('#preview-close').addEventListener('click', () => clearSelection());
   $('#preview-read').addEventListener('click', () => $('#inspector').scrollIntoView({ behavior: 'smooth', block: 'start' }));
+  host.querySelectorAll('.preview-link').forEach(button => button.addEventListener('click', () => selectConcept(button.dataset.concept)));
 }
 
 function displayValue(value) {
@@ -155,7 +184,8 @@ function renderInspector() {
   }).join('');
   const relations = connections.map(edge => {
     const { other, direction, relation } = relationDescription(edge, node.id);
-    return `<article class="relation-entry"><button type="button" data-concept="${escapeHtml(other?.id || '')}"><span class="relation-direction">${direction}</span><span><small>${escapeHtml(relation)}</small><strong>${escapeHtml(other?.label || other?.id || 'Unknown')}</strong></span><span class="relation-arrow">↗</span></button><div class="relation-proof">${other?.description ? `<p class="neighbor-description">${escapeHtml(other.description)}</p>` : ''}<span>Recorded in ${escapeHtml(sourceTitle(edge.document))}</span>${edge.semantic ? `<p>${escapeHtml(edge.semantic)}</p>` : ''}${renderFields(edge.fields || [])}${edge.evidence.length ? `<div class="claim-list"><strong>Supporting claims · ${edge.evidence.length}</strong>${edge.evidence.map(renderClaim).join('')}</div>` : '<p>No claim-level citation supplied for this relationship.</p>'}</div></article>`;
+    const style = window.PhysicsMapKey.classify(edge);
+    return `<article class="relation-entry"><button type="button" data-concept="${escapeHtml(other?.id || '')}"><span class="relation-direction">${direction}</span><span><span class="relation-style">${lineSample(style)}${escapeHtml(style.label)}</span><small>Original relation: ${escapeHtml(humanize(edge.relation))}</small><strong>${escapeHtml(other?.label || other?.id || 'Unknown')}</strong></span><span class="relation-arrow">↗</span></button><div class="relation-proof">${other?.description ? `<p class="neighbor-description">${escapeHtml(other.description)}</p>` : ''}<span>Recorded in ${escapeHtml(sourceTitle(edge.document))}</span>${edge.semantic ? `<p>${escapeHtml(relation)}</p>` : ''}${renderFields(edge.fields || [])}${edge.evidence.length ? `<div class="claim-list"><strong>Supporting claims · ${edge.evidence.length}</strong>${edge.evidence.map(renderClaim).join('')}</div>` : '<p>No claim-level citation supplied for this relationship.</p>'}</div></article>`;
   }).join('');
   host.innerHTML = `<div class="inspector-content"><div class="inspector-heading"><span class="label-chip ${category(node)}">${escapeHtml(humanize(node.type))}</span><span class="record-number">${connections.length} LINKS · ${node.variants.length} SOURCES</span></div><h3>${escapeHtml(node.label)}</h3><p class="inspector-id">${escapeHtml(node.id)}</p><button type="button" id="clear-focus" class="clear-focus">Clear selection <kbd>Esc</kbd></button>${node.note?.intuition ? `<div class="insight"><span class="insight-icon">✧</span><div><strong>IN PLAIN LANGUAGE · CURATED NOTE</strong><p>${escapeHtml(node.note.intuition)}</p></div></div>` : ''}<div class="inspector-section"><h4>Concept overview</h4><p>${escapeHtml(explanation)}</p>${node.note?.example ? `<p class="example"><b>For example</b> · ${escapeHtml(node.note.example)}</p>` : ''}${node.addedByCurriculum ? '<p class="provenance-warning">Teaching note added to resolve a source reference; not an original graph node.</p>' : ''}</div>${guide}<div class="inspector-section"><h4>Original source records <span>${node.variants.length}</span></h4><div class="source-record-grid">${sourceRecords || '<p>Curriculum-only concept; no original source record.</p>'}</div></div><div class="inspector-section"><h4>All connections <span>${connections.length}</span></h4><p class="connection-note">Direction, meaning and source evidence are shown for each recorded link. A link without a cited claim has no claim-level citation in the source data.</p><div class="relation-list">${relations || '<p>No relationships are recorded for this concept yet.</p>'}</div></div><div class="inspector-section"><details class="raw-record"><summary>Inspect complete JSON records <span>↗</span></summary><pre></pre></details></div></div>`;
   host.querySelectorAll('[data-concept]').forEach(button => button.addEventListener('click', () => selectConcept(button.dataset.concept)));
@@ -223,7 +253,7 @@ async function init() {
     $('#metric-relations').textContent = state.atlas.summary.relationships.toLocaleString();
     $('#metric-overlap').textContent = state.atlas.summary.overlaps;
     $('#source-links').innerHTML = state.atlas.documents.map((doc, index) => `<a href="./data/${doc.file.split('/').map(encodeURIComponent).join('/')}" download><span>${String(index + 1).padStart(2, '0')} / ${escapeHtml(doc.title)}</span><span>↓</span></a>`).join('') + `<a href="./data/atlas.json" download><span>${String(state.atlas.documents.length + 1).padStart(2, '0')} / Unified atlas JSON</span><span>↓</span></a>`;
-    setupMapGestures(); renderFilters(); renderMap(); renderPreview(); renderInspector(); renderRoutes(); renderCatalog();
+    setupMapGestures(); renderMapKey(); renderFilters(); renderMap(); renderPreview(); renderInspector(); renderRoutes(); renderCatalog();
     $('#search').addEventListener('input', event => { state.query = event.target.value; renderSearch(); });
     $('#catalog-search').addEventListener('input', event => { state.catalogQuery = event.target.value; state.catalogLimit = 36; renderCatalog(); });
     $('#catalog-more').addEventListener('click', () => { state.catalogLimit += 36; renderCatalog(); });

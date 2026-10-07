@@ -1,23 +1,12 @@
 (function () {
-  const colors = { physics: '#83d8e9', thermo: '#f8b886', chemistry: '#9ceddd', quantum: '#b6b4ff', ion: '#f19db4', bonding: '#d5c18e', matter: '#d0e9a2', claim: '#74929a' };
-
-  function groupOf(node) {
-    if (node.claim) return 'claim';
-    const topics = node.topics || [];
-    if (topics.some(topic => topic.includes('ionic_bonding'))) return 'bonding';
-    if (topics.some(topic => topic.startsWith('matter_'))) return 'matter';
-    if (topics.some(topic => topic.startsWith('ion_'))) return 'ion';
-    if (topics.some(topic => topic.includes('quantum_mechanics'))) return 'quantum';
-    if (topics.some(topic => topic.includes('physical_chemistry'))) return 'chemistry';
-    if (topics.some(topic => topic.includes('thermodynamics'))) return 'thermo';
-    return 'physics';
-  }
+  const mapKey = window.PhysicsMapKey;
 
   function mount(canvas, tooltip, atlas, onSelect) {
     const context = canvas.getContext('2d');
     if (!context) throw new Error('Canvas is unavailable in this browser');
     const nodes = atlas.nodes;
     const edges = atlas.edges;
+    const styles = new Map(edges.map(edge => [edge, mapKey.classify(edge)]));
     const ranked = [...nodes].sort((left, right) => right.degree - left.degree);
     const byId = new Map(nodes.map(node => [node.id, node]));
     const neighbors = new Map(nodes.map(node => [node.id, new Set()]));
@@ -41,6 +30,7 @@
     let selected = null;
     let hovered = null;
     let topic = 'all';
+    let focusedEdges = [];
     let drag = null;
     let scheduled = false;
 
@@ -55,17 +45,21 @@
       context.clearRect(0, 0, width, height);
       const active = selected || hovered;
       const related = active ? neighbors.get(active) || new Set() : null;
-      for (const edge of edges) {
+      function drawEdge(edge, highlighted) {
         const from = byId.get(edge.source), to = byId.get(edge.target);
-        if (!from || !to) continue;
-        const highlighted = active && (edge.source === active || edge.target === active);
+        if (!from || !to) return;
         const inTopic = topic === 'all' || from.topics.includes(topic) || to.topics.includes(topic);
-        context.globalAlpha = highlighted ? 0.92 : active ? 0.075 : inTopic ? 0.17 : 0.045;
-        context.strokeStyle = highlighted ? '#b6eee1' : '#5c8790';
-        context.lineWidth = highlighted ? 1.4 : 0.65;
+        const style = styles.get(edge);
+        context.globalAlpha = highlighted ? 0.94 : active ? 0.065 : inTopic ? 0.21 : 0.05;
+        context.strokeStyle = style.color;
+        context.lineWidth = highlighted ? 2.2 : 0.8;
+        context.setLineDash(style.dash);
         const start = screen(from), end = screen(to);
         context.beginPath(); context.moveTo(start.x, start.y); context.lineTo(end.x, end.y); context.stroke();
       }
+      for (const edge of edges) if (!active || (edge.source !== active && edge.target !== active)) drawEdge(edge, false);
+      if (active) for (const edge of edges) if (edge.source === active || edge.target === active) drawEdge(edge, true);
+      context.setLineDash([]);
       const labeled = new Set(ranked.slice(0, 32).map(node => node.id));
       if (active) {
         labeled.add(active);
@@ -77,7 +71,7 @@
         const inTopic = topic === 'all' || node.topics.includes(topic);
         const radius = Math.max(1.5, Math.min(8, (3 + Math.sqrt(node.degree || 0) * 0.65) * Math.max(0.58, Math.min(1.6, Math.min(fitScaleX, fitScaleY) * zoom))));
         context.globalAlpha = active ? relevant ? 1 : 0.3 : inTopic ? 0.82 : 0.25;
-        context.fillStyle = colors[groupOf(node)];
+        context.fillStyle = mapKey.domainById.get(mapKey.groupOf(node)).color;
         context.beginPath(); context.arc(point.x, point.y, node.id === active ? radius + 3 : radius, 0, Math.PI * 2); context.fill();
         if (node.id === active) {
           context.strokeStyle = '#f5fff9'; context.lineWidth = 2; context.stroke();
@@ -125,10 +119,27 @@
       return closest;
     }
 
-    function moveTooltip(event, node) {
-      tooltip.hidden = !node;
-      if (!node) return;
-      tooltip.textContent = `${node.label} · ${node.degree} links`;
+    function edgeAt(clientX, clientY) {
+      if (!selected) return null;
+      const rect = canvas.getBoundingClientRect();
+      const pointX = clientX - rect.left, pointY = clientY - rect.top;
+      let closest = null, distance = 7;
+      for (const edge of focusedEdges) {
+        const start = screen(byId.get(edge.source)), end = screen(byId.get(edge.target));
+        const horizontal = end.x - start.x, vertical = end.y - start.y;
+        const lengthSquared = horizontal * horizontal + vertical * vertical;
+        if (!lengthSquared) continue;
+        const fraction = Math.max(0, Math.min(1, ((pointX - start.x) * horizontal + (pointY - start.y) * vertical) / lengthSquared));
+        const separation = Math.hypot(pointX - start.x - fraction * horizontal, pointY - start.y - fraction * vertical);
+        if (separation < distance) { distance = separation; closest = edge; }
+      }
+      return closest;
+    }
+
+    function moveTooltip(event, node, edge) {
+      tooltip.hidden = !node && !edge;
+      if (!node && !edge) return;
+      tooltip.textContent = node ? `${node.label} · ${node.degree} links` : `${byId.get(edge.source).label} → ${byId.get(edge.target).label} · ${edge.relation.replaceAll('_', ' ')}${edge.semantic ? ` · ${edge.semantic}` : ''}`;
       const bounds = canvas.getBoundingClientRect();
       tooltip.style.left = `${Math.min(bounds.width - 190, Math.max(10, event.clientX - bounds.left + 12))}px`;
       tooltip.style.top = `${Math.max(10, event.clientY - bounds.top - 32)}px`;
@@ -145,9 +156,10 @@
         if (drag.moved) { panX = drag.panX + dx; panY = drag.panY + dy; tooltip.hidden = true; requestDraw(); return; }
       }
       const node = hitTest(event.clientX, event.clientY);
+      const edge = node ? null : edgeAt(event.clientX, event.clientY);
       if (hovered !== node?.id) { hovered = node?.id || null; requestDraw(); }
-      canvas.style.cursor = node ? 'pointer' : drag ? 'grabbing' : 'grab';
-      moveTooltip(event, node);
+      canvas.style.cursor = node ? 'pointer' : edge ? 'help' : drag ? 'grabbing' : 'grab';
+      moveTooltip(event, node, edge);
     });
     canvas.addEventListener('pointerup', event => {
       if (drag && !drag.moved) {
@@ -173,10 +185,10 @@
     resize();
 
     return {
-      select(id) { selected = id; hovered = null; tooltip.hidden = true; draw(); },
+      select(id) { selected = id; focusedEdges = id ? edges.filter(edge => edge.source === id || edge.target === id) : []; hovered = null; tooltip.hidden = true; draw(); },
       topic(id) { topic = id; draw(); },
       zoom(factor) { zoom = Math.max(0.65, Math.min(12, zoom * factor)); draw(); },
-      fit() { zoom = 1; panX = 0; panY = 0; selected = null; draw(); },
+      fit() { zoom = 1; panX = 0; panY = 0; selected = null; focusedEdges = []; draw(); },
       counts() { return { nodes: nodes.length, edges: edges.length, connected: selected ? neighbors.get(selected)?.size || 0 : 0 }; }
     };
   }
