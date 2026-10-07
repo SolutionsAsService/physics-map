@@ -55,25 +55,30 @@
         context.strokeStyle = style.color;
         context.lineWidth = edge === featuredEdge ? 4 : highlighted ? 2.2 : 0.8;
         context.setLineDash(style.dash);
-        const start = screen(from), end = screen(to);
+        const sourcePoint = screen(from), targetPoint = screen(to);
+        const distance = Math.hypot(targetPoint.x - sourcePoint.x, targetPoint.y - sourcePoint.y);
+        const alongX = distance ? (targetPoint.x - sourcePoint.x) / distance : 0;
+        const alongY = distance ? (targetPoint.y - sourcePoint.y) / distance : 0;
+        const featured = edge === featuredEdge && distance > 32;
+        const start = featured ? { x: sourcePoint.x + alongX * 12, y: sourcePoint.y + alongY * 12 } : sourcePoint;
+        const end = featured ? { x: targetPoint.x - alongX * 14, y: targetPoint.y - alongY * 14 } : targetPoint;
         context.beginPath(); context.moveTo(start.x, start.y); context.lineTo(end.x, end.y); context.stroke();
         if (style.arrow && (highlighted || (style.id === 'causal' && !active && inTopic))) {
-          const distance = Math.hypot(end.x - start.x, end.y - start.y);
           if (distance > 15) {
-            const alongX = (end.x - start.x) / distance, alongY = (end.y - start.y) / distance;
-            const tipX = end.x - alongX * 5, tipY = end.y - alongY * 5;
-            const baseX = tipX - alongX * 6, baseY = tipY - alongY * 6;
+            const tipX = end.x - alongX * (featured ? 0 : 5), tipY = end.y - alongY * (featured ? 0 : 5);
+            const baseX = tipX - alongX * (featured ? 11 : 6), baseY = tipY - alongY * (featured ? 11 : 6);
+            const halfWidth = featured ? 6 : 3;
             context.beginPath();
             if (style.arrow === 'filled') {
               context.moveTo(tipX, tipY);
-              context.lineTo(baseX - alongY * 3, baseY + alongX * 3);
-              context.lineTo(baseX + alongY * 3, baseY - alongX * 3);
+              context.lineTo(baseX - alongY * halfWidth, baseY + alongX * halfWidth);
+              context.lineTo(baseX + alongY * halfWidth, baseY - alongX * halfWidth);
               context.fillStyle = style.color;
               context.fill();
             } else {
-              context.moveTo(baseX - alongY * 3, baseY + alongX * 3);
+              context.moveTo(baseX - alongY * halfWidth, baseY + alongX * halfWidth);
               context.lineTo(tipX, tipY);
-              context.lineTo(baseX + alongY * 3, baseY - alongX * 3);
+              context.lineTo(baseX + alongY * halfWidth, baseY - alongX * halfWidth);
               context.setLineDash([]);
               context.stroke();
             }
@@ -89,6 +94,7 @@
         labeled.add(active);
         for (const node of ranked.filter(node => related.has(node.id)).slice(0, 25)) labeled.add(node.id);
       }
+      if (featuredEdge) { labeled.add(featuredEdge.source); labeled.add(featuredEdge.target); }
       for (const node of nodes) {
         const point = screen(node);
         const relevant = node.id === active || related?.has(node.id);
@@ -110,6 +116,24 @@
         context.fillStyle = node.id === active ? '#ffffff' : '#c8dadd';
         context.font = `${node.id === active ? 13 : 10}px system-ui, sans-serif`;
         context.fillText(node.label.slice(0, 27), point.x + 7, point.y - 7);
+      }
+      if (featuredEdge) {
+        const from = screen(byId.get(featuredEdge.source)), to = screen(byId.get(featuredEdge.target));
+        const dx = to.x - from.x, dy = to.y - from.y;
+        const distance = Math.max(1, Math.hypot(dx, dy));
+        const style = styles.get(featuredEdge);
+        const relation = style.id === 'causal' ? 'CAUSES' : 'DERIVED';
+        const formula = String(featuredEdge.record?.mathematical_form || featuredEdge.relation.replaceAll('_', ' '));
+        const caption = `${relation} · ${formula.length > 32 ? `${formula.slice(0, 31)}…` : formula}`;
+        context.font = '600 12px system-ui, sans-serif';
+        const textWidth = Math.min(width - 20, Math.ceil((context.measureText?.(caption).width || caption.length * 7) + 20));
+        const labelX = Math.max(10, Math.min(width - textWidth - 10, (from.x + to.x) / 2 - textWidth / 2 - dy / distance * 24));
+        const labelY = Math.max(22, Math.min(height - 12, (from.y + to.y) / 2 + dx / distance * 24));
+        context.globalAlpha = 1;
+        context.fillStyle = '#10252d';
+        context.fillRect(labelX, labelY - 18, textWidth, 25);
+        context.fillStyle = style.color;
+        context.fillText(caption, labelX + 9, labelY);
       }
       context.globalAlpha = 1;
     }
@@ -224,7 +248,6 @@
     return {
       select(id) { if (selected !== id) featuredEdge = null; selected = id; focusedEdges = id ? edges.filter(edge => edge.source === id || edge.target === id) : []; hovered = null; tooltip.hidden = true; draw(); },
       focusEdge(edge) { featuredEdge = edge; frameFeaturedEdge(); draw(); },
-      resize,
       topic(id) { topic = id; draw(); },
       zoom(factor) { zoom = Math.max(0.65, Math.min(12, zoom * factor)); draw(); },
       fit() { zoom = 1; panX = 0; panY = 0; selected = null; featuredEdge = null; focusedEdges = []; draw(); },

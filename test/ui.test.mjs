@@ -23,13 +23,18 @@ test('search, focus, source records and learning routes work on the full atlas',
   const scrolled = [];
   dom.window.HTMLElement.prototype.scrollIntoView = function () { scrolled.push(this.id); };
   const circles = [];
+  const graphArrows = [];
+  const graphLabels = [];
   const dashPatterns = new Set();
   let arrowHeads = 0;
   let pathSegments = 0;
   dom.window.HTMLCanvasElement.prototype.getContext = () => ({
-    setTransform() {}, clearRect() {}, beginPath() { pathSegments = 0; }, moveTo() {}, lineTo() { pathSegments++; }, stroke() {},
+    setTransform() {}, clearRect() {}, beginPath() { pathSegments = 0; this.start = null; this.end = null; },
+    moveTo(x, y) { this.start = [x, y]; }, lineTo(x, y) { this.end = [x, y]; pathSegments++; },
+    stroke() { if (this.lineWidth === 4 && this.start && this.end) graphArrows.push([this.start, this.end]); },
     setLineDash(pattern) { dashPatterns.add(pattern.join(',')); },
-    arc(x, y) { circles.push([x, y]); }, fill() { if (pathSegments >= 2) arrowHeads++; }, fillText() {}
+    arc(x, y) { circles.push([x, y]); }, fill() { if (pathSegments >= 2) arrowHeads++; },
+    fillRect() {}, fillText(label) { graphLabels.push(label); }
   });
   dom.window.eval(keyScript);
   dom.window.eval(networkScript);
@@ -57,24 +62,19 @@ test('search, focus, source records and learning routes work on the full atlas',
   assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('constant mass'));
   assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('132'));
   assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('Net force'));
-  const stage = document.querySelector('#relationship-stage');
-  assert.equal(stage.hidden, false);
-  assert.deepEqual([...stage.querySelectorAll('.stage-node')].map(button => button.dataset.concept), ['net_force', 'acceleration']);
-  assert.equal(stage.querySelector('.stage-path').getAttribute('marker-end'), 'url(#stage-arrow)');
-  assert.ok(stage.textContent.includes('F_net=dp/dt=m a'));
+  assert.equal(document.querySelector('#relationship-stage'), null);
+  assert.ok(graphLabels.includes('CAUSES · F_net=dp/dt=m a'));
   const indexOf = id => graph.nodes.findIndex(node => node.id === id);
   const separation = points => Math.hypot(points[indexOf('net_force')][0] - points[indexOf('acceleration')][0], points[indexOf('net_force')][1] - points[indexOf('acceleration')][1]);
-  assert.ok(separation(circles.slice(-graph.nodes.length)) > separation(rendered) * 3, 'map frames the actual two source nodes and their arrow');
+  const focusedPoints = circles.slice(-graph.nodes.length);
+  assert.ok(separation(focusedPoints) > separation(rendered) * 3, 'map frames the actual source nodes');
+  const [start, end] = graphArrows.at(-1);
+  assert.ok(Math.hypot(start[0] - focusedPoints[indexOf('net_force')][0], start[1] - focusedPoints[indexOf('net_force')][1]) <= 13, 'edge begins at source node');
+  assert.ok(Math.hypot(end[0] - focusedPoints[indexOf('acceleration')][0], end[1] - focusedPoints[indexOf('acceleration')][1]) <= 15, 'arrow terminates at target node');
   assert.ok(arrowHeads > 0, 'source-asserted causal arrows render on the map');
   assert.ok(document.querySelector('#relation-key .relation-key-item svg path[fill]:not([fill="none"])'));
-  stage.querySelector('[data-concept="acceleration"]').click();
-  assert.equal(document.querySelector('#inspector h3').textContent, 'Acceleration');
-  stage.querySelector('[data-step="1"]').click();
-  assert.ok(stage.textContent.includes('MATHEMATICAL DERIVATION'));
-  assert.deepEqual([...stage.querySelectorAll('.stage-node')].map(button => button.dataset.concept), ['velocity', 'acceleration']);
   document.querySelector('#preview-close').click();
-  assert.equal(stage.hidden, true);
-  assert.equal(document.querySelector('.map-panel').classList.contains('has-relation'), false);
+  assert.ok(Math.abs(separation(circles.slice(-graph.nodes.length)) - separation(rendered)) < 1, 'clear selection returns to full-map fit');
 
   const search = document.querySelector('#search');
   search.value = 'entropy';

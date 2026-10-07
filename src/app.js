@@ -1,4 +1,4 @@
-const state = { atlas: null, byId: new Map(), edgesById: new Map(), searchText: new Map(), selected: null, activeRelation: null, relationIndex: 0, topic: 'all', query: '', catalogQuery: '', catalogLimit: 36, route: null, routeStep: 0 };
+const state = { atlas: null, byId: new Map(), edgesById: new Map(), searchText: new Map(), selected: null, featuredEdge: null, topic: 'all', query: '', catalogQuery: '', catalogLimit: 36, route: null, routeStep: 0 };
 const $ = selector => document.querySelector(selector);
 const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 const humanize = value => String(value || '').replaceAll('_', ' ').replace(/\b\w/g, letter => letter.toUpperCase());
@@ -30,7 +30,6 @@ function relationDescription(edge, id) {
 function selectConcept(id, { scroll = false } = {}) {
   if (!state.byId.has(id)) return;
   state.selected = id;
-  state.relationIndex = 0;
   renderMap();
   renderPreview();
   renderInspector();
@@ -40,10 +39,9 @@ function selectConcept(id, { scroll = false } = {}) {
 
 function clearSelection({ fit = false } = {}) {
   if (!state.selected && !fit) return;
-  const wasFocused = Boolean(state.activeRelation);
+  const wasFocused = Boolean(state.featuredEdge);
   state.selected = null;
-  state.activeRelation = null;
-  state.relationIndex = 0;
+  state.featuredEdge = null;
   if (fit || wasFocused) network.fit();
   renderMap();
   renderPreview();
@@ -93,33 +91,9 @@ function renderMap() {
   $('#details-jump').hidden = !state.selected;
   $('#map-mode').textContent = state.selected ? `FOCUS / ${state.byId.get(state.selected).label.toUpperCase()}` : 'WHOLE FIELD / ALL NODES';
   $('#map-count').textContent = `${state.atlas.nodes.length.toLocaleString()} nodes · ${state.atlas.edges.length.toLocaleString()} links${state.selected ? ` · ${network?.counts().connected || 0} neighbors highlighted` : ''}`;
-  renderRelationshipStage();
-}
-
-function renderRelationshipStage() {
-  const host = $('#relationship-stage');
   const directed = (state.edgesById.get(state.selected) || []).filter(edge => window.PhysicsMapKey.classify(edge).arrow);
-  const previouslyHidden = host.hidden;
-  host.hidden = !directed.length;
-  $('.map-panel').classList.toggle('has-relation', directed.length > 0);
-  if (previouslyHidden !== host.hidden) network?.resize();
-  if (!directed.length) { state.activeRelation = null; host.replaceChildren(); return; }
-  state.relationIndex %= directed.length;
-  const edge = directed[state.relationIndex];
-  const style = window.PhysicsMapKey.classify(edge);
-  state.activeRelation = edge;
-  const source = state.byId.get(edge.source);
-  const target = state.byId.get(edge.target);
-  const equation = edge.record?.mathematical_form;
-  host.style.setProperty('--edge-color', style.color);
-  host.innerHTML = `<div class="stage-header"><span>${style.id === 'causal' ? 'SOURCE-ASSERTED CAUSATION' : 'MATHEMATICAL DERIVATION'}</span><span>${escapeHtml(humanize(edge.relation))} · ${state.relationIndex + 1}/${directed.length}</span></div><div class="stage-chain"><button type="button" class="stage-node" data-concept="${escapeHtml(edge.source)}"><span class="stage-dot" aria-hidden="true"></span><strong>${escapeHtml(source?.label || edge.source)}</strong></button><svg class="stage-connector" viewBox="0 0 200 52" preserveAspectRatio="none" role="img" aria-label="${escapeHtml(source?.label || edge.source)} leads to ${escapeHtml(target?.label || edge.target)}"><defs><marker id="stage-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="currentColor"/></marker></defs><path class="stage-path" d="M4 26 H192" marker-end="url(#stage-arrow)"/><circle class="stage-pulse" r="3"><animateMotion dur="2.4s" repeatCount="indefinite" path="M4 26 H187"/></circle></svg><button type="button" class="stage-node" data-concept="${escapeHtml(edge.target)}"><span class="stage-dot" aria-hidden="true"></span><strong>${escapeHtml(target?.label || edge.target)}</strong></button></div><div class="stage-footer"><span>${equation ? `<b>${escapeHtml(equation)}</b> · ` : ''}${escapeHtml(sourceTitle(edge.document))}</span>${directed.length > 1 ? '<span class="stage-steps"><button type="button" data-step="-1" aria-label="Previous directed relationship">←</button><button type="button" data-step="1" aria-label="Next directed relationship">→</button></span>' : ''}</div>`;
-  host.querySelectorAll('[data-concept]').forEach(button => button.addEventListener('click', () => selectConcept(button.dataset.concept)));
-  host.querySelectorAll('[data-step]').forEach(button => button.addEventListener('click', () => {
-    state.relationIndex = (state.relationIndex + Number(button.dataset.step) + directed.length) % directed.length;
-    renderMap();
-    renderPreview();
-  }));
-  network?.focusEdge(edge);
+  state.featuredEdge = directed.find(edge => window.PhysicsMapKey.classify(edge).id === 'causal') || directed[0] || null;
+  if (state.featuredEdge) network?.focusEdge(state.featuredEdge);
 }
 
 function sourceTitle(file) {
@@ -151,8 +125,8 @@ function renderPreview() {
   const examples = [];
   const seen = new Set();
   const ordered = [...connections].sort((left, right) => {
-    if (left === state.activeRelation) return -1;
-    if (right === state.activeRelation) return 1;
+    if (left === state.featuredEdge) return -1;
+    if (right === state.featuredEdge) return 1;
     const rank = edge => ({ causal: 0, derivation: 1, effect: 2 })[window.PhysicsMapKey.classify(edge).id] ?? 3;
     return rank(left) - rank(right);
   });
