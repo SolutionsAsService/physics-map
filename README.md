@@ -21,6 +21,8 @@ The **map key** separates colored concept domains from colored and patterned lin
 
 The **Force → acceleration** link in the hero selects the `net_force` node. Its preview draws a filled arrow for source-asserted causation and exposes the source graph's `F_net=dp/dt=m a`, mechanism, Newtonian/inertial/constant-mass conditions and source-line range. Dashed open arrows represent mathematical derivations and do **not** assert that the source node physically causes the target. Other relations remain undirected patterns unless their source explicitly labels them directional. Hover a highlighted edge or read the full entry to inspect its original record; a source-line range is provenance claimed by the uploaded graph, not independent verification of the cited text.
 
+When a selected concept has a directed source relationship, the **linked-node strip above the map** shows its actual source and target as connected, clickable nodes with a visible arrow and any supplied equation. The canvas frames the same underlying edge, keeping the surrounding graph visible. Use the arrow controls to explore other directed relations; selecting either node follows the source record. Fit all or Escape returns to the whole field. This strip is hidden for concepts without an explicitly directed source relationship.
+
 ## Verify
 
 ```bash

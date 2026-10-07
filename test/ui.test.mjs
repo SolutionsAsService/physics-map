@@ -57,9 +57,24 @@ test('search, focus, source records and learning routes work on the full atlas',
   assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('constant mass'));
   assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('132'));
   assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('Net force'));
+  const stage = document.querySelector('#relationship-stage');
+  assert.equal(stage.hidden, false);
+  assert.deepEqual([...stage.querySelectorAll('.stage-node')].map(button => button.dataset.concept), ['net_force', 'acceleration']);
+  assert.equal(stage.querySelector('.stage-path').getAttribute('marker-end'), 'url(#stage-arrow)');
+  assert.ok(stage.textContent.includes('F_net=dp/dt=m a'));
+  const indexOf = id => graph.nodes.findIndex(node => node.id === id);
+  const separation = points => Math.hypot(points[indexOf('net_force')][0] - points[indexOf('acceleration')][0], points[indexOf('net_force')][1] - points[indexOf('acceleration')][1]);
+  assert.ok(separation(circles.slice(-graph.nodes.length)) > separation(rendered) * 3, 'map frames the actual two source nodes and their arrow');
   assert.ok(arrowHeads > 0, 'source-asserted causal arrows render on the map');
   assert.ok(document.querySelector('#relation-key .relation-key-item svg path[fill]:not([fill="none"])'));
+  stage.querySelector('[data-concept="acceleration"]').click();
+  assert.equal(document.querySelector('#inspector h3').textContent, 'Acceleration');
+  stage.querySelector('[data-step="1"]').click();
+  assert.ok(stage.textContent.includes('MATHEMATICAL DERIVATION'));
+  assert.deepEqual([...stage.querySelectorAll('.stage-node')].map(button => button.dataset.concept), ['velocity', 'acceleration']);
   document.querySelector('#preview-close').click();
+  assert.equal(stage.hidden, true);
+  assert.equal(document.querySelector('.map-panel').classList.contains('has-relation'), false);
 
   const search = document.querySelector('#search');
   search.value = 'entropy';

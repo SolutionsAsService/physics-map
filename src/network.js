@@ -31,6 +31,7 @@
     let hovered = null;
     let topic = 'all';
     let focusedEdges = [];
+    let featuredEdge = null;
     let drag = null;
     let scheduled = false;
 
@@ -50,9 +51,9 @@
         if (!from || !to) return;
         const inTopic = topic === 'all' || from.topics.includes(topic) || to.topics.includes(topic);
         const style = styles.get(edge);
-        context.globalAlpha = highlighted ? 0.94 : active ? 0.065 : inTopic ? 0.21 : 0.05;
+        context.globalAlpha = edge === featuredEdge ? 1 : highlighted ? 0.94 : active ? 0.065 : inTopic ? 0.21 : 0.05;
         context.strokeStyle = style.color;
-        context.lineWidth = highlighted ? 2.2 : 0.8;
+        context.lineWidth = edge === featuredEdge ? 4 : highlighted ? 2.2 : 0.8;
         context.setLineDash(style.dash);
         const start = screen(from), end = screen(to);
         context.beginPath(); context.moveTo(start.x, start.y); context.lineTo(end.x, end.y); context.stroke();
@@ -80,7 +81,8 @@
         }
       }
       for (const edge of edges) if (!active || (edge.source !== active && edge.target !== active)) drawEdge(edge, false);
-      if (active) for (const edge of edges) if (edge.source === active || edge.target === active) drawEdge(edge, true);
+      if (active) for (const edge of focusedEdges) if (edge !== featuredEdge) drawEdge(edge, true);
+      if (featuredEdge) drawEdge(featuredEdge, true);
       context.setLineDash([]);
       const labeled = new Set(ranked.slice(0, 32).map(node => node.id));
       if (active) {
@@ -92,10 +94,11 @@
         const relevant = node.id === active || related?.has(node.id);
         const inTopic = topic === 'all' || node.topics.includes(topic);
         const radius = Math.max(1.5, Math.min(8, (3 + Math.sqrt(node.degree || 0) * 0.65) * Math.max(0.58, Math.min(1.6, Math.min(fitScaleX, fitScaleY) * zoom))));
+        const featured = featuredEdge && (featuredEdge.source === node.id || featuredEdge.target === node.id);
         context.globalAlpha = active ? relevant ? 1 : 0.3 : inTopic ? 0.82 : 0.25;
         context.fillStyle = mapKey.domainById.get(mapKey.groupOf(node)).color;
-        context.beginPath(); context.arc(point.x, point.y, node.id === active ? radius + 3 : radius, 0, Math.PI * 2); context.fill();
-        if (node.id === active) {
+        context.beginPath(); context.arc(point.x, point.y, featured || node.id === active ? radius + 3 : radius, 0, Math.PI * 2); context.fill();
+        if (node.id === active || featured) {
           context.strokeStyle = '#f5fff9'; context.lineWidth = 2; context.stroke();
         }
       }
@@ -117,6 +120,17 @@
       (window.requestAnimationFrame || (callback => setTimeout(callback, 16)))(draw);
     }
 
+    function frameFeaturedEdge() {
+      if (!featuredEdge) return;
+      const from = byId.get(featuredEdge.source), to = byId.get(featuredEdge.target);
+      const distance = Math.hypot((to.layout.x - from.layout.x) * fitScaleX, (to.layout.y - from.layout.y) * fitScaleY);
+      zoom = Math.max(1.8, Math.min(8, (width < 600 ? 95 : 160) / Math.max(1, distance)));
+      const midpointX = (from.layout.x + to.layout.x) / 2 - centerX;
+      const midpointY = (from.layout.y + to.layout.y) / 2 - centerY;
+      panX = (width < 760 ? width * 0.5 : width * 0.39) - width / 2 - midpointX * fitScaleX * zoom;
+      panY = (width < 760 ? height * 0.28 : height * 0.52) - height / 2 - midpointY * fitScaleY * zoom;
+    }
+
     function resize() {
       const rect = canvas.getBoundingClientRect();
       width = Math.max(320, Math.round(rect.width || 960));
@@ -126,6 +140,7 @@
       canvas.height = Math.round(height * pixelRatio);
       fitScaleX = (width - 36) / Math.max(1, bounds.maxX - bounds.minX);
       fitScaleY = (height - 36) / Math.max(1, bounds.maxY - bounds.minY);
+      frameFeaturedEdge();
       draw();
     }
 
@@ -207,10 +222,12 @@
     resize();
 
     return {
-      select(id) { selected = id; focusedEdges = id ? edges.filter(edge => edge.source === id || edge.target === id) : []; hovered = null; tooltip.hidden = true; draw(); },
+      select(id) { if (selected !== id) featuredEdge = null; selected = id; focusedEdges = id ? edges.filter(edge => edge.source === id || edge.target === id) : []; hovered = null; tooltip.hidden = true; draw(); },
+      focusEdge(edge) { featuredEdge = edge; frameFeaturedEdge(); draw(); },
+      resize,
       topic(id) { topic = id; draw(); },
       zoom(factor) { zoom = Math.max(0.65, Math.min(12, zoom * factor)); draw(); },
-      fit() { zoom = 1; panX = 0; panY = 0; selected = null; focusedEdges = []; draw(); },
+      fit() { zoom = 1; panX = 0; panY = 0; selected = null; featuredEdge = null; focusedEdges = []; draw(); },
       counts() { return { nodes: nodes.length, edges: edges.length, connected: selected ? neighbors.get(selected)?.size || 0 : 0 }; }
     };
   }
