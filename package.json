@@ -9,6 +9,7 @@
     "test": "node --test"
   },
   "devDependencies": {
+    "d3-force": "^3.0.0",
     "jsdom": "^26.1.0"
   }
 }

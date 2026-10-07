@@ -4,13 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#091119">
-  <meta name="description" content="Explore an interconnected map of physics, thermodynamics and physical chemistry. Follow ideas, inspect relationships and read the original graph records.">
+  <meta name="description" content="Explore all recorded concepts and relationships across physics, thermodynamics, chemistry, ions and quantum mechanics. Follow every link back to its source record.">
   <title>Physics Map — a living field guide</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./src/styles.css">
-  <script type="module" src="./src/app.js"></script>
+  <script src="./src/network.js" defer></script>
+  <script src="./src/app.js" defer></script>
 </head>
 <body>
   <div class="site-shell">
@@ -28,10 +29,10 @@
 
       <section class="metrics" aria-label="Atlas statistics"><div><strong id="metric-concepts">—</strong><span>connected concepts</span></div><div><strong id="metric-relations">—</strong><span>documented relationships</span></div><div><strong id="metric-overlap">—</strong><span>concepts bridging sources</span></div><div class="metric-copy"><span class="signal-dot"></span> Built from original semantic graph records, not an AI-generated summary.</div></section>
 
-      <section id="explorer" class="explorer" aria-labelledby="explorer-heading"><div class="section-top"><div><p class="eyebrow">01 / INTERACTIVE EXPLORER</p><h2 id="explorer-heading">Find your way through physics.</h2><p>Choose a concept to see its neighborhood. Every line describes a recorded relationship.</p></div><div class="section-index">01 — 03</div></div>
-        <div class="explorer-controls"><label class="searchbox"><span aria-hidden="true">⌕</span><span class="sr-only">Search concepts</span><input id="search" type="search" placeholder="Search 780+ concepts, theories or relations…" autocomplete="off"><kbd>/</kbd></label><div id="topic-filters" class="filter-row" role="group" aria-label="Filter by source graph"></div></div>
+      <section id="explorer" class="explorer" aria-labelledby="explorer-heading"><div class="section-top"><div><p class="eyebrow">01 / INTERACTIVE EXPLORER</p><h2 id="explorer-heading">Find your way through physics.</h2><p>The entire field stays on the map. Select or search any concept to highlight every direct relationship, then inspect complete source records and claim evidence.</p></div><div class="section-index">01 — 03</div></div>
+        <div class="explorer-controls"><label class="searchbox"><span aria-hidden="true">⌕</span><span class="sr-only">Search concepts</span><input id="search" type="search" placeholder="Search 1,500+ concepts, definitions or source claims…" autocomplete="off"><kbd>/</kbd></label><div id="topic-filters" class="filter-row" role="group" aria-label="Filter by source graph"></div></div>
         <div id="search-results" class="search-results" hidden></div>
-        <div class="explorer-grid"><div class="map-panel"><div class="panel-toolbar"><span><span class="signal-dot"></span><span id="map-mode">WHOLE FIELD / KEY IDEAS</span></span><div class="map-tools"><button id="reset-map" type="button">Overview</button><button id="zoom-out" type="button" aria-label="Zoom out">−</button><button id="zoom-in" type="button" aria-label="Zoom in">+</button></div></div><div class="map-canvas"><svg id="network" viewBox="0 0 960 620" role="img" aria-label="Interactive relationship network"></svg><div class="map-hint">SELECT A NODE TO EXPLORE · SCROLL TO ZOOM · DRAG TO PAN</div></div><div class="map-footer"><span><i class="legend physics"></i> Physics</span><span><i class="legend thermo"></i> Thermodynamics</span><span><i class="legend chemistry"></i> Physical chemistry</span><span class="map-count" id="map-count"></span></div></div>
+        <div class="explorer-grid"><div class="map-panel"><div class="panel-toolbar"><span><span class="signal-dot"></span><span id="map-mode">WHOLE FIELD / ALL NODES</span></span><div class="map-tools"><button id="reset-map" type="button">Fit all</button><button id="zoom-out" type="button" aria-label="Zoom out">−</button><button id="zoom-in" type="button" aria-label="Zoom in">+</button></div></div><div class="map-canvas"><canvas id="network" role="img" aria-label="All physics concepts and relationships; select or search to highlight connections"></canvas><div id="map-tooltip" class="map-tooltip" hidden></div><div class="map-hint">ALL NODES STAY VISIBLE · SELECT TO HIGHLIGHT · SCROLL TO ZOOM · DRAG TO PAN</div></div><div class="map-footer"><span><i class="legend physics"></i> Physics</span><span><i class="legend thermo"></i> Thermodynamics</span><span><i class="legend chemistry"></i> Chemistry</span><span><i class="legend quantum"></i> Quantum</span><span><i class="legend ion"></i> Ions</span><span class="map-count" id="map-count"></span></div></div>
           <aside id="inspector" class="inspector" aria-live="polite"></aside></div>
       </section>
 

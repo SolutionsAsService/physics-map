@@ -16,7 +16,7 @@ createServer(async (request, response) => {
     response.writeHead(400); response.end('Bad request'); return;
   }
   const relative = path.relative(root, filename).replaceAll('\\', '/');
-  if (!(relative === 'index.html' || /^(src|data)\/[^/]+\.(js|css|json)$/.test(relative))) {
+  if (!(relative === 'index.html' || /^src\/[^/]+\.(js|css)$/.test(relative) || /^data\/(?:[^/.]+\/)*[^/]+\.json$/.test(relative))) {
     response.writeHead(403); response.end('Forbidden'); return;
   }
   try {
