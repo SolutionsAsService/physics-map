@@ -1,0 +1,3187 @@
+{
+  "schema_name": "Full Dynamic Semantic Scientific Knowledge Graph",
+  "schema_version": "1.0-topic-semantic-provenance",
+  "domain": [
+    "physics",
+    "special_relativity",
+    "general_relativity",
+    "history_of_physics",
+    "experimental_physics",
+    "astrophysics",
+    "cosmology"
+  ],
+  "title": "Theory of Relativity — Full Dynamic Semantic Knowledge Graph",
+  "source_policy": {
+    "primary_source": "User-supplied Wikipedia article text: Theory of relativity",
+    "source_authority": "The supplied source is treated as authoritative for this transformation.",
+    "external_research_used": false,
+    "preservation_rule": "Preserve source terminology, distinctions, historical framing, cited people, experiments, applications, references and explicit uncertainty/caveats. Educational annotations are separately labeled.",
+    "coverage_note": "The graph captures the supplied article and expands its explicitly stated relationships into typed semantic edges; it does not silently substitute outside facts."
+  },
+  "central_subject": {
+    "node_id": "theory_relativity",
+    "label": "Theory of relativity",
+    "summary": "An umbrella scientific framework comprising special relativity and general relativity, transforming the treatment of spacetime, gravitation, astronomy and modern physics.",
+    "source_basis": [
+      "c001",
+      "c002",
+      "c003",
+      "c004"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "theory_relativity",
+      "label": "Theory of relativity",
+      "type": "theory",
+      "description": "Umbrella framework comprising Einstein's special and general relativity; special relativity addresses spacetime and physical phenomena absent gravity, while general relativity provides a theory of gravitation and its relation to nature."
+    },
+    {
+      "id": "special_relativity",
+      "label": "Special relativity",
+      "type": "theory",
+      "description": "Theory of spacetime introduced in Einstein's 1905 paper On the Electrodynamics of Moving Bodies; based on the principle of relativity and invariance of the speed of light in vacuum."
+    },
+    {
+      "id": "general_relativity",
+      "label": "General relativity",
+      "type": "theory",
+      "description": "Theory of gravitation developed by Einstein from 1907–1915, published in final form in 1916, using curved spacetime and Einstein field equations."
+    },
+    {
+      "id": "spacetime",
+      "label": "Four-dimensional spacetime",
+      "type": "concept",
+      "description": "Unified treatment of space and time introduced by relativity."
+    },
+    {
+      "id": "relativity_principle",
+      "label": "Principle of relativity",
+      "type": "principle",
+      "description": "Laws of physics are the same for observers in inertial frames related by relative motion."
+    },
+    {
+      "id": "light_speed_invariance",
+      "label": "Invariant speed of light",
+      "type": "principle",
+      "description": "Speed of light in vacuum is the same for all observers regardless of relative motion or source motion."
+    },
+    {
+      "id": "simultaneity",
+      "label": "Relativity of simultaneity",
+      "type": "phenomenon",
+      "description": "Events simultaneous for one observer may not be simultaneous for another observer in relative motion."
+    },
+    {
+      "id": "time_dilation",
+      "label": "Time dilation",
+      "type": "phenomenon",
+      "description": "Moving clocks are measured to tick more slowly relative to a stationary observer; gravitational time dilation also occurs in deeper gravitational wells."
+    },
+    {
+      "id": "length_contraction",
+      "label": "Length contraction",
+      "type": "phenomenon",
+      "description": "Objects are measured to be shortened in their direction of motion relative to an observer."
+    },
+    {
+      "id": "light_speed_limit",
+      "label": "Finite maximum speed",
+      "type": "constraint",
+      "description": "No physical object, message, or field line can travel faster than light in vacuum."
+    },
+    {
+      "id": "mass_energy",
+      "label": "Mass-energy equivalence",
+      "type": "relation",
+      "description": "Energy and mass are equivalent and transmutable, expressed by E = mc²."
+    },
+    {
+      "id": "lorentz_transformations",
+      "label": "Lorentz transformations",
+      "type": "mathematical_framework",
+      "description": "Transformations replacing Galilean transformations in special relativity."
+    },
+    {
+      "id": "galilean_transformations",
+      "label": "Galilean transformations",
+      "type": "classical_framework",
+      "description": "Classical-mechanical transformations superseded by Lorentz transformations in relativistic kinematics."
+    },
+    {
+      "id": "maxwell_equations",
+      "label": "Maxwell's equations",
+      "type": "equations",
+      "description": "Classical electromagnetism equations describing light as a wave with characteristic velocity."
+    },
+    {
+      "id": "electromagnetism",
+      "label": "Classical electromagnetism",
+      "type": "field",
+      "description": "Physical theory underlying Maxwell's equations and a key context for special relativity."
+    },
+    {
+      "id": "newtonian_mechanics",
+      "label": "Newtonian mechanics",
+      "type": "classical_framework",
+      "description": "Approximately 200-year-old mechanics framework that relativity superseded as the fundamental kinematic/gravitational framework."
+    },
+    {
+      "id": "newtonian_gravitation",
+      "label": "Newtonian gravitation",
+      "type": "classical_framework",
+      "description": "Classical gravitational theory for which general relativity supplies corrections and ultimately a relativistic replacement."
+    },
+    {
+      "id": "equivalence_principle",
+      "label": "Equivalence principle",
+      "type": "principle",
+      "description": "Accelerated motion and being at rest in a gravitational field are locally physically equivalent."
+    },
+    {
+      "id": "free_fall",
+      "label": "Free fall as inertial motion",
+      "type": "concept",
+      "description": "In general relativity free-fall motion is inertial motion rather than motion caused by a Newtonian gravitational force."
+    },
+    {
+      "id": "curved_spacetime",
+      "label": "Curved spacetime",
+      "type": "geometric_concept",
+      "description": "Spacetime curvature used by Einstein to resolve the incompatibility between free-fall acceleration and inertial motion."
+    },
+    {
+      "id": "riemannian_geometry",
+      "label": "Riemannian geometry",
+      "type": "mathematical_framework",
+      "description": "Geometric framework developed in the nineteenth century and used to formulate general relativity."
+    },
+    {
+      "id": "einstein_field_equations",
+      "label": "Einstein field equations",
+      "type": "equations",
+      "description": "Equations relating spacetime curvature to mass, energy and momentum, with cosmological-constant term."
+    },
+    {
+      "id": "metric_tensor",
+      "label": "Metric tensor",
+      "type": "mathematical_object",
+      "description": "Solutions of Einstein's field equations are metric tensors defining spacetime geometry and inertial motion."
+    },
+    {
+      "id": "spacetime_topology",
+      "label": "Spacetime topology",
+      "type": "geometric_concept",
+      "description": "Global/topological structure associated with spacetime solutions."
+    },
+    {
+      "id": "gravitation",
+      "label": "Gravitation",
+      "type": "interaction",
+      "description": "Interaction described geometrically by general relativity."
+    },
+    {
+      "id": "gravitational_time_dilation",
+      "label": "Gravitational time dilation",
+      "type": "phenomenon",
+      "description": "Clocks run slower in deeper gravitational wells."
+    },
+    {
+      "id": "perihelion_precession",
+      "label": "Perihelion/orbital precession",
+      "type": "phenomenon",
+      "description": "Orbital precession differing from Newtonian gravitational predictions."
+    },
+    {
+      "id": "light_deflection",
+      "label": "Deflection of light",
+      "type": "phenomenon",
+      "description": "Light rays bend in a gravitational field."
+    },
+    {
+      "id": "frame_dragging",
+      "label": "Frame dragging",
+      "type": "phenomenon",
+      "description": "Rotating masses drag surrounding spacetime."
+    },
+    {
+      "id": "universe_expansion",
+      "label": "Expansion of the universe",
+      "type": "cosmological_phenomenon",
+      "description": "General relativity accommodates an expanding universe and components capable of accelerating expansion."
+    },
+    {
+      "id": "gravitational_waves",
+      "label": "Gravitational waves",
+      "type": "phenomenon",
+      "description": "Propagating gravitational effects predicted within relativistic gravity; included among extraordinary astrophysical phenomena enabled by relativity."
+    },
+    {
+      "id": "neutron_stars",
+      "label": "Neutron stars",
+      "type": "astrophysical_object",
+      "description": "Extraordinary astrophysical objects predicted/explained through relativistic theory."
+    },
+    {
+      "id": "black_holes",
+      "label": "Black holes",
+      "type": "astrophysical_object",
+      "description": "Relativistic astrophysical phenomena whose attributes became experimentally/observationally relevant as astronomy developed."
+    },
+    {
+      "id": "cosmology",
+      "label": "Relativistic cosmology",
+      "type": "discipline",
+      "description": "Cosmological application of general relativity."
+    },
+    {
+      "id": "astrophysics",
+      "label": "Relativistic astrophysics",
+      "type": "discipline",
+      "description": "Astrophysical application of relativity."
+    },
+    {
+      "id": "particle_physics",
+      "label": "Relativistic particle physics",
+      "type": "discipline",
+      "description": "Relativity improved treatment of elementary particles and fundamental interactions."
+    },
+    {
+      "id": "nuclear_physics",
+      "label": "Nuclear physics",
+      "type": "discipline",
+      "description": "Field in which special relativity became a significant and necessary tool."
+    },
+    {
+      "id": "quantum_mechanics",
+      "label": "Quantum mechanics",
+      "type": "discipline",
+      "description": "Field in which special relativity became a significant and necessary tool by the 1920s."
+    },
+    {
+      "id": "atomic_physics",
+      "label": "Atomic physics",
+      "type": "discipline",
+      "description": "Field rapidly incorporating special relativity after its acceptance."
+    },
+    {
+      "id": "nuclear_age",
+      "label": "Nuclear age",
+      "type": "historical_impact",
+      "description": "Historical era associated in the source with relativity's contribution to nuclear physics and mass-energy concepts."
+    },
+    {
+      "id": "principle_theory",
+      "label": "Principle theory",
+      "type": "epistemology",
+      "description": "Einstein's characterization of relativity as beginning from established empirical facts and regularities and deducing necessary consequences."
+    },
+    {
+      "id": "constructive_theory",
+      "label": "Constructive theory",
+      "type": "epistemology",
+      "description": "Contrasting approach that attempts to build models from assumed underlying processes."
+    },
+    {
+      "id": "falsifiability",
+      "label": "Falsifiability",
+      "type": "epistemology",
+      "description": "Relativity makes testable predictions that can be compared with experiments."
+    },
+    {
+      "id": "ether",
+      "label": "Luminiferous aether",
+      "type": "historical_concept",
+      "description": "Hypothetical medium once believed by Maxwell and contemporaries to carry light waves."
+    },
+    {
+      "id": "aether_wind",
+      "label": "Aether wind",
+      "type": "historical_concept",
+      "description": "Hypothesized relative motion of the aether with respect to Earth."
+    },
+    {
+      "id": "fresnel_dragging",
+      "label": "Fresnel partial ether dragging",
+      "type": "historical_model",
+      "description": "Hypothesis ruling out first-order v/c effects in ether-drift detection."
+    },
+    {
+      "id": "fitzgerald_lorentz_contraction",
+      "label": "FitzGerald–Lorentz contraction hypothesis",
+      "type": "historical_model",
+      "description": "Ad hoc hypothesis that material bodies contract through motion in the aether, developed in response to null ether-drift results."
+    },
+    {
+      "id": "michelson_interferometer",
+      "label": "Michelson interferometer",
+      "type": "instrument",
+      "description": "Instrument designed by Michelson to detect second-order ether-wind effects."
+    },
+    {
+      "id": "doppler_effect",
+      "label": "Doppler effect",
+      "type": "phenomenon",
+      "description": "Frequency shift of light from moving sources; transverse Doppler effect provides a relativistic test."
+    },
+    {
+      "id": "transverse_doppler",
+      "label": "Transverse Doppler effect",
+      "type": "phenomenon",
+      "description": "Redshift of light from a moving source observed perpendicular to its velocity."
+    },
+    {
+      "id": "lorentz_factor",
+      "label": "Lorentz factor",
+      "type": "mathematical_concept",
+      "description": "Relativistic correction to frequency/kinematics tested in Ives–Stilwell experiments."
+    },
+    {
+      "id": "gps",
+      "label": "Global Positioning System",
+      "type": "application",
+      "description": "Satellite navigation system requiring relativistic corrections for precision."
+    },
+    {
+      "id": "glonass",
+      "label": "GLONASS",
+      "type": "application",
+      "description": "Satellite navigation system requiring relativistic corrections."
+    },
+    {
+      "id": "galileo_nav",
+      "label": "Galileo",
+      "type": "application",
+      "description": "Satellite navigation system requiring relativistic corrections."
+    },
+    {
+      "id": "satellite_time",
+      "label": "Satellite-based precision time",
+      "type": "application",
+      "description": "Precision satellite measurement and timekeeping requiring relativistic corrections."
+    },
+    {
+      "id": "electron_microscopes",
+      "label": "Electron microscopes",
+      "type": "application",
+      "description": "Instrument class cited as requiring relativistic considerations."
+    },
+    {
+      "id": "particle_accelerators",
+      "label": "Particle accelerators",
+      "type": "application",
+      "description": "Accelerator systems that depend on relativistic considerations."
+    },
+    {
+      "id": "precision_time",
+      "label": "High-precision time measurement",
+      "type": "application",
+      "description": "Measurement domain requiring relativistic effects."
+    },
+    {
+      "id": "relativity_newton",
+      "label": "Relativity's replacement of Newtonian framework",
+      "type": "historical_impact",
+      "description": "Relativity transformed theoretical physics and astronomy and superseded the older Newtonian framework."
+    },
+    {
+      "id": "20th_century_physics",
+      "label": "20th-century theoretical physics",
+      "type": "historical_impact",
+      "description": "Major scientific domain transformed by relativity."
+    },
+    {
+      "id": "astronomy_transformation",
+      "label": "20th-century astronomy",
+      "type": "historical_impact",
+      "description": "Astronomy transformed by relativistic concepts and predictions."
+    },
+    {
+      "id": "experimental_acceptance_sr",
+      "label": "Acceptance of special relativity",
+      "type": "historical_event",
+      "description": "By the 1920s the physics community understood and accepted special relativity."
+    },
+    {
+      "id": "slow_acceptance_gr",
+      "label": "Later acceptance/centrality of general relativity",
+      "type": "historical_event",
+      "description": "General relativity became central to physics and astronomy around 1960 after new mathematical techniques and astronomical observations."
+    },
+    {
+      "id": "quasar_1963",
+      "label": "Quasar discoveries (1963)",
+      "type": "historical_event",
+      "description": ""
+    },
+    {
+      "id": "cmb_1965",
+      "label": "3-kelvin microwave background radiation observations (1965)",
+      "type": "historical_event",
+      "description": ""
+    },
+    {
+      "id": "pulsar_1967",
+      "label": "Pulsar discoveries (1967)",
+      "type": "historical_event",
+      "description": ""
+    },
+    {
+      "id": "black_hole_candidates_1981",
+      "label": "First black-hole candidates (1981)",
+      "type": "historical_event",
+      "description": ""
+    },
+    {
+      "id": "merger_gw150914",
+      "label": "GW150914 black-hole merger simulation",
+      "type": "visualization",
+      "description": "Simulation showing spacetime distortion during black-hole orbit and merger."
+    },
+    {
+      "id": "einstein",
+      "label": "Albert Einstein",
+      "type": "person",
+      "description": "Developer of special and general relativity."
+    },
+    {
+      "id": "isaac_newton",
+      "label": "Isaac Newton",
+      "type": "person",
+      "description": "Primary figure associated in the source with the classical mechanics framework superseded by relativity."
+    },
+    {
+      "id": "michelson",
+      "label": "Albert A. Michelson",
+      "type": "person",
+      "description": "Experimental physicist who designed and conducted ether-drift experiments."
+    },
+    {
+      "id": "morley",
+      "label": "Edward W. Morley",
+      "type": "person",
+      "description": "Experimental collaborator in the 1887 Michelson–Morley experiment."
+    },
+    {
+      "id": "lorentz",
+      "label": "Hendrik Lorentz",
+      "type": "person",
+      "description": "Contributor to theoretical development surrounding special relativity and FitzGerald–Lorentz contraction."
+    },
+    {
+      "id": "poincare",
+      "label": "Henri Poincaré",
+      "type": "person",
+      "description": "Contributor to theoretical results underlying special relativity."
+    },
+    {
+      "id": "planck",
+      "label": "Max Planck",
+      "type": "person",
+      "description": "Used 'relative theory' in 1906 and contributed to subsequent development."
+    },
+    {
+      "id": "minkowski",
+      "label": "Hermann Minkowski",
+      "type": "person",
+      "description": "Performed subsequent work on relativity and spacetime."
+    },
+    {
+      "id": "grossmann",
+      "label": "Marcel Grossmann",
+      "type": "person",
+      "description": "Mathematician with whom Einstein discussed formulation of general relativity using Riemannian geometry."
+    },
+    {
+      "id": "fresnel",
+      "label": "Augustin-Jean Fresnel",
+      "type": "person",
+      "description": "Associated with partial ether-dragging hypothesis."
+    },
+    {
+      "id": "fitzgerald",
+      "label": "George FitzGerald",
+      "type": "person",
+      "description": "Co-originator of FitzGerald–Lorentz contraction hypothesis."
+    },
+    {
+      "id": "kennedy",
+      "label": "Roy Kennedy",
+      "type": "person",
+      "description": "Co-experimenter in Kennedy–Thorndike experiment."
+    },
+    {
+      "id": "thorndike",
+      "label": "Edward Thorndike",
+      "type": "person",
+      "description": "Co-experimenter in Kennedy–Thorndike experiment."
+    },
+    {
+      "id": "ives",
+      "label": "Herbert E. Ives",
+      "type": "person",
+      "description": "Experimenter in Ives–Stilwell test."
+    },
+    {
+      "id": "stilwell",
+      "label": "G. R. Stilwell",
+      "type": "person",
+      "description": "Experimenter in Ives–Stilwell test."
+    },
+    {
+      "id": "maxwell",
+      "label": "James Clerk Maxwell",
+      "type": "person",
+      "description": "Developed Maxwell's equations and discussed possible detection of Earth's motion through luminiferous ether."
+    },
+    {
+      "id": "feynman",
+      "label": "Richard Feynman",
+      "type": "person",
+      "description": "Author of cited Feynman Lectures on Gravitation."
+    },
+    {
+      "id": "ashby",
+      "label": "Neil Ashby",
+      "type": "person",
+      "description": "Author of cited work on relativity in GPS."
+    },
+    {
+      "id": "einstein_relativity_1916",
+      "label": "Relativity: The Special and General Theory (1916)",
+      "type": "work",
+      "description": "Einstein's book presenting special and general relativity."
+    },
+    {
+      "id": "einstein_grossmann_1913",
+      "label": "Entwurf einer verallgemeinerten Relativitätstheorie und einer Theorie der Gravitation (1913)",
+      "type": "work",
+      "description": "Einstein and Grossmann paper on a generalized relativity and gravitation theory."
+    },
+    {
+      "id": "einstein_1905_paper",
+      "label": "On the Electrodynamics of Moving Bodies (1905)",
+      "type": "work",
+      "description": "Einstein's 1905 paper introducing special relativity."
+    },
+    {
+      "id": "planck_1906_paper",
+      "label": "Planck 1906 paper on Kaufmann beta-ray measurements",
+      "type": "work",
+      "description": "Reference associated with early terminology/development of relativity."
+    },
+    {
+      "id": "maxwell_1880_paper",
+      "label": "On a Possible Mode of Detecting a Motion of the Solar System through the Luminiferous Ether (1880)",
+      "type": "work",
+      "description": ""
+    },
+    {
+      "id": "michelson_1881_paper",
+      "label": "The Relative Motion of the Earth and the Luminiferous Ether (1881)",
+      "type": "work",
+      "description": ""
+    },
+    {
+      "id": "michelson_morley_1887_paper",
+      "label": "On the Relative Motion of the Earth and the Luminiferous Ether (1887)",
+      "type": "work",
+      "description": ""
+    },
+    {
+      "id": "kennedy_thorndike_1932_paper",
+      "label": "Experimental Establishment of the Relativity of Time (1932)",
+      "type": "work",
+      "description": ""
+    },
+    {
+      "id": "ives_stilwell_1938_paper",
+      "label": "An experimental study of the rate of a moving atomic clock (1938)",
+      "type": "work",
+      "description": ""
+    },
+    {
+      "id": "ives_stilwell_1941_paper",
+      "label": "An experimental study of the rate of a moving atomic clock. II (1941)",
+      "type": "work",
+      "description": ""
+    },
+    {
+      "id": "ashby_2003_paper",
+      "label": "Relativity in the Global Positioning System (2003)",
+      "type": "work",
+      "description": ""
+    },
+    {
+      "id": "francis_2002_paper",
+      "label": "Timekeeping and Time Dissemination in a Distributed Space-Based Clock Ensemble (2002)",
+      "type": "work",
+      "description": ""
+    },
+    {
+      "id": "will_relativity_2010",
+      "label": "Relativity — Clifford M. Will (2010)",
+      "type": "secondary_source",
+      "description": ""
+    },
+    {
+      "id": "will_spacetime_2010",
+      "label": "Space-Time Continuum — Clifford M. Will (2010)",
+      "type": "secondary_source",
+      "description": ""
+    },
+    {
+      "id": "will_contraction_2010",
+      "label": "Fitzgerald–Lorentz contraction — Clifford M. Will (2010)",
+      "type": "secondary_source",
+      "description": ""
+    },
+    {
+      "id": "miller_1981",
+      "label": "Albert Einstein's special theory of relativity — Arthur I. Miller (1981)",
+      "type": "secondary_source",
+      "description": ""
+    },
+    {
+      "id": "feynman_gravitation_2002",
+      "label": "Feynman Lectures on Gravitation (2002)",
+      "type": "secondary_source",
+      "description": ""
+    },
+    {
+      "id": "taylor_wheeler_1992",
+      "label": "Spacetime Physics (1992)",
+      "type": "secondary_source",
+      "description": ""
+    },
+    {
+      "id": "pais_1982",
+      "label": "Subtle is the Lord... (1982)",
+      "type": "secondary_source",
+      "description": ""
+    },
+    {
+      "id": "hey_walters_2003",
+      "label": "The New Quantum Universe (2003)",
+      "type": "secondary_source",
+      "description": ""
+    },
+    {
+      "id": "hey_einstein_mirror_1997",
+      "label": "Einstein's Mirror (1997)",
+      "type": "secondary_source",
+      "description": ""
+    },
+    {
+      "id": "robertson_1949",
+      "label": "Postulate versus Observation in the Special Theory of Relativity (1949)",
+      "type": "secondary_source",
+      "description": ""
+    },
+    {
+      "id": "physics_faq",
+      "label": "What is the experimental basis of Special Relativity?",
+      "type": "secondary_source",
+      "description": ""
+    },
+    {
+      "id": "lawson_relativity_2005",
+      "label": "Relativity: The Special and General Theory (2005 edition)",
+      "type": "further_reading",
+      "description": ""
+    },
+    {
+      "id": "meaning_relativity_1956",
+      "label": "The Meaning of Relativity (1956 [1922])",
+      "type": "work",
+      "description": ""
+    },
+    {
+      "id": "autobiographical_notes_1979",
+      "label": "Albert Einstein, Autobiographical Notes (1979)",
+      "type": "work",
+      "description": ""
+    },
+    {
+      "id": "essays_science_2009",
+      "label": "Einstein's Essays in Science (2009)",
+      "type": "work",
+      "description": ""
+    },
+    {
+      "id": "how_created_relativity_1922",
+      "label": "How I created the theory of relativity (1922)",
+      "type": "work",
+      "description": ""
+    },
+    {
+      "id": "relativity_perkowitz",
+      "label": "Relativity — Sidney Perkowitz",
+      "type": "secondary_source",
+      "description": ""
+    },
+    {
+      "id": "experimental_evidence",
+      "label": "Experimental evidence",
+      "type": "evidence_domain",
+      "description": "Experimental and observational evidence used to test relativistic predictions."
+    },
+    {
+      "id": "relativity",
+      "label": "Relativity",
+      "type": "concept",
+      "description": "Generic relativity concept used as a bridge for the source's broader terminology."
+    },
+    {
+      "id": "r001",
+      "label": "Einstein A. (1916), Relativity: The Special and General Theory (Translation 1920), New York: H. Holt and Company.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r002",
+      "label": "Einstein, Albert (28 November 1919). \"Time, Space, and Gravitation\". The Times.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r003",
+      "label": "Will, Clifford M. (2010), \"Relativity\". Grolier Multimedia Encyclopedia.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r004",
+      "label": "Will, Clifford M. (2010), \"Space-Time Continuum\". Grolier Multimedia Encyclopedia.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r005",
+      "label": "Will, Clifford M. (2010), \"Fitzgerald–Lorentz contraction\". Grolier Multimedia Encyclopedia.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r006",
+      "label": "Planck, Max (1906), paper on Kaufmann beta-ray measurements, Physikalische Zeitschrift 7:753–761.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r007",
+      "label": "Miller, Arthur I. (1981), Albert Einstein’s special theory of relativity. Emergence (1905) and early interpretation (1905–1911).",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r008",
+      "label": "Hey, Anthony J.G.; Walters, Patrick (2003), The New Quantum Universe, Cambridge University Press.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r009",
+      "label": "Greene, Brian, \"The Theory of Relativity, Then and Now\".",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r010",
+      "label": "Einstein, A.; Grossmann, M. (1913), Entwurf einer verallgemeinerten Relativitätstheorie und einer Theorie der Gravitation.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r011",
+      "label": "Feynman, Richard Phillips et al. (2002), Feynman Lectures on Gravitation.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r012",
+      "label": "Roberts, T.; Schleif, S.; Dlugosz, J.M., eds. (2007), \"What is the experimental basis of Special Relativity?\".",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r013",
+      "label": "Maxwell, James Clerk (1880), \"On a Possible Mode of Detecting a Motion of the Solar System through the Luminiferous Ether\". Nature 21:314–315.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r014",
+      "label": "Pais, Abraham (1982), Subtle is the Lord...: The Science and the Life of Albert Einstein.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r015",
+      "label": "Michelson, Albert A. (1881), \"The Relative Motion of the Earth and the Luminiferous Ether\". American Journal of Science 22:120–129.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r016",
+      "label": "Michelson, Albert A.; Morley, Edward W. (1887), \"On the Relative Motion of the Earth and the Luminiferous Ether\". American Journal of Science 34:333–345.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r017",
+      "label": "Robertson, H.P. (1949), \"Postulate versus Observation in the Special Theory of Relativity\". Reviews of Modern Physics 21:378–382.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r018",
+      "label": "Taylor, Edwin F.; Wheeler, John Archibald (1992), Spacetime Physics.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r019",
+      "label": "Kennedy, R.J.; Thorndike, E.M. (1932), \"Experimental Establishment of the Relativity of Time\". Physical Review 42:400–418.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r020",
+      "label": "Ives, H.E.; Stilwell, G.R. (1938), \"An experimental study of the rate of a moving atomic clock\". JOSA 28:215.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r021",
+      "label": "Ives, H.E.; Stilwell, G.R. (1941), \"An experimental study of the rate of a moving atomic clock. II\". JOSA 31:369.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r022",
+      "label": "Ashby, N., \"Relativity in the Global Positioning System\". Living Reviews in Relativity 6, 1 (2003).",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r023",
+      "label": "Francis, S. et al. (2002), \"Timekeeping and Time Dissemination in a Distributed Space-Based Clock Ensemble\".",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r024",
+      "label": "Hey, Tony; Walters, Patrick (1997), Einstein’s Mirror.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r025",
+      "label": "Einstein, Albert (2005), Relativity: The Special and General Theory, translated by Robert W. Lawson.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "further_reading",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r026",
+      "label": "Einstein, Albert (1920), Relativity: The Special and General Theory, Henry Holt and Company.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r027",
+      "label": "Einstein, Albert; trans. Schilpp, Paul Arthur (1979), Albert Einstein, Autobiographical Notes.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r028",
+      "label": "Einstein, Albert (2009), Einstein’s Essays in Science.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r029",
+      "label": "Einstein, Albert (1956) [1922], The Meaning of Relativity.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r030",
+      "label": "How I created the theory of relativity, Albert Einstein, 14 December 1922; Physics Today August 1982.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r031",
+      "label": "Perkowitz, Sidney, \"Relativity\". Encyclopaedia Britannica.",
+      "type": "bibliographic_reference",
+      "description": "First-class provenance/reference node preserved from the supplied article.",
+      "citation_type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e001",
+      "source": "theory_relativity",
+      "target": "special_relativity",
+      "relationship": "has_major_branch",
+      "description": ""
+    },
+    {
+      "id": "e002",
+      "source": "theory_relativity",
+      "target": "general_relativity",
+      "relationship": "has_major_branch",
+      "description": ""
+    },
+    {
+      "id": "e003",
+      "source": "special_relativity",
+      "target": "spacetime",
+      "relationship": "defines_structure_of",
+      "description": ""
+    },
+    {
+      "id": "e004",
+      "source": "special_relativity",
+      "target": "relativity_principle",
+      "relationship": "based_on",
+      "description": ""
+    },
+    {
+      "id": "e005",
+      "source": "special_relativity",
+      "target": "light_speed_invariance",
+      "relationship": "based_on",
+      "description": ""
+    },
+    {
+      "id": "e006",
+      "source": "special_relativity",
+      "target": "simultaneity",
+      "relationship": "predicts",
+      "description": ""
+    },
+    {
+      "id": "e007",
+      "source": "special_relativity",
+      "target": "time_dilation",
+      "relationship": "predicts",
+      "description": ""
+    },
+    {
+      "id": "e008",
+      "source": "special_relativity",
+      "target": "length_contraction",
+      "relationship": "predicts",
+      "description": ""
+    },
+    {
+      "id": "e009",
+      "source": "special_relativity",
+      "target": "light_speed_limit",
+      "relationship": "establishes",
+      "description": ""
+    },
+    {
+      "id": "e010",
+      "source": "special_relativity",
+      "target": "mass_energy",
+      "relationship": "establishes",
+      "description": ""
+    },
+    {
+      "id": "e011",
+      "source": "special_relativity",
+      "target": "lorentz_transformations",
+      "relationship": "uses",
+      "description": ""
+    },
+    {
+      "id": "e012",
+      "source": "lorentz_transformations",
+      "target": "galilean_transformations",
+      "relationship": "replaces",
+      "description": ""
+    },
+    {
+      "id": "e013",
+      "source": "special_relativity",
+      "target": "maxwell_equations",
+      "relationship": "reconciles_with",
+      "description": ""
+    },
+    {
+      "id": "e014",
+      "source": "special_relativity",
+      "target": "electromagnetism",
+      "relationship": "applies_to",
+      "description": ""
+    },
+    {
+      "id": "e015",
+      "source": "special_relativity",
+      "target": "newtonian_mechanics",
+      "relationship": "supersedes_in_relevant_regime",
+      "description": ""
+    },
+    {
+      "id": "e016",
+      "source": "general_relativity",
+      "target": "equivalence_principle",
+      "relationship": "begins_with",
+      "description": ""
+    },
+    {
+      "id": "e017",
+      "source": "equivalence_principle",
+      "target": "free_fall",
+      "relationship": "interprets",
+      "description": ""
+    },
+    {
+      "id": "e018",
+      "source": "free_fall",
+      "target": "curved_spacetime",
+      "relationship": "motivates",
+      "description": ""
+    },
+    {
+      "id": "e019",
+      "source": "general_relativity",
+      "target": "curved_spacetime",
+      "relationship": "uses",
+      "description": ""
+    },
+    {
+      "id": "e020",
+      "source": "general_relativity",
+      "target": "riemannian_geometry",
+      "relationship": "formulated_with",
+      "description": ""
+    },
+    {
+      "id": "e021",
+      "source": "general_relativity",
+      "target": "einstein_field_equations",
+      "relationship": "defined_by",
+      "description": ""
+    },
+    {
+      "id": "e022",
+      "source": "einstein_field_equations",
+      "target": "metric_tensor",
+      "relationship": "determines",
+      "description": ""
+    },
+    {
+      "id": "e023",
+      "source": "metric_tensor",
+      "target": "spacetime_topology",
+      "relationship": "defines",
+      "description": ""
+    },
+    {
+      "id": "e024",
+      "source": "einstein_field_equations",
+      "target": "gravitation",
+      "relationship": "describes",
+      "description": ""
+    },
+    {
+      "id": "e025",
+      "source": "einstein_field_equations",
+      "target": "mass_energy",
+      "relationship": "relates_geometry_to",
+      "description": ""
+    },
+    {
+      "id": "e026",
+      "source": "general_relativity",
+      "target": "gravitational_time_dilation",
+      "relationship": "predicts",
+      "description": ""
+    },
+    {
+      "id": "e027",
+      "source": "general_relativity",
+      "target": "perihelion_precession",
+      "relationship": "predicts",
+      "description": ""
+    },
+    {
+      "id": "e028",
+      "source": "general_relativity",
+      "target": "light_deflection",
+      "relationship": "predicts",
+      "description": ""
+    },
+    {
+      "id": "e029",
+      "source": "general_relativity",
+      "target": "frame_dragging",
+      "relationship": "predicts",
+      "description": ""
+    },
+    {
+      "id": "e030",
+      "source": "general_relativity",
+      "target": "universe_expansion",
+      "relationship": "accommodates",
+      "description": ""
+    },
+    {
+      "id": "e031",
+      "source": "general_relativity",
+      "target": "gravitational_waves",
+      "relationship": "predicts",
+      "description": ""
+    },
+    {
+      "id": "e032",
+      "source": "general_relativity",
+      "target": "neutron_stars",
+      "relationship": "applies_to",
+      "description": ""
+    },
+    {
+      "id": "e033",
+      "source": "general_relativity",
+      "target": "black_holes",
+      "relationship": "applies_to",
+      "description": ""
+    },
+    {
+      "id": "e034",
+      "source": "general_relativity",
+      "target": "cosmology",
+      "relationship": "supports",
+      "description": ""
+    },
+    {
+      "id": "e035",
+      "source": "general_relativity",
+      "target": "astrophysics",
+      "relationship": "supports",
+      "description": ""
+    },
+    {
+      "id": "e036",
+      "source": "special_relativity",
+      "target": "particle_physics",
+      "relationship": "enables",
+      "description": ""
+    },
+    {
+      "id": "e037",
+      "source": "special_relativity",
+      "target": "atomic_physics",
+      "relationship": "supports",
+      "description": ""
+    },
+    {
+      "id": "e038",
+      "source": "special_relativity",
+      "target": "nuclear_physics",
+      "relationship": "supports",
+      "description": ""
+    },
+    {
+      "id": "e039",
+      "source": "special_relativity",
+      "target": "quantum_mechanics",
+      "relationship": "supports",
+      "description": ""
+    },
+    {
+      "id": "e040",
+      "source": "mass_energy",
+      "target": "nuclear_age",
+      "relationship": "contributes_to",
+      "description": ""
+    },
+    {
+      "id": "e041",
+      "source": "theory_relativity",
+      "target": "20th_century_physics",
+      "relationship": "transforms",
+      "description": ""
+    },
+    {
+      "id": "e042",
+      "source": "theory_relativity",
+      "target": "astronomy_transformation",
+      "relationship": "transforms",
+      "description": ""
+    },
+    {
+      "id": "e043",
+      "source": "general_relativity",
+      "target": "relativity_newton",
+      "relationship": "supersedes_classical_framework",
+      "description": ""
+    },
+    {
+      "id": "e044",
+      "source": "theory_relativity",
+      "target": "principle_theory",
+      "relationship": "characterized_as",
+      "description": ""
+    },
+    {
+      "id": "e045",
+      "source": "principle_theory",
+      "target": "constructive_theory",
+      "relationship": "contrasted_with",
+      "description": ""
+    },
+    {
+      "id": "e046",
+      "source": "theory_relativity",
+      "target": "falsifiability",
+      "relationship": "possesses",
+      "description": ""
+    },
+    {
+      "id": "e047",
+      "source": "falsifiability",
+      "target": "experimental_evidence",
+      "relationship": "requires",
+      "description": ""
+    },
+    {
+      "id": "e048",
+      "source": "einstein",
+      "target": "special_relativity",
+      "relationship": "developed",
+      "description": ""
+    },
+    {
+      "id": "e049",
+      "source": "einstein",
+      "target": "general_relativity",
+      "relationship": "developed",
+      "description": ""
+    },
+    {
+      "id": "e050",
+      "source": "einstein_1905_paper",
+      "target": "special_relativity",
+      "relationship": "introduces",
+      "description": ""
+    },
+    {
+      "id": "e051",
+      "source": "einstein_grossmann_1913",
+      "target": "general_relativity",
+      "relationship": "prefigures",
+      "description": ""
+    },
+    {
+      "id": "e052",
+      "source": "einstein_relativity_1916",
+      "target": "theory_relativity",
+      "relationship": "presents",
+      "description": ""
+    },
+    {
+      "id": "e053",
+      "source": "michelson",
+      "target": "michelson_morley_1887_paper",
+      "relationship": "coauthored",
+      "description": ""
+    },
+    {
+      "id": "e054",
+      "source": "morley",
+      "target": "michelson_morley_1887_paper",
+      "relationship": "coauthored",
+      "description": ""
+    },
+    {
+      "id": "e055",
+      "source": "michelson_morley_1887_paper",
+      "target": "ether",
+      "relationship": "tests",
+      "description": ""
+    },
+    {
+      "id": "e056",
+      "source": "michelson_morley_1887_paper",
+      "target": "aether_wind",
+      "relationship": "tests_for",
+      "description": ""
+    },
+    {
+      "id": "e057",
+      "source": "michelson_interferometer",
+      "target": "michelson_morley_1887_paper",
+      "relationship": "instrument_for",
+      "description": ""
+    },
+    {
+      "id": "e058",
+      "source": "michelson_morley_1887_paper",
+      "target": "falsifiability",
+      "relationship": "provides_experimental_constraint",
+      "description": ""
+    },
+    {
+      "id": "e059",
+      "source": "fitzgerald",
+      "target": "fitzgerald_lorentz_contraction",
+      "relationship": "co_developed",
+      "description": ""
+    },
+    {
+      "id": "e060",
+      "source": "lorentz",
+      "target": "fitzgerald_lorentz_contraction",
+      "relationship": "co_developed",
+      "description": ""
+    },
+    {
+      "id": "e061",
+      "source": "fitzgerald_lorentz_contraction",
+      "target": "michelson_morley_1887_paper",
+      "relationship": "response_to",
+      "description": ""
+    },
+    {
+      "id": "e062",
+      "source": "fresnel",
+      "target": "fresnel_dragging",
+      "relationship": "associated_with",
+      "description": ""
+    },
+    {
+      "id": "e063",
+      "source": "fresnel_dragging",
+      "target": "ether",
+      "relationship": "modifies_model_of",
+      "description": ""
+    },
+    {
+      "id": "e064",
+      "source": "maxwell",
+      "target": "maxwell_equations",
+      "relationship": "developed",
+      "description": ""
+    },
+    {
+      "id": "e065",
+      "source": "maxwell_1880_paper",
+      "target": "ether",
+      "relationship": "discusses",
+      "description": ""
+    },
+    {
+      "id": "e066",
+      "source": "maxwell_1880_paper",
+      "target": "aether_wind",
+      "relationship": "seeks_detection_of",
+      "description": ""
+    },
+    {
+      "id": "e067",
+      "source": "poincare",
+      "target": "special_relativity",
+      "relationship": "contributed_to_preconditions",
+      "description": ""
+    },
+    {
+      "id": "e068",
+      "source": "lorentz",
+      "target": "special_relativity",
+      "relationship": "contributed_to_preconditions",
+      "description": ""
+    },
+    {
+      "id": "e069",
+      "source": "michelson",
+      "target": "special_relativity",
+      "relationship": "experimental_context_for",
+      "description": ""
+    },
+    {
+      "id": "e070",
+      "source": "planck",
+      "target": "theory_relativity",
+      "relationship": "contributed_to_development",
+      "description": ""
+    },
+    {
+      "id": "e071",
+      "source": "planck",
+      "target": "einstein_relativity_1916",
+      "relationship": "terminology_context",
+      "description": ""
+    },
+    {
+      "id": "e072",
+      "source": "minkowski",
+      "target": "spacetime",
+      "relationship": "developed_subsequent_formulation",
+      "description": ""
+    },
+    {
+      "id": "e073",
+      "source": "grossmann",
+      "target": "riemannian_geometry",
+      "relationship": "connected_to",
+      "description": ""
+    },
+    {
+      "id": "e074",
+      "source": "grossmann",
+      "target": "einstein",
+      "relationship": "discussed_general_relativity_with",
+      "description": ""
+    },
+    {
+      "id": "e075",
+      "source": "einstein",
+      "target": "grossmann",
+      "relationship": "collaborated_with",
+      "description": ""
+    },
+    {
+      "id": "e076",
+      "source": "general_relativity",
+      "target": "slow_acceptance_gr",
+      "relationship": "historical_acceptance_pattern",
+      "description": ""
+    },
+    {
+      "id": "e077",
+      "source": "special_relativity",
+      "target": "experimental_acceptance_sr",
+      "relationship": "historical_acceptance",
+      "description": ""
+    },
+    {
+      "id": "e078",
+      "source": "experimental_acceptance_sr",
+      "target": "atomic_physics",
+      "relationship": "enabled",
+      "description": ""
+    },
+    {
+      "id": "e079",
+      "source": "experimental_acceptance_sr",
+      "target": "nuclear_physics",
+      "relationship": "enabled",
+      "description": ""
+    },
+    {
+      "id": "e080",
+      "source": "experimental_acceptance_sr",
+      "target": "quantum_mechanics",
+      "relationship": "enabled",
+      "description": ""
+    },
+    {
+      "id": "e081",
+      "source": "slow_acceptance_gr",
+      "target": "quasar_1963",
+      "relationship": "supported_by_observational_context",
+      "description": ""
+    },
+    {
+      "id": "e082",
+      "source": "slow_acceptance_gr",
+      "target": "cmb_1965",
+      "relationship": "supported_by_observational_context",
+      "description": ""
+    },
+    {
+      "id": "e083",
+      "source": "slow_acceptance_gr",
+      "target": "pulsar_1967",
+      "relationship": "supported_by_observational_context",
+      "description": ""
+    },
+    {
+      "id": "e084",
+      "source": "slow_acceptance_gr",
+      "target": "black_hole_candidates_1981",
+      "relationship": "supported_by_observational_context",
+      "description": ""
+    },
+    {
+      "id": "e085",
+      "source": "michelson_morley_1887_paper",
+      "target": "light_speed_invariance",
+      "relationship": "tests",
+      "description": ""
+    },
+    {
+      "id": "e086",
+      "source": "michelson_morley_1887_paper",
+      "target": "lorentz_transformations",
+      "relationship": "experimental_context",
+      "description": ""
+    },
+    {
+      "id": "e087",
+      "source": "kennedy_thorndike_1932_paper",
+      "target": "time_dilation",
+      "relationship": "tests",
+      "description": ""
+    },
+    {
+      "id": "e088",
+      "source": "kennedy_thorndike_1932_paper",
+      "target": "light_speed_invariance",
+      "relationship": "tests",
+      "description": ""
+    },
+    {
+      "id": "e089",
+      "source": "kennedy_thorndike_1932_paper",
+      "target": "kennedy",
+      "relationship": "coauthored",
+      "description": ""
+    },
+    {
+      "id": "e090",
+      "source": "kennedy_thorndike_1932_paper",
+      "target": "thorndike",
+      "relationship": "coauthored",
+      "description": ""
+    },
+    {
+      "id": "e091",
+      "source": "ives_stilwell_1938_paper",
+      "target": "transverse_doppler",
+      "relationship": "tests",
+      "description": ""
+    },
+    {
+      "id": "e092",
+      "source": "ives_stilwell_1938_paper",
+      "target": "lorentz_factor",
+      "relationship": "tests",
+      "description": ""
+    },
+    {
+      "id": "e093",
+      "source": "ives_stilwell_1938_paper",
+      "target": "ives",
+      "relationship": "coauthored",
+      "description": ""
+    },
+    {
+      "id": "e094",
+      "source": "ives_stilwell_1938_paper",
+      "target": "stilwell",
+      "relationship": "coauthored",
+      "description": ""
+    },
+    {
+      "id": "e095",
+      "source": "ives_stilwell_1941_paper",
+      "target": "transverse_doppler",
+      "relationship": "retests",
+      "description": ""
+    },
+    {
+      "id": "e096",
+      "source": "special_relativity",
+      "target": "michelson_morley_1887_paper",
+      "relationship": "confirmed_by",
+      "description": ""
+    },
+    {
+      "id": "e097",
+      "source": "special_relativity",
+      "target": "kennedy_thorndike_1932_paper",
+      "relationship": "confirmed_by",
+      "description": ""
+    },
+    {
+      "id": "e098",
+      "source": "special_relativity",
+      "target": "ives_stilwell_1938_paper",
+      "relationship": "confirmed_by",
+      "description": ""
+    },
+    {
+      "id": "e099",
+      "source": "special_relativity",
+      "target": "ives_stilwell_1941_paper",
+      "relationship": "confirmed_by",
+      "description": ""
+    },
+    {
+      "id": "e100",
+      "source": "transverse_doppler",
+      "target": "doppler_effect",
+      "relationship": "is",
+      "description": ""
+    },
+    {
+      "id": "e101",
+      "source": "ives_stilwell_1938_paper",
+      "target": "time_dilation",
+      "relationship": "supports",
+      "description": ""
+    },
+    {
+      "id": "e102",
+      "source": "michelson_morley_1887_paper",
+      "target": "ether",
+      "relationship": "produced_null_result_for",
+      "description": ""
+    },
+    {
+      "id": "e103",
+      "source": "michelson_morley_1887_paper",
+      "target": "aether_wind",
+      "relationship": "produced_null_result_for",
+      "description": ""
+    },
+    {
+      "id": "e104",
+      "source": "ether",
+      "target": "special_relativity",
+      "relationship": "historical_background_for",
+      "description": ""
+    },
+    {
+      "id": "e105",
+      "source": "fitzgerald_lorentz_contraction",
+      "target": "special_relativity",
+      "relationship": "historical_precursor",
+      "description": ""
+    },
+    {
+      "id": "e106",
+      "source": "general_relativity",
+      "target": "perihelion_precession",
+      "relationship": "confirmed_by",
+      "description": ""
+    },
+    {
+      "id": "e107",
+      "source": "general_relativity",
+      "target": "light_deflection",
+      "relationship": "confirmed_by",
+      "description": ""
+    },
+    {
+      "id": "e108",
+      "source": "general_relativity",
+      "target": "gravitational_time_dilation",
+      "relationship": "confirmed_by",
+      "description": ""
+    },
+    {
+      "id": "e109",
+      "source": "general_relativity",
+      "target": "equivalence_principle",
+      "relationship": "tested_by",
+      "description": ""
+    },
+    {
+      "id": "e110",
+      "source": "general_relativity",
+      "target": "frame_dragging",
+      "relationship": "confirmed_by",
+      "description": ""
+    },
+    {
+      "id": "e111",
+      "source": "perihelion_precession",
+      "target": "newtonian_gravitation",
+      "relationship": "differs_from",
+      "description": ""
+    },
+    {
+      "id": "e112",
+      "source": "light_deflection",
+      "target": "gravitation",
+      "relationship": "demonstrates",
+      "description": ""
+    },
+    {
+      "id": "e113",
+      "source": "gravitational_time_dilation",
+      "target": "precision_time",
+      "relationship": "relevant_to",
+      "description": ""
+    },
+    {
+      "id": "e114",
+      "source": "gps",
+      "target": "satellite_time",
+      "relationship": "requires",
+      "description": ""
+    },
+    {
+      "id": "e115",
+      "source": "glonass",
+      "target": "satellite_time",
+      "relationship": "requires",
+      "description": ""
+    },
+    {
+      "id": "e116",
+      "source": "galileo_nav",
+      "target": "satellite_time",
+      "relationship": "requires",
+      "description": ""
+    },
+    {
+      "id": "e117",
+      "source": "satellite_time",
+      "target": "special_relativity",
+      "relationship": "requires_correction_from",
+      "description": ""
+    },
+    {
+      "id": "e118",
+      "source": "satellite_time",
+      "target": "general_relativity",
+      "relationship": "requires_correction_from",
+      "description": ""
+    },
+    {
+      "id": "e119",
+      "source": "precision_time",
+      "target": "theory_relativity",
+      "relationship": "requires",
+      "description": ""
+    },
+    {
+      "id": "e120",
+      "source": "electron_microscopes",
+      "target": "special_relativity",
+      "relationship": "requires",
+      "description": ""
+    },
+    {
+      "id": "e121",
+      "source": "particle_accelerators",
+      "target": "special_relativity",
+      "relationship": "requires",
+      "description": ""
+    },
+    {
+      "id": "e122",
+      "source": "gps",
+      "target": "theory_relativity",
+      "relationship": "application_of",
+      "description": ""
+    },
+    {
+      "id": "e123",
+      "source": "glonass",
+      "target": "theory_relativity",
+      "relationship": "application_of",
+      "description": ""
+    },
+    {
+      "id": "e124",
+      "source": "galileo_nav",
+      "target": "theory_relativity",
+      "relationship": "application_of",
+      "description": ""
+    },
+    {
+      "id": "e125",
+      "source": "merger_gw150914",
+      "target": "gravitational_waves",
+      "relationship": "visualizes",
+      "description": ""
+    },
+    {
+      "id": "e126",
+      "source": "einstein_1905_paper",
+      "target": "einstein",
+      "relationship": "authored",
+      "description": ""
+    },
+    {
+      "id": "e127",
+      "source": "einstein_relativity_1916",
+      "target": "einstein",
+      "relationship": "authored",
+      "description": ""
+    },
+    {
+      "id": "e128",
+      "source": "einstein_grossmann_1913",
+      "target": "einstein",
+      "relationship": "coauthored",
+      "description": ""
+    },
+    {
+      "id": "e129",
+      "source": "einstein_grossmann_1913",
+      "target": "grossmann",
+      "relationship": "coauthored",
+      "description": ""
+    },
+    {
+      "id": "e130",
+      "source": "planck_1906_paper",
+      "target": "planck",
+      "relationship": "authored",
+      "description": ""
+    },
+    {
+      "id": "e131",
+      "source": "maxwell_1880_paper",
+      "target": "maxwell",
+      "relationship": "authored",
+      "description": ""
+    },
+    {
+      "id": "e132",
+      "source": "michelson_1881_paper",
+      "target": "michelson",
+      "relationship": "authored",
+      "description": ""
+    },
+    {
+      "id": "e133",
+      "source": "michelson_morley_1887_paper",
+      "target": "michelson",
+      "relationship": "authored",
+      "description": ""
+    },
+    {
+      "id": "e134",
+      "source": "michelson_morley_1887_paper",
+      "target": "morley",
+      "relationship": "authored",
+      "description": ""
+    },
+    {
+      "id": "e135",
+      "source": "kennedy_thorndike_1932_paper",
+      "target": "kennedy",
+      "relationship": "authored",
+      "description": ""
+    },
+    {
+      "id": "e136",
+      "source": "kennedy_thorndike_1932_paper",
+      "target": "thorndike",
+      "relationship": "authored",
+      "description": ""
+    },
+    {
+      "id": "e137",
+      "source": "ives_stilwell_1938_paper",
+      "target": "ives",
+      "relationship": "authored",
+      "description": ""
+    },
+    {
+      "id": "e138",
+      "source": "ives_stilwell_1938_paper",
+      "target": "stilwell",
+      "relationship": "authored",
+      "description": ""
+    },
+    {
+      "id": "e139",
+      "source": "ives_stilwell_1941_paper",
+      "target": "ives",
+      "relationship": "authored",
+      "description": ""
+    },
+    {
+      "id": "e140",
+      "source": "ives_stilwell_1941_paper",
+      "target": "stilwell",
+      "relationship": "authored",
+      "description": ""
+    },
+    {
+      "id": "e141",
+      "source": "ashby_2003_paper",
+      "target": "ashby",
+      "relationship": "authored",
+      "description": ""
+    },
+    {
+      "id": "e142",
+      "source": "francis_2002_paper",
+      "target": "satellite_time",
+      "relationship": "documents",
+      "description": ""
+    },
+    {
+      "id": "e143",
+      "source": "einstein_relativity_1916",
+      "target": "special_relativity",
+      "relationship": "presents",
+      "description": ""
+    },
+    {
+      "id": "e144",
+      "source": "einstein_relativity_1916",
+      "target": "general_relativity",
+      "relationship": "presents",
+      "description": ""
+    },
+    {
+      "id": "e145",
+      "source": "einstein_relativity_1916",
+      "target": "spacetime",
+      "relationship": "explains",
+      "description": ""
+    },
+    {
+      "id": "e146",
+      "source": "einstein_relativity_1916",
+      "target": "mass_energy",
+      "relationship": "explains",
+      "description": ""
+    },
+    {
+      "id": "e147",
+      "source": "will_relativity_2010",
+      "target": "theory_relativity",
+      "relationship": "discusses",
+      "description": ""
+    },
+    {
+      "id": "e148",
+      "source": "will_spacetime_2010",
+      "target": "spacetime",
+      "relationship": "discusses",
+      "description": ""
+    },
+    {
+      "id": "e149",
+      "source": "will_contraction_2010",
+      "target": "fitzgerald_lorentz_contraction",
+      "relationship": "discusses",
+      "description": ""
+    },
+    {
+      "id": "e150",
+      "source": "miller_1981",
+      "target": "special_relativity",
+      "relationship": "historical_analysis",
+      "description": ""
+    },
+    {
+      "id": "e151",
+      "source": "feynman_gravitation_2002",
+      "target": "general_relativity",
+      "relationship": "discusses",
+      "description": ""
+    },
+    {
+      "id": "e152",
+      "source": "taylor_wheeler_1992",
+      "target": "special_relativity",
+      "relationship": "teaches",
+      "description": ""
+    },
+    {
+      "id": "e153",
+      "source": "pais_1982",
+      "target": "einstein",
+      "relationship": "historical_biography",
+      "description": ""
+    },
+    {
+      "id": "e154",
+      "source": "hey_walters_2003",
+      "target": "relativity",
+      "relationship": "contextualizes",
+      "description": ""
+    },
+    {
+      "id": "e155",
+      "source": "hey_einstein_mirror_1997",
+      "target": "einstein",
+      "relationship": "contextualizes",
+      "description": ""
+    },
+    {
+      "id": "e156",
+      "source": "robertson_1949",
+      "target": "falsifiability",
+      "relationship": "discusses",
+      "description": ""
+    },
+    {
+      "id": "e157",
+      "source": "physics_faq",
+      "target": "special_relativity",
+      "relationship": "discusses_experimental_basis",
+      "description": ""
+    },
+    {
+      "id": "e158",
+      "source": "ashby_2003_paper",
+      "target": "gps",
+      "relationship": "documents_relativistic_application",
+      "description": ""
+    },
+    {
+      "id": "e159",
+      "source": "lawson_relativity_2005",
+      "target": "theory_relativity",
+      "relationship": "presents",
+      "description": ""
+    },
+    {
+      "id": "e160",
+      "source": "meaning_relativity_1956",
+      "target": "theory_relativity",
+      "relationship": "explains",
+      "description": ""
+    },
+    {
+      "id": "e161",
+      "source": "autobiographical_notes_1979",
+      "target": "einstein",
+      "relationship": "documents",
+      "description": ""
+    },
+    {
+      "id": "e162",
+      "source": "essays_science_2009",
+      "target": "einstein",
+      "relationship": "collects_essays",
+      "description": ""
+    },
+    {
+      "id": "e163",
+      "source": "how_created_relativity_1922",
+      "target": "einstein",
+      "relationship": "describes_development",
+      "description": ""
+    },
+    {
+      "id": "e164",
+      "source": "relativity_perkowitz",
+      "target": "theory_relativity",
+      "relationship": "explains",
+      "description": ""
+    },
+    {
+      "id": "er001",
+      "source": "r001",
+      "target": "einstein_relativity_1916",
+      "relationship": "documents_or_supports",
+      "description": ""
+    },
+    {
+      "id": "er002",
+      "source": "r006",
+      "target": "planck_1906_paper",
+      "relationship": "documents_or_supports",
+      "description": ""
+    },
+    {
+      "id": "er003",
+      "source": "r010",
+      "target": "einstein_grossmann_1913",
+      "relationship": "documents_or_supports",
+      "description": ""
+    },
+    {
+      "id": "er004",
+      "source": "r013",
+      "target": "maxwell_1880_paper",
+      "relationship": "documents_or_supports",
+      "description": ""
+    },
+    {
+      "id": "er005",
+      "source": "r015",
+      "target": "michelson_1881_paper",
+      "relationship": "documents_or_supports",
+      "description": ""
+    },
+    {
+      "id": "er006",
+      "source": "r016",
+      "target": "michelson_morley_1887_paper",
+      "relationship": "documents_or_supports",
+      "description": ""
+    },
+    {
+      "id": "er007",
+      "source": "r019",
+      "target": "kennedy_thorndike_1932_paper",
+      "relationship": "documents_or_supports",
+      "description": ""
+    },
+    {
+      "id": "er008",
+      "source": "r020",
+      "target": "ives_stilwell_1938_paper",
+      "relationship": "documents_or_supports",
+      "description": ""
+    },
+    {
+      "id": "er009",
+      "source": "r021",
+      "target": "ives_stilwell_1941_paper",
+      "relationship": "documents_or_supports",
+      "description": ""
+    },
+    {
+      "id": "er010",
+      "source": "r022",
+      "target": "ashby_2003_paper",
+      "relationship": "documents_or_supports",
+      "description": ""
+    },
+    {
+      "id": "er011",
+      "source": "r025",
+      "target": "lawson_relativity_2005",
+      "relationship": "documents_or_supports",
+      "description": ""
+    },
+    {
+      "id": "er012",
+      "source": "r026",
+      "target": "einstein_relativity_1916",
+      "relationship": "documents_or_supports",
+      "description": ""
+    },
+    {
+      "id": "er013",
+      "source": "r027",
+      "target": "autobiographical_notes_1979",
+      "relationship": "documents_or_supports",
+      "description": ""
+    },
+    {
+      "id": "er014",
+      "source": "r028",
+      "target": "essays_science_2009",
+      "relationship": "documents_or_supports",
+      "description": ""
+    },
+    {
+      "id": "er015",
+      "source": "r029",
+      "target": "meaning_relativity_1956",
+      "relationship": "documents_or_supports",
+      "description": ""
+    },
+    {
+      "id": "er016",
+      "source": "r030",
+      "target": "how_created_relativity_1922",
+      "relationship": "documents_or_supports",
+      "description": ""
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "c001",
+      "claim": "The theory of relativity comprises special relativity and general relativity, published in 1905 and 1915 respectively.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L54",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c002",
+      "claim": "Special relativity applies to physical phenomena in the absence of gravity; general relativity explains gravitation and its relation to forces of nature.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L54",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c003",
+      "claim": "Relativity transformed theoretical physics and astronomy and superseded a roughly 200-year-old Newtonian mechanics framework.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L56",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c004",
+      "claim": "Relativity introduced unified four-dimensional spacetime, relativity of simultaneity, kinematic/gravitational time dilation and length contraction.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L56",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c005",
+      "claim": "Einstein published special relativity in 1905 building on theoretical and empirical results associated with Michelson, Lorentz, Poincaré and others.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L86",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c006",
+      "claim": "Einstein developed general relativity between 1907 and 1915, with final form published in 1916.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L88",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c007",
+      "claim": "The expression 'theory of relativity' was associated with Planck's 1906 terminology and Bucherer's first use of the expression in the discussion section of that paper.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L90",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c008",
+      "claim": "Special relativity was understood and accepted by the physics community by the 1920s.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L92",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c009",
+      "claim": "General relativity initially appeared less experimentally accessible and mathematically difficult, but became central around 1960 as new techniques and astronomical discoveries developed.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L94",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c010",
+      "claim": "Special relativity rests on the principle of relativity and invariant light speed.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L98-L101",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c011",
+      "claim": "Special relativity predicts relativity of simultaneity, time dilation, length contraction, a finite maximum speed, gravitational signal propagation at light speed, and mass-energy equivalence.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L102-L109",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c012",
+      "claim": "General relativity begins with the equivalence principle and interprets free fall as inertial motion.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L115",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c013",
+      "claim": "Einstein and Marcel Grossmann connected general relativity with Riemannian geometry.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L115",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c014",
+      "claim": "Einstein's field equations relate spacetime curvature to mass, energy and momentum.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L115",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c015",
+      "claim": "General relativity predicts gravitational time dilation, orbital precession, light deflection, frame dragging and cosmic expansion.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L117-L124",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c016",
+      "claim": "Einstein described relativity as a principle theory grounded in established empirical facts and regularities, contrasted with constructive theories.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L127",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c017",
+      "claim": "Relativity is falsifiable and makes predictions testable by experiment.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L132-L145",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c018",
+      "claim": "Michelson–Morley produced null ether-drift results in 1881 and 1887; the result alone did not by itself validate special relativity.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L137",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c019",
+      "claim": "Kennedy–Thorndike tested changes in the magnitude of light velocity between inertial frames and obtained a null result.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L141",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c020",
+      "claim": "Ives–Stilwell tested the transverse Doppler effect and observed the Lorentz-factor correction predicted by special relativity.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L143",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c021",
+      "claim": "General relativity was confirmed through classic tests including Mercury's perihelion precession, solar light deflection, gravitational redshift, equivalence-principle tests and frame dragging.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L149",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c022",
+      "claim": "GPS, GLONASS and Galileo require relativistic corrections for precision because satellites move relative to Earth-bound users and experience Earth's gravitational field.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L152",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c023",
+      "claim": "High-precision time measurement, electron microscopes and particle accelerators are cited as practical systems requiring relativistic considerations.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L152",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c024",
+      "claim": "Maxwell's contemporaries regarded light as propagating through a luminiferous aether, motivating ether-drift experiments.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L135-L137",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c025",
+      "claim": "FitzGerald and Lorentz introduced an ad hoc contraction hypothesis in response to null ether-drift observations.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L137",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c026",
+      "claim": "The article identifies quasars, 3-kelvin microwave background radiation, pulsars and black-hole candidates as developments associated with general relativity's later centrality.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L94",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c027",
+      "claim": "The supplied article includes Einstein's 1916 Relativity, the Special and General Theory among references/further reading.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L162-L163",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c028",
+      "claim": "The source includes original and secondary literature on early ether experiments, special-relativity tests, general relativity, GPS, and Einstein's writings.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L167-L196",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c029",
+      "claim": "The article provides Wikimedia-linked original works and learning resources for relativity.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L199-L209",
+      "epistemic_status": "source_stated"
+    },
+    {
+      "id": "c030",
+      "claim": "The supplied page was last edited 28 August 2026 according to its page footer.",
+      "source": "Wikipedia source supplied by user",
+      "source_lines": "L230",
+      "epistemic_status": "source_stated"
+    }
+  ],
+  "references": [
+    {
+      "id": "r001",
+      "citation": "Einstein A. (1916), Relativity: The Special and General Theory (Translation 1920), New York: H. Holt and Company.",
+      "type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r002",
+      "citation": "Einstein, Albert (28 November 1919). \"Time, Space, and Gravitation\". The Times.",
+      "type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r003",
+      "citation": "Will, Clifford M. (2010), \"Relativity\". Grolier Multimedia Encyclopedia.",
+      "type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r004",
+      "citation": "Will, Clifford M. (2010), \"Space-Time Continuum\". Grolier Multimedia Encyclopedia.",
+      "type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r005",
+      "citation": "Will, Clifford M. (2010), \"Fitzgerald–Lorentz contraction\". Grolier Multimedia Encyclopedia.",
+      "type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r006",
+      "citation": "Planck, Max (1906), paper on Kaufmann beta-ray measurements, Physikalische Zeitschrift 7:753–761.",
+      "type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r007",
+      "citation": "Miller, Arthur I. (1981), Albert Einstein’s special theory of relativity. Emergence (1905) and early interpretation (1905–1911).",
+      "type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r008",
+      "citation": "Hey, Anthony J.G.; Walters, Patrick (2003), The New Quantum Universe, Cambridge University Press.",
+      "type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r009",
+      "citation": "Greene, Brian, \"The Theory of Relativity, Then and Now\".",
+      "type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r010",
+      "citation": "Einstein, A.; Grossmann, M. (1913), Entwurf einer verallgemeinerten Relativitätstheorie und einer Theorie der Gravitation.",
+      "type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r011",
+      "citation": "Feynman, Richard Phillips et al. (2002), Feynman Lectures on Gravitation.",
+      "type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r012",
+      "citation": "Roberts, T.; Schleif, S.; Dlugosz, J.M., eds. (2007), \"What is the experimental basis of Special Relativity?\".",
+      "type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r013",
+      "citation": "Maxwell, James Clerk (1880), \"On a Possible Mode of Detecting a Motion of the Solar System through the Luminiferous Ether\". Nature 21:314–315.",
+      "type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r014",
+      "citation": "Pais, Abraham (1982), Subtle is the Lord...: The Science and the Life of Albert Einstein.",
+      "type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r015",
+      "citation": "Michelson, Albert A. (1881), \"The Relative Motion of the Earth and the Luminiferous Ether\". American Journal of Science 22:120–129.",
+      "type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r016",
+      "citation": "Michelson, Albert A.; Morley, Edward W. (1887), \"On the Relative Motion of the Earth and the Luminiferous Ether\". American Journal of Science 34:333–345.",
+      "type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r017",
+      "citation": "Robertson, H.P. (1949), \"Postulate versus Observation in the Special Theory of Relativity\". Reviews of Modern Physics 21:378–382.",
+      "type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r018",
+      "citation": "Taylor, Edwin F.; Wheeler, John Archibald (1992), Spacetime Physics.",
+      "type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r019",
+      "citation": "Kennedy, R.J.; Thorndike, E.M. (1932), \"Experimental Establishment of the Relativity of Time\". Physical Review 42:400–418.",
+      "type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r020",
+      "citation": "Ives, H.E.; Stilwell, G.R. (1938), \"An experimental study of the rate of a moving atomic clock\". JOSA 28:215.",
+      "type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r021",
+      "citation": "Ives, H.E.; Stilwell, G.R. (1941), \"An experimental study of the rate of a moving atomic clock. II\". JOSA 31:369.",
+      "type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r022",
+      "citation": "Ashby, N., \"Relativity in the Global Positioning System\". Living Reviews in Relativity 6, 1 (2003).",
+      "type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r023",
+      "citation": "Francis, S. et al. (2002), \"Timekeeping and Time Dissemination in a Distributed Space-Based Clock Ensemble\".",
+      "type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r024",
+      "citation": "Hey, Tony; Walters, Patrick (1997), Einstein’s Mirror.",
+      "type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r025",
+      "citation": "Einstein, Albert (2005), Relativity: The Special and General Theory, translated by Robert W. Lawson.",
+      "type": "further_reading",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r026",
+      "citation": "Einstein, Albert (1920), Relativity: The Special and General Theory, Henry Holt and Company.",
+      "type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r027",
+      "citation": "Einstein, Albert; trans. Schilpp, Paul Arthur (1979), Albert Einstein, Autobiographical Notes.",
+      "type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r028",
+      "citation": "Einstein, Albert (2009), Einstein’s Essays in Science.",
+      "type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r029",
+      "citation": "Einstein, Albert (1956) [1922], The Meaning of Relativity.",
+      "type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r030",
+      "citation": "How I created the theory of relativity, Albert Einstein, 14 December 1922; Physics Today August 1982.",
+      "type": "primary_work",
+      "source_scope": "supplied article reference/further-reading list"
+    },
+    {
+      "id": "r031",
+      "citation": "Perkowitz, Sidney, \"Relativity\". Encyclopaedia Britannica.",
+      "type": "secondary",
+      "source_scope": "supplied article reference/further-reading list"
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "sd01",
+      "distinction": "Special vs general relativity",
+      "A": "Special relativity",
+      "B": "General relativity",
+      "why_it_matters": "Special relativity concerns spacetime without gravity; general relativity extends the framework to gravitation through curved spacetime and field equations."
+    },
+    {
+      "id": "sd02",
+      "distinction": "Kinematic vs gravitational time dilation",
+      "A": "Kinematic time dilation",
+      "B": "Gravitational time dilation",
+      "why_it_matters": "Both alter clock rates but arise in different relativistic contexts: relative motion versus gravitational potential/geometry."
+    },
+    {
+      "id": "sd03",
+      "distinction": "Principle theory vs constructive theory",
+      "A": "Principle theory",
+      "B": "Constructive theory",
+      "why_it_matters": "The source explicitly frames relativity as beginning from established empirical regularities rather than assumed microscopic mechanisms."
+    },
+    {
+      "id": "sd04",
+      "distinction": "Null ether result vs proof of special relativity",
+      "A": "Null ether-drift result",
+      "B": "Full validation of special relativity",
+      "why_it_matters": "The Michelson–Morley result constrained ether models but, according to the source, did not by itself validate special relativity."
+    },
+    {
+      "id": "sd05",
+      "distinction": "Lorentz/FitzGerald contraction vs relativistic length contraction",
+      "A": "Historical ether-based contraction hypothesis",
+      "B": "Relativistic length contraction",
+      "why_it_matters": "The historical hypotheses and the relativistic effect can look similar mathematically while having different theoretical meanings."
+    },
+    {
+      "id": "sd06",
+      "distinction": "Free fall vs Newtonian gravitational force",
+      "A": "Free fall as inertial motion",
+      "B": "Newtonian force interpretation",
+      "why_it_matters": "General relativity changes the conceptual status of free fall by treating it as inertial motion in curved spacetime."
+    },
+    {
+      "id": "sd07",
+      "distinction": "Metric tensor vs spacetime topology",
+      "A": "Metric tensor",
+      "B": "Spacetime topology",
+      "why_it_matters": "The source distinguishes metric solutions defining geometry from the broader topological structure of spacetime."
+    },
+    {
+      "id": "sd08",
+      "distinction": "Prediction vs experimental confirmation",
+      "A": "Theoretical prediction",
+      "B": "Experimental/observational confirmation",
+      "why_it_matters": "Relativity is modeled as a predictive and falsifiable framework whose predictions are separately tested."
+    },
+    {
+      "id": "sd09",
+      "distinction": "Historical acceptance of SR vs GR",
+      "A": "Rapid acceptance of special relativity",
+      "B": "Later centrality of general relativity",
+      "why_it_matters": "The source describes markedly different historical trajectories."
+    },
+    {
+      "id": "sd10",
+      "distinction": "Classical transformation vs Lorentz transformation",
+      "A": "Galilean transformations",
+      "B": "Lorentz transformations",
+      "why_it_matters": "This mathematical replacement is a defining structural feature of special relativity."
+    },
+    {
+      "id": "sd11",
+      "distinction": "Astronomical scale vs laboratory applicability",
+      "A": "Astronomical/astrophysical relativistic effects",
+      "B": "Engineering/laboratory relativistic effects",
+      "why_it_matters": "The source emphasizes that relativity moved from seemingly remote astronomical predictions to routine engineering requirements."
+    },
+    {
+      "id": "sd12",
+      "distinction": "Theory of relativity vs philosophical relativism",
+      "A": "Physical relativity theory",
+      "B": "Philosophical/ontological relativism",
+      "why_it_matters": "The source explicitly warns that the scientific concept should not be conflated with philosophical theories called relativism."
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "lp01",
+      "title": "Relativity foundations",
+      "sequence": [
+        "theory_relativity",
+        "special_relativity",
+        "spacetime",
+        "relativity_principle",
+        "light_speed_invariance",
+        "lorentz_transformations"
+      ]
+    },
+    {
+      "id": "lp02",
+      "title": "Special-relativity phenomena",
+      "sequence": [
+        "special_relativity",
+        "simultaneity",
+        "time_dilation",
+        "length_contraction",
+        "light_speed_limit",
+        "mass_energy"
+      ]
+    },
+    {
+      "id": "lp03",
+      "title": "From ether to special relativity",
+      "sequence": [
+        "ether",
+        "aether_wind",
+        "michelson_interferometer",
+        "michelson_morley_1887_paper",
+        "fitzgerald_lorentz_contraction",
+        "lorentz_transformations",
+        "special_relativity"
+      ]
+    },
+    {
+      "id": "lp04",
+      "title": "General-relativity conceptual development",
+      "sequence": [
+        "equivalence_principle",
+        "free_fall",
+        "curved_spacetime",
+        "riemannian_geometry",
+        "einstein_field_equations",
+        "metric_tensor"
+      ]
+    },
+    {
+      "id": "lp05",
+      "title": "Testing special relativity",
+      "sequence": [
+        "falsifiability",
+        "michelson_morley_1887_paper",
+        "kennedy_thorndike_1932_paper",
+        "ives_stilwell_1938_paper",
+        "special_relativity"
+      ]
+    },
+    {
+      "id": "lp06",
+      "title": "Testing general relativity",
+      "sequence": [
+        "general_relativity",
+        "perihelion_precession",
+        "light_deflection",
+        "gravitational_time_dilation",
+        "frame_dragging"
+      ]
+    },
+    {
+      "id": "lp07",
+      "title": "Relativity and astronomy",
+      "sequence": [
+        "general_relativity",
+        "cosmology",
+        "astrophysics",
+        "neutron_stars",
+        "black_holes",
+        "gravitational_waves",
+        "universe_expansion"
+      ]
+    },
+    {
+      "id": "lp08",
+      "title": "Relativity in engineering",
+      "sequence": [
+        "theory_relativity",
+        "satellite_time",
+        "gps",
+        "glonass",
+        "galileo_nav",
+        "precision_time",
+        "particle_accelerators"
+      ]
+    },
+    {
+      "id": "lp09",
+      "title": "Epistemology of relativity",
+      "sequence": [
+        "principle_theory",
+        "constructive_theory",
+        "falsifiability",
+        "experimental_evidence",
+        "theory_relativity"
+      ]
+    }
+  ],
+  "misconceptions": [
+    {
+      "id": "m01",
+      "misconception": "Michelson–Morley alone proved special relativity.",
+      "correction": "The source says the null result constrained ether interpretations but was not by itself sufficient to discount all ether theories or validate special relativity.",
+      "related": [
+        "michelson_morley_1887_paper",
+        "special_relativity"
+      ]
+    },
+    {
+      "id": "m02",
+      "misconception": "General relativity was immediately as experimentally central as special relativity.",
+      "correction": "The source describes general relativity as initially difficult to test and becoming central around 1960.",
+      "related": [
+        "general_relativity",
+        "slow_acceptance_gr"
+      ]
+    },
+    {
+      "id": "m03",
+      "misconception": "Relativity is only about astronomy.",
+      "correction": "The source explicitly identifies atomic, nuclear and quantum physics, satellite navigation, precision time, electron microscopes and accelerators as applications.",
+      "related": [
+        "atomic_physics",
+        "gps",
+        "particle_accelerators"
+      ]
+    },
+    {
+      "id": "m04",
+      "misconception": "Relativity simply modifies Newtonian mechanics without replacing its conceptual structure.",
+      "correction": "The source emphasizes replacement of Galilean transformations by Lorentz transformations and the geometric reformulation of gravitation.",
+      "related": [
+        "galilean_transformations",
+        "lorentz_transformations",
+        "curved_spacetime"
+      ]
+    },
+    {
+      "id": "m05",
+      "misconception": "General relativity treats gravity as an ordinary force in the Newtonian sense.",
+      "correction": "The source frames gravity geometrically through curved spacetime and field equations.",
+      "related": [
+        "gravitation",
+        "curved_spacetime",
+        "einstein_field_equations"
+      ]
+    },
+    {
+      "id": "m06",
+      "misconception": "The theory cannot be experimentally falsified.",
+      "correction": "The source explicitly calls relativity falsifiable and lists experimental tests.",
+      "related": [
+        "falsifiability",
+        "experimental_acceptance_sr",
+        "general_relativity"
+      ]
+    },
+    {
+      "id": "m07",
+      "misconception": "Relativistic effects are negligible in modern technology.",
+      "correction": "GPS, satellite timing and several precision instruments require relativistic corrections.",
+      "related": [
+        "gps",
+        "satellite_time",
+        "precision_time"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q01",
+      "question": "What are the two major theories included under the theory of relativity?",
+      "answer_targets": [
+        "special_relativity",
+        "general_relativity"
+      ]
+    },
+    {
+      "id": "q02",
+      "question": "What two postulates define special relativity in the supplied article?",
+      "answer_targets": [
+        "relativity_principle",
+        "light_speed_invariance"
+      ]
+    },
+    {
+      "id": "q03",
+      "question": "Why did Einstein introduce curved spacetime in general relativity?",
+      "answer_targets": [
+        "free_fall",
+        "curved_spacetime",
+        "equivalence_principle"
+      ]
+    },
+    {
+      "id": "q04",
+      "question": "How did Lorentz transformations replace Galilean transformations?",
+      "answer_targets": [
+        "lorentz_transformations",
+        "galilean_transformations",
+        "special_relativity"
+      ]
+    },
+    {
+      "id": "q05",
+      "question": "What did the Michelson–Morley experiment establish, and what did it not establish by itself?",
+      "answer_targets": [
+        "michelson_morley_1887_paper",
+        "ether",
+        "special_relativity"
+      ]
+    },
+    {
+      "id": "q06",
+      "question": "How did Kennedy–Thorndike and Ives–Stilwell complement Michelson–Morley?",
+      "answer_targets": [
+        "kennedy_thorndike_1932_paper",
+        "ives_stilwell_1938_paper",
+        "special_relativity"
+      ]
+    },
+    {
+      "id": "q07",
+      "question": "Which classic observations/tests support general relativity?",
+      "answer_targets": [
+        "perihelion_precession",
+        "light_deflection",
+        "gravitational_time_dilation",
+        "frame_dragging"
+      ]
+    },
+    {
+      "id": "q08",
+      "question": "Why does GPS require relativity?",
+      "answer_targets": [
+        "gps",
+        "special_relativity",
+        "general_relativity",
+        "satellite_time"
+      ]
+    },
+    {
+      "id": "q09",
+      "question": "How does the source distinguish principle theories from constructive theories?",
+      "answer_targets": [
+        "principle_theory",
+        "constructive_theory"
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "Why did general relativity become more central around 1960?",
+      "answer_targets": [
+        "slow_acceptance_gr",
+        "quasar_1963",
+        "cmb_1965",
+        "pulsar_1967",
+        "black_hole_candidates_1981"
+      ]
+    }
+  ],
+  "equations": [
+    {
+      "id": "eq01",
+      "name": "Einstein field equations",
+      "expression": "G_{μν} + Λ g_{μν} = κ T_{μν}",
+      "meaning": "Relates spacetime curvature/geometry to mass-energy-momentum with a cosmological-constant term.",
+      "source_status": "equation explicitly displayed in supplied source"
+    },
+    {
+      "id": "eq02",
+      "name": "Mass–energy equivalence",
+      "expression": "E = mc²",
+      "meaning": "Expresses equivalence/transmutability of mass and energy.",
+      "source_status": "listed explicitly in supplied source"
+    },
+    {
+      "id": "eq03",
+      "name": "Relativistic light-speed constraint",
+      "expression": "v ≤ c for physical objects/signals/field propagation",
+      "meaning": "The supplied article states that no physical object, message or field line can travel faster than light in vacuum.",
+      "source_status": "semantic formalization of source statement"
+    },
+    {
+      "id": "eq04",
+      "name": "Lorentz transformation family",
+      "expression": "Lorentz transformations",
+      "meaning": "Mathematical transformations replacing Galilean transformations in special relativity.",
+      "source_status": "conceptual equation-family entry; exact component equations not supplied"
+    }
+  ],
+  "expansion_targets": [
+    {
+      "id": "x01",
+      "target": "Full mathematical special-relativity graph",
+      "scope": "Lorentz transformations, invariant interval, four-vectors, energy-momentum, rapidity, relativistic velocity composition; these were not fully present in the supplied source."
+    },
+    {
+      "id": "x02",
+      "target": "Full mathematical general-relativity graph",
+      "scope": "Tensor calculus, Christoffel symbols, curvature tensors, geodesics, Einstein-Hilbert action, stress-energy conservation; not fully specified in source."
+    },
+    {
+      "id": "x03",
+      "target": "Experimental validation graph",
+      "scope": "Detailed apparatus, numerical results, uncertainties and later precision tests."
+    },
+    {
+      "id": "x04",
+      "target": "Relativistic cosmology graph",
+      "scope": "Friedmann equations, cosmological models, dark matter/energy and observational cosmology; source only gives broad expansion context."
+    },
+    {
+      "id": "x05",
+      "target": "Black-hole and gravitational-wave graph",
+      "scope": "Solutions, horizons, binary dynamics and detector physics; source mentions black holes and gravitational waves but does not develop their mathematics."
+    },
+    {
+      "id": "x06",
+      "target": "Relativity-to-quantum interface",
+      "scope": "Relativistic quantum mechanics, quantum field theory and incompatibility/complementarity issues; source only notes SR's role in quantum mechanics."
+    },
+    {
+      "id": "x07",
+      "target": "GPS relativity engineering graph",
+      "scope": "Separate special-relativistic and gravitational corrections, clock rates, orbit models and navigation error budgets."
+    },
+    {
+      "id": "x08",
+      "target": "History of special relativity",
+      "scope": "Detailed pre-1905 development involving Lorentz, Poincaré, Michelson, Fitzgerald, Maxwell and others."
+    },
+    {
+      "id": "x09",
+      "target": "History of general relativity",
+      "scope": "Detailed 1907–1916 development, Entwurf theory, covariance, Grossmann and field-equation evolution."
+    },
+    {
+      "id": "x10",
+      "target": "Bibliographic citation graph",
+      "scope": "Expand every reference/further-reading item into complete metadata and citation relationships."
+    },
+    {
+      "id": "x11",
+      "target": "Modern precision-test graph",
+      "scope": "Atomic clocks, Lorentz-invariance violation searches and contemporary experimental constraints."
+    },
+    {
+      "id": "x12",
+      "target": "Relativity ontology bridge",
+      "scope": "Connect spacetime, causality, simultaneity, observables, frames and philosophical interpretations while separating physics from philosophical relativism."
+    }
+  ],
+  "statistics": {
+    "node_count": 148,
+    "edge_count": 180,
+    "source_claim_count": 30,
+    "reference_count": 31,
+    "semantic_distinction_count": 12,
+    "learning_path_count": 9,
+    "misconception_count": 7,
+    "question_count": 10,
+    "equation_count": 4,
+    "expansion_target_count": 12
+  },
+  "validation": {
+    "all_edge_endpoints_exist": true,
+    "duplicate_node_ids": false,
+    "duplicate_edge_ids": false,
+    "all_source_claim_refs_exist": true,
+    "reference_ids_unique": true,
+    "semantic_distinctions_have_ids": true,
+    "learning_paths_have_valid_nodes": true,
+    "questions_have_valid_targets": true,
+    "equation_count": 4
+  },
+  "provenance_model": {
+    "node_provenance": "Nodes represent concepts, people, works, experiments, historical events, applications, mathematical objects and disciplines explicitly present or directly structured from the source.",
+    "edge_provenance": "Edges encode typed semantic relationships rather than simple co-occurrence.",
+    "claim_provenance": "Source claims preserve the supplied article's wording-level assertions and line locations.",
+    "reference_provenance": "References are retained as first-class bibliography/provenance objects rather than flattened URLs or footnotes.",
+    "epistemic_separation": "Source-derived claims are separated from semantic formalizations and expansion targets.",
+    "educational_layer": "Learning paths, questions and misconceptions are derived instructional structures, not claims that were explicitly stated as such by the source."
+  },
+  "generated_at": "2026-10-06T23:00:00-06:00",
+  "coverage_matrix": {
+    "special_relativity": {
+      "covered": "high",
+      "areas": [
+        "postulates",
+        "spacetime",
+        "Lorentz transformations",
+        "SR phenomena",
+        "historical development",
+        "experimental tests",
+        "applications"
+      ]
+    },
+    "general_relativity": {
+      "covered": "high",
+      "areas": [
+        "equivalence principle",
+        "free fall",
+        "curved spacetime",
+        "Riemannian geometry",
+        "field equations",
+        "predictions",
+        "tests",
+        "historical acceptance"
+      ]
+    },
+    "experimental_evidence": {
+      "covered": "high",
+      "areas": [
+        "Michelson–Morley",
+        "Kennedy–Thorndike",
+        "Ives–Stilwell",
+        "Mercury",
+        "light deflection",
+        "gravitational redshift",
+        "frame dragging"
+      ]
+    },
+    "modern_applications": {
+      "covered": "high",
+      "areas": [
+        "GPS",
+        "GLONASS",
+        "Galileo",
+        "precision time",
+        "electron microscopes",
+        "particle accelerators"
+      ]
+    },
+    "full_mathematical_formalism": {
+      "covered": "partial",
+      "note": "The source does not supply the full tensor/vector mathematical machinery, so expansion targets are explicitly retained instead of inventing it."
+    },
+    "modern_precision_tests": {
+      "covered": "low",
+      "note": "Only broadly referenced by the source; detailed modern test catalog is an expansion target."
+    }
+  }
+}
