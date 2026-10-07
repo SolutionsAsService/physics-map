@@ -1,7 +1,7 @@
 import { readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { claimEntries, explainVariant, sourceClaimsFor } from './extract-concepts.mjs';
+import { claimEntries, explainDocument, explainEdge, explainVariant } from './extract-concepts.mjs';
 import { layoutGraph } from './layout-graph.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -28,7 +28,7 @@ export async function buildAtlas() {
     const graphId = data.graph_id || path.basename(file, '.json');
     const claimsById = new Map(claimEntries(data).map(claim => [claim.id, claim]));
     const { nodes: _nodes, edges: _edges, ...metadata } = data;
-    documentMetadata.push({ file, graphId, title: data.title || graphId, domain: data.domain || '', nodeCount: data.nodes.length, edgeCount: data.edges.length, metadata });
+    documentMetadata.push({ file, graphId, title: data.title || graphId, domain: data.domain || '', nodeCount: data.nodes.length, edgeCount: data.edges.length, fields: explainDocument(metadata), metadata });
     for (const original of data.nodes) {
       if (!original.id || typeof original.id !== 'string') throw new Error(`Missing node ID in ${file}`);
       const current = nodes.get(original.id) || { id: original.id, label: original.label || original.id, type: original.type || original.node_type || 'concept', description: '', topics: [], variants: [] };
@@ -48,7 +48,7 @@ export async function buildAtlas() {
     }
     data.edges.forEach((original, index) => {
       if (!original.source || !original.target) throw new Error(`Incomplete edge ${index} in ${file}`);
-      edges.push({ id: `${graphId}:${index}`, source: original.source, target: original.target, relation: original.relationship || original.relation || 'related to', semantic: original.semantic || '', document: file, evidence: sourceClaimsFor(original, claimsById), record: original });
+      edges.push({ id: `${graphId}:${index}`, source: original.source, target: original.target, relation: original.relationship || original.relation || 'related to', semantic: original.semantic || original.description || '', ...explainEdge(original, file, claimsById) });
     });
   }
 

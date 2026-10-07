@@ -2,7 +2,7 @@ const state = { atlas: null, byId: new Map(), edgesById: new Map(), selected: nu
 const $ = selector => document.querySelector(selector);
 const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 const humanize = value => String(value || '').replaceAll('_', ' ').replace(/\b\w/g, letter => letter.toUpperCase());
-const category = node => node?.claim ? 'claim' : node?.topics?.some(topic => topic.includes('ionic_bonding')) ? 'bonding' : node?.topics?.some(topic => topic.startsWith('ion_')) ? 'ion' : node?.topics?.some(topic => topic.includes('quantum_mechanics')) ? 'quantum' : node?.topics?.some(topic => topic.includes('physical_chemistry')) ? 'chemistry' : node?.topics?.some(topic => topic.includes('thermodynamics')) ? 'thermo' : 'physics';
+const category = node => node?.claim ? 'claim' : node?.topics?.some(topic => topic.includes('ionic_bonding')) ? 'bonding' : node?.topics?.some(topic => topic.startsWith('matter_')) ? 'matter' : node?.topics?.some(topic => topic.startsWith('ion_')) ? 'ion' : node?.topics?.some(topic => topic.includes('quantum_mechanics')) ? 'quantum' : node?.topics?.some(topic => topic.includes('physical_chemistry')) ? 'chemistry' : node?.topics?.some(topic => topic.includes('thermodynamics')) ? 'thermo' : 'physics';
 
 function connectIndexes(atlas) {
   state.byId = new Map(atlas.nodes.map(node => [node.id, node]));
@@ -28,6 +28,17 @@ function selectConcept(id, { scroll = false } = {}) {
   renderInspector();
   if (scroll) $('#explorer').scrollIntoView({ behavior: 'smooth' });
   history.replaceState(null, '', `${location.pathname}?concept=${encodeURIComponent(id)}#explorer`);
+}
+
+function clearSelection({ fit = false } = {}) {
+  if (!state.selected && !fit) return;
+  state.selected = null;
+  if (fit) network.fit();
+  renderMap();
+  renderInspector();
+  const url = new URL(location.href);
+  url.searchParams.delete('concept');
+  history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
 }
 
 function renderFilters() {
@@ -79,6 +90,15 @@ function displayValue(value) {
   return `<pre class="field-value">${escapeHtml(JSON.stringify(value, null, 2))}</pre>`;
 }
 
+function renderFields(fields) {
+  return fields.map(field => `<div class="source-field"><strong>${escapeHtml(field.label)}</strong><div>${displayValue(field.value)}</div></div>`).join('');
+}
+
+function renderClaim(claim) {
+  const fields = Object.entries(claim).filter(([key]) => key !== 'id').map(([key, value]) => ({ label: humanize(key), value }));
+  return `<div class="claim"><b>${escapeHtml(claim.id)}</b>${renderFields(fields)}</div>`;
+}
+
 function renderInspector() {
   const host = $('#inspector');
   const node = state.selected ? state.byId.get(state.selected) : null;
@@ -89,14 +109,30 @@ function renderInspector() {
   }
   const connections = state.edgesById.get(node.id) || [];
   const explanation = node.description || node.note?.intuition || `No prose definition is supplied for this concept. Its ${connections.length} recorded connections and source records are listed below.`;
-  const sourceRecords = node.variants.map(variant => `<article class="source-variant"><h5>${escapeHtml(sourceTitle(variant.document))}</h5><p class="source-file">${escapeHtml(variant.document)}</p>${variant.fields.map(field => `<div class="source-field"><strong>${escapeHtml(field.label)}</strong><div>${displayValue(field.value)}</div></div>`).join('') || '<p>No descriptive fields supplied in this source.</p>'}${variant.source ? `<div class="source-field"><strong>Source reference</strong>${displayValue(variant.source)}</div>` : ''}${variant.claims.length ? `<div class="claim-list"><strong>Supporting claims</strong>${variant.claims.map(claim => `<div class="claim"><b>${escapeHtml(claim.id)}</b><p>${escapeHtml(claim.statement || 'Source claim reference not found')}</p>${claim.provenance ? `<small>${displayValue(claim.provenance)}</small>` : ''}</div>`).join('')}</div>` : ''}</article>`).join('');
+  const keyFacts = new Set(['definition', 'description', 'semantic_definition', 'scope', 'conceptual_basis', 'significance', 'history_note', 'distinction', 'foundational_issue', 'role', 'charge_definition', 'canonical_examples', 'not_to_conflate_with']);
+  const perspectives = node.variants.flatMap(variant => variant.fields.filter(field => keyFacts.has(field.key) && field.value).map(field => `<div class="perspective"><strong>${escapeHtml(field.label)} · ${escapeHtml(sourceTitle(variant.document))}</strong><div>${displayValue(field.value)}</div></div>`)).join('');
+  const connectedDefinitions = connections.map(edge => ({ edge, ...relationDescription(edge, node.id) })).filter(item => item.other?.description).slice(0, 5);
+  const guide = `<div class="inspector-section"><h4>Source-backed field guide</h4>${perspectives || '<p>No prose explanation was provided by the source graphs for this concept.</p>'}${connectedDefinitions.length ? `<h5>Connected definitions · first ${connectedDefinitions.length} of ${connections.length} links</h5>${connectedDefinitions.map(({ edge, other, relation }) => `<button type="button" class="perspective-link" data-concept="${escapeHtml(other.id)}"><b>${escapeHtml(other.label)}</b> · ${escapeHtml(relation)}<small>${escapeHtml(other.description)} · ${escapeHtml(sourceTitle(edge.document))}</small></button>`).join('')}` : ''}</div>`;
+  const sourceRecords = node.variants.map(variant => {
+    const document = state.atlas.documents.find(item => item.file === variant.document);
+    const encodedFile = variant.document.split('/').map(encodeURIComponent).join('/');
+    const context = document?.metadata.source || document?.metadata.source_policy || null;
+    return `<article class="source-variant"><h5>${escapeHtml(sourceTitle(variant.document))}</h5><p class="source-file">${escapeHtml(variant.document)} · <a href="./data/${encodedFile}" download>Download source JSON ↓</a></p>${renderFields(variant.fields) || '<p>No descriptive fields supplied in this record.</p>'}${variant.claims.length ? `<div class="claim-list"><strong>Supporting claims · ${variant.claims.length}</strong>${variant.claims.map(renderClaim).join('')}</div>` : ''}${context ? `<div class="source-field"><strong>Source policy / origin</strong>${displayValue(context)}</div>` : ''}${document ? `<details class="document-context" data-file="${escapeHtml(variant.document)}"><summary>Source context, references &amp; complete metadata ↗</summary><div class="document-fields"></div><details class="document-raw"><summary>Full source metadata JSON</summary><pre></pre></details></details>` : ''}</article>`;
+  }).join('');
   const relations = connections.map(edge => {
     const { other, direction, relation } = relationDescription(edge, node.id);
-    return `<article class="relation-entry"><button type="button" data-concept="${escapeHtml(other?.id || '')}"><span class="relation-direction">${direction}</span><span><small>${escapeHtml(relation)}</small><strong>${escapeHtml(other?.label || other?.id || 'Unknown')}</strong></span><span class="relation-arrow">↗</span></button><div class="relation-proof"><span>${escapeHtml(sourceTitle(edge.document))}</span>${edge.semantic ? `<p>${escapeHtml(edge.semantic)}</p>` : ''}${edge.evidence.map(claim => `<p>Claim ${escapeHtml(claim.id)}: ${escapeHtml(claim.statement || 'Referenced claim missing')}${claim.provenance ? ` · ${escapeHtml(JSON.stringify(claim.provenance))}` : ''}</p>`).join('')}</div></article>`;
+    return `<article class="relation-entry"><button type="button" data-concept="${escapeHtml(other?.id || '')}"><span class="relation-direction">${direction}</span><span><small>${escapeHtml(relation)}</small><strong>${escapeHtml(other?.label || other?.id || 'Unknown')}</strong></span><span class="relation-arrow">↗</span></button><div class="relation-proof">${other?.description ? `<p class="neighbor-description">${escapeHtml(other.description)}</p>` : ''}<span>Recorded in ${escapeHtml(sourceTitle(edge.document))}</span>${edge.semantic ? `<p>${escapeHtml(edge.semantic)}</p>` : ''}${renderFields(edge.fields || [])}${edge.evidence.length ? `<div class="claim-list"><strong>Supporting claims · ${edge.evidence.length}</strong>${edge.evidence.map(renderClaim).join('')}</div>` : '<p>No claim-level citation supplied for this relationship.</p>'}</div></article>`;
   }).join('');
-  host.innerHTML = `<div class="inspector-content"><div class="inspector-heading"><span class="label-chip ${category(node)}">${escapeHtml(humanize(node.type))}</span><span class="record-number">${connections.length} LINKS · ${node.variants.length} SOURCES</span></div><h3>${escapeHtml(node.label)}</h3><p class="inspector-id">${escapeHtml(node.id)}</p>${node.note?.intuition ? `<div class="insight"><span class="insight-icon">✧</span><div><strong>IN PLAIN LANGUAGE · CURATED NOTE</strong><p>${escapeHtml(node.note.intuition)}</p></div></div>` : ''}<div class="inspector-section"><h4>Concept overview</h4><p>${escapeHtml(explanation)}</p>${node.note?.example ? `<p class="example"><b>For example</b> · ${escapeHtml(node.note.example)}</p>` : ''}${node.addedByCurriculum ? '<p class="provenance-warning">Teaching note added to resolve a source reference; not an original graph node.</p>' : ''}</div><div class="inspector-section"><h4>Original source records <span>${node.variants.length}</span></h4>${sourceRecords || '<p>Curriculum-only concept; no original source record.</p>'}</div><div class="inspector-section"><h4>All connections <span>${connections.length}</span></h4><p class="connection-note">Direction, meaning and source evidence are shown for each recorded link. A link without a cited claim has no claim-level citation in the source data.</p><div class="relation-list">${relations || '<p>No relationships are recorded for this concept yet.</p>'}</div></div><div class="inspector-section"><details class="raw-record"><summary>Inspect complete JSON records <span>↗</span></summary><pre></pre></details></div></div>`;
+  host.innerHTML = `<div class="inspector-content"><div class="inspector-heading"><span class="label-chip ${category(node)}">${escapeHtml(humanize(node.type))}</span><span class="record-number">${connections.length} LINKS · ${node.variants.length} SOURCES</span></div><h3>${escapeHtml(node.label)}</h3><p class="inspector-id">${escapeHtml(node.id)}</p><button type="button" id="clear-focus" class="clear-focus">Clear selection <kbd>Esc</kbd></button>${node.note?.intuition ? `<div class="insight"><span class="insight-icon">✧</span><div><strong>IN PLAIN LANGUAGE · CURATED NOTE</strong><p>${escapeHtml(node.note.intuition)}</p></div></div>` : ''}<div class="inspector-section"><h4>Concept overview</h4><p>${escapeHtml(explanation)}</p>${node.note?.example ? `<p class="example"><b>For example</b> · ${escapeHtml(node.note.example)}</p>` : ''}${node.addedByCurriculum ? '<p class="provenance-warning">Teaching note added to resolve a source reference; not an original graph node.</p>' : ''}</div>${guide}<div class="inspector-section"><h4>Original source records <span>${node.variants.length}</span></h4>${sourceRecords || '<p>Curriculum-only concept; no original source record.</p>'}</div><div class="inspector-section"><h4>All connections <span>${connections.length}</span></h4><p class="connection-note">Direction, meaning and source evidence are shown for each recorded link. A link without a cited claim has no claim-level citation in the source data.</p><div class="relation-list">${relations || '<p>No relationships are recorded for this concept yet.</p>'}</div></div><div class="inspector-section"><details class="raw-record"><summary>Inspect complete JSON records <span>↗</span></summary><pre></pre></details></div></div>`;
   host.querySelectorAll('[data-concept]').forEach(button => button.addEventListener('click', () => selectConcept(button.dataset.concept)));
-  const details = host.querySelector('details');
+  $('#clear-focus').addEventListener('click', () => clearSelection());
+  host.querySelectorAll('.document-context').forEach(details => details.addEventListener('toggle', () => {
+    if (!details.open) return;
+    const document = state.atlas.documents.find(item => item.file === details.dataset.file);
+    details.querySelector('.document-fields').innerHTML = renderFields(document.fields);
+    details.querySelector('pre').textContent = JSON.stringify(document.metadata, null, 2);
+  }));
+  const details = host.querySelector('.raw-record');
   details.addEventListener('toggle', () => { if (details.open) details.querySelector('pre').textContent = JSON.stringify({ id: node.id, variants: node.variants, curriculum: node.note || null, relationships: connections }, null, 2); });
 }
 
@@ -138,13 +174,7 @@ function setupMapGestures() {
   network = window.PhysicsNetwork.mount($('#network'), $('#map-tooltip'), state.atlas, id => selectConcept(id));
   $('#zoom-in').addEventListener('click', () => network.zoom(1.3));
   $('#zoom-out').addEventListener('click', () => network.zoom(1 / 1.3));
-  $('#reset-map').addEventListener('click', () => {
-    state.selected = null;
-    network.fit();
-    renderMap();
-    renderInspector();
-    history.replaceState(null, '', `${location.pathname}#explorer`);
-  });
+  $('#reset-map').addEventListener('click', () => clearSelection({ fit: true }));
 }
 
 async function init() {
@@ -154,6 +184,7 @@ async function init() {
     state.atlas = await response.json();
     connectIndexes(state.atlas);
     $('#metric-concepts').textContent = state.atlas.summary.concepts.toLocaleString();
+    $('#search').placeholder = `Search ${state.atlas.summary.concepts.toLocaleString()} concepts, definitions or claims…`;
     $('#metric-relations').textContent = state.atlas.summary.relationships.toLocaleString();
     $('#metric-overlap').textContent = state.atlas.summary.overlaps;
     $('#source-links').innerHTML = state.atlas.documents.map((doc, index) => `<a href="./data/${doc.file.split('/').map(encodeURIComponent).join('/')}" download><span>${String(index + 1).padStart(2, '0')} / ${escapeHtml(doc.title)}</span><span>↓</span></a>`).join('') + `<a href="./data/atlas.json" download><span>${String(state.atlas.documents.length + 1).padStart(2, '0')} / Unified atlas JSON</span><span>↓</span></a>`;
@@ -161,7 +192,17 @@ async function init() {
     $('#search').addEventListener('input', event => { state.query = event.target.value; renderSearch(); });
     $('#catalog-search').addEventListener('input', event => { state.catalogQuery = event.target.value; state.catalogLimit = 36; renderCatalog(); });
     $('#catalog-more').addEventListener('click', () => { state.catalogLimit += 36; renderCatalog(); });
-    document.addEventListener('keydown', event => { if (event.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) { event.preventDefault(); $('#search').focus(); $('#explorer').scrollIntoView({ behavior: 'smooth' }); } if (event.key === 'Escape') { state.query = ''; $('#search').value = ''; renderSearch(); } });
+    document.addEventListener('keydown', event => {
+      if (event.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+        event.preventDefault(); $('#search').focus(); $('#explorer').scrollIntoView({ behavior: 'smooth' });
+      }
+      if (event.key === 'Escape') {
+        state.query = '';
+        $('#search').value = '';
+        renderSearch();
+        if (state.selected) { event.preventDefault(); clearSelection(); }
+      }
+    });
     const initial = new URL(location.href).searchParams.get('concept');
     if (initial && state.byId.has(initial)) selectConcept(initial);
   } catch (error) {

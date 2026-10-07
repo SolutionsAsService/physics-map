@@ -1,4 +1,4 @@
-const excluded = new Set(['id', 'label', 'type', 'node_type', 'source', 'source_claims']);
+const excluded = new Set(['id', 'label']);
 const titles = {
   semantic_definition: 'Semantic definition',
   chemical_formula: 'Chemical formula',
@@ -17,13 +17,26 @@ export function claimEntries(document) {
 
 export function fieldsFrom(record) {
   return Object.entries(record)
-    .filter(([key, value]) => !excluded.has(key) && value !== null && value !== '' && !(Array.isArray(value) && !value.length))
+    .filter(([key]) => !excluded.has(key))
     .map(([key, value]) => ({ key, label: titles[key] || key.replaceAll('_', ' ').replace(/^./, letter => letter.toUpperCase()), value }));
 }
 
 export function sourceClaimsFor(record, claimsById) {
   const ids = Array.isArray(record.source_claims) ? record.source_claims : [];
   return ids.map(id => claimsById.get(id) || { id, missing: true });
+}
+
+export function explainEdge(original, file, claimsById) {
+  return {
+    document: file,
+    fields: fieldsFrom(original).filter(field => !['source', 'target', 'relation', 'relationship', 'semantic'].includes(field.key)),
+    evidence: sourceClaimsFor(original, claimsById),
+    record: original
+  };
+}
+
+export function explainDocument(metadata) {
+  return fieldsFrom(metadata).filter(field => !['claims', 'source_claims'].includes(field.key));
 }
 
 export function explainVariant(original, file, claimsById) {

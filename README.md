@@ -1,6 +1,6 @@
 # Physics Map
 
-An interconnected, source-aware physics learning map across physics, thermodynamics, physical chemistry, ions, ionic bonding and quantum mechanics. Follow learning routes, search definitions and claim text, and inspect original records and evidence for every relationship. No sign-in, backend or paid service is required.
+An interconnected, source-aware physics learning map across physics, matter, thermodynamics, physical chemistry, ions, ionic bonding and quantum mechanics. Follow learning routes, search definitions and claim text, and inspect original records and evidence for every relationship. No sign-in, backend or paid service is required.
 
 ## Run locally
 
@@ -13,9 +13,9 @@ Open `http://localhost:4173`. The page is static and can also be served from a G
 
 ## Data model
 
-The original JSON graphs are preserved in `data/`. `npm run build` recursively discovers graph JSON files in `data/` with `nodes` and `edges` arrays, excluding the generated `atlas.json` and the curriculum file. Place new source graphs there and rebuild; no importer allowlist needs editing. Six graphs currently yield 1,539 concepts and 2,076 recorded relationships. The original node fields, edges, source references and claim records remain in `variants[].record`, `edges[].record` and document metadata. Concepts with the same ID merge into one node with multiple source records. The curriculum notes are clearly marked teaching additions, not falsely attributed to any graph. Source texts named in citations may not be included in this repository; displayed citations are the source graph's own provenance, not independently verified external references.
+The original JSON graphs are preserved in `data/`. `npm run build` recursively discovers graph JSON files in `data/` with `nodes` and `edges` arrays, excluding the generated `atlas.json` and the curriculum file. Place new source graphs there and rebuild; no importer allowlist needs editing. Seven graphs currently yield 1,851 concepts and 2,418 recorded relationships, including the newly uploaded matter graph. The original node fields, edges, source references and claim records remain in `variants[].record`, `edges[].record` and document metadata; the extractor also structures all supplied fields for the inspector. Concepts with the same ID merge into one node with multiple source records. The curriculum notes are clearly marked teaching additions, not falsely attributed to any graph. Source texts named in citations may not be included in this repository; displayed citations are the source graph's own provenance, not independently verified external references.
 
-The map renders **every node and recorded link at all times** using a precomputed force layout. Hover or select to brighten direct neighbors and edges; unrelated nodes remain visible but dimmed. Drag to pan, scroll or use buttons to zoom, and choose Fit all to reset. Source filters dim the map rather than hiding nodes; they narrow only search and catalog results. The inspector shows every connection, every source field and available claim-level evidence, including original line references, without silently truncating. Full source documents and the unified atlas can also be downloaded. A record with no definition or citation is identified as such; the app does not invent one.
+The nearly full-width map renders **every node and recorded link at all times** using a precomputed force layout, fitted close to the viewer edges. Hover or select to brighten direct neighbors and edges; unrelated nodes remain visible but dimmed. Drag to pan, scroll or use buttons to zoom, choose Fit all to reset the view, or press Escape (or Clear selection) to leave focus without resetting zoom. Source filters dim the map rather than hiding nodes; they narrow only search and catalog results. The encyclopedia inspector assembles each source's supplied definitions, scope, examples, distinctions and connected descriptions, with every original node field, every edge attribute, all available claim records and provenance, and expandable document-level context (including source policies, bibliographies and raw metadata). Full source documents and the unified atlas can also be downloaded. Some source graph records do not contain a prose definition or a citation; the app identifies those gaps rather than inventing material or claiming the cited source text was independently verified.
 
 ## Verify
 
@@ -24,4 +24,4 @@ npm test
 npm run build
 ```
 
-The tests check source-record preservation, evidence, graph completeness, rendered interactions and route integrity. Re-run `npm run build` after adding or editing any source graph or curriculum notes, then commit the changed `data/atlas.json` alongside them.
+The tests check preservation and extraction of source, node and edge fields, evidence, graph completeness, edge-to-edge fit, Escape behavior, rendered interactions and route integrity. Re-run `npm run build` after adding or editing any source graph or curriculum notes, then commit the changed `data/atlas.json` alongside them.

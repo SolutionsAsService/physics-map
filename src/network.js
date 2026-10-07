@@ -1,10 +1,11 @@
 (function () {
-  const colors = { physics: '#83d8e9', thermo: '#f8b886', chemistry: '#9ceddd', quantum: '#b6b4ff', ion: '#f19db4', bonding: '#d5c18e', claim: '#74929a' };
+  const colors = { physics: '#83d8e9', thermo: '#f8b886', chemistry: '#9ceddd', quantum: '#b6b4ff', ion: '#f19db4', bonding: '#d5c18e', matter: '#d0e9a2', claim: '#74929a' };
 
   function groupOf(node) {
     if (node.claim) return 'claim';
     const topics = node.topics || [];
     if (topics.some(topic => topic.includes('ionic_bonding'))) return 'bonding';
+    if (topics.some(topic => topic.startsWith('matter_'))) return 'matter';
     if (topics.some(topic => topic.startsWith('ion_'))) return 'ion';
     if (topics.some(topic => topic.includes('quantum_mechanics'))) return 'quantum';
     if (topics.some(topic => topic.includes('physical_chemistry'))) return 'chemistry';
@@ -32,7 +33,8 @@
     const centerY = (bounds.minY + bounds.maxY) / 2;
     let width = 960;
     let height = 620;
-    let fitScale = 1;
+    let fitScaleX = 1;
+    let fitScaleY = 1;
     let zoom = 1;
     let panX = 0;
     let panY = 0;
@@ -43,8 +45,7 @@
     let scheduled = false;
 
     function screen(node) {
-      const scale = fitScale * zoom;
-      return { x: width / 2 + panX + (node.layout.x - centerX) * scale, y: height / 2 + panY + (node.layout.y - centerY) * scale };
+      return { x: width / 2 + panX + (node.layout.x - centerX) * fitScaleX * zoom, y: height / 2 + panY + (node.layout.y - centerY) * fitScaleY * zoom };
     }
 
     function draw() {
@@ -74,7 +75,7 @@
         const point = screen(node);
         const relevant = node.id === active || related?.has(node.id);
         const inTopic = topic === 'all' || node.topics.includes(topic);
-        const radius = Math.max(1.5, Math.min(8, (3 + Math.sqrt(node.degree || 0) * 0.65) * Math.max(0.58, Math.min(1.6, fitScale * zoom))));
+        const radius = Math.max(1.5, Math.min(8, (3 + Math.sqrt(node.degree || 0) * 0.65) * Math.max(0.58, Math.min(1.6, Math.min(fitScaleX, fitScaleY) * zoom))));
         context.globalAlpha = active ? relevant ? 1 : 0.3 : inTopic ? 0.82 : 0.25;
         context.fillStyle = colors[groupOf(node)];
         context.beginPath(); context.arc(point.x, point.y, node.id === active ? radius + 3 : radius, 0, Math.PI * 2); context.fill();
@@ -107,7 +108,8 @@
       const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
       canvas.width = Math.round(width * pixelRatio);
       canvas.height = Math.round(height * pixelRatio);
-      fitScale = Math.min((width - 80) / Math.max(1, bounds.maxX - bounds.minX), (height - 80) / Math.max(1, bounds.maxY - bounds.minY));
+      fitScaleX = (width - 36) / Math.max(1, bounds.maxX - bounds.minX);
+      fitScaleY = (height - 36) / Math.max(1, bounds.maxY - bounds.minY);
       draw();
     }
 
