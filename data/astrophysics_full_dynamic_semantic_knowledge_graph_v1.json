@@ -1,0 +1,4759 @@
+{
+  "schema_name": "Full Dynamic Semantic Scientific Knowledge Graph",
+  "schema_version": "2.0-astrophysics-semantic-provenance",
+  "domain": [
+    "physics",
+    "astronomy",
+    "astrophysics",
+    "observational_astrophysics",
+    "theoretical_astrophysics",
+    "cosmology",
+    "astroparticle_physics"
+  ],
+  "title": "Astrophysics — Full Dynamic Semantic Knowledge Graph",
+  "source_policy": {
+    "primary_source": "Uploaded Astrophysics article",
+    "source_authority": "authoritative for transformation",
+    "external_research_used": false,
+    "preservation_policy": "Preserve source terminology, framing, historical context, examples, named people, references, further reading and external links. Contextual mathematical formalizations are explicitly labeled."
+  },
+  "central_subject": "domain_astrophysics",
+  "nodes": [
+    {
+      "id": "domain_astrophysics",
+      "label": "Astrophysics",
+      "type": "domain",
+      "description": "Application of physics and chemistry to astronomical objects and phenomena, including the universe."
+    },
+    {
+      "id": "concept_physics",
+      "label": "Physics",
+      "type": "discipline",
+      "description": "Physical laws and methods underlying astrophysical models and observations."
+    },
+    {
+      "id": "concept_chemistry",
+      "label": "Chemistry",
+      "type": "discipline",
+      "description": "Chemical principles used to study astronomical matter and composition."
+    },
+    {
+      "id": "concept_astronomy",
+      "label": "Astronomy",
+      "type": "discipline",
+      "description": "Study of astronomical objects; historically encompassing positional and observational work."
+    },
+    {
+      "id": "concept_celestial_mechanics",
+      "label": "Celestial mechanics",
+      "type": "subdiscipline",
+      "description": "Study of positions and motions of astronomical bodies."
+    },
+    {
+      "id": "concept_astrodynamics",
+      "label": "Astrodynamics",
+      "type": "subdiscipline",
+      "description": "Use of astronomical physics for spacecraft course design and trajectory plotting."
+    },
+    {
+      "id": "concept_observational_astrophysics",
+      "label": "Observational astrophysics",
+      "type": "subdiscipline",
+      "description": "Recording and interpreting astronomical data with telescopes and other apparatus."
+    },
+    {
+      "id": "concept_theoretical_astrophysics",
+      "label": "Theoretical astrophysics",
+      "type": "subdiscipline",
+      "description": "Construction of physical models and derivation of measurable observational consequences."
+    },
+    {
+      "id": "concept_theoretical_astronomy",
+      "label": "Theoretical astronomy",
+      "type": "subdiscipline",
+      "description": "Mathematical and computational modeling/prediction of astronomical motions."
+    },
+    {
+      "id": "concept_solar_physics",
+      "label": "Solar physics",
+      "type": "subdiscipline",
+      "description": "Detailed physical study of the Sun."
+    },
+    {
+      "id": "concept_stellar_astrophysics",
+      "label": "Stellar astrophysics",
+      "type": "subdiscipline",
+      "description": "Physical study of stars and their internal/atmospheric properties."
+    },
+    {
+      "id": "concept_galactic_astrophysics",
+      "label": "Galactic astrophysics",
+      "type": "subdiscipline",
+      "description": "Physical study of galaxies and their formation/evolution."
+    },
+    {
+      "id": "concept_cosmology",
+      "label": "Physical cosmology",
+      "type": "subdiscipline",
+      "description": "Physical study of the largest-scale structures and history of the universe."
+    },
+    {
+      "id": "concept_astroparticle",
+      "label": "Astroparticle physics",
+      "type": "subdiscipline",
+      "description": "Intersection of particle physics and astrophysics."
+    },
+    {
+      "id": "concept_high_energy",
+      "label": "High-energy astronomy",
+      "type": "subdiscipline",
+      "description": "Study of energetic astronomical sources and radiation."
+    },
+    {
+      "id": "concept_neutrino_astronomy",
+      "label": "Neutrino astronomy",
+      "type": "subdiscipline",
+      "description": "Astronomy using neutrinos as messengers."
+    },
+    {
+      "id": "concept_gw_astronomy",
+      "label": "Gravitational-wave astronomy",
+      "type": "subdiscipline",
+      "description": "Astronomy using gravitational waves as observational messengers."
+    },
+    {
+      "id": "concept_astrochemistry",
+      "label": "Astrochemistry",
+      "type": "subdiscipline",
+      "description": "Study of molecules in the universe and their reactions."
+    },
+    {
+      "id": "concept_planetary_science",
+      "label": "Planetary science",
+      "type": "subdiscipline",
+      "description": "Study of planets and planetary systems; source calls theoretical astronomy foundational to it."
+    },
+    {
+      "id": "concept_plasma_physics",
+      "label": "Plasma physics",
+      "type": "discipline",
+      "description": "Physics of ionized matter relevant to astrophysical environments."
+    },
+    {
+      "id": "concept_hydrodynamics",
+      "label": "Hydrodynamics",
+      "type": "discipline",
+      "description": "Fluid dynamics applied to astrophysical systems."
+    },
+    {
+      "id": "concept_mhd",
+      "label": "Magnetohydrodynamics",
+      "type": "method",
+      "description": "Study/modeling of conducting astrophysical fluids coupled to magnetic fields."
+    },
+    {
+      "id": "concept_stat_mech",
+      "label": "Statistical mechanics",
+      "type": "discipline",
+      "description": "Framework for microscopic populations and thermodynamic behavior."
+    },
+    {
+      "id": "concept_thermodynamics",
+      "label": "Thermodynamics",
+      "type": "discipline",
+      "description": "Thermal physics used in astrophysical systems."
+    },
+    {
+      "id": "concept_quantum_mechanics",
+      "label": "Quantum mechanics",
+      "type": "discipline",
+      "description": "Quantum framework used in atomic, nuclear and high-energy astrophysics."
+    },
+    {
+      "id": "concept_atomic",
+      "label": "Atomic physics",
+      "type": "discipline",
+      "description": "Atomic structure and transitions underlying spectral diagnostics."
+    },
+    {
+      "id": "concept_molecular",
+      "label": "Molecular physics",
+      "type": "discipline",
+      "description": "Molecular structure/transitions relevant to spectra and astrochemistry."
+    },
+    {
+      "id": "concept_nuclear",
+      "label": "Nuclear physics",
+      "type": "discipline",
+      "description": "Nuclear processes relevant to stellar energy and energetic phenomena."
+    },
+    {
+      "id": "concept_particle",
+      "label": "Particle physics",
+      "type": "discipline",
+      "description": "Fundamental-particle physics linked to cosmic rays, astroparticles and cosmology."
+    },
+    {
+      "id": "concept_em",
+      "label": "Electromagnetism",
+      "type": "discipline",
+      "description": "Theory governing electromagnetic radiation and interactions."
+    },
+    {
+      "id": "concept_classical_mech",
+      "label": "Classical mechanics",
+      "type": "discipline",
+      "description": "Classical dynamics used in astronomical motion and physical models."
+    },
+    {
+      "id": "concept_special_relativity",
+      "label": "Special relativity",
+      "type": "theory",
+      "description": "Relativistic framework used for high-speed/high-energy astrophysical processes."
+    },
+    {
+      "id": "concept_general_relativity",
+      "label": "General relativity",
+      "type": "theory",
+      "description": "Relativistic gravitation used where gravity strongly affects astrophysical phenomena."
+    },
+    {
+      "id": "concept_string_cosmology",
+      "label": "String cosmology",
+      "type": "research_area",
+      "description": "Cosmological research using string-theoretic frameworks."
+    },
+    {
+      "id": "concept_lcdm",
+      "label": "Lambda-CDM model",
+      "type": "model",
+      "description": "Source groups Big Bang, inflation, dark matter, dark energy and fundamental physics within widely studied models."
+    },
+    {
+      "id": "concept_big_bang",
+      "label": "Big Bang",
+      "type": "model",
+      "description": "Cosmological model identified as widely accepted/studied in the source."
+    },
+    {
+      "id": "concept_inflation",
+      "label": "Cosmic inflation",
+      "type": "model",
+      "description": "Early-universe model identified in the source."
+    },
+    {
+      "id": "concept_dark_matter",
+      "label": "Dark matter",
+      "type": "concept",
+      "description": "Major cosmological topic and component of Lambda-CDM modeling."
+    },
+    {
+      "id": "concept_dark_energy",
+      "label": "Dark energy",
+      "type": "concept",
+      "description": "Major cosmological topic and component of Lambda-CDM modeling."
+    },
+    {
+      "id": "concept_cosmic_rays",
+      "label": "Cosmic rays",
+      "type": "phenomenon",
+      "description": "Very-high-energy particles observed through interactions with Earth's atmosphere."
+    },
+    {
+      "id": "concept_cmb",
+      "label": "Cosmic microwave background",
+      "type": "phenomenon",
+      "description": "Microwave background studied as redshifted light from the Big Bang."
+    },
+    {
+      "id": "concept_interstellar_medium",
+      "label": "Interstellar medium",
+      "type": "system",
+      "description": "Gas and dust between stars, including cold material studied in radio astronomy."
+    },
+    {
+      "id": "concept_exoplanets",
+      "label": "Extrasolar planets",
+      "type": "object_class",
+      "description": "Planets outside the Solar System."
+    },
+    {
+      "id": "concept_galaxies",
+      "label": "Galaxies",
+      "type": "object_class",
+      "description": "Large astronomical systems studied in galactic astrophysics."
+    },
+    {
+      "id": "concept_stars",
+      "label": "Stars",
+      "type": "object_class",
+      "description": "Stellar objects central to astrophysical study."
+    },
+    {
+      "id": "concept_sun",
+      "label": "Sun",
+      "type": "object",
+      "description": "Nearest star and uniquely detailed observational laboratory."
+    },
+    {
+      "id": "concept_nebulae",
+      "label": "Nebulae",
+      "type": "object_class",
+      "description": "Astronomical gas/dust structures studied through radiation and spectra."
+    },
+    {
+      "id": "concept_black_holes",
+      "label": "Black holes",
+      "type": "object_class",
+      "description": "Compact gravitational objects studied especially in relativistic/high-energy astrophysics."
+    },
+    {
+      "id": "concept_magnetars",
+      "label": "Magnetars",
+      "type": "object_class",
+      "description": "Highly magnetized compact objects studied at high energies."
+    },
+    {
+      "id": "concept_binary_pulsars",
+      "label": "Binary pulsars",
+      "type": "object_class",
+      "description": "Pulsating compact-object systems."
+    },
+    {
+      "id": "concept_pulsars",
+      "label": "Pulsars",
+      "type": "object_class",
+      "description": "Periodic compact-object radio sources."
+    },
+    {
+      "id": "concept_planets",
+      "label": "Planets",
+      "type": "object_class",
+      "description": "Planetary bodies, including objects studied at infrared wavelengths."
+    },
+    {
+      "id": "concept_supernova",
+      "label": "Supernova",
+      "type": "phenomenon",
+      "description": "Explosive stellar event."
+    },
+    {
+      "id": "concept_supernova_remnant",
+      "label": "Supernova remnant",
+      "type": "object",
+      "description": "Aftermath of a supernova, with multiwavelength emission."
+    },
+    {
+      "id": "concept_stellar_evolution",
+      "label": "Stellar evolution",
+      "type": "process",
+      "description": "Physical change of stars from birth to destruction."
+    },
+    {
+      "id": "concept_stellar_dynamics",
+      "label": "Stellar dynamics",
+      "type": "research_area",
+      "description": "Dynamics of stars and stellar systems."
+    },
+    {
+      "id": "concept_galaxy_evolution",
+      "label": "Galaxy formation and evolution",
+      "type": "research_area",
+      "description": "Physical origin and evolution of galaxies."
+    },
+    {
+      "id": "concept_large_scale_structure",
+      "label": "Large-scale structure",
+      "type": "research_area",
+      "description": "Distribution of matter on cosmological scales."
+    },
+    {
+      "id": "concept_solar_system_formation",
+      "label": "Solar System formation and evolution",
+      "type": "research_area",
+      "description": "Formation/evolution of the Solar System."
+    },
+    {
+      "id": "concept_origin_fate_universe",
+      "label": "Origin and ultimate fate of the universe",
+      "type": "research_problem",
+      "description": "Major cosmological questions."
+    },
+    {
+      "id": "concept_luminosity",
+      "label": "Luminosity",
+      "type": "observable",
+      "description": "Intrinsic power output of an astronomical object."
+    },
+    {
+      "id": "concept_density",
+      "label": "Density",
+      "type": "observable",
+      "description": "Mass per volume."
+    },
+    {
+      "id": "concept_temperature",
+      "label": "Temperature",
+      "type": "observable",
+      "description": "Thermal state inferred from radiation and models."
+    },
+    {
+      "id": "concept_chemical_composition",
+      "label": "Chemical composition",
+      "type": "observable",
+      "description": "Elemental/molecular makeup inferred especially through spectra."
+    },
+    {
+      "id": "concept_em_spectrum",
+      "label": "Electromagnetic spectrum",
+      "type": "messenger",
+      "description": "Range of electromagnetic radiation used in astronomy."
+    },
+    {
+      "id": "concept_spectroscopy",
+      "label": "Astronomical spectroscopy",
+      "type": "method",
+      "description": "Measurement and interpretation of astronomical spectra."
+    },
+    {
+      "id": "concept_spectral_line",
+      "label": "Spectral line",
+      "type": "observable",
+      "description": "Emission/absorption feature associated with specific transitions."
+    },
+    {
+      "id": "concept_absorption",
+      "label": "Absorption",
+      "type": "physical_process",
+      "description": "Reduction of radiation at characteristic wavelengths."
+    },
+    {
+      "id": "concept_emission",
+      "label": "Emission",
+      "type": "physical_process",
+      "description": "Production of electromagnetic radiation."
+    },
+    {
+      "id": "concept_saha_ionization",
+      "label": "Saha ionization theory",
+      "type": "theory",
+      "description": "Ionization theory applied to stellar atmospheres by Cecilia Payne."
+    },
+    {
+      "id": "concept_stellar_atmosphere",
+      "label": "Stellar atmosphere",
+      "type": "system",
+      "description": "Outer stellar layers whose spectra encode physical properties."
+    },
+    {
+      "id": "concept_hr_diagram",
+      "label": "Hertzsprung–Russell diagram",
+      "type": "diagram",
+      "description": "Diagram used to classify stars and represent evolutionary states."
+    },
+    {
+      "id": "concept_stellar_fusion",
+      "label": "Stellar nuclear fusion",
+      "type": "process",
+      "description": "Hydrogen-to-helium fusion proposed by Eddington as stellar energy source."
+    },
+    {
+      "id": "concept_mass_energy",
+      "label": "Mass–energy equivalence",
+      "type": "principle",
+      "description": "E=mc² relation invoked in Eddington's stellar-energy reasoning."
+    },
+    {
+      "id": "concept_stellar_energy_problem",
+      "label": "Stellar energy problem",
+      "type": "historical_problem",
+      "description": "Historical mystery of the source of stellar energy."
+    },
+    {
+      "id": "concept_spectral_classification",
+      "label": "Stellar spectral classification",
+      "type": "method",
+      "description": "Classification of stars using their spectra."
+    },
+    {
+      "id": "concept_harvard_scheme",
+      "label": "Harvard Classification Scheme",
+      "type": "classification_system",
+      "description": "Large-scale stellar spectral classification scheme associated with Pickering and Cannon."
+    },
+    {
+      "id": "concept_observatory",
+      "label": "Astronomical observatory",
+      "type": "infrastructure",
+      "description": "Facility/instrumental setting for astronomical observations."
+    },
+    {
+      "id": "concept_telescope",
+      "label": "Telescope",
+      "type": "instrument",
+      "description": "Instrument collecting astronomical radiation."
+    },
+    {
+      "id": "concept_ccd",
+      "label": "Charge-coupled device",
+      "type": "instrument",
+      "description": "Detector commonly paired with optical telescopes."
+    },
+    {
+      "id": "concept_space_telescope",
+      "label": "Space telescope",
+      "type": "instrument",
+      "description": "Telescope operating above Earth's atmosphere."
+    },
+    {
+      "id": "concept_adaptive_optics",
+      "label": "Adaptive optics",
+      "type": "technology",
+      "description": "Technique improving optical image quality by correcting atmospheric effects."
+    },
+    {
+      "id": "concept_radio_telescope",
+      "label": "Radio telescope",
+      "type": "instrument",
+      "description": "Large instrument for long-wavelength radio observations."
+    },
+    {
+      "id": "concept_iact",
+      "label": "Imaging atmospheric Cherenkov telescope",
+      "type": "instrument",
+      "description": "Ground-based high-energy gamma-ray observing instrument."
+    },
+    {
+      "id": "concept_rxte",
+      "label": "Rossi X-ray Timing Explorer (RXTE)",
+      "type": "observatory",
+      "description": "Space-based X-ray observatory cited by the source."
+    },
+    {
+      "id": "concept_chandra",
+      "label": "Chandra X-ray Observatory",
+      "type": "observatory",
+      "description": "Space-based X-ray observatory cited by the source."
+    },
+    {
+      "id": "concept_compton",
+      "label": "Compton Gamma Ray Observatory",
+      "type": "observatory",
+      "description": "Space-based gamma-ray observatory cited by the source."
+    },
+    {
+      "id": "concept_hess",
+      "label": "H.E.S.S.",
+      "type": "observatory",
+      "description": "Imaging atmospheric Cherenkov telescope array cited by the source."
+    },
+    {
+      "id": "concept_magic",
+      "label": "MAGIC telescope",
+      "type": "observatory",
+      "description": "Imaging atmospheric Cherenkov telescope cited by the source."
+    },
+    {
+      "id": "concept_gw_detector",
+      "label": "Gravitational-wave observatory",
+      "type": "instrument_class",
+      "description": "Detector infrastructure for gravitational-wave astronomy."
+    },
+    {
+      "id": "concept_neutrino_observatory",
+      "label": "Neutrino observatory",
+      "type": "instrument_class",
+      "description": "Detector infrastructure for neutrino astronomy."
+    },
+    {
+      "id": "concept_optical_timescale",
+      "label": "Optical observation timescales",
+      "type": "methodological_concept",
+      "description": "Typical optical observations span minutes to hours in the source's account."
+    },
+    {
+      "id": "concept_radio_timescale",
+      "label": "Radio observation timescales",
+      "type": "methodological_concept",
+      "description": "Radio observations can probe milliseconds or combine years of data."
+    },
+    {
+      "id": "concept_historical_data",
+      "label": "Long-baseline astronomical records",
+      "type": "dataset_concept",
+      "description": "Historical observations can span centuries or millennia."
+    },
+    {
+      "id": "concept_analytical_model",
+      "label": "Analytical model",
+      "type": "method",
+      "description": "Mathematical model offering insight into the heart of a process."
+    },
+    {
+      "id": "concept_polytrope",
+      "label": "Polytrope",
+      "type": "model",
+      "description": "Analytical approximation used for stellar behavior."
+    },
+    {
+      "id": "concept_numerical_simulation",
+      "label": "Numerical simulation",
+      "type": "method",
+      "description": "Computational model capable of revealing otherwise unseen phenomena/effects."
+    },
+    {
+      "id": "concept_model_observation_cycle",
+      "label": "Theory–observation feedback cycle",
+      "type": "methodology",
+      "description": "Models predict observables; observations support, constrain or refute them."
+    },
+    {
+      "id": "concept_model_selection",
+      "label": "Model comparison and selection",
+      "type": "methodology",
+      "description": "Use of data to choose among competing models."
+    },
+    {
+      "id": "concept_minimal_modification",
+      "label": "Minimal model modification",
+      "type": "methodological_principle",
+      "description": "Tendency to make minimal changes when observations conflict with a model."
+    },
+    {
+      "id": "concept_unified_physics",
+      "label": "Unified celestial-terrestrial physics",
+      "type": "historical_concept",
+      "description": "Seventeenth-century idea that celestial and terrestrial realms obey the same natural laws."
+    },
+    {
+      "id": "concept_aristotelian_cosmos",
+      "label": "Aristotelian cosmology",
+      "type": "historical_model",
+      "description": "Historical worldview separating changing terrestrial matter from apparently unchanging celestial spheres."
+    },
+    {
+      "id": "concept_aether",
+      "label": "Aether",
+      "type": "historical_concept",
+      "description": "Celestial substance in Aristotle's historical cosmology."
+    },
+    {
+      "id": "concept_fire",
+      "label": "Celestial Fire",
+      "type": "historical_concept",
+      "description": "Celestial substance in Plato's historical cosmology."
+    },
+    {
+      "id": "concept_fraunhofer_lines",
+      "label": "Fraunhofer lines",
+      "type": "historical_observation",
+      "description": "Dark solar spectral lines central to the emergence of astrophysics."
+    },
+    {
+      "id": "concept_helium_discovery",
+      "label": "Helium identification in solar spectrum",
+      "type": "historical_discovery",
+      "description": "Unexplained solar yellow line led Lockyer to propose a new element named helium."
+    },
+    {
+      "id": "concept_harvard_women_computers",
+      "label": "Harvard women computers",
+      "type": "historical_group",
+      "description": "Team including Fleming, Maury and Cannon who classified stellar spectra."
+    },
+    {
+      "id": "concept_astrophysical_journal",
+      "label": "The Astrophysical Journal",
+      "type": "journal",
+      "description": "1895 journal intended to bridge astronomy and physics."
+    },
+    {
+      "id": "concept_institute_theoretical_astrophysics",
+      "label": "Institute of Theoretical Astrophysics",
+      "type": "institution",
+      "description": "Swedish institute opened in 1934 under Svein Rosseland."
+    },
+    {
+      "id": "concept_cambridge_ita",
+      "label": "Institute of Theoretical Astronomy at Cambridge",
+      "type": "institution",
+      "description": "Institute established in 1966 for dedicated computational theoretical research."
+    },
+    {
+      "id": "concept_virginia_ita",
+      "label": "Virginia Institute of Theoretical Astronomy",
+      "type": "institution",
+      "description": "University of Virginia institute opened in 1985 for theoretical astronomy/astrophysics."
+    },
+    {
+      "id": "concept_royal_astronomical_society",
+      "label": "Royal Astronomical Society",
+      "type": "organization",
+      "description": "Organization identified as contributing to popularization."
+    },
+    {
+      "id": "concept_popularization",
+      "label": "Popularization of astrophysics",
+      "type": "social_process",
+      "description": "Public communication and cultural exposure that attract people to astrophysics."
+    },
+    {
+      "id": "concept_big_bang_theory_show",
+      "label": "The Big Bang Theory",
+      "type": "popular_culture",
+      "description": "Sitcom identified by the source as contributing to public popularization."
+    },
+    {
+      "id": "concept_hydrogen",
+      "label": "Hydrogen",
+      "type": "chemical_element",
+      "description": "Principal stellar component in the source and fuel in Eddington's fusion hypothesis."
+    },
+    {
+      "id": "concept_helium",
+      "label": "Helium",
+      "type": "chemical_element",
+      "description": "Principal stellar component and fusion product in Eddington's hypothesis."
+    },
+    {
+      "id": "concept_newtonian_gravitation",
+      "label": "Newtonian gravitation",
+      "type": "theory",
+      "description": "Universal gravitation underlying classical celestial mechanics."
+    },
+    {
+      "id": "concept_mathematics",
+      "label": "Mathematical methods",
+      "type": "method",
+      "description": "Mathematical tools used by theoretical astronomy."
+    },
+    {
+      "id": "concept_celestial_region",
+      "label": "Celestial region",
+      "type": "historical_domain",
+      "description": "Celestial realm in the historical account."
+    },
+    {
+      "id": "concept_terrestrial_region",
+      "label": "Terrestrial region",
+      "type": "historical_domain",
+      "description": "Earthly realm in the historical account."
+    },
+    {
+      "id": "concept_optical_atmospheric_interference",
+      "label": "Atmospheric interference in optical astronomy",
+      "type": "limitation",
+      "description": "Atmosphere degrades optical observations."
+    },
+    {
+      "id": "concept_earth_atmosphere",
+      "label": "Earth's atmosphere",
+      "type": "environment",
+      "description": "Atmospheric environment affecting observation and cosmic-ray detection."
+    },
+    {
+      "id": "concept_shock_wave",
+      "label": "Supernova shock wave",
+      "type": "phenomenon",
+      "description": "Shock generated by a supernova explosion."
+    },
+    {
+      "id": "concept_theoretical_model",
+      "label": "Theoretical astrophysical model",
+      "type": "abstract_model",
+      "description": "Physical/mathematical representation whose observable consequences can be tested."
+    },
+    {
+      "id": "concept_unexpected_phenomena",
+      "label": "Previously unrecognized phenomena/effects",
+      "type": "methodological_outcome",
+      "description": "Effects numerical models can reveal."
+    },
+    {
+      "id": "concept_model_abandonment",
+      "label": "Model abandonment",
+      "type": "methodological_outcome",
+      "description": "Replacement of a model after sufficiently persistent inconsistent evidence."
+    },
+    {
+      "id": "person_james_keeler",
+      "label": "James Keeler",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_galileo",
+      "label": "Galileo Galilei",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_descartes",
+      "label": "René Descartes",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_newton",
+      "label": "Isaac Newton",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_wollaston",
+      "label": "William Hyde Wollaston",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_fraunhofer",
+      "label": "Joseph von Fraunhofer",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_kirchhoff",
+      "label": "Gustav Kirchhoff",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_bunsen",
+      "label": "Robert Bunsen",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_lockyer",
+      "label": "Norman Lockyer",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_frankland",
+      "label": "Edward Frankland",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_pickering",
+      "label": "Edward C. Pickering",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_fleming",
+      "label": "Williamina Fleming",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_maury",
+      "label": "Antonia Maury",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_cannon",
+      "label": "Annie Jump Cannon",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_hale",
+      "label": "George Ellery Hale",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_eddington",
+      "label": "Arthur Eddington",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_payne",
+      "label": "Cecilia Helena Payne-Gaposchkin",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_hipparchus",
+      "label": "Hipparchus",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_opolzer",
+      "label": "Theodor von Oppolzer",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_rosseland",
+      "label": "Svein Rosseland",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_hoyle",
+      "label": "Fred Hoyle",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_krauss",
+      "label": "Lawrence Krauss",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_chandrasekhar",
+      "label": "Subrahmanyan Chandrasekhar",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_hawking",
+      "label": "Stephen Hawking",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_reeves",
+      "label": "Hubert Reeves",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_sagan",
+      "label": "Carl Sagan",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_moore",
+      "label": "Patrick Moore",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "person_tyson",
+      "label": "Neil deGrasse Tyson",
+      "type": "person",
+      "description": ""
+    },
+    {
+      "id": "claim_node:claim_01",
+      "label": "claim_01",
+      "type": "source_claim",
+      "description": "Astrophysics applies physics and chemistry to astronomical objects and phenomena, including the universe.",
+      "source_section": "Definition",
+      "source_line_range": "63"
+    },
+    {
+      "id": "claim_node:claim_02",
+      "label": "claim_02",
+      "type": "source_claim",
+      "description": "Astrophysics emphasizes determining the nature of heavenly bodies rather than primarily their positions or motions.",
+      "source_section": "Definition",
+      "source_line_range": "63"
+    },
+    {
+      "id": "claim_node:claim_03",
+      "label": "claim_03",
+      "type": "source_claim",
+      "description": "Astrophysics is also used when designing and plotting spacecraft courses.",
+      "source_section": "Definition",
+      "source_line_range": "63"
+    },
+    {
+      "id": "claim_node:claim_04",
+      "label": "claim_04",
+      "type": "source_claim",
+      "description": "The field studies the Sun, stars, galaxies, extrasolar planets, interstellar medium and cosmic microwave background.",
+      "source_section": "Scope",
+      "source_line_range": "65"
+    },
+    {
+      "id": "claim_node:claim_05",
+      "label": "claim_05",
+      "type": "source_claim",
+      "description": "Observations examine luminosity, density, temperature and chemical composition across the electromagnetic spectrum.",
+      "source_section": "Scope",
+      "source_line_range": "65"
+    },
+    {
+      "id": "claim_node:claim_06",
+      "label": "claim_06",
+      "type": "source_claim",
+      "description": "Astrophysics draws on classical mechanics, electromagnetism, statistical mechanics, thermodynamics, quantum mechanics, relativity, nuclear/particle physics and atomic/molecular physics.",
+      "source_section": "Scope",
+      "source_line_range": "65"
+    },
+    {
+      "id": "claim_node:claim_07",
+      "label": "claim_07",
+      "type": "source_claim",
+      "description": "Modern astronomical research involves substantial theoretical and observational physics.",
+      "source_section": "Scope",
+      "source_line_range": "67"
+    },
+    {
+      "id": "claim_node:claim_08",
+      "label": "claim_08",
+      "type": "source_claim",
+      "description": "Theoretical astrophysics includes stellar dynamics/evolution, galaxy formation/evolution, magnetohydrodynamics, large-scale structure, cosmic rays, relativity, cosmology, string cosmology and astroparticle physics.",
+      "source_section": "Theoretical astrophysics",
+      "source_line_range": "67"
+    },
+    {
+      "id": "claim_node:claim_09",
+      "label": "claim_09",
+      "type": "source_claim",
+      "description": "Relativistic astrophysics gauges large-scale structures where gravitation is important and underlies black-hole physics and gravitational-wave studies.",
+      "source_section": "Theoretical astrophysics",
+      "source_line_range": "112"
+    },
+    {
+      "id": "claim_node:claim_10",
+      "label": "claim_10",
+      "type": "source_claim",
+      "description": "The source includes Big Bang, inflation, dark matter, dark energy and fundamental physics among widely accepted/studied Lambda-CDM-related models.",
+      "source_section": "Models",
+      "source_line_range": "114"
+    },
+    {
+      "id": "claim_node:claim_11",
+      "label": "claim_11",
+      "type": "source_claim",
+      "description": "Aristotelian cosmology treated celestial and terrestrial realms as fundamentally different.",
+      "source_section": "History",
+      "source_line_range": "70"
+    },
+    {
+      "id": "claim_node:claim_12",
+      "label": "claim_12",
+      "type": "source_claim",
+      "description": "Galileo, Descartes and Newton helped advance the idea that celestial and terrestrial realms share material and natural laws.",
+      "source_section": "History",
+      "source_line_range": "70"
+    },
+    {
+      "id": "claim_node:claim_13",
+      "label": "claim_13",
+      "type": "source_claim",
+      "description": "Nineteenth-century astronomy focused heavily on measuring positions and computing motions before astrophysics emerged.",
+      "source_section": "History",
+      "source_line_range": "72"
+    },
+    {
+      "id": "claim_node:claim_14",
+      "label": "claim_14",
+      "type": "source_claim",
+      "description": "Wollaston and Fraunhofer independently discovered dark lines in the solar spectrum.",
+      "source_section": "History",
+      "source_line_range": "72"
+    },
+    {
+      "id": "claim_node:claim_15",
+      "label": "claim_15",
+      "type": "source_claim",
+      "description": "Kirchhoff and Bunsen showed that solar dark lines corresponded to bright lines in spectra of known gases and elements.",
+      "source_section": "History",
+      "source_line_range": "72"
+    },
+    {
+      "id": "claim_node:claim_16",
+      "label": "claim_16",
+      "type": "source_claim",
+      "description": "Kirchhoff inferred that solar dark lines arise from absorption by chemical elements in the solar atmosphere.",
+      "source_section": "History",
+      "source_line_range": "72"
+    },
+    {
+      "id": "claim_node:claim_17",
+      "label": "claim_17",
+      "type": "source_claim",
+      "description": "Lockyer and Frankland investigated spectra and proposed helium for an unexplained yellow solar spectral line.",
+      "source_section": "History",
+      "source_line_range": "74"
+    },
+    {
+      "id": "claim_node:claim_18",
+      "label": "claim_18",
+      "type": "source_claim",
+      "description": "Pickering's Harvard program classified stellar spectra using photographic plates with major contributions by Fleming, Maury and Cannon.",
+      "source_section": "History",
+      "source_line_range": "76"
+    },
+    {
+      "id": "claim_node:claim_19",
+      "label": "claim_19",
+      "type": "source_claim",
+      "description": "Cannon expanded the catalog to over a quarter million stars and developed the Harvard Classification Scheme.",
+      "source_section": "History",
+      "source_line_range": "76"
+    },
+    {
+      "id": "claim_node:claim_20",
+      "label": "claim_20",
+      "type": "source_claim",
+      "description": "Hale and Keeler established The Astrophysical Journal in 1895 to bridge astronomy and physics.",
+      "source_section": "History",
+      "source_line_range": "78"
+    },
+    {
+      "id": "claim_node:claim_21",
+      "label": "claim_21",
+      "type": "source_claim",
+      "description": "Eddington anticipated hydrogen-to-helium fusion as the stellar energy source and connected it with E=mc².",
+      "source_section": "History",
+      "source_line_range": "80"
+    },
+    {
+      "id": "claim_node:claim_22",
+      "label": "claim_22",
+      "type": "source_claim",
+      "description": "Payne applied Saha ionization theory to stellar atmospheres and found hydrogen and helium to be principal stellar components.",
+      "source_section": "History",
+      "source_line_range": "82"
+    },
+    {
+      "id": "claim_node:claim_23",
+      "label": "claim_23",
+      "type": "source_claim",
+      "description": "Astronomical spectroscopy expanded from radio through optical, X-ray and gamma wavelengths and later to gravitational-wave observations.",
+      "source_section": "History",
+      "source_line_range": "84"
+    },
+    {
+      "id": "claim_node:claim_24",
+      "label": "claim_24",
+      "type": "source_claim",
+      "description": "Observational astrophysics records and interprets data using telescopes and other apparatus.",
+      "source_section": "Observational astrophysics",
+      "source_line_range": "89"
+    },
+    {
+      "id": "claim_node:claim_25",
+      "label": "claim_25",
+      "type": "source_claim",
+      "description": "Radio astronomy studies long-wavelength radiation from cold gas/dust, the CMB and pulsars.",
+      "source_section": "Observational astrophysics",
+      "source_line_range": "93"
+    },
+    {
+      "id": "claim_node:claim_26",
+      "label": "claim_26",
+      "type": "source_claim",
+      "description": "Infrared astronomy studies wavelengths longer than visible light and is useful for objects colder than stars, including planets.",
+      "source_section": "Observational astrophysics",
+      "source_line_range": "94"
+    },
+    {
+      "id": "claim_node:claim_27",
+      "label": "claim_27",
+      "type": "source_claim",
+      "description": "Optical astronomy uses telescopes, CCDs and spectroscopy; adaptive optics and space telescopes improve image quality.",
+      "source_section": "Observational astrophysics",
+      "source_line_range": "95"
+    },
+    {
+      "id": "claim_node:claim_28",
+      "label": "claim_28",
+      "type": "source_claim",
+      "description": "UV, X-ray and gamma-ray astronomy study energetic processes; observations use space telescopes or ground-based imaging atmospheric Cherenkov telescopes because the atmosphere blocks these wavelengths.",
+      "source_section": "Observational astrophysics",
+      "source_line_range": "96"
+    },
+    {
+      "id": "claim_node:claim_29",
+      "label": "claim_29",
+      "type": "source_claim",
+      "description": "Gravitational waves, neutrinos and cosmic rays provide additional distant astrophysical messengers.",
+      "source_section": "Observational astrophysics",
+      "source_line_range": "97"
+    },
+    {
+      "id": "claim_node:claim_30",
+      "label": "claim_30",
+      "type": "source_claim",
+      "description": "Different observation timescales reveal different information, from minutes/hours to milliseconds, years, centuries and millennia.",
+      "source_section": "Observational astrophysics",
+      "source_line_range": "99"
+    },
+    {
+      "id": "claim_node:claim_31",
+      "label": "claim_31",
+      "type": "source_claim",
+      "description": "The Sun's proximity allows detail unavailable for other stars and makes it a guide to stellar understanding.",
+      "source_section": "Observational astrophysics",
+      "source_line_range": "101"
+    },
+    {
+      "id": "claim_node:claim_32",
+      "label": "claim_32",
+      "type": "source_claim",
+      "description": "Stellar evolution is modeled by placing star types on the Hertzsprung–Russell diagram from birth to destruction.",
+      "source_section": "Observational astrophysics",
+      "source_line_range": "103"
+    },
+    {
+      "id": "claim_node:claim_33",
+      "label": "claim_33",
+      "type": "source_claim",
+      "description": "Theoretical astrophysics uses analytical models and numerical simulations, which have different strengths.",
+      "source_section": "Theoretical astrophysics",
+      "source_line_range": "106"
+    },
+    {
+      "id": "claim_node:claim_34",
+      "label": "claim_34",
+      "type": "source_claim",
+      "description": "Theorists derive observational consequences so observers can seek data that refute models or discriminate between alternatives.",
+      "source_section": "Theoretical astrophysics",
+      "source_line_range": "108"
+    },
+    {
+      "id": "claim_node:claim_35",
+      "label": "claim_35",
+      "type": "source_claim",
+      "description": "Persistent inconsistent data can lead to model modification or abandonment.",
+      "source_section": "Theoretical astrophysics",
+      "source_line_range": "110"
+    },
+    {
+      "id": "claim_node:claim_36",
+      "label": "claim_36",
+      "type": "source_claim",
+      "description": "When astronomy was limited to astrometry and observation, celestial mechanics was called theoretical astronomy.",
+      "source_section": "History and theoretical astronomy",
+      "source_line_range": "118"
+    },
+    {
+      "id": "claim_node:claim_37",
+      "label": "claim_37",
+      "type": "source_claim",
+      "description": "Hipparchus made foundational contributions through numerical observation geometry; Newton is considered founder of celestial mechanics through calculus and universal gravitation.",
+      "source_section": "History and theoretical astronomy",
+      "source_line_range": "118"
+    },
+    {
+      "id": "claim_node:claim_38",
+      "label": "claim_38",
+      "type": "source_claim",
+      "description": "After Cepheid variable stars were discovered, theorists shifted toward stellar composition and internal physics.",
+      "source_section": "History and theoretical astronomy",
+      "source_line_range": "118"
+    },
+    {
+      "id": "claim_node:claim_39",
+      "label": "claim_39",
+      "type": "source_claim",
+      "description": "Theoretical astronomy expanded into cosmology, plasma physics and hydrodynamics.",
+      "source_section": "History and theoretical astronomy",
+      "source_line_range": "120"
+    },
+    {
+      "id": "claim_node:claim_40",
+      "label": "claim_40",
+      "type": "source_claim",
+      "description": "Rosseland funded the Institute of Theoretical Astrophysics in Sweden, opened in 1934.",
+      "source_section": "History and theoretical astronomy",
+      "source_line_range": "120"
+    },
+    {
+      "id": "claim_node:claim_41",
+      "label": "claim_41",
+      "type": "source_claim",
+      "description": "Hoyle and colleagues established the Institute of Theoretical Astronomy at Cambridge in 1966 for dedicated computational research.",
+      "source_section": "History and theoretical astronomy",
+      "source_line_range": "120"
+    },
+    {
+      "id": "claim_node:claim_42",
+      "label": "claim_42",
+      "type": "source_claim",
+      "description": "The Virginia Institute of Theoretical Astronomy opened in 1985 for research in theoretical astronomy and astrophysics.",
+      "source_section": "History and theoretical astronomy",
+      "source_line_range": "120"
+    },
+    {
+      "id": "claim_node:claim_43",
+      "label": "claim_43",
+      "type": "source_claim",
+      "description": "Modern theoretical astronomy uses mathematical and computational tools and is foundational to planetary science.",
+      "source_section": "History and theoretical astronomy",
+      "source_line_range": "122"
+    },
+    {
+      "id": "claim_node:claim_44",
+      "label": "claim_44",
+      "type": "source_claim",
+      "description": "Scientific organizations, educators and popular media contribute to popularization of astrophysics.",
+      "source_section": "Popularization",
+      "source_line_range": "124"
+    },
+    {
+      "id": "eq_mass_energy",
+      "label": "Mass–energy equivalence",
+      "type": "equation",
+      "description": "Explicitly invoked by the source in Eddington's stellar-energy reasoning.",
+      "expression": "E = mc²",
+      "status": "source_supported"
+    },
+    {
+      "id": "eq_gravitation",
+      "label": "Newtonian universal gravitation",
+      "type": "equation",
+      "description": "Formal expression of Newton's universal gravitation, which the source names but does not print.",
+      "expression": "F = G m₁m₂/r²",
+      "status": "contextual_formalization"
+    },
+    {
+      "id": "eq_saha",
+      "label": "Saha ionization relation",
+      "type": "equation",
+      "description": "Formal representation of the Saha ionization framework named by the source.",
+      "expression": "nᵢ₊₁nₑ/nᵢ ∝ T^(3/2) exp(−χᵢ/kT)",
+      "status": "contextual_formalization"
+    },
+    {
+      "id": "eq_planck",
+      "label": "Planck spectral radiance",
+      "type": "equation",
+      "description": "Contextual formalization of spectral/thermal inference; not printed in the source.",
+      "expression": "Bλ(T)=2hc²/λ⁵·[exp(hc/λkT)−1]⁻¹",
+      "status": "contextual_formalization"
+    },
+    {
+      "id": "work_internal_constitution",
+      "label": "The Internal Constitution of the Stars",
+      "type": "work",
+      "description": "Eddington work cited as anticipating nuclear fusion in stars."
+    },
+    {
+      "id": "work_stellar_atmospheres",
+      "label": "Stellar Atmospheres",
+      "type": "work",
+      "description": "Cecilia Payne's 1925 doctoral dissertation applying Saha ionization theory."
+    },
+    {
+      "id": "work_kirchhoff_fraunhofer",
+      "label": "Ueber die Fraunhofer'schen Linien",
+      "type": "work",
+      "description": "Kirchhoff's 1860 paper on Fraunhofer lines."
+    },
+    {
+      "id": "concept_physical_insight",
+      "label": "Physical insight",
+      "type": "methodological_outcome",
+      "description": "Mechanistic understanding of a process that analytical models can expose."
+    },
+    {
+      "id": "ref_001",
+      "label": "Maoz, Dan (2016). Astrophysics in a Nutshell. Princeton University Press. p. 272. ISBN 978-1400881178.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 143
+    },
+    {
+      "id": "ref_002",
+      "label": "\"astrophysics\". Merriam-Webster, Incorporated. Archived from the original on 10 June 2011. Retrieved 2011-05-22.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 144
+    },
+    {
+      "id": "ref_003",
+      "label": "Keeler, James E. (November 1897). \"The Importance of Astrophysical Research and the Relation of Astrophysics to the Other Physical Sciences\". The Astrophysical Journal. 6 (4): 271–288. Bibcode:1897ApJ.....6..271K. doi:10.1086/140401. PMID 17796068.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 145
+    },
+    {
+      "id": "ref_004",
+      "label": "\"Focus Areas – NASA Science\". nasa.gov. Archived from the original on 2017-05-16. Retrieved 2017-07-12.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 146
+    },
+    {
+      "id": "ref_005",
+      "label": "\"astronomy\". Encyclopædia Britannica. 29 May 2023.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 147
+    },
+    {
+      "id": "ref_006",
+      "label": "Lloyd, G. E. R. (1968). Aristotle: The Growth and Structure of His Thought. Cambridge: Cambridge University Press. pp. 134–135. ISBN 978-0-521-09456-6.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 148
+    },
+    {
+      "id": "ref_007",
+      "label": "Cornford, Francis MacDonald (c. 1957) [1937]. Plato's Cosmology: The Timaeus of Plato translated, with a running commentary. Indianapolis: Bobbs Merrill Co. p. 118.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 149
+    },
+    {
+      "id": "ref_008",
+      "label": "Galilei, Galileo (1989). Van Helden, Albert (ed.). Sidereus Nuncius or The Sidereal Messenger. Chicago: University of Chicago Press. pp. 21, 47. ISBN 978-0-226-27903-9.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 150
+    },
+    {
+      "id": "ref_009",
+      "label": "Edward Slowik (2013) [2005]. \"Descartes' Physics\". Stanford Encyclopedia of Philosophy. Retrieved 2015-07-18.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 151
+    },
+    {
+      "id": "ref_010",
+      "label": "Westfall, Richard S. (1983). Never at Rest: A Biography of Isaac Newton. Cambridge: Cambridge University Press (published 1980). pp. 731–732. ISBN 978-0-521-27435-7.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 152
+    },
+    {
+      "id": "ref_011",
+      "label": "Burtt, Edwin Arthur (2003) [First published 1924]. The Metaphysical Foundations of Modern Science (second revised ed.). Mineola, NY: Dover Publications. pp. 30, 41, 241–2. ISBN 978-0-486-42551-1.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 153
+    },
+    {
+      "id": "ref_012",
+      "label": "Ladislav Kvasz (2013). \"Galileo, Descartes, and Newton – Founders of the Language of Physics\" (PDF). Acta Physica Slovaca. Institute of Philosophy, Academy of Sciences of the Czech Republic. Retrieved 2015-07-18.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 154
+    },
+    {
+      "id": "ref_013",
+      "label": "Case, Stephen (2015). \"'Land-marks of the universe': John Herschel against the background of positional astronomy\". Annals of Science. 72 (4): 417–434. Bibcode:2015AnSci..72..417C. doi:10.1080/00033790.2015.1034588. PMID 26221834. S2CID 205397708. The great majority of astronomers working in the early nineteenth century were not interested in stars as physical objects. Far from being bodies with physical properties to be investigated, the stars were seen as markers measured in order to construct an accurate, detailed and precise background against which solar, lunar and planetary motions could be charted, primarily for terrestrial applications.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 155
+    },
+    {
+      "id": "ref_014",
+      "label": "Donnelly, Kevin (September 2014). \"On the boredom of science: positional astronomy in the nineteenth century\". The British Journal for the History of Science. 47 (3): 479–503. doi:10.1017/S0007087413000915. S2CID 146382057.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 156
+    },
+    {
+      "id": "ref_015",
+      "label": "Hearnshaw, J.B. (1986). The analysis of starlight. Cambridge: Cambridge University Press. pp. 23–29. ISBN 978-0-521-39916-6.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 157
+    },
+    {
+      "id": "ref_016",
+      "label": "Kirchhoff, Gustav (1860). \"Ueber die Fraunhofer'schen Linien\". Annalen der Physik. 185 (1): 148–150. Bibcode:1860AnP...185..148K. doi:10.1002/andp.18601850115.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 158
+    },
+    {
+      "id": "ref_017",
+      "label": "Kirchhoff, Gustav (1860). \"Ueber das Verhältniss zwischen dem Emissionsvermögen und dem Absorptionsvermögen der Körper für Wärme und Licht\". Annalen der Physik. 185 (2): 275–301. Bibcode:1860AnP...185..275K. doi:10.1002/andp.18601850205.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 159
+    },
+    {
+      "id": "ref_018",
+      "label": "Cortie, A. L. (1921). \"Sir Norman Lockyer, 1836 – 1920\". The Astrophysical Journal. 53: 233–248. Bibcode:1921ApJ....53..233C. doi:10.1086/142602.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 160
+    },
+    {
+      "id": "ref_019",
+      "label": "Jensen, William B. (2004). \"Why Helium Ends in \"-ium\"\" (PDF). Journal of Chemical Education. 81 (7): 944–945. Bibcode:2004JChEd..81..944J. doi:10.1021/ed081p944.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 161
+    },
+    {
+      "id": "ref_020",
+      "label": "Hetherington, Norriss S.; McCray, W. Patrick. Weart, Spencer R. (ed.). Spectroscopy and the Birth of Astrophysics. American Institute of Physics, Center for the History of Physics. Archived from the original on September 7, 2015. Retrieved July 19, 2015.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 162
+    },
+    {
+      "id": "ref_021",
+      "label": "Hale, George Ellery (1895). \"The Astrophysical Journal\". The Astrophysical Journal. 1 (1): 80–84. Bibcode:1895ApJ.....1...80H. doi:10.1086/140011.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 163
+    },
+    {
+      "id": "ref_022",
+      "label": "The Astrophysical Journal. 1 (1).",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 164
+    },
+    {
+      "id": "ref_023",
+      "label": "Eddington, A. S. (October 1920). \"The Internal Constitution of the Stars\". The Scientific Monthly. 11 (4): 297–303. Bibcode:1920Sci....52..233E. doi:10.1126/science.52.1341.233. JSTOR 6491. PMID 17747682.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 165
+    },
+    {
+      "id": "ref_024",
+      "label": "Eddington, A. S. (1916). \"On the radiative equilibrium of the stars\". Monthly Notices of the Royal Astronomical Society. 77: 16–35. Bibcode:1916MNRAS..77...16E. doi:10.1093/mnras/77.1.16.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 166
+    },
+    {
+      "id": "ref_025",
+      "label": "McCracken, Garry; Stott, Peter (2013). McCracken, Garry; Stott, Peter (eds.). Fusion (Second ed.). Boston: Academic Press. p. 13. doi:10.1016/b978-0-12-384656-3.00002-7. ISBN 978-0-12-384656-3. Eddington had realized that there would be a mass loss if four hydrogen atoms combined to form a single helium atom. Einstein's equivalence of mass and energy led directly to the suggestion that this could be the long-sought process that produces the energy in the stars! It was an inspired guess, all the more remarkable because the structure of the nucleus and the mechanisms of these reactions were not fully understood.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 167
+    },
+    {
+      "id": "ref_026",
+      "label": "Payne, C. H. (1925). Stellar Atmospheres; A Contribution to the Observational Study of High Temperature in the Reversing Layers of Stars (PhD Thesis). Cambridge, Massachusetts: Radcliffe College. Bibcode:1925PhDT.........6P.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 168
+    },
+    {
+      "id": "ref_027",
+      "label": "Haramundanis, Katherine (2007). \"Payne-Gaposchkin [Payne], Cecilia Helena\". In Hockey, Thomas; Trimble, Virginia; Williams, Thomas R. (eds.). Biographical Encyclopedia of Astronomers. New York: Springer. pp. 876–878. ISBN 978-0-387-30400-7. Retrieved July 19, 2015.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 169
+    },
+    {
+      "id": "ref_028",
+      "label": "Steven Soter and Neil deGrasse Tyson (2000). \"Cecilia Payne and the Composition of the Stars\". American Museum of Natural History. American Museum of Natural History.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 170
+    },
+    {
+      "id": "ref_029",
+      "label": "Biermann, Peter L.; Falcke, Heino (1998). \"Frontiers of Astrophysics—Workshop summary\". In Panvini, Robert S.; Weiler, Thomas J. (eds.). Fundamental Particles and Interactions. AIP Conference Proceedings. Vol. 423. American Institute of Physics. pp. 236–248. arXiv:astro-ph/9711066. Bibcode:1998AIPC..423..236B. doi:10.1063/1.55085. ISBN 1-56396-725-1.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 171
+    },
+    {
+      "id": "ref_030",
+      "label": "Eddington, A.S. (1926). \"Internal Constitution of the Stars\". Science. 52 (1341): 233–240. Bibcode:1920Sci....52..233E. doi:10.1126/science.52.1341.233. PMID 17747682.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 172
+    },
+    {
+      "id": "ref_031",
+      "label": "Eddington, Sir Arthur Stanley (28 January 1988). The Internal Constitution of the Stars. Cambridge University Press. ISBN 978-0-521-33708-3.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 173
+    },
+    {
+      "id": "ref_032",
+      "label": "Brumberg, V. A. (2013). \"Celestial mechanics: Past, present, future\". Solar System Research. 47 (5): 347–358. doi:10.1134/S0038094613040011. ISSN 0038-0946.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 174
+    },
+    {
+      "id": "ref_033",
+      "label": "Dolling, Lisa M.; Gianelli, Arthur F.; Statile, Glenn N., eds. (2003). The tests of time: readings in the development of physical theory. Princeton: Princeton University Press. ISBN 978-0-691-09084-9.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 175
+    },
+    {
+      "id": "ref_034",
+      "label": "Clerke, Agnes M. (1885). A popular history of astronomy during the nineteenth century. Edinburgh: A. & C. Black – via Internet Archive.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 176
+    },
+    {
+      "id": "ref_035",
+      "label": "Chebotarev, G.A. (1975). \"10.3. Johannes Kepler and celestial mechanics\". Vistas in Astronomy. 18: 557–565. doi:10.1016/0083-6656(75)90135-X.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 177
+    },
+    {
+      "id": "ref_036",
+      "label": "Gingerich, Owen, ed. (1984). Astrophysics and twentieth-century astronomy to 1950. The General history of astronomy. Cambridge [Cambridgeshire]; New York: Cambridge University Press. ISBN 978-0-521-24256-1.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 178
+    },
+    {
+      "id": "ref_037",
+      "label": "Rivadulla, Andrés (2016). \"Abduction and Beyond: Methodological and Computational Aspects of Creativity in Natural Sciences\". In Magnani, Lorenzo; Gabbay, Dov M.; Siekmann, Jörg (eds.). The IfCoLog Journal of Logics and their Applications. Vol. 3. Lightning Source. pp. 105–122. ISBN 978-1-84890-214-5.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 179
+    },
+    {
+      "id": "ref_038",
+      "label": "Longair, Malcolm (2022-04-05). \"A Brief History of Astronomy, Astrophysics and Cosmology 1945-2000 | Royal Society\". royalsociety.org. Retrieved 2026-02-15.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 180
+    },
+    {
+      "id": "ref_039",
+      "label": "Jensen, E. (1986). \"Svein Rosseland, 31 March 1894 - 19 January 1985\". Quarterly Journal of the Royal Astronomical Society. 27 (3): 512–514. ISSN 0035-8738.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 181
+    },
+    {
+      "id": "ref_040",
+      "label": "Rosseland, S. (1928). \"Theoretical Astrophysics\". Nature. 122 (3066): 159–162. doi:10.1038/122159a0. ISSN 0028-0836.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 182
+    },
+    {
+      "id": "ref_041",
+      "label": "Hurn, M. (2004). \"An English astronomical library: the case of the Cambridge Observatory\". The Observatory. 124: 37–46. ISSN 0029-7704.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 183
+    },
+    {
+      "id": "ref_042",
+      "label": "Struve, Otto (1943). \"Fifty years of progress in astronomy\". Popular Astronomy. 51: 469. ISSN 0197-7482.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 184
+    },
+    {
+      "id": "ref_043",
+      "label": "\"Virginia Institute of Theoretical Astronomy\". Department of Astronomy. Retrieved 2026-02-15.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 185
+    },
+    {
+      "id": "ref_044",
+      "label": "\"What Can You Do with an Astronomy Degree\". Embry-Riddle. Retrieved 2026-02-15.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 186
+    },
+    {
+      "id": "ref_045",
+      "label": "Polyakhova, Elena; Korolev, Vladimir (2022-12-14), \"Astrodynamics in Photogravitational Field of the Sun: Space Flights with a Solar Sail\", in S. Essa, Khalid (ed.), Gravitational Field - Concepts and Applications, IntechOpen, doi:10.5772/intechopen.102005, ISBN 978-1-83969-752-4, retrieved 2026-02-15",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 187
+    },
+    {
+      "id": "ref_046",
+      "label": "V., Narlikar, Jayant (1990). \"Curriculum for the Training of Astronomers\". IAU Colloq. 105: The Teaching of astronomy. Archived from the original on 2024-07-29.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 188
+    },
+    {
+      "id": "ref_047",
+      "label": "Armitage, Philip J. (2010). Astrophysics of planet formation. Cambridge: Cambridge University Press. ISBN 978-0-521-88745-8.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 189
+    },
+    {
+      "id": "ref_048",
+      "label": "D. Mark Manley (2012). \"Famous Astronomers and Astrophysicists\". Kent State University. Retrieved 2015-07-17.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 190
+    },
+    {
+      "id": "ref_049",
+      "label": "The science.ca team (2015). \"Hubert Reeves – Astronomy, Astrophysics and Space Science\". GCS Research Society. Retrieved 2015-07-17.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 191
+    },
+    {
+      "id": "ref_050",
+      "label": "\"Neil deGrasse Tyson\". Hayden Planetarium. 2015. Retrieved 2015-07-17.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "reference",
+      "source_line": 192
+    },
+    {
+      "id": "ref_051",
+      "label": "Longair, Malcolm S. (2006). The Cosmic Century: A History of Astrophysics and Cosmology. Cambridge: Cambridge University Press. ISBN 978-0-521-47436-8.",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "further_reading",
+      "source_line": 194
+    },
+    {
+      "id": "ref_052",
+      "label": "Astrophysics, Scholarpedia Expert articles",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "further_reading",
+      "source_line": 195
+    },
+    {
+      "id": "ref_053",
+      "label": "Wikibooks has a book on the topic of: Astrophysics",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "external_link",
+      "source_line": 198
+    },
+    {
+      "id": "ref_054",
+      "label": "Library resources about",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "external_link",
+      "source_line": 199
+    },
+    {
+      "id": "ref_055",
+      "label": "Astrophysics",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "external_link",
+      "source_line": 200
+    },
+    {
+      "id": "ref_056",
+      "label": "Online books",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "external_link",
+      "source_line": 201
+    },
+    {
+      "id": "ref_057",
+      "label": "Resources in your library",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "external_link",
+      "source_line": 202
+    },
+    {
+      "id": "ref_058",
+      "label": "Resources in other libraries",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "external_link",
+      "source_line": 203
+    },
+    {
+      "id": "ref_059",
+      "label": "Astronomy and Astrophysics, a European Journal",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "external_link",
+      "source_line": 204
+    },
+    {
+      "id": "ref_060",
+      "label": "The Astrophysical Journal",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "external_link",
+      "source_line": 205
+    },
+    {
+      "id": "ref_061",
+      "label": "International Journal of Modern Physics D from World Scientific",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "external_link",
+      "source_line": 206
+    },
+    {
+      "id": "ref_062",
+      "label": "The Open Journal of Astrophysics",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "external_link",
+      "source_line": 207
+    },
+    {
+      "id": "ref_063",
+      "label": "Solar Physics",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "external_link",
+      "source_line": 208
+    },
+    {
+      "id": "ref_064",
+      "label": "Cosmic Journey: A History of Scientific Cosmology Archived 2008-10-21 at the Wayback Machine from the American Institute of Physics",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "external_link",
+      "source_line": 209
+    },
+    {
+      "id": "ref_065",
+      "label": "Ned Wright's Cosmology Tutorial, UCLA",
+      "type": "bibliography_reference",
+      "description": "First-class provenance/reference record preserved from the uploaded Astrophysics article.",
+      "category": "external_link",
+      "source_line": 210
+    }
+  ],
+  "edges": [
+    {
+      "id": "e01",
+      "source": "domain_astrophysics",
+      "relation": "applies_methods_from",
+      "target": "concept_physics"
+    },
+    {
+      "id": "e02",
+      "source": "domain_astrophysics",
+      "relation": "applies_methods_from",
+      "target": "concept_chemistry"
+    },
+    {
+      "id": "e03",
+      "source": "domain_astrophysics",
+      "relation": "studies",
+      "target": "concept_sun"
+    },
+    {
+      "id": "e04",
+      "source": "domain_astrophysics",
+      "relation": "studies",
+      "target": "concept_stars"
+    },
+    {
+      "id": "e05",
+      "source": "domain_astrophysics",
+      "relation": "studies",
+      "target": "concept_galaxies"
+    },
+    {
+      "id": "e06",
+      "source": "domain_astrophysics",
+      "relation": "studies",
+      "target": "concept_exoplanets"
+    },
+    {
+      "id": "e07",
+      "source": "domain_astrophysics",
+      "relation": "studies",
+      "target": "concept_interstellar_medium"
+    },
+    {
+      "id": "e08",
+      "source": "domain_astrophysics",
+      "relation": "studies",
+      "target": "concept_cmb"
+    },
+    {
+      "id": "e09",
+      "source": "domain_astrophysics",
+      "relation": "contrasts_with",
+      "target": "concept_celestial_mechanics"
+    },
+    {
+      "id": "e10",
+      "source": "concept_astrodynamics",
+      "relation": "uses",
+      "target": "domain_astrophysics"
+    },
+    {
+      "id": "e11",
+      "source": "concept_observational_astrophysics",
+      "relation": "complements",
+      "target": "concept_theoretical_astrophysics"
+    },
+    {
+      "id": "e12",
+      "source": "concept_theoretical_astrophysics",
+      "relation": "predicts_observational_consequences_for",
+      "target": "concept_observational_astrophysics"
+    },
+    {
+      "id": "e13",
+      "source": "concept_observational_astrophysics",
+      "relation": "uses",
+      "target": "concept_telescope"
+    },
+    {
+      "id": "e14",
+      "source": "concept_observational_astrophysics",
+      "relation": "uses",
+      "target": "concept_spectroscopy"
+    },
+    {
+      "id": "e15",
+      "source": "concept_observational_astrophysics",
+      "relation": "uses",
+      "target": "concept_em_spectrum"
+    },
+    {
+      "id": "e16",
+      "source": "concept_theoretical_astrophysics",
+      "relation": "uses",
+      "target": "concept_analytical_model"
+    },
+    {
+      "id": "e17",
+      "source": "concept_theoretical_astrophysics",
+      "relation": "uses",
+      "target": "concept_numerical_simulation"
+    },
+    {
+      "id": "e18",
+      "source": "concept_theoretical_astrophysics",
+      "relation": "studies",
+      "target": "concept_stellar_evolution"
+    },
+    {
+      "id": "e19",
+      "source": "concept_theoretical_astrophysics",
+      "relation": "studies",
+      "target": "concept_galaxy_evolution"
+    },
+    {
+      "id": "e20",
+      "source": "concept_theoretical_astrophysics",
+      "relation": "studies",
+      "target": "concept_mhd"
+    },
+    {
+      "id": "e21",
+      "source": "concept_theoretical_astrophysics",
+      "relation": "studies",
+      "target": "concept_large_scale_structure"
+    },
+    {
+      "id": "e22",
+      "source": "concept_theoretical_astrophysics",
+      "relation": "studies",
+      "target": "concept_cosmic_rays"
+    },
+    {
+      "id": "e23",
+      "source": "concept_theoretical_astrophysics",
+      "relation": "uses",
+      "target": "concept_general_relativity"
+    },
+    {
+      "id": "e24",
+      "source": "concept_theoretical_astrophysics",
+      "relation": "includes",
+      "target": "concept_cosmology"
+    },
+    {
+      "id": "e25",
+      "source": "concept_cosmology",
+      "relation": "includes",
+      "target": "concept_lcdm"
+    },
+    {
+      "id": "e26",
+      "source": "concept_lcdm",
+      "relation": "includes",
+      "target": "concept_big_bang"
+    },
+    {
+      "id": "e27",
+      "source": "concept_lcdm",
+      "relation": "includes",
+      "target": "concept_inflation"
+    },
+    {
+      "id": "e28",
+      "source": "concept_lcdm",
+      "relation": "includes",
+      "target": "concept_dark_matter"
+    },
+    {
+      "id": "e29",
+      "source": "concept_lcdm",
+      "relation": "includes",
+      "target": "concept_dark_energy"
+    },
+    {
+      "id": "e30",
+      "source": "concept_general_relativity",
+      "relation": "supports_study_of",
+      "target": "concept_black_holes"
+    },
+    {
+      "id": "e31",
+      "source": "concept_general_relativity",
+      "relation": "supports_study_of",
+      "target": "concept_gw_astronomy"
+    },
+    {
+      "id": "e32",
+      "source": "concept_spectroscopy",
+      "relation": "uses",
+      "target": "concept_em_spectrum"
+    },
+    {
+      "id": "e33",
+      "source": "concept_spectroscopy",
+      "relation": "infers",
+      "target": "concept_chemical_composition"
+    },
+    {
+      "id": "e34",
+      "source": "concept_spectroscopy",
+      "relation": "infers",
+      "target": "concept_temperature"
+    },
+    {
+      "id": "e35",
+      "source": "concept_spectroscopy",
+      "relation": "uses",
+      "target": "concept_spectral_line"
+    },
+    {
+      "id": "e36",
+      "source": "concept_spectral_line",
+      "relation": "can_be",
+      "target": "concept_absorption"
+    },
+    {
+      "id": "e37",
+      "source": "concept_spectral_line",
+      "relation": "can_be",
+      "target": "concept_emission"
+    },
+    {
+      "id": "e38",
+      "source": "concept_absorption",
+      "relation": "occurs_in",
+      "target": "concept_stellar_atmosphere"
+    },
+    {
+      "id": "e39",
+      "source": "concept_stellar_atmosphere",
+      "relation": "contains_information_about",
+      "target": "concept_chemical_composition"
+    },
+    {
+      "id": "e40",
+      "source": "concept_saha_ionization",
+      "relation": "applies_to",
+      "target": "concept_stellar_atmosphere"
+    },
+    {
+      "id": "e41",
+      "source": "concept_saha_ionization",
+      "relation": "relates_to",
+      "target": "concept_spectral_classification"
+    },
+    {
+      "id": "e42",
+      "source": "concept_spectral_classification",
+      "relation": "represented_by",
+      "target": "concept_harvard_scheme"
+    },
+    {
+      "id": "e43",
+      "source": "concept_harvard_scheme",
+      "relation": "classifies",
+      "target": "concept_stars"
+    },
+    {
+      "id": "e44",
+      "source": "concept_hr_diagram",
+      "relation": "represents",
+      "target": "concept_stellar_evolution"
+    },
+    {
+      "id": "e45",
+      "source": "concept_stellar_fusion",
+      "relation": "uses_fuel",
+      "target": "concept_hydrogen"
+    },
+    {
+      "id": "e46",
+      "source": "concept_stellar_fusion",
+      "relation": "produces",
+      "target": "concept_helium"
+    },
+    {
+      "id": "e47",
+      "source": "concept_stellar_fusion",
+      "relation": "releases_energy_explained_by",
+      "target": "eq_mass_energy"
+    },
+    {
+      "id": "e48",
+      "source": "concept_mass_energy",
+      "relation": "expressed_by",
+      "target": "eq_mass_energy"
+    },
+    {
+      "id": "e49",
+      "source": "concept_sun",
+      "relation": "is_a",
+      "target": "concept_stars"
+    },
+    {
+      "id": "e50",
+      "source": "concept_solar_physics",
+      "relation": "studies",
+      "target": "concept_sun"
+    },
+    {
+      "id": "e51",
+      "source": "concept_solar_physics",
+      "relation": "guides_understanding_of",
+      "target": "concept_stellar_astrophysics"
+    },
+    {
+      "id": "e52",
+      "source": "concept_radio_telescope",
+      "relation": "observes",
+      "target": "concept_cmb"
+    },
+    {
+      "id": "e53",
+      "source": "concept_radio_telescope",
+      "relation": "observes",
+      "target": "concept_interstellar_medium"
+    },
+    {
+      "id": "e54",
+      "source": "concept_radio_telescope",
+      "relation": "observes",
+      "target": "concept_pulsars"
+    },
+    {
+      "id": "e55",
+      "source": "concept_space_telescope",
+      "relation": "supports",
+      "target": "concept_high_energy"
+    },
+    {
+      "id": "e56",
+      "source": "concept_adaptive_optics",
+      "relation": "mitigates",
+      "target": "concept_optical_atmospheric_interference"
+    },
+    {
+      "id": "e57",
+      "source": "concept_iact",
+      "relation": "observes",
+      "target": "concept_high_energy"
+    },
+    {
+      "id": "e58",
+      "source": "concept_gw_detector",
+      "relation": "detects",
+      "target": "concept_gw_astronomy"
+    },
+    {
+      "id": "e59",
+      "source": "concept_neutrino_observatory",
+      "relation": "detects",
+      "target": "concept_neutrino_astronomy"
+    },
+    {
+      "id": "e60",
+      "source": "concept_cosmic_rays",
+      "relation": "interact_with",
+      "target": "concept_earth_atmosphere"
+    },
+    {
+      "id": "e61",
+      "source": "concept_supernova_remnant",
+      "relation": "is_produced_by",
+      "target": "concept_supernova"
+    },
+    {
+      "id": "e62",
+      "source": "concept_supernova_remnant",
+      "relation": "contains",
+      "target": "concept_shock_wave"
+    },
+    {
+      "id": "e63",
+      "source": "concept_theoretical_astronomy",
+      "relation": "historically_overlapped_with",
+      "target": "concept_celestial_mechanics"
+    },
+    {
+      "id": "e64",
+      "source": "concept_celestial_mechanics",
+      "relation": "uses",
+      "target": "concept_newtonian_gravitation"
+    },
+    {
+      "id": "e65",
+      "source": "concept_celestial_mechanics",
+      "relation": "uses",
+      "target": "concept_classical_mech"
+    },
+    {
+      "id": "e66",
+      "source": "concept_theoretical_astronomy",
+      "relation": "uses",
+      "target": "concept_numerical_simulation"
+    },
+    {
+      "id": "e67",
+      "source": "concept_theoretical_astronomy",
+      "relation": "uses",
+      "target": "concept_mathematics"
+    },
+    {
+      "id": "e68",
+      "source": "concept_theoretical_astronomy",
+      "relation": "supports",
+      "target": "concept_planetary_science"
+    },
+    {
+      "id": "e69",
+      "source": "concept_unified_physics",
+      "relation": "bridges",
+      "target": "concept_astronomy"
+    },
+    {
+      "id": "e70",
+      "source": "concept_unified_physics",
+      "relation": "bridges",
+      "target": "concept_physics"
+    },
+    {
+      "id": "e71",
+      "source": "concept_aristotelian_cosmos",
+      "relation": "separates",
+      "target": "concept_celestial_region"
+    },
+    {
+      "id": "e72",
+      "source": "concept_aristotelian_cosmos",
+      "relation": "separates",
+      "target": "concept_terrestrial_region"
+    },
+    {
+      "id": "e73",
+      "source": "concept_aether",
+      "relation": "associated_with",
+      "target": "concept_celestial_region"
+    },
+    {
+      "id": "e74",
+      "source": "concept_fire",
+      "relation": "associated_with",
+      "target": "concept_celestial_region"
+    },
+    {
+      "id": "e75",
+      "source": "person_galileo",
+      "relation": "advanced",
+      "target": "concept_unified_physics"
+    },
+    {
+      "id": "e76",
+      "source": "person_descartes",
+      "relation": "advanced",
+      "target": "concept_unified_physics"
+    },
+    {
+      "id": "e77",
+      "source": "person_newton",
+      "relation": "advanced",
+      "target": "concept_unified_physics"
+    },
+    {
+      "id": "e78",
+      "source": "person_wollaston",
+      "relation": "observed",
+      "target": "concept_fraunhofer_lines"
+    },
+    {
+      "id": "e79",
+      "source": "person_fraunhofer",
+      "relation": "observed",
+      "target": "concept_fraunhofer_lines"
+    },
+    {
+      "id": "e80",
+      "source": "person_kirchhoff",
+      "relation": "explained",
+      "target": "concept_fraunhofer_lines"
+    },
+    {
+      "id": "e81",
+      "source": "person_kirchhoff",
+      "relation": "linked",
+      "target": "concept_spectral_line"
+    },
+    {
+      "id": "e82",
+      "source": "person_bunsen",
+      "relation": "collaborated_with",
+      "target": "person_kirchhoff"
+    },
+    {
+      "id": "e83",
+      "source": "person_lockyer",
+      "relation": "proposed",
+      "target": "concept_helium_discovery"
+    },
+    {
+      "id": "e84",
+      "source": "person_frankland",
+      "relation": "collaborated_with",
+      "target": "person_lockyer"
+    },
+    {
+      "id": "e85",
+      "source": "concept_helium_discovery",
+      "relation": "identifies",
+      "target": "concept_helium"
+    },
+    {
+      "id": "e86",
+      "source": "person_pickering",
+      "relation": "led",
+      "target": "concept_spectral_classification"
+    },
+    {
+      "id": "e87",
+      "source": "person_fleming",
+      "relation": "contributed_to",
+      "target": "concept_spectral_classification"
+    },
+    {
+      "id": "e88",
+      "source": "person_maury",
+      "relation": "contributed_to",
+      "target": "concept_spectral_classification"
+    },
+    {
+      "id": "e89",
+      "source": "person_cannon",
+      "relation": "developed",
+      "target": "concept_harvard_scheme"
+    },
+    {
+      "id": "e90",
+      "source": "person_hale",
+      "relation": "founded",
+      "target": "concept_astrophysical_journal"
+    },
+    {
+      "id": "e91",
+      "source": "person_james_keeler",
+      "relation": "founded",
+      "target": "concept_astrophysical_journal"
+    },
+    {
+      "id": "e92",
+      "source": "concept_astrophysical_journal",
+      "relation": "bridges",
+      "target": "concept_astronomy"
+    },
+    {
+      "id": "e93",
+      "source": "concept_astrophysical_journal",
+      "relation": "bridges",
+      "target": "concept_physics"
+    },
+    {
+      "id": "e94",
+      "source": "person_eddington",
+      "relation": "proposed",
+      "target": "concept_stellar_fusion"
+    },
+    {
+      "id": "e95",
+      "source": "person_eddington",
+      "relation": "connected",
+      "target": "concept_mass_energy"
+    },
+    {
+      "id": "e96",
+      "source": "person_payne",
+      "relation": "applied",
+      "target": "concept_saha_ionization"
+    },
+    {
+      "id": "e97",
+      "source": "person_payne",
+      "relation": "inferred",
+      "target": "concept_chemical_composition"
+    },
+    {
+      "id": "e98",
+      "source": "person_hipparchus",
+      "relation": "contributed_to",
+      "target": "concept_celestial_mechanics"
+    },
+    {
+      "id": "e99",
+      "source": "person_newton",
+      "relation": "founded",
+      "target": "concept_celestial_mechanics"
+    },
+    {
+      "id": "e100",
+      "source": "person_rosseland",
+      "relation": "supported",
+      "target": "concept_institute_theoretical_astrophysics"
+    },
+    {
+      "id": "e101",
+      "source": "person_hoyle",
+      "relation": "founded",
+      "target": "concept_cambridge_ita"
+    },
+    {
+      "id": "e102",
+      "source": "concept_model_observation_cycle",
+      "relation": "enables",
+      "target": "concept_model_selection"
+    },
+    {
+      "id": "e103",
+      "source": "concept_model_selection",
+      "relation": "can_support",
+      "target": "concept_theoretical_model"
+    },
+    {
+      "id": "e104",
+      "source": "concept_model_selection",
+      "relation": "can_refute",
+      "target": "concept_theoretical_model"
+    },
+    {
+      "id": "e105",
+      "source": "concept_numerical_simulation",
+      "relation": "can_reveal",
+      "target": "concept_unexpected_phenomena"
+    },
+    {
+      "id": "e106",
+      "source": "concept_analytical_model",
+      "relation": "provides",
+      "target": "concept_physical_insight"
+    },
+    {
+      "id": "e107",
+      "source": "concept_minimal_modification",
+      "relation": "precedes",
+      "target": "concept_model_abandonment"
+    },
+    {
+      "id": "e108",
+      "source": "concept_observational_astrophysics",
+      "relation": "has_timescale",
+      "target": "concept_optical_timescale"
+    },
+    {
+      "id": "e109",
+      "source": "concept_observational_astrophysics",
+      "relation": "has_timescale",
+      "target": "concept_radio_timescale"
+    },
+    {
+      "id": "e110",
+      "source": "concept_observational_astrophysics",
+      "relation": "uses",
+      "target": "concept_historical_data"
+    },
+    {
+      "id": "e111",
+      "source": "concept_popularization",
+      "relation": "supported_by",
+      "target": "concept_royal_astronomical_society"
+    },
+    {
+      "id": "e112",
+      "source": "concept_popularization",
+      "relation": "supported_by",
+      "target": "concept_big_bang_theory_show"
+    },
+    {
+      "id": "e113",
+      "source": "concept_institute_theoretical_astrophysics",
+      "relation": "associated_with",
+      "target": "person_rosseland"
+    },
+    {
+      "id": "e114",
+      "source": "concept_cambridge_ita",
+      "relation": "associated_with",
+      "target": "person_hoyle"
+    },
+    {
+      "id": "e115",
+      "source": "concept_virginia_ita",
+      "relation": "researches",
+      "target": "concept_theoretical_astrophysics"
+    },
+    {
+      "id": "e116",
+      "source": "person_krauss",
+      "relation": "contributes_to",
+      "target": "concept_popularization"
+    },
+    {
+      "id": "e117",
+      "source": "person_chandrasekhar",
+      "relation": "contributes_to",
+      "target": "concept_popularization"
+    },
+    {
+      "id": "e118",
+      "source": "person_hawking",
+      "relation": "contributes_to",
+      "target": "concept_popularization"
+    },
+    {
+      "id": "e119",
+      "source": "person_reeves",
+      "relation": "contributes_to",
+      "target": "concept_popularization"
+    },
+    {
+      "id": "e120",
+      "source": "person_sagan",
+      "relation": "contributes_to",
+      "target": "concept_popularization"
+    },
+    {
+      "id": "e121",
+      "source": "person_moore",
+      "relation": "contributes_to",
+      "target": "concept_popularization"
+    },
+    {
+      "id": "e122",
+      "source": "person_tyson",
+      "relation": "contributes_to",
+      "target": "concept_popularization"
+    },
+    {
+      "id": "w01",
+      "source": "person_eddington",
+      "relation": "authored",
+      "target": "work_internal_constitution"
+    },
+    {
+      "id": "w02",
+      "source": "person_payne",
+      "relation": "authored",
+      "target": "work_stellar_atmospheres"
+    },
+    {
+      "id": "w03",
+      "source": "person_kirchhoff",
+      "relation": "authored",
+      "target": "work_kirchhoff_fraunhofer"
+    },
+    {
+      "id": "claimrel_claim_01",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_01",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_02",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_02",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_03",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_03",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_04",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_04",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_05",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_05",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_06",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_06",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_07",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_07",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_08",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_08",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_09",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_09",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_10",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_10",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_11",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_11",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_12",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_12",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_13",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_13",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_14",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_14",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_15",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_15",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_16",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_16",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_17",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_17",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_18",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_18",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_19",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_19",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_20",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_20",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_21",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_21",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_22",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_22",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_23",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_23",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_24",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_24",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_25",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_25",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_26",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_26",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_27",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_27",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_28",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_28",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_29",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_29",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_30",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_30",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_31",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_31",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_32",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_32",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_33",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_33",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_34",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_34",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_35",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_35",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_36",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_36",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_37",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_37",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_38",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_38",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_39",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_39",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_40",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_40",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_41",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_41",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_42",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_42",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_43",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_43",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "claimrel_claim_44",
+      "source": "domain_astrophysics",
+      "relation": "has_source_claim",
+      "target": "claim_node:claim_44",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_01_ref_001",
+      "source": "claim_node:claim_01",
+      "relation": "supported_by_reference",
+      "target": "ref_001",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_01_ref_002",
+      "source": "claim_node:claim_01",
+      "relation": "supported_by_reference",
+      "target": "ref_002",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_01_ref_003",
+      "source": "claim_node:claim_01",
+      "relation": "supported_by_reference",
+      "target": "ref_003",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_12_ref_006",
+      "source": "claim_node:claim_12",
+      "relation": "supported_by_reference",
+      "target": "ref_006",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_12_ref_007",
+      "source": "claim_node:claim_12",
+      "relation": "supported_by_reference",
+      "target": "ref_007",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_12_ref_008",
+      "source": "claim_node:claim_12",
+      "relation": "supported_by_reference",
+      "target": "ref_008",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_12_ref_009",
+      "source": "claim_node:claim_12",
+      "relation": "supported_by_reference",
+      "target": "ref_009",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_12_ref_010",
+      "source": "claim_node:claim_12",
+      "relation": "supported_by_reference",
+      "target": "ref_010",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_12_ref_011",
+      "source": "claim_node:claim_12",
+      "relation": "supported_by_reference",
+      "target": "ref_011",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_14_ref_014",
+      "source": "claim_node:claim_14",
+      "relation": "supported_by_reference",
+      "target": "ref_014",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_14_ref_015",
+      "source": "claim_node:claim_14",
+      "relation": "supported_by_reference",
+      "target": "ref_015",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_15_ref_017",
+      "source": "claim_node:claim_15",
+      "relation": "supported_by_reference",
+      "target": "ref_017",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_15_ref_018",
+      "source": "claim_node:claim_15",
+      "relation": "supported_by_reference",
+      "target": "ref_018",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_15_ref_019",
+      "source": "claim_node:claim_15",
+      "relation": "supported_by_reference",
+      "target": "ref_019",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_17_ref_020",
+      "source": "claim_node:claim_17",
+      "relation": "supported_by_reference",
+      "target": "ref_020",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_17_ref_021",
+      "source": "claim_node:claim_17",
+      "relation": "supported_by_reference",
+      "target": "ref_021",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_18_ref_022",
+      "source": "claim_node:claim_18",
+      "relation": "supported_by_reference",
+      "target": "ref_022",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_20_ref_024",
+      "source": "claim_node:claim_20",
+      "relation": "supported_by_reference",
+      "target": "ref_024",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_20_ref_025",
+      "source": "claim_node:claim_20",
+      "relation": "supported_by_reference",
+      "target": "ref_025",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_21_ref_026",
+      "source": "claim_node:claim_21",
+      "relation": "supported_by_reference",
+      "target": "ref_026",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_21_ref_027",
+      "source": "claim_node:claim_21",
+      "relation": "supported_by_reference",
+      "target": "ref_027",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_21_ref_028",
+      "source": "claim_node:claim_21",
+      "relation": "supported_by_reference",
+      "target": "ref_028",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_21_ref_029",
+      "source": "claim_node:claim_21",
+      "relation": "supported_by_reference",
+      "target": "ref_029",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_21_ref_030",
+      "source": "claim_node:claim_21",
+      "relation": "supported_by_reference",
+      "target": "ref_030",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_21_ref_031",
+      "source": "claim_node:claim_21",
+      "relation": "supported_by_reference",
+      "target": "ref_031",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_22_ref_032",
+      "source": "claim_node:claim_22",
+      "relation": "supported_by_reference",
+      "target": "ref_032",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_22_ref_033",
+      "source": "claim_node:claim_22",
+      "relation": "supported_by_reference",
+      "target": "ref_033",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_22_ref_034",
+      "source": "claim_node:claim_22",
+      "relation": "supported_by_reference",
+      "target": "ref_034",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_36_ref_035",
+      "source": "claim_node:claim_36",
+      "relation": "supported_by_reference",
+      "target": "ref_035",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_37_ref_036",
+      "source": "claim_node:claim_37",
+      "relation": "supported_by_reference",
+      "target": "ref_036",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_37_ref_037",
+      "source": "claim_node:claim_37",
+      "relation": "supported_by_reference",
+      "target": "ref_037",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_37_ref_038",
+      "source": "claim_node:claim_37",
+      "relation": "supported_by_reference",
+      "target": "ref_038",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_40_ref_041",
+      "source": "claim_node:claim_40",
+      "relation": "supported_by_reference",
+      "target": "ref_041",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_40_ref_042",
+      "source": "claim_node:claim_40",
+      "relation": "supported_by_reference",
+      "target": "ref_042",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_41_ref_043",
+      "source": "claim_node:claim_41",
+      "relation": "supported_by_reference",
+      "target": "ref_043",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_42_ref_044",
+      "source": "claim_node:claim_42",
+      "relation": "supported_by_reference",
+      "target": "ref_044",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_43_ref_045",
+      "source": "claim_node:claim_43",
+      "relation": "supported_by_reference",
+      "target": "ref_045",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_43_ref_046",
+      "source": "claim_node:claim_43",
+      "relation": "supported_by_reference",
+      "target": "ref_046",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_43_ref_047",
+      "source": "claim_node:claim_43",
+      "relation": "supported_by_reference",
+      "target": "ref_047",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_44_ref_048",
+      "source": "claim_node:claim_44",
+      "relation": "supported_by_reference",
+      "target": "ref_048",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_44_ref_049",
+      "source": "claim_node:claim_44",
+      "relation": "supported_by_reference",
+      "target": "ref_049",
+      "edge_type": "provenance"
+    },
+    {
+      "id": "prov_claim_44_ref_050",
+      "source": "claim_node:claim_44",
+      "relation": "supported_by_reference",
+      "target": "ref_050",
+      "edge_type": "provenance"
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "claim_01",
+      "statement": "Astrophysics applies physics and chemistry to astronomical objects and phenomena, including the universe.",
+      "source_section": "Definition",
+      "source_line_range": "63",
+      "subject_node_ids": [
+        "domain_astrophysics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_02",
+      "statement": "Astrophysics emphasizes determining the nature of heavenly bodies rather than primarily their positions or motions.",
+      "source_section": "Definition",
+      "source_line_range": "63",
+      "subject_node_ids": [
+        "domain_astrophysics",
+        "concept_celestial_mechanics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_03",
+      "statement": "Astrophysics is also used when designing and plotting spacecraft courses.",
+      "source_section": "Definition",
+      "source_line_range": "63",
+      "subject_node_ids": [
+        "domain_astrophysics",
+        "concept_astrodynamics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_04",
+      "statement": "The field studies the Sun, stars, galaxies, extrasolar planets, interstellar medium and cosmic microwave background.",
+      "source_section": "Scope",
+      "source_line_range": "65",
+      "subject_node_ids": [
+        "concept_sun",
+        "concept_stars",
+        "concept_galaxies",
+        "concept_exoplanets",
+        "concept_interstellar_medium",
+        "concept_cmb"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_05",
+      "statement": "Observations examine luminosity, density, temperature and chemical composition across the electromagnetic spectrum.",
+      "source_section": "Scope",
+      "source_line_range": "65",
+      "subject_node_ids": [
+        "concept_luminosity",
+        "concept_density",
+        "concept_temperature",
+        "concept_chemical_composition",
+        "concept_em_spectrum"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_06",
+      "statement": "Astrophysics draws on classical mechanics, electromagnetism, statistical mechanics, thermodynamics, quantum mechanics, relativity, nuclear/particle physics and atomic/molecular physics.",
+      "source_section": "Scope",
+      "source_line_range": "65",
+      "subject_node_ids": [
+        "concept_classical_mech",
+        "concept_em",
+        "concept_stat_mech",
+        "concept_thermodynamics",
+        "concept_quantum_mechanics",
+        "concept_general_relativity",
+        "concept_nuclear",
+        "concept_particle",
+        "concept_atomic",
+        "concept_molecular"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_07",
+      "statement": "Modern astronomical research involves substantial theoretical and observational physics.",
+      "source_section": "Scope",
+      "source_line_range": "67",
+      "subject_node_ids": [
+        "concept_observational_astrophysics",
+        "concept_theoretical_astrophysics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_08",
+      "statement": "Theoretical astrophysics includes stellar dynamics/evolution, galaxy formation/evolution, magnetohydrodynamics, large-scale structure, cosmic rays, relativity, cosmology, string cosmology and astroparticle physics.",
+      "source_section": "Theoretical astrophysics",
+      "source_line_range": "67",
+      "subject_node_ids": [
+        "concept_stellar_dynamics",
+        "concept_stellar_evolution",
+        "concept_galaxy_evolution",
+        "concept_mhd",
+        "concept_large_scale_structure",
+        "concept_cosmic_rays",
+        "concept_general_relativity",
+        "concept_cosmology",
+        "concept_string_cosmology",
+        "concept_astroparticle"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_09",
+      "statement": "Relativistic astrophysics gauges large-scale structures where gravitation is important and underlies black-hole physics and gravitational-wave studies.",
+      "source_section": "Theoretical astrophysics",
+      "source_line_range": "112",
+      "subject_node_ids": [
+        "concept_general_relativity",
+        "concept_black_holes",
+        "concept_gw_astronomy"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_10",
+      "statement": "The source includes Big Bang, inflation, dark matter, dark energy and fundamental physics among widely accepted/studied Lambda-CDM-related models.",
+      "source_section": "Models",
+      "source_line_range": "114",
+      "subject_node_ids": [
+        "concept_lcdm",
+        "concept_big_bang",
+        "concept_inflation",
+        "concept_dark_matter",
+        "concept_dark_energy"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_11",
+      "statement": "Aristotelian cosmology treated celestial and terrestrial realms as fundamentally different.",
+      "source_section": "History",
+      "source_line_range": "70",
+      "subject_node_ids": [
+        "concept_aristotelian_cosmos",
+        "concept_celestial_region",
+        "concept_terrestrial_region",
+        "concept_aether",
+        "concept_fire"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_12",
+      "statement": "Galileo, Descartes and Newton helped advance the idea that celestial and terrestrial realms share material and natural laws.",
+      "source_section": "History",
+      "source_line_range": "70",
+      "subject_node_ids": [
+        "person_galileo",
+        "person_descartes",
+        "person_newton",
+        "concept_unified_physics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_13",
+      "statement": "Nineteenth-century astronomy focused heavily on measuring positions and computing motions before astrophysics emerged.",
+      "source_section": "History",
+      "source_line_range": "72",
+      "subject_node_ids": [
+        "concept_celestial_mechanics",
+        "domain_astrophysics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_14",
+      "statement": "Wollaston and Fraunhofer independently discovered dark lines in the solar spectrum.",
+      "source_section": "History",
+      "source_line_range": "72",
+      "subject_node_ids": [
+        "person_wollaston",
+        "person_fraunhofer",
+        "concept_fraunhofer_lines"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_15",
+      "statement": "Kirchhoff and Bunsen showed that solar dark lines corresponded to bright lines in spectra of known gases and elements.",
+      "source_section": "History",
+      "source_line_range": "72",
+      "subject_node_ids": [
+        "person_kirchhoff",
+        "person_bunsen",
+        "concept_spectral_line"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_16",
+      "statement": "Kirchhoff inferred that solar dark lines arise from absorption by chemical elements in the solar atmosphere.",
+      "source_section": "History",
+      "source_line_range": "72",
+      "subject_node_ids": [
+        "person_kirchhoff",
+        "concept_absorption",
+        "concept_stellar_atmosphere",
+        "concept_chemical_composition"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_17",
+      "statement": "Lockyer and Frankland investigated spectra and proposed helium for an unexplained yellow solar spectral line.",
+      "source_section": "History",
+      "source_line_range": "74",
+      "subject_node_ids": [
+        "person_lockyer",
+        "person_frankland",
+        "concept_helium_discovery"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_18",
+      "statement": "Pickering's Harvard program classified stellar spectra using photographic plates with major contributions by Fleming, Maury and Cannon.",
+      "source_section": "History",
+      "source_line_range": "76",
+      "subject_node_ids": [
+        "person_pickering",
+        "person_fleming",
+        "person_maury",
+        "person_cannon",
+        "concept_harvard_women_computers"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_19",
+      "statement": "Cannon expanded the catalog to over a quarter million stars and developed the Harvard Classification Scheme.",
+      "source_section": "History",
+      "source_line_range": "76",
+      "subject_node_ids": [
+        "person_cannon",
+        "concept_harvard_scheme"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_20",
+      "statement": "Hale and Keeler established The Astrophysical Journal in 1895 to bridge astronomy and physics.",
+      "source_section": "History",
+      "source_line_range": "78",
+      "subject_node_ids": [
+        "person_hale",
+        "person_james_keeler",
+        "concept_astrophysical_journal"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_21",
+      "statement": "Eddington anticipated hydrogen-to-helium fusion as the stellar energy source and connected it with E=mc².",
+      "source_section": "History",
+      "source_line_range": "80",
+      "subject_node_ids": [
+        "person_eddington",
+        "concept_stellar_fusion",
+        "concept_mass_energy",
+        "concept_stellar_energy_problem"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_22",
+      "statement": "Payne applied Saha ionization theory to stellar atmospheres and found hydrogen and helium to be principal stellar components.",
+      "source_section": "History",
+      "source_line_range": "82",
+      "subject_node_ids": [
+        "person_payne",
+        "concept_saha_ionization",
+        "concept_stellar_atmosphere",
+        "concept_hydrogen",
+        "concept_helium"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_23",
+      "statement": "Astronomical spectroscopy expanded from radio through optical, X-ray and gamma wavelengths and later to gravitational-wave observations.",
+      "source_section": "History",
+      "source_line_range": "84",
+      "subject_node_ids": [
+        "concept_em_spectrum",
+        "concept_gw_astronomy"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_24",
+      "statement": "Observational astrophysics records and interprets data using telescopes and other apparatus.",
+      "source_section": "Observational astrophysics",
+      "source_line_range": "89",
+      "subject_node_ids": [
+        "concept_observational_astrophysics",
+        "concept_telescope",
+        "concept_observatory"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_25",
+      "statement": "Radio astronomy studies long-wavelength radiation from cold gas/dust, the CMB and pulsars.",
+      "source_section": "Observational astrophysics",
+      "source_line_range": "93",
+      "subject_node_ids": [
+        "concept_radio_telescope",
+        "concept_interstellar_medium",
+        "concept_cmb",
+        "concept_pulsars"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_26",
+      "statement": "Infrared astronomy studies wavelengths longer than visible light and is useful for objects colder than stars, including planets.",
+      "source_section": "Observational astrophysics",
+      "source_line_range": "94",
+      "subject_node_ids": [
+        "concept_planets",
+        "concept_em_spectrum"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_27",
+      "statement": "Optical astronomy uses telescopes, CCDs and spectroscopy; adaptive optics and space telescopes improve image quality.",
+      "source_section": "Observational astrophysics",
+      "source_line_range": "95",
+      "subject_node_ids": [
+        "concept_ccd",
+        "concept_spectroscopy",
+        "concept_adaptive_optics",
+        "concept_space_telescope"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_28",
+      "statement": "UV, X-ray and gamma-ray astronomy study energetic processes; observations use space telescopes or ground-based imaging atmospheric Cherenkov telescopes because the atmosphere blocks these wavelengths.",
+      "source_section": "Observational astrophysics",
+      "source_line_range": "96",
+      "subject_node_ids": [
+        "concept_high_energy",
+        "concept_space_telescope",
+        "concept_iact"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_29",
+      "statement": "Gravitational waves, neutrinos and cosmic rays provide additional distant astrophysical messengers.",
+      "source_section": "Observational astrophysics",
+      "source_line_range": "97",
+      "subject_node_ids": [
+        "concept_gw_astronomy",
+        "concept_neutrino_astronomy",
+        "concept_cosmic_rays"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_30",
+      "statement": "Different observation timescales reveal different information, from minutes/hours to milliseconds, years, centuries and millennia.",
+      "source_section": "Observational astrophysics",
+      "source_line_range": "99",
+      "subject_node_ids": [
+        "concept_optical_timescale",
+        "concept_radio_timescale",
+        "concept_historical_data"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_31",
+      "statement": "The Sun's proximity allows detail unavailable for other stars and makes it a guide to stellar understanding.",
+      "source_section": "Observational astrophysics",
+      "source_line_range": "101",
+      "subject_node_ids": [
+        "concept_sun",
+        "concept_solar_physics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_32",
+      "statement": "Stellar evolution is modeled by placing star types on the Hertzsprung–Russell diagram from birth to destruction.",
+      "source_section": "Observational astrophysics",
+      "source_line_range": "103",
+      "subject_node_ids": [
+        "concept_stellar_evolution",
+        "concept_hr_diagram"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_33",
+      "statement": "Theoretical astrophysics uses analytical models and numerical simulations, which have different strengths.",
+      "source_section": "Theoretical astrophysics",
+      "source_line_range": "106",
+      "subject_node_ids": [
+        "concept_analytical_model",
+        "concept_numerical_simulation"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_34",
+      "statement": "Theorists derive observational consequences so observers can seek data that refute models or discriminate between alternatives.",
+      "source_section": "Theoretical astrophysics",
+      "source_line_range": "108",
+      "subject_node_ids": [
+        "concept_model_observation_cycle",
+        "concept_model_selection"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_35",
+      "statement": "Persistent inconsistent data can lead to model modification or abandonment.",
+      "source_section": "Theoretical astrophysics",
+      "source_line_range": "110",
+      "subject_node_ids": [
+        "concept_minimal_modification",
+        "concept_model_abandonment"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_36",
+      "statement": "When astronomy was limited to astrometry and observation, celestial mechanics was called theoretical astronomy.",
+      "source_section": "History and theoretical astronomy",
+      "source_line_range": "118",
+      "subject_node_ids": [
+        "concept_celestial_mechanics",
+        "concept_theoretical_astronomy"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_37",
+      "statement": "Hipparchus made foundational contributions through numerical observation geometry; Newton is considered founder of celestial mechanics through calculus and universal gravitation.",
+      "source_section": "History and theoretical astronomy",
+      "source_line_range": "118",
+      "subject_node_ids": [
+        "person_hipparchus",
+        "person_newton",
+        "concept_celestial_mechanics",
+        "concept_newtonian_gravitation"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_38",
+      "statement": "After Cepheid variable stars were discovered, theorists shifted toward stellar composition and internal physics.",
+      "source_section": "History and theoretical astronomy",
+      "source_line_range": "118",
+      "subject_node_ids": [
+        "concept_stellar_astrophysics",
+        "concept_stellar_evolution"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_39",
+      "statement": "Theoretical astronomy expanded into cosmology, plasma physics and hydrodynamics.",
+      "source_section": "History and theoretical astronomy",
+      "source_line_range": "120",
+      "subject_node_ids": [
+        "concept_cosmology",
+        "concept_plasma_physics",
+        "concept_hydrodynamics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_40",
+      "statement": "Rosseland funded the Institute of Theoretical Astrophysics in Sweden, opened in 1934.",
+      "source_section": "History and theoretical astronomy",
+      "source_line_range": "120",
+      "subject_node_ids": [
+        "person_rosseland",
+        "concept_institute_theoretical_astrophysics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_41",
+      "statement": "Hoyle and colleagues established the Institute of Theoretical Astronomy at Cambridge in 1966 for dedicated computational research.",
+      "source_section": "History and theoretical astronomy",
+      "source_line_range": "120",
+      "subject_node_ids": [
+        "person_hoyle",
+        "concept_cambridge_ita"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_42",
+      "statement": "The Virginia Institute of Theoretical Astronomy opened in 1985 for research in theoretical astronomy and astrophysics.",
+      "source_section": "History and theoretical astronomy",
+      "source_line_range": "120",
+      "subject_node_ids": [
+        "concept_virginia_ita"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_43",
+      "statement": "Modern theoretical astronomy uses mathematical and computational tools and is foundational to planetary science.",
+      "source_section": "History and theoretical astronomy",
+      "source_line_range": "122",
+      "subject_node_ids": [
+        "concept_theoretical_astronomy",
+        "concept_mathematics",
+        "concept_planetary_science"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "claim_44",
+      "statement": "Scientific organizations, educators and popular media contribute to popularization of astrophysics.",
+      "source_section": "Popularization",
+      "source_line_range": "124",
+      "subject_node_ids": [
+        "concept_popularization",
+        "concept_royal_astronomical_society",
+        "concept_big_bang_theory_show"
+      ],
+      "epistemic_status": "source_derived"
+    }
+  ],
+  "references": [
+    {
+      "id": "ref_001",
+      "citation": "Maoz, Dan (2016). Astrophysics in a Nutshell. Princeton University Press. p. 272. ISBN 978-1400881178.",
+      "category": "reference",
+      "source_line": 143
+    },
+    {
+      "id": "ref_002",
+      "citation": "\"astrophysics\". Merriam-Webster, Incorporated. Archived from the original on 10 June 2011. Retrieved 2011-05-22.",
+      "category": "reference",
+      "source_line": 144
+    },
+    {
+      "id": "ref_003",
+      "citation": "Keeler, James E. (November 1897). \"The Importance of Astrophysical Research and the Relation of Astrophysics to the Other Physical Sciences\". The Astrophysical Journal. 6 (4): 271–288. Bibcode:1897ApJ.....6..271K. doi:10.1086/140401. PMID 17796068.",
+      "category": "reference",
+      "source_line": 145
+    },
+    {
+      "id": "ref_004",
+      "citation": "\"Focus Areas – NASA Science\". nasa.gov. Archived from the original on 2017-05-16. Retrieved 2017-07-12.",
+      "category": "reference",
+      "source_line": 146
+    },
+    {
+      "id": "ref_005",
+      "citation": "\"astronomy\". Encyclopædia Britannica. 29 May 2023.",
+      "category": "reference",
+      "source_line": 147
+    },
+    {
+      "id": "ref_006",
+      "citation": "Lloyd, G. E. R. (1968). Aristotle: The Growth and Structure of His Thought. Cambridge: Cambridge University Press. pp. 134–135. ISBN 978-0-521-09456-6.",
+      "category": "reference",
+      "source_line": 148
+    },
+    {
+      "id": "ref_007",
+      "citation": "Cornford, Francis MacDonald (c. 1957) [1937]. Plato's Cosmology: The Timaeus of Plato translated, with a running commentary. Indianapolis: Bobbs Merrill Co. p. 118.",
+      "category": "reference",
+      "source_line": 149
+    },
+    {
+      "id": "ref_008",
+      "citation": "Galilei, Galileo (1989). Van Helden, Albert (ed.). Sidereus Nuncius or The Sidereal Messenger. Chicago: University of Chicago Press. pp. 21, 47. ISBN 978-0-226-27903-9.",
+      "category": "reference",
+      "source_line": 150
+    },
+    {
+      "id": "ref_009",
+      "citation": "Edward Slowik (2013) [2005]. \"Descartes' Physics\". Stanford Encyclopedia of Philosophy. Retrieved 2015-07-18.",
+      "category": "reference",
+      "source_line": 151
+    },
+    {
+      "id": "ref_010",
+      "citation": "Westfall, Richard S. (1983). Never at Rest: A Biography of Isaac Newton. Cambridge: Cambridge University Press (published 1980). pp. 731–732. ISBN 978-0-521-27435-7.",
+      "category": "reference",
+      "source_line": 152
+    },
+    {
+      "id": "ref_011",
+      "citation": "Burtt, Edwin Arthur (2003) [First published 1924]. The Metaphysical Foundations of Modern Science (second revised ed.). Mineola, NY: Dover Publications. pp. 30, 41, 241–2. ISBN 978-0-486-42551-1.",
+      "category": "reference",
+      "source_line": 153
+    },
+    {
+      "id": "ref_012",
+      "citation": "Ladislav Kvasz (2013). \"Galileo, Descartes, and Newton – Founders of the Language of Physics\" (PDF). Acta Physica Slovaca. Institute of Philosophy, Academy of Sciences of the Czech Republic. Retrieved 2015-07-18.",
+      "category": "reference",
+      "source_line": 154
+    },
+    {
+      "id": "ref_013",
+      "citation": "Case, Stephen (2015). \"'Land-marks of the universe': John Herschel against the background of positional astronomy\". Annals of Science. 72 (4): 417–434. Bibcode:2015AnSci..72..417C. doi:10.1080/00033790.2015.1034588. PMID 26221834. S2CID 205397708. The great majority of astronomers working in the early nineteenth century were not interested in stars as physical objects. Far from being bodies with physical properties to be investigated, the stars were seen as markers measured in order to construct an accurate, detailed and precise background against which solar, lunar and planetary motions could be charted, primarily for terrestrial applications.",
+      "category": "reference",
+      "source_line": 155
+    },
+    {
+      "id": "ref_014",
+      "citation": "Donnelly, Kevin (September 2014). \"On the boredom of science: positional astronomy in the nineteenth century\". The British Journal for the History of Science. 47 (3): 479–503. doi:10.1017/S0007087413000915. S2CID 146382057.",
+      "category": "reference",
+      "source_line": 156
+    },
+    {
+      "id": "ref_015",
+      "citation": "Hearnshaw, J.B. (1986). The analysis of starlight. Cambridge: Cambridge University Press. pp. 23–29. ISBN 978-0-521-39916-6.",
+      "category": "reference",
+      "source_line": 157
+    },
+    {
+      "id": "ref_016",
+      "citation": "Kirchhoff, Gustav (1860). \"Ueber die Fraunhofer'schen Linien\". Annalen der Physik. 185 (1): 148–150. Bibcode:1860AnP...185..148K. doi:10.1002/andp.18601850115.",
+      "category": "reference",
+      "source_line": 158
+    },
+    {
+      "id": "ref_017",
+      "citation": "Kirchhoff, Gustav (1860). \"Ueber das Verhältniss zwischen dem Emissionsvermögen und dem Absorptionsvermögen der Körper für Wärme und Licht\". Annalen der Physik. 185 (2): 275–301. Bibcode:1860AnP...185..275K. doi:10.1002/andp.18601850205.",
+      "category": "reference",
+      "source_line": 159
+    },
+    {
+      "id": "ref_018",
+      "citation": "Cortie, A. L. (1921). \"Sir Norman Lockyer, 1836 – 1920\". The Astrophysical Journal. 53: 233–248. Bibcode:1921ApJ....53..233C. doi:10.1086/142602.",
+      "category": "reference",
+      "source_line": 160
+    },
+    {
+      "id": "ref_019",
+      "citation": "Jensen, William B. (2004). \"Why Helium Ends in \"-ium\"\" (PDF). Journal of Chemical Education. 81 (7): 944–945. Bibcode:2004JChEd..81..944J. doi:10.1021/ed081p944.",
+      "category": "reference",
+      "source_line": 161
+    },
+    {
+      "id": "ref_020",
+      "citation": "Hetherington, Norriss S.; McCray, W. Patrick. Weart, Spencer R. (ed.). Spectroscopy and the Birth of Astrophysics. American Institute of Physics, Center for the History of Physics. Archived from the original on September 7, 2015. Retrieved July 19, 2015.",
+      "category": "reference",
+      "source_line": 162
+    },
+    {
+      "id": "ref_021",
+      "citation": "Hale, George Ellery (1895). \"The Astrophysical Journal\". The Astrophysical Journal. 1 (1): 80–84. Bibcode:1895ApJ.....1...80H. doi:10.1086/140011.",
+      "category": "reference",
+      "source_line": 163
+    },
+    {
+      "id": "ref_022",
+      "citation": "The Astrophysical Journal. 1 (1).",
+      "category": "reference",
+      "source_line": 164
+    },
+    {
+      "id": "ref_023",
+      "citation": "Eddington, A. S. (October 1920). \"The Internal Constitution of the Stars\". The Scientific Monthly. 11 (4): 297–303. Bibcode:1920Sci....52..233E. doi:10.1126/science.52.1341.233. JSTOR 6491. PMID 17747682.",
+      "category": "reference",
+      "source_line": 165
+    },
+    {
+      "id": "ref_024",
+      "citation": "Eddington, A. S. (1916). \"On the radiative equilibrium of the stars\". Monthly Notices of the Royal Astronomical Society. 77: 16–35. Bibcode:1916MNRAS..77...16E. doi:10.1093/mnras/77.1.16.",
+      "category": "reference",
+      "source_line": 166
+    },
+    {
+      "id": "ref_025",
+      "citation": "McCracken, Garry; Stott, Peter (2013). McCracken, Garry; Stott, Peter (eds.). Fusion (Second ed.). Boston: Academic Press. p. 13. doi:10.1016/b978-0-12-384656-3.00002-7. ISBN 978-0-12-384656-3. Eddington had realized that there would be a mass loss if four hydrogen atoms combined to form a single helium atom. Einstein's equivalence of mass and energy led directly to the suggestion that this could be the long-sought process that produces the energy in the stars! It was an inspired guess, all the more remarkable because the structure of the nucleus and the mechanisms of these reactions were not fully understood.",
+      "category": "reference",
+      "source_line": 167
+    },
+    {
+      "id": "ref_026",
+      "citation": "Payne, C. H. (1925). Stellar Atmospheres; A Contribution to the Observational Study of High Temperature in the Reversing Layers of Stars (PhD Thesis). Cambridge, Massachusetts: Radcliffe College. Bibcode:1925PhDT.........6P.",
+      "category": "reference",
+      "source_line": 168
+    },
+    {
+      "id": "ref_027",
+      "citation": "Haramundanis, Katherine (2007). \"Payne-Gaposchkin [Payne], Cecilia Helena\". In Hockey, Thomas; Trimble, Virginia; Williams, Thomas R. (eds.). Biographical Encyclopedia of Astronomers. New York: Springer. pp. 876–878. ISBN 978-0-387-30400-7. Retrieved July 19, 2015.",
+      "category": "reference",
+      "source_line": 169
+    },
+    {
+      "id": "ref_028",
+      "citation": "Steven Soter and Neil deGrasse Tyson (2000). \"Cecilia Payne and the Composition of the Stars\". American Museum of Natural History. American Museum of Natural History.",
+      "category": "reference",
+      "source_line": 170
+    },
+    {
+      "id": "ref_029",
+      "citation": "Biermann, Peter L.; Falcke, Heino (1998). \"Frontiers of Astrophysics—Workshop summary\". In Panvini, Robert S.; Weiler, Thomas J. (eds.). Fundamental Particles and Interactions. AIP Conference Proceedings. Vol. 423. American Institute of Physics. pp. 236–248. arXiv:astro-ph/9711066. Bibcode:1998AIPC..423..236B. doi:10.1063/1.55085. ISBN 1-56396-725-1.",
+      "category": "reference",
+      "source_line": 171
+    },
+    {
+      "id": "ref_030",
+      "citation": "Eddington, A.S. (1926). \"Internal Constitution of the Stars\". Science. 52 (1341): 233–240. Bibcode:1920Sci....52..233E. doi:10.1126/science.52.1341.233. PMID 17747682.",
+      "category": "reference",
+      "source_line": 172
+    },
+    {
+      "id": "ref_031",
+      "citation": "Eddington, Sir Arthur Stanley (28 January 1988). The Internal Constitution of the Stars. Cambridge University Press. ISBN 978-0-521-33708-3.",
+      "category": "reference",
+      "source_line": 173
+    },
+    {
+      "id": "ref_032",
+      "citation": "Brumberg, V. A. (2013). \"Celestial mechanics: Past, present, future\". Solar System Research. 47 (5): 347–358. doi:10.1134/S0038094613040011. ISSN 0038-0946.",
+      "category": "reference",
+      "source_line": 174
+    },
+    {
+      "id": "ref_033",
+      "citation": "Dolling, Lisa M.; Gianelli, Arthur F.; Statile, Glenn N., eds. (2003). The tests of time: readings in the development of physical theory. Princeton: Princeton University Press. ISBN 978-0-691-09084-9.",
+      "category": "reference",
+      "source_line": 175
+    },
+    {
+      "id": "ref_034",
+      "citation": "Clerke, Agnes M. (1885). A popular history of astronomy during the nineteenth century. Edinburgh: A. & C. Black – via Internet Archive.",
+      "category": "reference",
+      "source_line": 176
+    },
+    {
+      "id": "ref_035",
+      "citation": "Chebotarev, G.A. (1975). \"10.3. Johannes Kepler and celestial mechanics\". Vistas in Astronomy. 18: 557–565. doi:10.1016/0083-6656(75)90135-X.",
+      "category": "reference",
+      "source_line": 177
+    },
+    {
+      "id": "ref_036",
+      "citation": "Gingerich, Owen, ed. (1984). Astrophysics and twentieth-century astronomy to 1950. The General history of astronomy. Cambridge [Cambridgeshire]; New York: Cambridge University Press. ISBN 978-0-521-24256-1.",
+      "category": "reference",
+      "source_line": 178
+    },
+    {
+      "id": "ref_037",
+      "citation": "Rivadulla, Andrés (2016). \"Abduction and Beyond: Methodological and Computational Aspects of Creativity in Natural Sciences\". In Magnani, Lorenzo; Gabbay, Dov M.; Siekmann, Jörg (eds.). The IfCoLog Journal of Logics and their Applications. Vol. 3. Lightning Source. pp. 105–122. ISBN 978-1-84890-214-5.",
+      "category": "reference",
+      "source_line": 179
+    },
+    {
+      "id": "ref_038",
+      "citation": "Longair, Malcolm (2022-04-05). \"A Brief History of Astronomy, Astrophysics and Cosmology 1945-2000 | Royal Society\". royalsociety.org. Retrieved 2026-02-15.",
+      "category": "reference",
+      "source_line": 180
+    },
+    {
+      "id": "ref_039",
+      "citation": "Jensen, E. (1986). \"Svein Rosseland, 31 March 1894 - 19 January 1985\". Quarterly Journal of the Royal Astronomical Society. 27 (3): 512–514. ISSN 0035-8738.",
+      "category": "reference",
+      "source_line": 181
+    },
+    {
+      "id": "ref_040",
+      "citation": "Rosseland, S. (1928). \"Theoretical Astrophysics\". Nature. 122 (3066): 159–162. doi:10.1038/122159a0. ISSN 0028-0836.",
+      "category": "reference",
+      "source_line": 182
+    },
+    {
+      "id": "ref_041",
+      "citation": "Hurn, M. (2004). \"An English astronomical library: the case of the Cambridge Observatory\". The Observatory. 124: 37–46. ISSN 0029-7704.",
+      "category": "reference",
+      "source_line": 183
+    },
+    {
+      "id": "ref_042",
+      "citation": "Struve, Otto (1943). \"Fifty years of progress in astronomy\". Popular Astronomy. 51: 469. ISSN 0197-7482.",
+      "category": "reference",
+      "source_line": 184
+    },
+    {
+      "id": "ref_043",
+      "citation": "\"Virginia Institute of Theoretical Astronomy\". Department of Astronomy. Retrieved 2026-02-15.",
+      "category": "reference",
+      "source_line": 185
+    },
+    {
+      "id": "ref_044",
+      "citation": "\"What Can You Do with an Astronomy Degree\". Embry-Riddle. Retrieved 2026-02-15.",
+      "category": "reference",
+      "source_line": 186
+    },
+    {
+      "id": "ref_045",
+      "citation": "Polyakhova, Elena; Korolev, Vladimir (2022-12-14), \"Astrodynamics in Photogravitational Field of the Sun: Space Flights with a Solar Sail\", in S. Essa, Khalid (ed.), Gravitational Field - Concepts and Applications, IntechOpen, doi:10.5772/intechopen.102005, ISBN 978-1-83969-752-4, retrieved 2026-02-15",
+      "category": "reference",
+      "source_line": 187
+    },
+    {
+      "id": "ref_046",
+      "citation": "V., Narlikar, Jayant (1990). \"Curriculum for the Training of Astronomers\". IAU Colloq. 105: The Teaching of astronomy. Archived from the original on 2024-07-29.",
+      "category": "reference",
+      "source_line": 188
+    },
+    {
+      "id": "ref_047",
+      "citation": "Armitage, Philip J. (2010). Astrophysics of planet formation. Cambridge: Cambridge University Press. ISBN 978-0-521-88745-8.",
+      "category": "reference",
+      "source_line": 189
+    },
+    {
+      "id": "ref_048",
+      "citation": "D. Mark Manley (2012). \"Famous Astronomers and Astrophysicists\". Kent State University. Retrieved 2015-07-17.",
+      "category": "reference",
+      "source_line": 190
+    },
+    {
+      "id": "ref_049",
+      "citation": "The science.ca team (2015). \"Hubert Reeves – Astronomy, Astrophysics and Space Science\". GCS Research Society. Retrieved 2015-07-17.",
+      "category": "reference",
+      "source_line": 191
+    },
+    {
+      "id": "ref_050",
+      "citation": "\"Neil deGrasse Tyson\". Hayden Planetarium. 2015. Retrieved 2015-07-17.",
+      "category": "reference",
+      "source_line": 192
+    },
+    {
+      "id": "ref_051",
+      "citation": "Longair, Malcolm S. (2006). The Cosmic Century: A History of Astrophysics and Cosmology. Cambridge: Cambridge University Press. ISBN 978-0-521-47436-8.",
+      "category": "further_reading",
+      "source_line": 194
+    },
+    {
+      "id": "ref_052",
+      "citation": "Astrophysics, Scholarpedia Expert articles",
+      "category": "further_reading",
+      "source_line": 195
+    },
+    {
+      "id": "ref_053",
+      "citation": "Wikibooks has a book on the topic of: Astrophysics",
+      "category": "external_link",
+      "source_line": 198
+    },
+    {
+      "id": "ref_054",
+      "citation": "Library resources about",
+      "category": "external_link",
+      "source_line": 199
+    },
+    {
+      "id": "ref_055",
+      "citation": "Astrophysics",
+      "category": "external_link",
+      "source_line": 200
+    },
+    {
+      "id": "ref_056",
+      "citation": "Online books",
+      "category": "external_link",
+      "source_line": 201
+    },
+    {
+      "id": "ref_057",
+      "citation": "Resources in your library",
+      "category": "external_link",
+      "source_line": 202
+    },
+    {
+      "id": "ref_058",
+      "citation": "Resources in other libraries",
+      "category": "external_link",
+      "source_line": 203
+    },
+    {
+      "id": "ref_059",
+      "citation": "Astronomy and Astrophysics, a European Journal",
+      "category": "external_link",
+      "source_line": 204
+    },
+    {
+      "id": "ref_060",
+      "citation": "The Astrophysical Journal",
+      "category": "external_link",
+      "source_line": 205
+    },
+    {
+      "id": "ref_061",
+      "citation": "International Journal of Modern Physics D from World Scientific",
+      "category": "external_link",
+      "source_line": 206
+    },
+    {
+      "id": "ref_062",
+      "citation": "The Open Journal of Astrophysics",
+      "category": "external_link",
+      "source_line": 207
+    },
+    {
+      "id": "ref_063",
+      "citation": "Solar Physics",
+      "category": "external_link",
+      "source_line": 208
+    },
+    {
+      "id": "ref_064",
+      "citation": "Cosmic Journey: A History of Scientific Cosmology Archived 2008-10-21 at the Wayback Machine from the American Institute of Physics",
+      "category": "external_link",
+      "source_line": 209
+    },
+    {
+      "id": "ref_065",
+      "citation": "Ned Wright's Cosmology Tutorial, UCLA",
+      "category": "external_link",
+      "source_line": 210
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "sd01",
+      "distinction": "Astrophysics vs celestial mechanics",
+      "a": "Astrophysics",
+      "b": "Celestial mechanics",
+      "difference": "Astrophysics emphasizes physical nature, composition and processes; celestial mechanics emphasizes positions and motions."
+    },
+    {
+      "id": "sd02",
+      "distinction": "Observational vs theoretical astrophysics",
+      "a": "Observational astrophysics",
+      "b": "Theoretical astrophysics",
+      "difference": "Observation records/interprets data; theory constructs models and derives measurable consequences."
+    },
+    {
+      "id": "sd03",
+      "distinction": "Astronomy vs astrophysics",
+      "a": "Astronomy",
+      "b": "Astrophysics",
+      "difference": "The source frames astrophysics as the physics/chemistry-oriented study of astronomical objects emerging from astronomy."
+    },
+    {
+      "id": "sd04",
+      "distinction": "Emission vs absorption",
+      "a": "Emission",
+      "b": "Absorption",
+      "difference": "Emission adds radiation at characteristic wavelengths; absorption reduces radiation at characteristic wavelengths."
+    },
+    {
+      "id": "sd05",
+      "distinction": "Composition vs classification",
+      "a": "Chemical composition",
+      "b": "Stellar spectral classification",
+      "difference": "Composition is a physical property inferred from spectra; classification groups stars by spectral characteristics."
+    },
+    {
+      "id": "sd06",
+      "distinction": "Analytical model vs numerical simulation",
+      "a": "Analytical model",
+      "b": "Numerical simulation",
+      "difference": "Analytical methods provide insight; numerical methods can reveal otherwise unseen effects."
+    },
+    {
+      "id": "sd07",
+      "distinction": "Model support vs model refutation",
+      "a": "Model support",
+      "b": "Model refutation",
+      "difference": "Observations can support a model or reveal persistent inconsistencies that force revision or abandonment."
+    },
+    {
+      "id": "sd08",
+      "distinction": "Electromagnetic vs multi-messenger astronomy",
+      "a": "Electromagnetic radiation",
+      "b": "Gravitational waves/neutrinos/cosmic rays",
+      "difference": "Astrophysics uses multiple messenger classes rather than only electromagnetic radiation."
+    },
+    {
+      "id": "sd09",
+      "distinction": "Optical vs radio timescales",
+      "a": "Optical observations",
+      "b": "Radio observations",
+      "difference": "Typical observation durations and accessible variability timescales differ."
+    },
+    {
+      "id": "sd10",
+      "distinction": "Sun vs other stars observationally",
+      "a": "Sun",
+      "b": "Other stars",
+      "difference": "The Sun's proximity allows uniquely detailed observation."
+    },
+    {
+      "id": "sd11",
+      "distinction": "Theoretical astronomy vs theoretical astrophysics",
+      "a": "Theoretical astronomy",
+      "b": "Theoretical astrophysics",
+      "difference": "They historically overlap, but theoretical astronomy is described as strongly focused on mathematical/computational motion prediction."
+    },
+    {
+      "id": "sd12",
+      "distinction": "Historical celestial-terrestrial separation vs unified physics",
+      "a": "Aristotelian cosmology",
+      "b": "Unified celestial-terrestrial physics",
+      "difference": "A historical transition from different celestial/terrestrial substances to shared natural laws."
+    },
+    {
+      "id": "sd13",
+      "distinction": "HR diagram vs stellar evolution",
+      "a": "Hertzsprung–Russell diagram",
+      "b": "Stellar evolution",
+      "difference": "The diagram represents/classifies states; stellar evolution is the physical process."
+    },
+    {
+      "id": "sd14",
+      "distinction": "Messenger vs inferred property",
+      "a": "Astronomical messenger",
+      "b": "Astrophysical property",
+      "difference": "Radiation/waves/particles are observational channels; temperature/composition/density/luminosity are inferred properties."
+    },
+    {
+      "id": "sd15",
+      "distinction": "Source equation vs contextual formalization",
+      "a": "Source-supported equation",
+      "b": "Contextual formalization",
+      "difference": "Equations explicitly invoked by the article are distinguished from mathematical expansions added only to structure the graph."
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "lp01",
+      "name": "Foundations",
+      "nodes": [
+        "domain_astrophysics",
+        "concept_physics",
+        "concept_chemistry",
+        "concept_astronomy",
+        "concept_celestial_mechanics",
+        "concept_observational_astrophysics",
+        "concept_theoretical_astrophysics"
+      ]
+    },
+    {
+      "id": "lp02",
+      "name": "Historical emergence",
+      "nodes": [
+        "concept_aristotelian_cosmos",
+        "concept_unified_physics",
+        "person_galileo",
+        "person_descartes",
+        "person_newton",
+        "concept_fraunhofer_lines",
+        "person_kirchhoff",
+        "concept_astrophysical_journal"
+      ]
+    },
+    {
+      "id": "lp03",
+      "name": "Spectroscopy and composition",
+      "nodes": [
+        "concept_em_spectrum",
+        "concept_spectroscopy",
+        "concept_spectral_line",
+        "concept_absorption",
+        "concept_emission",
+        "concept_stellar_atmosphere",
+        "concept_saha_ionization",
+        "person_payne",
+        "concept_chemical_composition"
+      ]
+    },
+    {
+      "id": "lp04",
+      "name": "Stellar structure and evolution",
+      "nodes": [
+        "concept_stars",
+        "concept_stellar_energy_problem",
+        "person_eddington",
+        "concept_stellar_fusion",
+        "concept_mass_energy",
+        "concept_hr_diagram",
+        "concept_stellar_evolution"
+      ]
+    },
+    {
+      "id": "lp05",
+      "name": "Observational spectrum",
+      "nodes": [
+        "concept_radio_telescope",
+        "concept_cmb",
+        "concept_interstellar_medium",
+        "concept_space_telescope",
+        "concept_adaptive_optics",
+        "concept_ccd",
+        "concept_iact",
+        "concept_high_energy"
+      ]
+    },
+    {
+      "id": "lp06",
+      "name": "Multi-messenger astrophysics",
+      "nodes": [
+        "concept_em_spectrum",
+        "concept_gw_astronomy",
+        "concept_neutrino_astronomy",
+        "concept_cosmic_rays",
+        "concept_gw_detector",
+        "concept_neutrino_observatory"
+      ]
+    },
+    {
+      "id": "lp07",
+      "name": "Theoretical modeling",
+      "nodes": [
+        "concept_theoretical_astrophysics",
+        "concept_analytical_model",
+        "concept_polytrope",
+        "concept_numerical_simulation",
+        "concept_model_observation_cycle",
+        "concept_model_selection"
+      ]
+    },
+    {
+      "id": "lp08",
+      "name": "Celestial mechanics and theoretical astronomy",
+      "nodes": [
+        "concept_theoretical_astronomy",
+        "concept_celestial_mechanics",
+        "person_hipparchus",
+        "person_newton",
+        "concept_newtonian_gravitation",
+        "concept_planetary_science"
+      ]
+    },
+    {
+      "id": "lp09",
+      "name": "Relativistic/cosmological astrophysics",
+      "nodes": [
+        "concept_general_relativity",
+        "concept_black_holes",
+        "concept_gw_astronomy",
+        "concept_cosmology",
+        "concept_lcdm",
+        "concept_dark_matter",
+        "concept_dark_energy",
+        "concept_inflation"
+      ]
+    },
+    {
+      "id": "lp10",
+      "name": "Institutions and popularization",
+      "nodes": [
+        "concept_astrophysical_journal",
+        "concept_institute_theoretical_astrophysics",
+        "concept_cambridge_ita",
+        "concept_virginia_ita",
+        "concept_royal_astronomical_society",
+        "concept_popularization"
+      ]
+    }
+  ],
+  "misconceptions": [
+    {
+      "id": "mc01",
+      "misconception": "Astrophysics is just astronomy with larger telescopes.",
+      "correction": "The source defines it as applying physics and chemistry to astronomical objects and emphasizes physical nature, composition and processes."
+    },
+    {
+      "id": "mc02",
+      "misconception": "Astrophysics only studies visible light.",
+      "correction": "The source covers radio, infrared, optical, ultraviolet, X-ray and gamma radiation and later gravitational waves, neutrinos and cosmic rays."
+    },
+    {
+      "id": "mc03",
+      "misconception": "Observational and theoretical astrophysics are unrelated.",
+      "correction": "The source presents them as complementary parts of modern astronomical research."
+    },
+    {
+      "id": "mc04",
+      "misconception": "Spectra only measure brightness.",
+      "correction": "The source connects spectra to chemical composition and stellar temperature and identifies characteristic lines."
+    },
+    {
+      "id": "mc05",
+      "misconception": "The Sun is observationally equivalent to any other star.",
+      "correction": "The source stresses that its proximity allows exceptional detail."
+    },
+    {
+      "id": "mc06",
+      "misconception": "Analytical models are always superior to simulations.",
+      "correction": "The source assigns different strengths to analytical insight and numerical discovery."
+    },
+    {
+      "id": "mc07",
+      "misconception": "A model that disagrees with data is immediately discarded.",
+      "correction": "The source describes minimal modification before eventual abandonment when inconsistency accumulates."
+    },
+    {
+      "id": "mc08",
+      "misconception": "Electromagnetic radiation is the only astronomical messenger.",
+      "correction": "The source explicitly includes gravitational waves, neutrinos and cosmic rays."
+    },
+    {
+      "id": "mc09",
+      "misconception": "Theoretical astronomy and theoretical astrophysics are identical.",
+      "correction": "The source describes historical overlap but a motion/modeling emphasis for modern theoretical astronomy."
+    },
+    {
+      "id": "mc10",
+      "misconception": "Stars were always known to be mostly hydrogen and helium.",
+      "correction": "The source presents this as a major discovery associated with Payne."
+    },
+    {
+      "id": "mc11",
+      "misconception": "Eddington's fusion insight came after nuclear fusion was fully understood.",
+      "correction": "The source emphasizes the opposite: fusion and stellar hydrogen composition had not yet been established."
+    },
+    {
+      "id": "mc12",
+      "misconception": "Astrophysics began only in the twentieth century.",
+      "correction": "The source traces roots to seventeenth-century unified physics and nineteenth-century spectroscopy."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q01",
+      "question": "How does astrophysics differ from celestial mechanics?",
+      "answer_focus": "Nature/composition/processes versus positions and motions.",
+      "nodes": [
+        "domain_astrophysics",
+        "concept_celestial_mechanics"
+      ]
+    },
+    {
+      "id": "q02",
+      "question": "How did spectroscopy transform astronomy?",
+      "answer_focus": "Spectral lines linked astronomical light to terrestrial elements and physical conditions.",
+      "nodes": [
+        "concept_spectroscopy",
+        "concept_spectral_line",
+        "concept_chemical_composition"
+      ]
+    },
+    {
+      "id": "q03",
+      "question": "Why is the Sun unusually valuable observationally?",
+      "answer_focus": "Its proximity permits detail unavailable for other stars.",
+      "nodes": [
+        "concept_sun",
+        "concept_solar_physics"
+      ]
+    },
+    {
+      "id": "q04",
+      "question": "What did Cecilia Payne infer about stellar composition?",
+      "answer_focus": "Hydrogen and helium are principal stellar components.",
+      "nodes": [
+        "person_payne",
+        "concept_hydrogen",
+        "concept_helium"
+      ]
+    },
+    {
+      "id": "q05",
+      "question": "What was Eddington's stellar-energy insight?",
+      "answer_focus": "Hydrogen fusion into helium could power stars via mass-energy equivalence.",
+      "nodes": [
+        "person_eddington",
+        "concept_stellar_fusion",
+        "concept_mass_energy"
+      ]
+    },
+    {
+      "id": "q06",
+      "question": "Why are non-optical wavelengths important?",
+      "answer_focus": "Different bands probe different environments and energetic processes.",
+      "nodes": [
+        "concept_radio_telescope",
+        "concept_space_telescope",
+        "concept_high_energy"
+      ]
+    },
+    {
+      "id": "q07",
+      "question": "Why use multiple messenger types?",
+      "answer_focus": "Electromagnetic radiation is complemented by gravitational waves, neutrinos and cosmic rays.",
+      "nodes": [
+        "concept_em_spectrum",
+        "concept_gw_astronomy",
+        "concept_neutrino_astronomy",
+        "concept_cosmic_rays"
+      ]
+    },
+    {
+      "id": "q08",
+      "question": "What are analytical models and numerical simulations each good for?",
+      "answer_focus": "Analytical insight versus discovery of complex/unseen effects.",
+      "nodes": [
+        "concept_analytical_model",
+        "concept_numerical_simulation"
+      ]
+    },
+    {
+      "id": "q09",
+      "question": "How does the theory-observation cycle work?",
+      "answer_focus": "Models predict observables; data support, constrain, refute or force revision.",
+      "nodes": [
+        "concept_model_observation_cycle",
+        "concept_model_selection"
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "How did Kirchhoff and Bunsen connect the Sun to terrestrial chemistry?",
+      "answer_focus": "Solar absorption lines matched characteristic lines of known elements.",
+      "nodes": [
+        "person_kirchhoff",
+        "person_bunsen",
+        "concept_absorption",
+        "concept_emission"
+      ]
+    },
+    {
+      "id": "q11",
+      "question": "What was the importance of Harvard spectral classification?",
+      "answer_focus": "It systematized classification at very large catalog scale.",
+      "nodes": [
+        "person_pickering",
+        "person_cannon",
+        "concept_harvard_scheme"
+      ]
+    },
+    {
+      "id": "q12",
+      "question": "How did theoretical astronomy expand beyond celestial mechanics?",
+      "answer_focus": "It expanded into stellar physics, cosmology, plasma physics and hydrodynamics.",
+      "nodes": [
+        "concept_theoretical_astronomy",
+        "concept_celestial_mechanics",
+        "concept_cosmology",
+        "concept_plasma_physics",
+        "concept_hydrodynamics"
+      ]
+    },
+    {
+      "id": "q13",
+      "question": "What is relativistic astrophysics used for?",
+      "answer_focus": "Large-scale gravitational phenomena, black holes and gravitational waves.",
+      "nodes": [
+        "concept_general_relativity",
+        "concept_black_holes",
+        "concept_gw_astronomy"
+      ]
+    },
+    {
+      "id": "q14",
+      "question": "Why do observation timescales matter?",
+      "answer_focus": "Different durations expose different variability and historical information.",
+      "nodes": [
+        "concept_optical_timescale",
+        "concept_radio_timescale",
+        "concept_historical_data"
+      ]
+    },
+    {
+      "id": "q15",
+      "question": "How has astrophysics been popularized?",
+      "answer_focus": "Scientific organizations, educators and popular media have attracted public interest.",
+      "nodes": [
+        "concept_popularization",
+        "concept_royal_astronomical_society",
+        "concept_big_bang_theory_show"
+      ]
+    }
+  ],
+  "equations": [
+    {
+      "id": "eq_mass_energy",
+      "name": "Mass–energy equivalence",
+      "expression": "E = mc²",
+      "meaning": "Explicitly invoked by the source in Eddington's stellar-energy reasoning.",
+      "status": "source_supported"
+    },
+    {
+      "id": "eq_gravitation",
+      "name": "Newtonian universal gravitation",
+      "expression": "F = G m₁m₂/r²",
+      "meaning": "Formal expression of Newton's universal gravitation, which the source names but does not print.",
+      "status": "contextual_formalization"
+    },
+    {
+      "id": "eq_saha",
+      "name": "Saha ionization relation",
+      "expression": "nᵢ₊₁nₑ/nᵢ ∝ T^(3/2) exp(−χᵢ/kT)",
+      "meaning": "Formal representation of the Saha ionization framework named by the source.",
+      "status": "contextual_formalization"
+    },
+    {
+      "id": "eq_planck",
+      "name": "Planck spectral radiance",
+      "expression": "Bλ(T)=2hc²/λ⁵·[exp(hc/λkT)−1]⁻¹",
+      "meaning": "Contextual formalization of spectral/thermal inference; not printed in the source.",
+      "status": "contextual_formalization"
+    }
+  ],
+  "expansion_targets": [
+    {
+      "id": "xt01",
+      "target": "Full electromagnetic astronomy graph",
+      "reason": "Expand wavelength bands into sources, emission mechanisms, atmospheric windows, instruments and inference pipelines."
+    },
+    {
+      "id": "xt02",
+      "target": "Stellar structure and evolution graph",
+      "reason": "Expand stellar birth, hydrostatic structure, energy transport, nuclear burning, remnants and HR tracks."
+    },
+    {
+      "id": "xt03",
+      "target": "Spectroscopy and atomic physics graph",
+      "reason": "Expand transitions, ionization, line broadening, radiative transfer and abundance inference."
+    },
+    {
+      "id": "xt04",
+      "target": "Galaxy formation/evolution graph",
+      "reason": "Expand dark matter halos, gas dynamics, star formation, feedback, morphology and structure."
+    },
+    {
+      "id": "xt05",
+      "target": "Multi-messenger astrophysics graph",
+      "reason": "Connect electromagnetic, gravitational-wave, neutrino and cosmic-ray observations to common sources."
+    },
+    {
+      "id": "xt06",
+      "target": "Cosmology/Lambda-CDM graph",
+      "reason": "Expand Big Bang, inflation, CMB, expansion history, dark matter, dark energy and structure formation."
+    },
+    {
+      "id": "xt07",
+      "target": "High-energy astrophysics graph",
+      "reason": "Expand black holes, magnetars, pulsars, accretion, jets and X/gamma-ray instruments."
+    },
+    {
+      "id": "xt08",
+      "target": "Observatory/instrument graph",
+      "reason": "Model instruments, wavelength coverage, atmospheric constraints, calibration and data products."
+    },
+    {
+      "id": "xt09",
+      "target": "History of astrophysics graph",
+      "reason": "Expand the transition from celestial-terrestrial separation through spectroscopy to multi-messenger astronomy."
+    },
+    {
+      "id": "xt10",
+      "target": "Theory-model-evidence graph",
+      "reason": "Represent hypotheses, predictions, observations, constraints, anomalies, revisions and abandonment."
+    },
+    {
+      "id": "xt11",
+      "target": "Astrochemistry graph",
+      "reason": "Expand molecules, chemical networks, dust chemistry and spectroscopic signatures."
+    },
+    {
+      "id": "xt12",
+      "target": "Planet formation/exoplanet graph",
+      "reason": "Expand protoplanetary disks, formation mechanisms, atmospheres and observational methods."
+    }
+  ],
+  "statistics": {
+    "node_count": 271,
+    "edge_count": 211,
+    "source_claim_count": 44,
+    "reference_count": 65,
+    "person_count": 28,
+    "equation_count": 4,
+    "semantic_distinction_count": 15,
+    "learning_path_count": 10,
+    "misconception_count": 12,
+    "question_count": 15,
+    "expansion_target_count": 12
+  },
+  "validation": {
+    "all_edge_endpoints_exist": true,
+    "missing_edge_endpoints": [],
+    "duplicate_node_ids": false,
+    "duplicate_edge_ids": false,
+    "all_source_claim_ids_unique": true,
+    "all_reference_ids_unique": true
+  },
+  "provenance_model": {
+    "source_claims": "Atomic statements mapped to source sections and line ranges.",
+    "bibliography": "All numbered references plus further-reading and external-link records are preserved as first-class nodes.",
+    "edge_provenance": "Claim/reference edges encode source support without flattening it into generic tags.",
+    "contextual_formalization": "Equations not printed in the article are labeled contextual_formalization."
+  },
+  "source_metadata": {
+    "uploaded_file": "Pasted text(20261007-051304).txt",
+    "source_type": "Wikipedia article",
+    "article_title": "Astrophysics",
+    "article_last_edited": "26 September 2026, 16:40 UTC",
+    "source_lines": 231,
+    "source_characters": 29028,
+    "source_sections": [
+      "History",
+      "Observational astrophysics",
+      "Theoretical astrophysics",
+      "History and theoretical astronomy",
+      "Popularization",
+      "See also",
+      "References",
+      "Further reading",
+      "External links"
+    ],
+    "reference_section_source_lines": "143-192",
+    "further_reading_source_lines": "194-195",
+    "external_links_source_lines": "198-210"
+  }
+}
