@@ -8,18 +8,21 @@ const atlasPromise = buildAtlas();
 
 test('all discovered source graphs retain complete original records and valid layouts', async () => {
   const atlas = await atlasPromise;
-  assert.ok(atlas.documents.length >= 9);
+  assert.ok(atlas.documents.length >= 12);
   assert.ok(atlas.summary.concepts >= 2744);
   assert.ok(atlas.documents.some(document => document.file.startsWith('matter_full_')));
   assert.ok(atlas.documents.some(document => document.file.startsWith('albert_einstein_')));
   assert.ok(atlas.documents.some(document => document.file.startsWith('theory_of_relativity_')));
+  assert.ok(atlas.documents.some(document => document.file.startsWith('force_full_')));
+  assert.ok(atlas.documents.some(document => document.file.startsWith('acceleration_full_')));
+  assert.ok(atlas.documents.some(document => document.file.startsWith('astrophysics_full_')));
   for (const node of atlas.nodes) {
     assert.ok(Number.isFinite(node.layout.x) && Number.isFinite(node.layout.y), node.id);
   }
   for (const document of atlas.documents) {
     const original = JSON.parse(await readFile(new URL(`../data/${document.file}`, import.meta.url)));
-    assert.equal(atlas.edges.filter(edge => edge.document === document.file).length, original.edges.length);
-    for (const key of Object.keys(original).filter(key => !['nodes', 'edges', 'claims', 'source_claims'].includes(key))) {
+    assert.equal(atlas.edges.filter(edge => edge.document === document.file).length, (original.edges || original.relationships).length);
+    for (const key of Object.keys(original).filter(key => !['nodes', 'edges', 'relationships', 'claims', 'source_claims'].includes(key))) {
       assert.ok(document.fields.some(field => field.key === key) || ['title', 'graph_id', 'domain'].includes(key), `${document.file}: ${key}`);
     }
     for (const node of original.nodes) {
@@ -49,6 +52,24 @@ test('cross-source IDs are unified and every relationship resolves', async () =>
     assert.ok(ids.has(edge.source), edge.source);
     assert.ok(ids.has(edge.target), edge.target);
   }
+});
+
+test('force and acceleration retain their explicit mechanism, equation and assumptions', async () => {
+  const atlas = await atlasPromise;
+  const accelerationDocument = atlas.documents.find(document => document.file.startsWith('acceleration_full_'));
+  const forceDocument = atlas.documents.find(document => document.file.startsWith('force_full_'));
+  const astroDocument = atlas.documents.find(document => document.file.startsWith('astrophysics_full_'));
+  assert.equal(accelerationDocument.edgeCount, 221);
+  assert.equal(forceDocument.edgeCount, 634);
+  assert.equal(astroDocument.edgeCount, 211);
+  const proof = atlas.edges.find(edge => edge.source === 'net_force' && edge.target === 'acceleration' && edge.relation === 'causes_acceleration_through');
+  assert.equal(proof.record.semantic_role, 'causal_derivation');
+  assert.equal(proof.record.mathematical_form, 'F_net=dp/dt=m a');
+  assert.match(proof.record.conditions, /constant mass/);
+  assert.deepEqual(proof.record.source_line_range, [132, 132]);
+  assert.equal(proof.fields.find(field => field.key === 'mechanism').value, proof.record.mechanism);
+  assert.equal(proof.semantic, proof.record.mechanism);
+  assert.ok(atlas.nodes.find(node => node.id === 'net_force').variants.some(variant => variant.document === accelerationDocument.file));
 });
 
 test('new ion and quantum evidence can be traced to its complete source claims', async () => {

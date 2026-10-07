@@ -24,10 +24,12 @@ test('search, focus, source records and learning routes work on the full atlas',
   dom.window.HTMLElement.prototype.scrollIntoView = function () { scrolled.push(this.id); };
   const circles = [];
   const dashPatterns = new Set();
+  let arrowHeads = 0;
+  let pathSegments = 0;
   dom.window.HTMLCanvasElement.prototype.getContext = () => ({
-    setTransform() {}, clearRect() {}, beginPath() {}, moveTo() {}, lineTo() {}, stroke() {},
+    setTransform() {}, clearRect() {}, beginPath() { pathSegments = 0; }, moveTo() {}, lineTo() { pathSegments++; }, stroke() {},
     setLineDash(pattern) { dashPatterns.add(pattern.join(',')); },
-    arc(x, y) { circles.push([x, y]); }, fill() {}, fillText() {}
+    arc(x, y) { circles.push([x, y]); }, fill() { if (pathSegments >= 2) arrowHeads++; }, fillText() {}
   });
   dom.window.eval(keyScript);
   dom.window.eval(networkScript);
@@ -42,12 +44,22 @@ test('search, focus, source records and learning routes work on the full atlas',
   assert.ok(Math.min(...rendered.map(([, y]) => y)) <= 25);
   assert.ok(Math.max(...rendered.map(([, y]) => y)) >= 595);
   assert.ok(document.querySelector('#map-count').textContent.includes(`${graph.summary.concepts.toLocaleString()} nodes`));
-  assert.equal(document.querySelectorAll('#domain-key .domain-item').length, 10);
-  assert.equal(document.querySelectorAll('#relation-key .relation-key-item').length, 6);
+  assert.equal(document.querySelectorAll('#domain-key .domain-item').length, 13);
+  assert.equal(document.querySelectorAll('#relation-key .relation-key-item').length, 8);
+  assert.ok(document.querySelector('#relation-key').textContent.includes('Causes'));
   assert.ok(document.querySelector('#domain-key').textContent.includes('Relativity'));
   assert.ok(dashPatterns.size >= 5);
   assert.equal(document.querySelector('#details-jump').hidden, true);
   assert.equal(document.querySelector('#map-preview').hidden, true);
+  document.querySelector('#demo-force').click();
+  assert.equal(document.querySelector('#inspector h3').textContent, 'Net force');
+  assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('F_net=dp/dt=m a'));
+  assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('constant mass'));
+  assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('132'));
+  assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('Net force'));
+  assert.ok(arrowHeads > 0, 'source-asserted causal arrows render on the map');
+  assert.ok(document.querySelector('#relation-key .relation-key-item svg path[fill]:not([fill="none"])'));
+  document.querySelector('#preview-close').click();
 
   const search = document.querySelector('#search');
   search.value = 'entropy';

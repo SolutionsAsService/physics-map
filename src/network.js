@@ -56,6 +56,28 @@
         context.setLineDash(style.dash);
         const start = screen(from), end = screen(to);
         context.beginPath(); context.moveTo(start.x, start.y); context.lineTo(end.x, end.y); context.stroke();
+        if (style.arrow && (highlighted || (style.id === 'causal' && !active && inTopic))) {
+          const distance = Math.hypot(end.x - start.x, end.y - start.y);
+          if (distance > 15) {
+            const alongX = (end.x - start.x) / distance, alongY = (end.y - start.y) / distance;
+            const tipX = end.x - alongX * 5, tipY = end.y - alongY * 5;
+            const baseX = tipX - alongX * 6, baseY = tipY - alongY * 6;
+            context.beginPath();
+            if (style.arrow === 'filled') {
+              context.moveTo(tipX, tipY);
+              context.lineTo(baseX - alongY * 3, baseY + alongX * 3);
+              context.lineTo(baseX + alongY * 3, baseY - alongX * 3);
+              context.fillStyle = style.color;
+              context.fill();
+            } else {
+              context.moveTo(baseX - alongY * 3, baseY + alongX * 3);
+              context.lineTo(tipX, tipY);
+              context.lineTo(baseX + alongY * 3, baseY - alongX * 3);
+              context.setLineDash([]);
+              context.stroke();
+            }
+          }
+        }
       }
       for (const edge of edges) if (!active || (edge.source !== active && edge.target !== active)) drawEdge(edge, false);
       if (active) for (const edge of edges) if (edge.source === active || edge.target === active) drawEdge(edge, true);
@@ -139,7 +161,7 @@
     function moveTooltip(event, node, edge) {
       tooltip.hidden = !node && !edge;
       if (!node && !edge) return;
-      tooltip.textContent = node ? `${node.label} · ${node.degree} links` : `${byId.get(edge.source).label} → ${byId.get(edge.target).label} · ${edge.relation.replaceAll('_', ' ')}${edge.semantic ? ` · ${edge.semantic}` : ''}`;
+      tooltip.textContent = node ? `${node.label} · ${node.degree} links` : `${byId.get(edge.source).label} → ${byId.get(edge.target).label} · ${edge.relation.replaceAll('_', ' ')}${edge.semantic ? ` · ${edge.semantic}` : ''}${edge.record?.mathematical_form ? ` · ${edge.record.mathematical_form}` : ''}${edge.record?.conditions ? ` · When: ${Array.isArray(edge.record.conditions) ? edge.record.conditions.join('; ') : edge.record.conditions}` : ''}`;
       const bounds = canvas.getBoundingClientRect();
       tooltip.style.left = `${Math.min(bounds.width - 190, Math.max(10, event.clientX - bounds.left + 12))}px`;
       tooltip.style.top = `${Math.max(10, event.clientY - bounds.top - 32)}px`;

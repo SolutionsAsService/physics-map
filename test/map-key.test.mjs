@@ -12,7 +12,7 @@ test('every recorded relationship gets a visual family without losing its origin
   const examples = [
     ['instance_of', 'structure'], ['provides_provenance_for', 'evidence'],
     ['authored', 'history'], ['predicts', 'effect'], ['measures', 'practice'],
-    ['associated_with', 'related']
+    ['associated_with', 'related'], ['causes_acceleration_through', 'causal'], ['time_derivative_defines', 'derivation']
   ];
   for (const [relation, family] of examples) assert.equal(key.classify({ relation }).id, family);
   assert.equal(key.groupOf({ type: 'scientist', topics: [] }), 'history');
@@ -22,5 +22,8 @@ test('every recorded relationship gets a visual family without losing its origin
   assert.equal(key.classify({ relation: 'unknown_connection' }).id, 'related');
   assert.ok(atlas.edges.every(edge => key.relationships.includes(key.classify(edge))));
   assert.ok(key.relationships.every(style => atlas.edges.some(edge => key.classify(edge) === style)));
+  const proof = atlas.edges.find(edge => edge.source === 'net_force' && edge.target === 'acceleration');
+  assert.equal(key.classify(proof).arrow, 'filled');
+  assert.equal(key.classify({ relation: 'determines' }).arrow, undefined);
   assert.equal(new Set(key.domains.map(item => item.id)).size, key.domains.length);
 });

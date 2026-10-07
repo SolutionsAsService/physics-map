@@ -639,6 +639,13 @@ p {
 .preview-meta { display: flex; gap: 13px; border-top: 1px solid #36535a; padding-top: 12px; color: var(--mint); font: 11px var(--mono); }
 .preview-sources { color: #9fbab9; font-size: 11px; line-height: 1.5; margin: 12px 0 18px; }
 .preview-why { border-top: 1px solid #36535a; margin: 0 0 18px; }
+.dynamic-proof { display: grid; gap: 8px; margin: 0 0 16px; padding: 16px; border: 1px solid #bb8461; background: linear-gradient(125deg, #47332b, #182c31); color: #f4e3cd; }
+.dynamic-proof .preview-kicker { margin: 0; color: #ffd09b; }
+.dynamic-proof strong { color: #fff; font: 600 16px/1.3 var(--display); }
+.dynamic-proof > span:not(.preview-kicker), .dynamic-proof small { color: #d4c1ad; font: 10px/1.5 var(--mono); }
+.dynamic-proof b { display: block; padding: 9px 11px; border-left: 2px solid #ffae86; background: #0c1c26; color: #fff0c7; font: 500 13px/1.5 var(--mono); overflow-wrap: anywhere; }
+.dynamic-proof p { margin: 0; color: #f0e1d3; font-size: 11px; line-height: 1.55; }
+.dynamic-proof em { font-style: normal; color: #ffca9f; font-weight: 700; }
 .preview-why .preview-kicker { display: block; margin: 16px 0 7px; }
 .preview-why > p { color: #93b2b1; font: 10px/1.5 var(--mono); margin: 10px 0 0; }
 .preview-link { display: grid; gap: 5px; width: 100%; padding: 10px 4px; border: 0; border-bottom: 1px solid #36535a; background: transparent; color: #eaf8f4; text-align: left; cursor: pointer; }

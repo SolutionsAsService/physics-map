@@ -18,7 +18,7 @@ async function sourceFiles(directory = dataDirectory) {
 export async function buildAtlas() {
   const files = await sourceFiles();
   const sources = await Promise.all(files.map(async file => ({ file, data: JSON.parse(await readFile(path.join(dataDirectory, file), 'utf8')) })));
-  const documents = sources.filter(({ data }) => Array.isArray(data.nodes) && Array.isArray(data.edges));
+  const documents = sources.filter(({ data }) => Array.isArray(data.nodes) && (Array.isArray(data.edges) || Array.isArray(data.relationships)));
   const curriculum = JSON.parse(await readFile(path.join(dataDirectory, 'atlas-curriculum.json'), 'utf8'));
   const nodes = new Map();
   const edges = [];
@@ -26,10 +26,11 @@ export async function buildAtlas() {
 
   for (const { file, data } of documents) {
     const graphId = data.graph_id || path.basename(file, '.json');
+    const relationships = data.edges || data.relationships;
     const claimsById = new Map(claimEntries(data).map(claim => [claim.id, claim]));
-    const { nodes: _nodes, edges: _edges, ...metadata } = data;
+    const { nodes: _nodes, edges: _edges, relationships: _relationships, ...metadata } = data;
     const related = relatedSections(metadata, new Set([...data.nodes.map(node => node.id), ...claimsById.keys()]));
-    documentMetadata.push({ file, graphId, title: data.title || graphId, domain: data.domain || '', nodeCount: data.nodes.length, edgeCount: data.edges.length, fields: explainDocument(metadata), metadata });
+    documentMetadata.push({ file, graphId, title: data.title || data.subject || graphId, domain: data.domain || '', nodeCount: data.nodes.length, edgeCount: relationships.length, fields: explainDocument(metadata), metadata });
     for (const original of data.nodes) {
       if (!original.id || typeof original.id !== 'string') throw new Error(`Missing node ID in ${file}`);
       const current = nodes.get(original.id) || { id: original.id, label: original.label || original.id, type: original.type || original.node_type || 'concept', description: '', topics: [], variants: [] };
@@ -47,9 +48,9 @@ export async function buildAtlas() {
       current.variants.push({ ...explainVariant(claim, file, claimsById), related: related.get(claim.id) || [] });
       nodes.set(claim.id, current);
     }
-    data.edges.forEach((original, index) => {
+    relationships.forEach((original, index) => {
       if (!original.source || !original.target) throw new Error(`Incomplete edge ${index} in ${file}`);
-      edges.push({ id: `${graphId}:${index}`, source: original.source, target: original.target, relation: original.relationship || original.relation || 'related to', semantic: original.semantic || original.description || '', ...explainEdge(original, file, claimsById) });
+      edges.push({ id: `${graphId}:${index}`, source: original.source, target: original.target, relation: original.relationship || original.relation || 'related to', semantic: original.semantic || original.description || original.mechanism || '', ...explainEdge(original, file, claimsById) });
     });
   }
 
