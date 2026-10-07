@@ -1,266 +1,54 @@
 (function () {
-  const mapKey = window.PhysicsMapKey;
-
-  function mount(canvas, tooltip, atlas, onSelect) {
-    const context = canvas.getContext('2d');
-    if (!context) throw new Error('Canvas is unavailable in this browser');
-    const nodes = atlas.nodes;
-    const edges = atlas.edges;
-    const styles = new Map(edges.map(edge => [edge, mapKey.classify(edge)]));
-    const ranked = [...nodes].sort((left, right) => right.degree - left.degree);
-    const byId = new Map(nodes.map(node => [node.id, node]));
-    const neighbors = new Map(nodes.map(node => [node.id, new Set()]));
-    for (const edge of edges) {
-      neighbors.get(edge.source)?.add(edge.target);
-      neighbors.get(edge.target)?.add(edge.source);
-    }
-    const bounds = nodes.reduce((result, node) => ({
-      minX: Math.min(result.minX, node.layout.x), maxX: Math.max(result.maxX, node.layout.x),
-      minY: Math.min(result.minY, node.layout.y), maxY: Math.max(result.maxY, node.layout.y)
-    }), { minX: Infinity, maxX: -Infinity, minY: Infinity, maxY: -Infinity });
-    if (!nodes.length) Object.assign(bounds, { minX: 0, maxX: 1, minY: 0, maxY: 1 });
-    const centerX = (bounds.minX + bounds.maxX) / 2;
-    const centerY = (bounds.minY + bounds.maxY) / 2;
-    let width = 960;
-    let height = 620;
-    let fitScaleX = 1;
-    let fitScaleY = 1;
-    let zoom = 1;
-    let panX = 0;
-    let panY = 0;
-    let selected = null;
-    let hovered = null;
-    let topic = 'all';
-    let focusedEdges = [];
-    let featuredEdge = null;
-    let drag = null;
-    let scheduled = false;
-
-    function screen(node) {
-      return { x: width / 2 + panX + (node.layout.x - centerX) * fitScaleX * zoom, y: height / 2 + panY + (node.layout.y - centerY) * fitScaleY * zoom };
-    }
-
-    function draw() {
-      scheduled = false;
-      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
-      context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
-      context.clearRect(0, 0, width, height);
-      const active = selected || hovered;
-      const related = active ? neighbors.get(active) || new Set() : null;
-      const activeEdges = active ? edges.filter(edge => edge.source === active || edge.target === active) : [];
-      function drawEdge(edge, highlighted) {
-        const from = byId.get(edge.source), to = byId.get(edge.target);
-        if (!from || !to) return;
-        const inTopic = topic === 'all' || from.topics.includes(topic) || to.topics.includes(topic);
-        const style = styles.get(edge);
-        context.globalAlpha = edge === featuredEdge ? 1 : highlighted ? 0.94 : active ? 0.065 : inTopic ? 0.21 : 0.05;
-        context.strokeStyle = style.color;
-        context.lineWidth = edge === featuredEdge ? 4 : highlighted ? 2.2 : 0.8;
-        context.setLineDash(style.dash);
-        const sourcePoint = screen(from), targetPoint = screen(to);
-        const distance = Math.hypot(targetPoint.x - sourcePoint.x, targetPoint.y - sourcePoint.y);
-        const alongX = distance ? (targetPoint.x - sourcePoint.x) / distance : 0;
-        const alongY = distance ? (targetPoint.y - sourcePoint.y) / distance : 0;
-        const featured = edge === featuredEdge && distance > 32;
-        const start = featured ? { x: sourcePoint.x + alongX * 12, y: sourcePoint.y + alongY * 12 } : sourcePoint;
-        const end = featured ? { x: targetPoint.x - alongX * 14, y: targetPoint.y - alongY * 14 } : targetPoint;
-        context.beginPath(); context.moveTo(start.x, start.y); context.lineTo(end.x, end.y); context.stroke();
-        // All predicates get an arrow; small quiet heads avoid an overview thicket.
-        if (style.arrow) {
-          if (distance > 2) {
-            const inset = featured ? 0 : Math.min(distance * 0.2, highlighted ? 9 : 5);
-            const tipX = end.x - alongX * inset, tipY = end.y - alongY * inset;
-            const size = Math.min(distance * 0.3, featured ? 11 : highlighted ? 7 : 3);
-            const baseX = tipX - alongX * size, baseY = tipY - alongY * size;
-            const halfWidth = size * 0.55;
-            context.setLineDash([]);
-            context.beginPath();
-            if (style.arrow === 'filled') {
-              context.moveTo(tipX, tipY);
-              context.lineTo(baseX - alongY * halfWidth, baseY + alongX * halfWidth);
-              context.lineTo(baseX + alongY * halfWidth, baseY - alongX * halfWidth);
-              context.fillStyle = style.color;
-              context.fill();
-            } else {
-              context.moveTo(baseX - alongY * halfWidth, baseY + alongX * halfWidth);
-              context.lineTo(tipX, tipY);
-              context.lineTo(baseX + alongY * halfWidth, baseY - alongX * halfWidth);
-              context.setLineDash([]);
-              context.stroke();
-            }
-          }
-        }
-      }
-      for (const edge of edges) if (!active || (edge.source !== active && edge.target !== active)) drawEdge(edge, false);
-      if (active) for (const edge of activeEdges) if (edge !== featuredEdge) drawEdge(edge, true);
-      if (featuredEdge) drawEdge(featuredEdge, true);
-      context.setLineDash([]);
-      const labeled = new Set(ranked.slice(0, 32).map(node => node.id));
-      if (active) {
-        labeled.add(active);
-        for (const node of ranked.filter(node => related.has(node.id)).slice(0, 25)) labeled.add(node.id);
-      }
-      if (featuredEdge) { labeled.add(featuredEdge.source); labeled.add(featuredEdge.target); }
-      for (const node of nodes) {
-        const point = screen(node);
-        const relevant = node.id === active || related?.has(node.id);
-        const inTopic = topic === 'all' || node.topics.includes(topic);
-        const radius = Math.max(1.5, Math.min(8, (3 + Math.sqrt(node.degree || 0) * 0.65) * Math.max(0.58, Math.min(1.6, Math.min(fitScaleX, fitScaleY) * zoom))));
-        const featured = featuredEdge && (featuredEdge.source === node.id || featuredEdge.target === node.id);
-        context.globalAlpha = active ? relevant ? 1 : 0.3 : inTopic ? 0.82 : 0.25;
-        context.fillStyle = mapKey.domainById.get(mapKey.groupOf(node)).color;
-        context.beginPath(); context.arc(point.x, point.y, featured || node.id === active ? radius + 3 : radius, 0, Math.PI * 2); context.fill();
-        if (node.id === active || featured) {
-          context.strokeStyle = '#f5fff9'; context.lineWidth = 2; context.stroke();
-        }
-      }
-      for (const node of nodes) {
-        if (!labeled.has(node.id) || (topic !== 'all' && !node.topics.includes(topic) && node.id !== active)) continue;
-        if (active && node.id !== active && !related.has(node.id)) continue;
-        const point = screen(node);
-        context.globalAlpha = node.id === active ? 1 : 0.9;
-        context.fillStyle = node.id === active ? '#ffffff' : '#c8dadd';
-        context.font = `${node.id === active ? 13 : 10}px system-ui, sans-serif`;
-        context.fillText(node.label.slice(0, 27), point.x + 7, point.y - 7);
-      }
-      if (featuredEdge) {
-        const from = screen(byId.get(featuredEdge.source)), to = screen(byId.get(featuredEdge.target));
-        const dx = to.x - from.x, dy = to.y - from.y;
-        const distance = Math.max(1, Math.hypot(dx, dy));
-        const style = styles.get(featuredEdge);
-        const relation = featuredEdge.relation.replaceAll('_', ' ').toUpperCase();
-        const formula = featuredEdge.record?.mathematical_form;
-        const caption = formula ? `${relation} · ${formula}` : relation;
-        context.font = '600 12px system-ui, sans-serif';
-        const textWidth = Math.min(width - 20, Math.ceil((context.measureText?.(caption).width || caption.length * 7) + 20));
-        const labelX = Math.max(10, Math.min(width - textWidth - 10, (from.x + to.x) / 2 - textWidth / 2 - dy / distance * 24));
-        const labelY = Math.max(22, Math.min(height - 12, (from.y + to.y) / 2 + dx / distance * 24));
-        context.globalAlpha = 1;
-        context.fillStyle = '#10252d';
-        context.fillRect(labelX, labelY - 18, textWidth, 25);
-        context.fillStyle = style.color;
-        context.fillText(caption, labelX + 9, labelY);
-      }
-      context.globalAlpha = 1;
-    }
-
-    function requestDraw() {
-      if (scheduled) return;
-      scheduled = true;
-      (window.requestAnimationFrame || (callback => setTimeout(callback, 16)))(draw);
-    }
-
-    function frameFeaturedEdge() {
-      if (!featuredEdge) return;
-      const from = byId.get(featuredEdge.source), to = byId.get(featuredEdge.target);
-      const distance = Math.hypot((to.layout.x - from.layout.x) * fitScaleX, (to.layout.y - from.layout.y) * fitScaleY);
-      zoom = Math.max(1.8, Math.min(8, (width < 600 ? 95 : 160) / Math.max(1, distance)));
-      const midpointX = (from.layout.x + to.layout.x) / 2 - centerX;
-      const midpointY = (from.layout.y + to.layout.y) / 2 - centerY;
-      panX = (width < 760 ? width * 0.5 : width * 0.39) - width / 2 - midpointX * fitScaleX * zoom;
-      panY = (width < 760 ? height * 0.28 : height * 0.52) - height / 2 - midpointY * fitScaleY * zoom;
-    }
-
-    function resize() {
-      const rect = canvas.getBoundingClientRect();
-      width = Math.max(320, Math.round(rect.width || 960));
-      height = Math.max(340, Math.round(rect.height || 620));
-      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = Math.round(width * pixelRatio);
-      canvas.height = Math.round(height * pixelRatio);
-      fitScaleX = (width - 36) / Math.max(1, bounds.maxX - bounds.minX);
-      fitScaleY = (height - 36) / Math.max(1, bounds.maxY - bounds.minY);
-      frameFeaturedEdge();
-      draw();
-    }
-
-    function hitTest(clientX, clientY) {
-      const rect = canvas.getBoundingClientRect();
-      const x = clientX - rect.left, y = clientY - rect.top;
-      let closest = null, distance = 12;
-      for (const node of nodes) {
-        const point = screen(node);
-        const candidate = Math.hypot(point.x - x, point.y - y);
-        if (candidate < distance) { distance = candidate; closest = node; }
-      }
-      return closest;
-    }
-
-    function edgeAt(clientX, clientY) {
-      if (!selected) return null;
-      const rect = canvas.getBoundingClientRect();
-      const pointX = clientX - rect.left, pointY = clientY - rect.top;
-      let closest = null, distance = 7;
-      for (const edge of focusedEdges) {
-        const start = screen(byId.get(edge.source)), end = screen(byId.get(edge.target));
-        const horizontal = end.x - start.x, vertical = end.y - start.y;
-        const lengthSquared = horizontal * horizontal + vertical * vertical;
-        if (!lengthSquared) continue;
-        const fraction = Math.max(0, Math.min(1, ((pointX - start.x) * horizontal + (pointY - start.y) * vertical) / lengthSquared));
-        const separation = Math.hypot(pointX - start.x - fraction * horizontal, pointY - start.y - fraction * vertical);
-        if (separation < distance) { distance = separation; closest = edge; }
-      }
-      return closest;
-    }
-
-    function moveTooltip(event, node, edge) {
-      tooltip.hidden = !node && !edge;
-      if (!node && !edge) return;
-      tooltip.textContent = node ? `${node.label} · ${node.degree} distinct neighbors` : `${byId.get(edge.source).label} → ${byId.get(edge.target).label} · ${edge.relation.replaceAll('_', ' ')}${edge.semantic ? ` · ${edge.semantic}` : ''}${edge.record?.mathematical_form ? ` · ${edge.record.mathematical_form}` : ''}${edge.record?.conditions ? ` · When: ${Array.isArray(edge.record.conditions) ? edge.record.conditions.join('; ') : edge.record.conditions}` : ''}`;
-      const bounds = canvas.getBoundingClientRect();
-      tooltip.style.left = `${Math.min(bounds.width - 190, Math.max(10, event.clientX - bounds.left + 12))}px`;
-      tooltip.style.top = `${Math.max(10, event.clientY - bounds.top - 32)}px`;
-    }
-
-    canvas.addEventListener('pointerdown', event => {
-      drag = { x: event.clientX, y: event.clientY, panX, panY, moved: false };
-      canvas.setPointerCapture?.(event.pointerId);
-    });
-    canvas.addEventListener('pointermove', event => {
-      if (drag) {
-        const dx = event.clientX - drag.x, dy = event.clientY - drag.y;
-        if (Math.hypot(dx, dy) > 4) drag.moved = true;
-        if (drag.moved) { panX = drag.panX + dx; panY = drag.panY + dy; tooltip.hidden = true; requestDraw(); return; }
-      }
-      const node = hitTest(event.clientX, event.clientY);
-      const edge = node ? null : edgeAt(event.clientX, event.clientY);
-      if (edge && featuredEdge !== edge) { featuredEdge = edge; requestDraw(); }
-      if (hovered !== node?.id) { hovered = node?.id || null; requestDraw(); }
-      canvas.style.cursor = node ? 'pointer' : edge ? 'help' : drag ? 'grabbing' : 'grab';
-      moveTooltip(event, node, edge);
-    });
-    canvas.addEventListener('pointerup', event => {
-      if (drag && !drag.moved) {
-        const node = hitTest(event.clientX, event.clientY);
-        if (node) onSelect(node.id);
-      }
-      drag = null;
-    });
-    canvas.addEventListener('pointercancel', () => { drag = null; });
-    canvas.addEventListener('pointerleave', () => { hovered = null; tooltip.hidden = true; requestDraw(); });
-    canvas.addEventListener('wheel', event => {
-      event.preventDefault();
-      const factor = event.deltaY < 0 ? 1.12 : 1 / 1.12;
-      const next = Math.max(0.65, Math.min(12, zoom * factor));
-      const rect = canvas.getBoundingClientRect();
-      const x = event.clientX - rect.left - width / 2, y = event.clientY - rect.top - height / 2;
-      panX = x - (x - panX) * (next / zoom);
-      panY = y - (y - panY) * (next / zoom);
-      zoom = next;
-      requestDraw();
-    }, { passive: false });
-    window.addEventListener('resize', resize);
-    resize();
-
-    return {
-      select(id) { if (selected !== id) featuredEdge = null; selected = id; focusedEdges = id ? edges.filter(edge => edge.source === id || edge.target === id) : []; hovered = null; tooltip.hidden = true; draw(); },
-      focusEdge(edge) { if (featuredEdge === edge) return; featuredEdge = edge; frameFeaturedEdge(); draw(); },
-      topic(id) { topic = id; draw(); },
-      zoom(factor) { zoom = Math.max(0.65, Math.min(12, zoom * factor)); draw(); },
-      fit() { zoom = 1; panX = 0; panY = 0; selected = null; featuredEdge = null; focusedEdges = []; draw(); },
-      counts() { return { nodes: nodes.length, edges: edges.length, connected: selected ? neighbors.get(selected)?.size || 0 : 0 }; }
-    };
+ const mapKey=window.PhysicsMapKey;
+ function mount(canvas,tooltip,atlas,onSelect,onEdge=()=>{}) {
+  const ctx=canvas.getContext('2d');if(!ctx)throw Error('Canvas unavailable');
+  let width=960,height=620,selected=atlas.nodes.some(n=>n.id==='force')?'force':atlas.nodes[0]?.id,offset=-1,zoom=1,panX=0,panY=0,drag=null,frame=null,destroyed=false;
+  let view,positions=new Map(),labels=[];const listeners=[];
+  function listen(target,name,fn,options){target.addEventListener(name,fn,options);listeners.push(()=>target.removeEventListener(name,fn,options));}
+  const human=s=>s.replaceAll('_',' ');
+  function layout(){
+   view=window.PhysicsGraphView.neighborhood(atlas,selected,offset,width<600?4:5);positions=new Map();
+   const mechanics=offset<0&&['force','net_force','acceleration'].includes(selected)&&view.nodes.some(n=>n.id==='net_force');
+   const mobile=width<600;
+   if(mechanics){
+    const core=['force','net_force','acceleration'];core.forEach((id,i)=>positions.set(id,mobile?{x:width*.48,y:95+i*170}:{x:100+i*(width-200)/2,y:height*.36}));
+    const rest=view.nodes.filter(n=>!core.includes(n.id));rest.forEach((n,i)=>positions.set(n.id,mobile?{x:width*.48,y:605+i*155}:{x:110+i*(width-220)/Math.max(1,rest.length-1),y:height*.77}));
+   }else{
+    positions.set(selected,{x:mobile?85:width*.5,y:mobile?110:height*.45});
+    const peers=view.nodes.filter(n=>n.id!==selected);peers.forEach((n,i)=>{const angle=-Math.PI/2+i*2*Math.PI/peers.length;positions.set(n.id,mobile?{x:width-95,y:260+i*180}:{x:width*.5+Math.cos(angle)*(width*.36),y:height*.48+Math.sin(angle)*(height*.34)});});
+   }
+   const maxY=Math.max(...[...positions.values()].map(p=>p.y));canvas.style.minHeight=mobile?Math.max(740,maxY+90)+'px':'620px';
   }
-
-  window.PhysicsNetwork = { mount };
+  const screen=id=>{const p=positions.get(id);return {x:width/2+(p.x-width/2)*zoom+panX,y:height/2+(p.y-height/2)*zoom+panY};};
+  const box=n=>{const p=screen(n.id);return {...p,w:Math.min(width<600?170:190,Math.max(95,n.label.length*7+24)),h:44};};
+  function endpoint(a,b){const dx=b.x-a.x,dy=b.y-a.y;const t=Math.min(Math.abs((a.w/2+5)/(dx||.0001)),Math.abs((a.h/2+5)/(dy||.0001)));return {x:a.x+dx*t,y:a.y+dy*t};}
+  function draw(){
+   frame=null;if(destroyed||document.hidden)return;
+   const ratio=Math.min(window.devicePixelRatio||1,2);ctx.setTransform(ratio,0,0,ratio,0,0);ctx.clearRect(0,0,width,height);labels=[];
+   const byId=new Map(view.nodes.map(n=>[n.id,n]));
+   for(const e of view.edges){
+    const a=box(byId.get(e.source)),b=box(byId.get(e.target)),from=endpoint(a,b),to=endpoint(b,a);const style=mapKey.classify(e);ctx.globalAlpha=1;ctx.strokeStyle=style.color;ctx.fillStyle=style.color;ctx.lineWidth=e.relation==='causes'?3:1.7;ctx.setLineDash(style.dash);
+    ctx.beginPath();ctx.moveTo(from.x,from.y);ctx.lineTo(to.x,to.y);ctx.stroke();ctx.setLineDash([]);
+    const angle=Math.atan2(to.y-from.y,to.x-from.x);ctx.beginPath();ctx.moveTo(to.x,to.y);ctx.lineTo(to.x-11*Math.cos(angle-.4),to.y-11*Math.sin(angle-.4));ctx.lineTo(to.x-11*Math.cos(angle+.4),to.y-11*Math.sin(angle+.4));if(e.kind==='causation')ctx.fill();else ctx.stroke();
+    const text=human(e.relation),words=text.split(' '),lines=[];let line='';for(const word of words){if((line+' '+word).length>24){lines.push(line);line=word}else line+=(line?' ':'')+word;}if(line)lines.push(line);
+    const x=(from.x+to.x)/2,y=(from.y+to.y)/2;ctx.font='600 12px system-ui';ctx.textAlign='center';const w=Math.min(width-24,Math.max(...lines.map(l=>l.length))*7+16);ctx.fillStyle='#10252d';ctx.fillRect(x-w/2,y-12,w,lines.length*16+6);ctx.fillStyle=style.color;lines.forEach((l,i)=>ctx.fillText(l,x,y+i*16));labels.push({x,y,w,h:lines.length*16+8,edge:e});
+   }
+   for(const n of view.nodes){const b=box(n);ctx.fillStyle=n.id===selected?'#214b55':'#122b34';ctx.fillRect(b.x-b.w/2,b.y-b.h/2,b.w,b.h);ctx.strokeStyle=mapKey.domainById.get(mapKey.groupOf(n)).color;ctx.lineWidth=n.id===selected?3:1;ctx.beginPath();ctx.moveTo(b.x-b.w/2,b.y+b.h/2);ctx.lineTo(b.x+b.w/2,b.y+b.h/2);ctx.stroke();ctx.fillStyle='#f3f9fa';ctx.font='600 14px system-ui';ctx.textAlign='center';const label=n.label.length>24?n.label.slice(0,22)+'…':n.label;ctx.fillText(label,b.x,b.y+5);}
+   ctx.textAlign='start';
+  }
+  function requestDraw(){if(frame!==null||destroyed||document.hidden)return;frame=window.requestAnimationFrame?window.requestAnimationFrame(draw):window.setTimeout(draw,16);}
+  function resize(){const r=canvas.getBoundingClientRect();width=Math.max(320,r.width||960);height=Math.max(620,r.height||620);layout();height=Math.max(height,parseInt(canvas.style.minHeight)||0);const ratio=Math.min(window.devicePixelRatio||1,2);canvas.width=width*ratio;canvas.height=height*ratio;draw();}
+  function point(e){const r=canvas.getBoundingClientRect();return {x:e.clientX-r.left,y:e.clientY-r.top};}
+  function hit(p){return view.nodes.find(n=>{const b=box(n);return Math.abs(p.x-b.x)<b.w/2&&Math.abs(p.y-b.y)<b.h/2;});}
+  listen(canvas,'pointerdown',e=>{drag={...point(e),panX,panY,moved:false};canvas.setPointerCapture?.(e.pointerId);});
+  listen(canvas,'pointermove',e=>{const p=point(e);if(drag){const dx=p.x-drag.x,dy=p.y-drag.y;if(Math.hypot(dx,dy)>4)drag.moved=true;if(drag.moved){panX=drag.panX+dx;panY=drag.panY+dy;requestDraw();return;}}const node=hit(p);const label=labels.find(l=>Math.abs(p.x-l.x)<l.w/2&&Math.abs(p.y-l.y)<l.h);tooltip.hidden=!node&&!label;tooltip.textContent=node?node.label:label?human(label.edge.relation)+' · '+(label.edge.scope||'Read source conditions in evidence'):'';tooltip.style.left=Math.max(5,Math.min(width-220,p.x))+'px';tooltip.style.top=Math.max(5,p.y-40)+'px';canvas.style.cursor=node||label?'pointer':'grab';});
+  listen(canvas,'pointerup',e=>{if(drag&&!drag.moved){const p=point(e),node=hit(p);if(node)onSelect(node.id);else {const label=labels.find(l=>Math.abs(p.x-l.x)<l.w/2&&Math.abs(p.y-l.y)<l.h);if(label)onEdge(label.edge);}}drag=null;});
+  listen(canvas,'pointercancel',()=>{drag=null;});
+  listen(canvas,'pointerleave',()=>{tooltip.hidden=true;});
+  listen(canvas,'wheel',e=>{e.preventDefault();zoom=Math.max(.6,Math.min(3,zoom*(e.deltaY<0?1.1:1/1.1)));requestDraw();},{passive:false});
+  listen(window,'resize',resize);listen(document,'visibilitychange',()=>{if(document.hidden&&frame!==null){(window.cancelAnimationFrame||window.clearTimeout)(frame);frame=null;}else requestDraw();});
+  const observer=typeof ResizeObserver!=='undefined'?new ResizeObserver(resize):null;observer?.observe(canvas);resize();
+  return {select(id){if(!id)id=atlas.nodes.some(n=>n.id==='force')?'force':atlas.nodes[0]?.id;if(selected!==id){selected=id;offset=-1;zoom=1;panX=panY=0;resize();}},topic(){},focusEdge(){},zoom(f){zoom=Math.max(.6,Math.min(3,zoom*f));draw();},fit(){zoom=1;panX=panY=0;draw();},next(){offset=offset<0?0:(offset+view.limit>=view.totalNeighbors)?0:offset+view.limit;zoom=1;panX=panY=0;resize();},counts(){return {nodes:view.nodes.length,edges:view.edges.length,connected:view.totalNeighbors,offset};},snapshot(){return {selected,limit:view.limit,nodes:view.nodes.map(n=>({id:n.id,...screen(n.id)})),edges:view.edges,labels:[...labels]};},destroy(){destroyed=true;listeners.forEach(fn=>fn());observer?.disconnect();if(frame!==null)(window.cancelAnimationFrame||window.clearTimeout)(frame);}};
+ }
+ window.PhysicsNetwork={mount};
 })();

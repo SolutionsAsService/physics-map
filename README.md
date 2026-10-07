@@ -33,3 +33,19 @@ npm run build
 ```
 
 The tests check preservation and extraction of source, node and edge fields, evidence, graph completeness, edge-to-edge fit, Escape behavior, rendered interactions and route integrity. Re-run `npm run build` after adding or editing any source graph or curriculum notes, then commit the changed `data/atlas.json` alongside them.
+
+## Canonical physics graph (schema 3, October 7, 2026)
+
+The runtime `data/atlas.json` is now a concept graph, not the former source-record graph. This section supersedes older counts and whole-map interaction descriptions above.
+
+- Traverses all 12 uploaded graphs plus the existing Newtonian evidence and new verified domain bridges.
+- `data/concept-aliases.json` is the explicit ID ledger (147 mappings, document-scoped disambiguation and two reviewed edge-endpoint corrections). There is no runtime fuzzy/substring merging. Force/net force, gravity/gravitational force, speed/velocity, mass/rest mass remain distinct. Local equation IDs are document-namespaced.
+- Canonical nodes retain full original variants, aliases and attached supporting metadata. Bibliography, people, history, protocols and claims cannot count as physics neighbors. All original records survive in variants, edge provenance or archive, with unchanged original downloads.
+- Edges have stable content-derived IDs, directed predicates, semantic kinds, scopes, aggregated provenance and evidence. Equivalent Newtonian statements coalesce to one net-force → causes → acceleration claim with six source records, without inventing reverse causation. Two original broad Force endpoints were corrected because their own equations/mechanisms explicitly describe net force; corrections are recorded in the ledger and provenance.
+- Verified bridges distinguish vector composition, causation, proportionality, definition and dependency. Textbook sources and assumptions are in `data/verified_domain_bridges.json`; they were retrieved on October 7, 2026. Uploaded claims without independent textbook verification remain source assertions, not newly certified facts.
+
+**Counts:** previous runtime: 3,576 mixed records / 4,488 links. New full concept graph: 1,478 canonical concepts / 1,934 semantic edges, from 3,530 original node records (1,800 concept records and 1,730 supporting metadata records). Twenty-six duplicate claims aggregate. The genuine iterative two-neighbor core has 521 concepts / 1,223 edges. The 957 lower-connectivity concepts and original evidence remain downloadable, not artificially connected.
+
+**Interaction:** starts with actual Force, Net force, Acceleration and Mass nodes. Click concepts to recenter; Next connections pages through neighbors; search crosses source datasets and resolves aliases. Every drawn arrow has a verb and selectable evidence; keyboard-accessible concept/edge controls mirror the canvas. This is a bounded lens of the two-neighbor core, not a claim that every endpoint has two neighbors simultaneously in every small lens. Reset returns to mechanics. No perpetual animation; requestAnimationFrame is owned/cancelled, hidden documents pause and pagehide disposes the renderer.
+
+**Verification:** `npm run build && npm test` passes 13 tests, including exhaustive original-record retention, metadata exclusion, aliases/distinct concepts, six-way Newtonian aggregation, edge direction, bridges, core invariant, all-core neighborhoods, exhaustive neighbor pagination, extracted field/source-line preservation, alias search, source filters, keyboard reset, evidence/routes, and mocked-canvas interaction at 390px/1200px. HTTP smoke checks on the real server return 200 for HTML, renderer and schema-3 atlas. Real browser navigation was denied by the tool with `browser navigation blocked by policy`; no alternate browser route was attempted. JSDOM/canvas-spy checks are not screenshots or real browser layout proof.

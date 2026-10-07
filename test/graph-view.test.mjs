@@ -39,3 +39,18 @@ test('real map contains only 2+ distinct visible neighbors and source-backed mot
   assert.equal(view.summary.relationships, view.edges.length);
   assert.equal(view.summary.concepts, view.nodes.length);
 });
+
+test('each core concept has a bounded navigable neighborhood made only from real predicates',async()=>{const a=connectedCore(JSON.parse(await readFile(new URL('../data/atlas.json',import.meta.url))));for(const n of a.nodes){const v=globalThis.PhysicsGraphView.neighborhood(a,n.id);assert.ok(v.nodes.length<=6,n.id);assert.ok(v.totalNeighbors>=2,n.id);assert.ok(v.edges.every(e=>a.edges.includes(e)));}const lens=globalThis.PhysicsGraphView.neighborhood(a,'force');assert.ok(lens.nodes.some(n=>n.id==='acceleration'));assert.ok(lens.edges.some(e=>e.source==='force'&&e.target==='net_force'));assert.ok(lens.edges.some(e=>e.source==='net_force'&&e.target==='acceleration'&&e.relation==='causes'));});
+
+test('paging reaches every genuine neighbor, including those omitted from the mechanics overview', async () => {
+ const a = connectedCore(JSON.parse(await readFile(new URL('../data/atlas.json', import.meta.url))));
+ for (const focus of ['force','net_force','acceleration','ion']) {
+  const expected = new Set(a.edges.filter(e => e.source === focus || e.target === focus).map(e => e.source === focus ? e.target : e.source));
+  const reached = new Set();
+  for (let offset=0; offset<expected.size; offset+=4) {
+   const lens = globalThis.PhysicsGraphView.neighborhood(a,focus,offset,4);
+   for (const node of lens.nodes) if (node.id !== focus) reached.add(node.id);
+  }
+  assert.deepEqual(reached,expected,focus);
+ }
+});

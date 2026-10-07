@@ -1,153 +1,38 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
-import { JSDOM, VirtualConsole } from 'jsdom';
-
-test('search, focus, source records and learning routes work on the full atlas', async () => {
-  const [html, keyScript, networkScript, script, atlas, styles] = await Promise.all([
-    readFile(new URL('../index.html', import.meta.url), 'utf8'),
-    readFile(new URL('../src/map-key.js', import.meta.url), 'utf8'),
-    readFile(new URL('../src/network.js', import.meta.url), 'utf8'),
-    readFile(new URL('../src/app.js', import.meta.url), 'utf8'),
-    readFile(new URL('../data/atlas.json', import.meta.url), 'utf8'),
-    readFile(new URL('../src/styles.css', import.meta.url), 'utf8')
-  ]);
-  assert.match(styles, /\.map-panel\s*\{[^}]*height:\s*clamp\(720px,\s*88vh,/);
-  assert.match(styles, /\.inspector\s*\{[^}]*border-top:/);
-  const failures = [];
-  const virtualConsole = new VirtualConsole();
-  virtualConsole.on('jsdomError', error => failures.push(error));
-  const dom = new JSDOM(html, { url: 'http://localhost:4173/', runScripts: 'outside-only', virtualConsole });
-  dom.window.eval(await readFile(new URL('../src/graph-view.js', import.meta.url), 'utf8'));
-  const graph = dom.window.PhysicsGraphView.connectedCore(JSON.parse(atlas));
-  dom.window.fetch = async () => ({ ok: true, json: async () => JSON.parse(atlas) });
-  const scrolled = [];
-  dom.window.HTMLElement.prototype.scrollIntoView = function () { scrolled.push(this.id); };
-  const circles = [];
-  const graphArrows = [];
-  const graphLabels = [];
-  const dashPatterns = new Set();
-  let arrowHeads = 0;
-  let pathSegments = 0;
-  dom.window.HTMLCanvasElement.prototype.getContext = () => ({
-    setTransform() {}, clearRect() {}, beginPath() { pathSegments = 0; this.start = null; this.end = null; },
-    moveTo(x, y) { this.start = [x, y]; }, lineTo(x, y) { this.end = [x, y]; pathSegments++; },
-    stroke() { if (this.lineWidth === 4 && this.start && this.end) graphArrows.push([this.start, this.end]); },
-    setLineDash(pattern) { dashPatterns.add(pattern.join(',')); },
-    arc(x, y) { circles.push([x, y]); }, fill() { if (pathSegments >= 2) arrowHeads++; },
-    fillRect() {}, fillText(label) { graphLabels.push(label); }
-  });
-  dom.window.eval(keyScript);
-  dom.window.eval(networkScript);
-  dom.window.eval(script);
-  await new Promise(resolve => setTimeout(resolve, 150));
-  const document = dom.window.document;
-  assert.equal(document.querySelector('#metric-concepts').textContent, graph.summary.concepts.toLocaleString());
-  assert.ok(circles.length >= graph.summary.concepts);
-  const rendered = circles.slice(0, graph.summary.concepts);
-  assert.ok(Math.min(...rendered.map(([x]) => x)) <= 25);
-  assert.ok(Math.max(...rendered.map(([x]) => x)) >= 935);
-  assert.ok(Math.min(...rendered.map(([, y]) => y)) <= 25);
-  assert.ok(Math.max(...rendered.map(([, y]) => y)) >= 595);
-  assert.ok(document.querySelector('#map-count').textContent.includes(`${graph.summary.concepts.toLocaleString()} nodes`));
-  assert.equal(document.querySelectorAll('#domain-key .domain-item').length, 13);
-  assert.equal(document.querySelectorAll('#relation-key .relation-key-item').length, 8);
-  assert.ok(document.querySelector('#relation-key').textContent.includes('Causes'));
-  assert.ok(document.querySelector('#domain-key').textContent.includes('Relativity'));
-  assert.ok(dashPatterns.size >= 5);
-  assert.equal(document.querySelector('#details-jump').hidden, true);
-  assert.equal(document.querySelector('#map-preview').hidden, true);
-  document.querySelector('#demo-force').click();
-  assert.equal(document.querySelector('#inspector h3').textContent, 'Net force');
-  assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('a = F_net / m'));
-  assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('constant positive mass'));
-  assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('OpenStax'));
-  assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('Net force'));
-  assert.equal(document.querySelector('#relationship-stage'), null);
-  assert.ok(graphLabels.includes('CAUSES ACCELERATION · a = F_net / m'));
-  const indexOf = id => graph.nodes.findIndex(node => node.id === id);
-  const separation = points => Math.hypot(points[indexOf('net_force')][0] - points[indexOf('acceleration')][0], points[indexOf('net_force')][1] - points[indexOf('acceleration')][1]);
-  const focusedPoints = circles.slice(-graph.nodes.length);
-  assert.ok(separation(focusedPoints) > separation(rendered) * 3, 'map frames the actual source nodes');
-  const [start, end] = graphArrows.at(-1);
-  assert.ok(Math.hypot(start[0] - focusedPoints[indexOf('net_force')][0], start[1] - focusedPoints[indexOf('net_force')][1]) <= 13, 'edge begins at source node');
-  assert.ok(Math.hypot(end[0] - focusedPoints[indexOf('acceleration')][0], end[1] - focusedPoints[indexOf('acceleration')][1]) <= 15, 'arrow terminates at target node');
-  assert.ok(arrowHeads > 0, 'source-asserted causal arrows render on the map');
-  assert.ok(document.querySelector('#relation-key .relation-key-item svg path[fill]:not([fill="none"])'));
-  document.querySelector('#preview-close').click();
-  assert.ok(Math.abs(separation(circles.slice(-graph.nodes.length)) - separation(rendered)) < 1, 'clear selection returns to full-map fit');
-
-  const search = document.querySelector('#search');
-  search.value = 'entropy';
-  search.dispatchEvent(new dom.window.Event('input', { bubbles: true }));
-  assert.ok(document.querySelector('#search-results').textContent.includes('Entropy'));
-  document.querySelector('#search-results [data-concept="entropy"]').click();
-  assert.ok(document.querySelector('#inspector h3').textContent.toLowerCase().includes('entropy'));
-  assert.ok(document.querySelector('#inspector .relation-list').children.length > 0);
-  assert.equal(document.querySelectorAll('#inspector .relation-entry').length, graph.edges.filter(edge => edge.source === 'entropy' || edge.target === 'entropy').length);
-  assert.ok(document.querySelector('#map-count').textContent.includes('neighbors highlighted'));
-  assert.equal(document.querySelector('#map-preview').hidden, false);
-  assert.ok(document.querySelector('#map-preview h3').textContent.toLowerCase().includes('entropy'));
-  assert.ok(document.querySelector('#map-preview').textContent.includes('SOURCE EXCERPT'));
-  const sample = document.querySelector('#map-preview .preview-link');
-  assert.ok(sample);
-  assert.ok(sample.querySelector('svg path').getAttribute('stroke-dasharray'));
-  assert.ok(graph.edges.filter(edge => (edge.source === 'entropy' && edge.target === sample.dataset.concept) || (edge.target === 'entropy' && edge.source === sample.dataset.concept)).some(edge => sample.textContent.toLowerCase().includes(edge.relation.replaceAll('_', ' ').toLowerCase())));
-  assert.ok(document.querySelector('#inspector .relation-style svg'));
-  assert.ok(document.querySelector('#inspector').textContent.includes('Original relation:'));
-  sample.click();
-  assert.equal(document.querySelector('#inspector h3').textContent, graph.nodes.find(node => node.id === sample.dataset.concept).label);
-  document.querySelector('#preview-read').click();
-  assert.equal(scrolled.at(-1), 'inspector');
-  assert.ok(document.querySelector('#inspector .relation-list').children.length > 0);
-
-  search.value = 'net ionic charge';
-  search.dispatchEvent(new dom.window.Event('input', { bubbles: true }));
-  assert.ok(document.querySelector('#search-results').textContent.includes('Ion'));
-  document.querySelector('#search-results [data-concept="ion"]').click();
-  assert.ok(document.querySelector('#inspector').textContent.includes('Q/e = N_protons - N_electrons'));
-  assert.ok(document.querySelector('#inspector').textContent.includes('L67-L70'));
-  assert.equal(document.querySelector('#details-jump').hidden, false);
-  assert.ok(document.querySelector('#map-preview').textContent.includes('recorded links'));
-
-  const sourceContext = document.querySelector('#inspector .document-context');
-  sourceContext.open = true;
-  sourceContext.dispatchEvent(new dom.window.Event('toggle'));
-  assert.ok(sourceContext.querySelector('.document-fields').textContent.includes('Schema version'));
-  assert.ok(sourceContext.querySelector('pre').textContent.includes('"schema_version"'));
-  const raw = document.querySelector('#inspector .raw-record');
-  raw.open = true;
-  raw.dispatchEvent(new dom.window.Event('toggle'));
-  assert.ok(raw.querySelector('pre').textContent.includes('"variants"'));
-
-  document.querySelector('#catalog-search').value = 'concept_special_relativity';
-  document.querySelector('#catalog-search').dispatchEvent(new dom.window.Event('input', { bubbles: true }));
-  document.querySelector('#catalog-items [data-concept="concept_special_relativity"]').click();
-  const study = document.querySelector('#inspector .related-material');
-  assert.ok(study.textContent.includes('Learning Paths'));
-  assert.ok(study.textContent.includes('concept_special_relativity'));
-  search.value = 'Einstein: Foundations';
-  search.dispatchEvent(new dom.window.Event('input', { bubbles: true }));
-  assert.ok(document.querySelector('#search-results').textContent.includes('matches'));
-  document.querySelector('#catalog-search').value = 'Einstein: Foundations';
-  document.querySelector('#catalog-search').dispatchEvent(new dom.window.Event('input', { bubbles: true }));
-  assert.ok(document.querySelector('#catalog-items [data-concept="concept_special_relativity"]'));
-  document.querySelector('#details-jump').click();
-
-  document.dispatchEvent(new dom.window.KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
-  assert.equal(document.querySelector('#inspector h3').textContent, 'Explore the complete field.');
-  assert.equal(document.querySelector('#map-mode').textContent, 'CONNECTED CORE / 2+ NEIGHBORS');
-  assert.equal(new URL(dom.window.location.href).searchParams.has('concept'), false);
-  assert.equal(document.querySelector('#map-preview').hidden, true);
-  document.querySelector('.starter-links [data-concept="entropy"]').click();
-  document.querySelector('#preview-close').click();
-  assert.equal(document.querySelector('#map-mode').textContent, 'CONNECTED CORE / 2+ NEIGHBORS');
-  assert.equal(document.querySelector('#map-preview').hidden, true);
-
-  document.querySelector('#route-list button').click();
-  assert.equal(document.querySelector('#route-detail').hidden, false);
-  document.querySelector('#route-next').click();
-  assert.ok(document.querySelector('#route-detail').textContent.includes('02'));
-  assert.deepEqual(failures, []);
-  dom.window.close();
+import test from 'node:test';import assert from 'node:assert/strict';import {readFile}from'node:fs/promises';import {JSDOM,VirtualConsole}from'jsdom';
+test('application integration in JSDOM: default mechanics, search navigation, edge evidence, source archives, routes',async()=>{
+ const html=await readFile(new URL('../index.html',import.meta.url),'utf8');const atlas=JSON.parse(await readFile(new URL('../data/atlas.json',import.meta.url)));const failures=[];const vc=new VirtualConsole();vc.on('jsdomError',e=>failures.push(e));const dom=new JSDOM(html,{url:'http://localhost:4173/',runScripts:'outside-only',pretendToBeVisual:true,virtualConsole:vc});const w=dom.window,d=w.document;let labels=[];w.fetch=async()=>({ok:true,json:async()=>atlas});w.HTMLElement.prototype.scrollIntoView=function(){};w.HTMLCanvasElement.prototype.getContext=()=>({setTransform(){},clearRect(){labels=[];},setLineDash(){},beginPath(){},moveTo(){},lineTo(){},stroke(){},fill(){},fillRect(){},fillText(t){labels.push(t);}});
+ for(const f of ['map-key','graph-view','network','app'])w.eval(await readFile(new URL('../src/'+f+'.js',import.meta.url),'utf8'));await new Promise(r=>setTimeout(r,100));assert.notEqual(d.querySelector('#map-mode').textContent,'ATLAS UNAVAILABLE',d.querySelector('#inspector').textContent.slice(0,500));assert.equal(d.querySelector('#inspector h3').textContent,'Force');for(const t of ['Force','Net force','Acceleration','causes'])assert.ok(labels.includes(t),t);assert.match(d.querySelector('#lens-controls').textContent,/nonzero net force/);assert.ok(d.querySelectorAll('[data-lens-node]').length<=6);
+ const cause=[...d.querySelectorAll('[data-lens-edge]')].find(b=>b.textContent.includes('Net force → causes → Acceleration'));assert.ok(cause);cause.click();assert.match(d.querySelector('#edge-evidence').textContent,/constant positive mass/);assert.match(d.querySelector('#edge-evidence').textContent,/OpenStax/);
+ const search=d.querySelector('#search');for(const id of ['entropy','ion','quantum_mechanics','special_relativity']){search.value=id;search.dispatchEvent(new w.Event('input'));const button=d.querySelector('#search-results [data-concept="'+id+'"]');assert.ok(button,id);button.click();assert.match(d.querySelector('#map-mode').textContent,/FOCUS/);assert.ok(new URL(w.location.href).searchParams.get('concept')===id);assert.ok(d.querySelectorAll('[data-lens-edge]').length>0);assert.ok(labels.includes(atlas.nodes.find(n=>n.id===id).label));}
+ assert.ok(d.querySelector('#inspector .related-material'));const raw=d.querySelector('.raw-record');raw.open=true;raw.dispatchEvent(new w.Event('toggle'));assert.match(raw.textContent,/aliases/);assert.match(raw.textContent,/supporting/);d.querySelector('#more-neighbors').click();assert.ok(d.querySelectorAll('[data-lens-node]').length>1);d.querySelector('#reset-map').click();assert.equal(d.querySelector('#inspector h3').textContent,'Force');d.querySelector('#route-list button').click();assert.equal(d.querySelector('#route-detail').hidden,false);d.querySelector('#route-next').click();assert.match(d.querySelector('#route-detail').textContent,/02/);const core=w.PhysicsGraphView.connectedCore(atlas);
+ assert.equal(d.querySelector('#metric-concepts').textContent,core.nodes.length.toLocaleString());
+ assert.equal(d.querySelectorAll('#domain-key .domain-item').length,13);
+ assert.equal(d.querySelectorAll('#relation-key .relation-key-item').length,8);
+ assert.equal(d.querySelectorAll('#source-links a[download]').length,atlas.documents.length+1);
+ search.value='concept_force';search.dispatchEvent(new w.Event('input'));
+ assert.equal(d.querySelector('#search-results [data-concept]').dataset.concept,'force');
+ search.value='net ionic charge';search.dispatchEvent(new w.Event('input'));
+ d.querySelector('#search-results [data-concept="ion"]').click();
+ assert.equal(d.querySelector('#edge-evidence').hidden,true);
+ assert.ok(d.querySelector('#inspector').textContent.includes('Q/e = N_protons - N_electrons'));
+ assert.match(d.querySelector('#inspector').textContent,/L67-L70/);
+ assert.equal(d.querySelectorAll('#inspector .relation-entry').length,core.edges.filter(e=>e.source==='ion'||e.target==='ion').length);
+ const context=d.querySelector('.document-context');context.open=true;context.dispatchEvent(new w.Event('toggle'));
+ assert.match(context.querySelector('pre').textContent,/schema_version/);
+ const catalog=d.querySelector('#catalog-search');catalog.value='concept_special_relativity';catalog.dispatchEvent(new w.Event('input'));
+ d.querySelector('#catalog-items [data-concept="special_relativity"]').click();
+ assert.match(d.querySelector('#inspector .related-material').textContent,/Learning Paths/);
+ const source=atlas.documents.find(doc=>doc.file.startsWith('ion_full'));
+ d.querySelector('[data-topic="'+source.graphId+'"]').click();
+ assert.equal(d.querySelector('[data-topic="'+source.graphId+'"]').getAttribute('aria-pressed'),'true');
+ catalog.value='';catalog.dispatchEvent(new w.Event('input'));
+ for(const button of d.querySelectorAll('#catalog-items [data-concept]')) assert.ok(core.nodes.find(n=>n.id===button.dataset.concept).topics.includes(source.graphId));
+ d.querySelector('[data-topic="all"]').click();
+ d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
+ assert.equal(d.querySelector('#inspector h3').textContent,'Force');
+ assert.equal(new URL(w.location.href).searchParams.has('concept'),false);
+ assert.equal(d.querySelector('#search-results').hidden,true);
+ d.querySelector('#search').blur();d.dispatchEvent(new w.KeyboardEvent('keydown',{key:'/',bubbles:true}));
+ assert.equal(d.activeElement,d.querySelector('#search'));
+ assert.deepEqual(failures,[]);w.dispatchEvent(new w.Event('pagehide'));dom.window.close();
 });

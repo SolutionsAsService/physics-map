@@ -38,5 +38,18 @@
         hiddenConcepts: atlas.nodes.length - nodes.length, archivedRelationships: atlas.edges.length - edges.length }
     };
   }
-  root.PhysicsGraphView = { connectedCore };
+  // A bounded lens into the genuine two-neighbor core. No synthetic edges.
+  function neighborhood(atlas, focus, offset = -1, limit = 5) {
+    const byId = new Map(atlas.nodes.map(n => [n.id,n]));
+    const rank = e => e.record?.teaching_addition ? 0 : e.kind === 'causation' ? 1 : e.kind === 'definition' ? 2 : 3;
+    const incident = atlas.edges.filter(e => e.source === focus || e.target === focus).sort((a,b)=>rank(a)-rank(b)||a.id.localeCompare(b.id));
+    const peers = [...new Set(incident.map(e=>e.source===focus?e.target:e.source))];
+    const chosen = ['force','net_force','acceleration'].includes(focus)&&offset<0 ? ['force','net_force','acceleration','mass'].filter(id=>id!==focus&&byId.has(id)) : peers.slice(Math.max(0,offset),Math.max(0,offset)+limit);
+    const ids = new Set([focus,...chosen]);
+    if(['force','net_force','acceleration'].includes(focus)&&offset<0)for(const id of ['force','net_force','acceleration','mass'])if(byId.has(id))ids.add(id);
+    // One most explanatory directed predicate per endpoint pair; other claims remain inspectable.
+    const pairs = new Set();const edges = atlas.edges.filter(e=>ids.has(e.source)&&ids.has(e.target)&&!(offset<0&&['force','net_force','acceleration'].includes(focus)&&e.source==='force'&&e.target==='acceleration')).sort((a,b)=>rank(a)-rank(b)||a.id.localeCompare(b.id)).filter(e=>{const k=[e.source,e.target].sort().join('|');if(pairs.has(k))return false;pairs.add(k);return true;});
+    return {nodes:[...ids].map(id=>byId.get(id)).filter(Boolean),edges,totalNeighbors:peers.length,offset,limit};
+  }
+  root.PhysicsGraphView = { connectedCore, neighborhood };
 })(globalThis);

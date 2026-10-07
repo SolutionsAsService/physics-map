@@ -1,0 +1,221 @@
+{
+  "graph_id": "verified_domain_bridges",
+  "title": "Verified physics concept bridges",
+  "domain": "cross-domain physics",
+  "attribution": "Editorial paraphrases of OpenStax educational sources; original uploaded attributions retained separately.",
+  "nodes": [],
+  "claims": [
+    {
+      "id": "bridge_newton",
+      "statement": "Section 5.3: external forces sum vectorially; acceleration follows net external force and is inversely proportional to mass.",
+      "references": [
+        {
+          "title": "OpenStax University Physics I §5.3",
+          "url": "https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law",
+          "accessed": "2026-10-07",
+          "publisher": "OpenStax, Rice University"
+        }
+      ]
+    },
+    {
+      "id": "bridge_gas",
+      "statement": "Section 2.2: mean molecular translational energy is 3kBT/2; monatomic ideal-gas internal energy sums those energies.",
+      "references": [
+        {
+          "title": "OpenStax University Physics II §2.2",
+          "url": "https://openstax.org/books/university-physics-volume-2/pages/2-2-pressure-temperature-and-rms-speed",
+          "accessed": "2026-10-07",
+          "publisher": "OpenStax, Rice University"
+        }
+      ]
+    },
+    {
+      "id": "bridge_bond",
+      "statement": "Section 7.1: ionic compounds consist of charged ions held by electrostatic attraction; ions form through electron loss or gain.",
+      "references": [
+        {
+          "title": "OpenStax Chemistry 2e §7.1",
+          "url": "https://openstax.org/books/chemistry-2e/pages/7-1-ionic-bonding",
+          "accessed": "2026-10-07",
+          "publisher": "OpenStax, Rice University"
+        }
+      ]
+    },
+    {
+      "id": "bridge_quantum",
+      "statement": "Section 6.3, The Quantum-Mechanical Model of an Atom: squared wavefunction magnitude gives the spatial probability distribution.",
+      "references": [
+        {
+          "title": "OpenStax Chemistry §6.3",
+          "url": "https://openstax.org/books/chemistry/pages/6-3-development-of-quantum-theory",
+          "accessed": "2026-10-07",
+          "publisher": "OpenStax, Rice University"
+        }
+      ]
+    },
+    {
+      "id": "bridge_star",
+      "statement": "Section 16.2, Nuclear Fusion: hydrogen fusion products have lower mass, with the difference released as energy.",
+      "references": [
+        {
+          "title": "OpenStax Astronomy 2e §16.2",
+          "url": "https://openstax.org/books/astronomy-2e/pages/16-2-mass-energy-and-the-theory-of-relativity",
+          "accessed": "2026-10-07",
+          "publisher": "OpenStax, Rice University"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "force",
+      "target": "net_force",
+      "relationship": "contributes_to_vector_sum",
+      "kind": "composition",
+      "conditions": "External forces on the chosen system sum vectorially; individual forces can cancel.",
+      "scope": "External forces on the chosen system sum vectorially; individual forces can cancel.",
+      "mathematical_form": "F_net = Σ F_external",
+      "mechanism": "External forces on the chosen system sum vectorially; individual forces can cancel.",
+      "source_claim_ids": [
+        "bridge_newton"
+      ],
+      "teaching_addition": true,
+      "reviewed": "2026-10-07"
+    },
+    {
+      "source": "net_force",
+      "target": "acceleration",
+      "relationship": "causes",
+      "kind": "causation",
+      "conditions": "Nonzero net external force; constant positive mass; inertial frame; Newtonian mechanics.",
+      "scope": "Nonzero net external force; constant positive mass; inertial frame; Newtonian mechanics.",
+      "mathematical_form": "a = F_net / m",
+      "mechanism": "Nonzero net external force; constant positive mass; inertial frame; Newtonian mechanics.",
+      "source_claim_ids": [
+        "bridge_newton"
+      ],
+      "teaching_addition": true,
+      "reviewed": "2026-10-07"
+    },
+    {
+      "source": "acceleration",
+      "target": "mass",
+      "relationship": "inversely_proportional_to",
+      "kind": "proportionality",
+      "conditions": "Compare constant positive masses under the same fixed net external force in Newtonian mechanics.",
+      "scope": "Compare constant positive masses under the same fixed net external force in Newtonian mechanics.",
+      "mathematical_form": "|a| = |F_net| / m",
+      "mechanism": "Compare constant positive masses under the same fixed net external force in Newtonian mechanics.",
+      "source_claim_ids": [
+        "bridge_newton"
+      ],
+      "teaching_addition": true,
+      "reviewed": "2026-10-07"
+    },
+    {
+      "source": "temperature",
+      "target": "kinetic_energy",
+      "relationship": "proportional_to_mean_translation",
+      "kind": "proportionality",
+      "conditions": "Classical ideal gas at equilibrium; mean translational energy per molecule, not every individual molecule or all matter.",
+      "scope": "Classical ideal gas at equilibrium; mean translational energy per molecule, not every individual molecule or all matter.",
+      "mathematical_form": "⟨K_trans⟩ = 3 k_B T / 2",
+      "mechanism": "Classical ideal gas at equilibrium; mean translational energy per molecule, not every individual molecule or all matter.",
+      "source_claim_ids": [
+        "bridge_gas"
+      ],
+      "teaching_addition": true,
+      "reviewed": "2026-10-07"
+    },
+    {
+      "source": "kinetic_energy",
+      "target": "internal_energy",
+      "relationship": "sums_to",
+      "kind": "composition",
+      "conditions": "Monatomic classical ideal gas; only translational microscopic kinetic energy included.",
+      "scope": "Monatomic classical ideal gas; only translational microscopic kinetic energy included.",
+      "mathematical_form": "U = N ⟨K_trans⟩",
+      "mechanism": "Monatomic classical ideal gas; only translational microscopic kinetic energy included.",
+      "source_claim_ids": [
+        "bridge_gas"
+      ],
+      "teaching_addition": true,
+      "reviewed": "2026-10-07"
+    },
+    {
+      "source": "electrostatic_force",
+      "target": "ionic_bond",
+      "relationship": "provides_attraction",
+      "kind": "dependency",
+      "conditions": "Oppositely charged ions; ionic bonding is collective in crystals, not an isolated molecule model.",
+      "scope": "Oppositely charged ions; ionic bonding is collective in crystals, not an isolated molecule model.",
+      "mathematical_form": "",
+      "mechanism": "Oppositely charged ions; ionic bonding is collective in crystals, not an isolated molecule model.",
+      "source_claim_ids": [
+        "bridge_bond"
+      ],
+      "teaching_addition": true,
+      "reviewed": "2026-10-07"
+    },
+    {
+      "source": "ionic_compound",
+      "target": "ion",
+      "relationship": "composed_of",
+      "kind": "composition",
+      "conditions": "Ionic compound consists of cations and anions in charge-balanced proportions.",
+      "scope": "Ionic compound consists of cations and anions in charge-balanced proportions.",
+      "mathematical_form": "",
+      "mechanism": "Ionic compound consists of cations and anions in charge-balanced proportions.",
+      "source_claim_ids": [
+        "bridge_bond"
+      ],
+      "teaching_addition": true,
+      "reviewed": "2026-10-07"
+    },
+    {
+      "source": "ion",
+      "target": "electric_charge",
+      "relationship": "has_nonzero_net",
+      "kind": "definition",
+      "conditions": "An atom or molecule with unequal numbers of protons and electrons.",
+      "scope": "An atom or molecule with unequal numbers of protons and electrons.",
+      "mathematical_form": "Q = e (N_p − N_e)",
+      "mechanism": "An atom or molecule with unequal numbers of protons and electrons.",
+      "source_claim_ids": [
+        "bridge_bond"
+      ],
+      "teaching_addition": true,
+      "reviewed": "2026-10-07"
+    },
+    {
+      "source": "quantum_mechanics",
+      "target": "electron",
+      "relationship": "describes_probability_distribution",
+      "kind": "dependency",
+      "conditions": "Bound atomic electrons; wavefunctions give probabilities, not classical definite orbits.",
+      "scope": "Bound atomic electrons; wavefunctions give probabilities, not classical definite orbits.",
+      "mathematical_form": "",
+      "mechanism": "Bound atomic electrons; wavefunctions give probabilities, not classical definite orbits.",
+      "source_claim_ids": [
+        "bridge_quantum"
+      ],
+      "teaching_addition": true,
+      "reviewed": "2026-10-07"
+    },
+    {
+      "source": "mass_energy_equivalence",
+      "target": "concept_stellar_fusion",
+      "relationship": "accounts_for_energy_release",
+      "kind": "dependency",
+      "conditions": "Fusion products have smaller total rest mass; the difference appears as released energy, not destruction of total mass-energy.",
+      "scope": "Fusion products have smaller total rest mass; the difference appears as released energy, not destruction of total mass-energy.",
+      "mathematical_form": "E_released = Δm c²",
+      "mechanism": "Fusion products have smaller total rest mass; the difference appears as released energy, not destruction of total mass-energy.",
+      "source_claim_ids": [
+        "bridge_star"
+      ],
+      "teaching_addition": true,
+      "reviewed": "2026-10-07"
+    }
+  ]
+}

@@ -45,6 +45,8 @@
   }
 
   function classify(edge) {
+    const kinds={causation:'causal',definition:'derivation',derivation:'derivation',composition:'structure',classification:'structure',proportionality:'effect',dependency:'effect',conservation:'effect',approximation:'effect'};
+    if(edge.kind && kinds[edge.kind])return relationshipById.get(kinds[edge.kind]);
     const relation = String(edge.relation || '').toLowerCase();
     const role = String(edge.record?.semantic_role || '').toLowerCase();
     if (/^(causal|directional_causation)/.test(role) || /(^|_)(causes?|produces|induces|generates|drives|leads_to|results_in)(_|$)/.test(relation)) return relationshipById.get('causal');

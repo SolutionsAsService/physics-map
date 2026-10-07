@@ -1,4 +1,4 @@
-const state = { atlas: null, byId: new Map(), edgesById: new Map(), searchText: new Map(), selected: null, featuredEdge: null, topic: 'all', query: '', catalogQuery: '', catalogLimit: 36, route: null, routeStep: 0 };
+const state = { atlas: null, byId: new Map(), edgesById: new Map(), searchText: new Map(), selected: 'force', featuredEdge: null, topic: 'all', query: '', catalogQuery: '', catalogLimit: 36, route: null, routeStep: 0 };
 const $ = selector => document.querySelector(selector);
 const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 const humanize = value => String(value || '').replaceAll('_', ' ').replace(/\b\w/g, letter => letter.toUpperCase());
@@ -14,7 +14,7 @@ function connectIndexes(atlas) {
     }
   }
   state.searchText = new Map(atlas.nodes.map(node => [node.id, [
-    node.id, node.label, node.type, node.description, node.note?.intuition,
+    node.id, node.label, ...(node.aliases || []), node.type, node.description, node.note?.intuition,
     ...node.variants.flatMap(variant => [variant.document, ...variant.fields.map(field => JSON.stringify(field.value)), ...variant.claims.map(claim => JSON.stringify(claim)), ...(variant.related || []).map(item => JSON.stringify(item.record))]),
     ...(state.edgesById.get(node.id) || []).map(edge => `${edge.relation} ${edge.semantic}`)
   ].join(' ').toLowerCase()]));
@@ -28,8 +28,10 @@ function relationDescription(edge, id) {
 }
 
 function selectConcept(id, { scroll = false } = {}) {
+  id = state.atlas.aliases?.aliases[id]?.canonical || id;
   if (!state.byId.has(id)) return;
   state.selected = id;
+  $('#edge-evidence').hidden = true;
   renderMap();
   renderPreview();
   renderInspector();
@@ -40,8 +42,9 @@ function selectConcept(id, { scroll = false } = {}) {
 function clearSelection({ fit = false } = {}) {
   if (!state.selected && !fit) return;
   const wasFocused = Boolean(state.featuredEdge);
-  state.selected = null;
+  state.selected = 'force';
   state.featuredEdge = null;
+  $('#edge-evidence').hidden = true;
   if (fit || wasFocused) network.fit();
   renderMap();
   renderPreview();
@@ -66,7 +69,7 @@ function renderFilters() {
 function inTopic(node) { return state.topic === 'all' || node.topics.includes(state.topic); }
 function filteredNodes(query) {
   const term = query.trim().toLowerCase();
-  return state.atlas.nodes.filter(node => inTopic(node) && (!term || state.searchText.get(node.id).includes(term)));
+  return state.atlas.nodes.filter(node => inTopic(node) && (!term || state.searchText.get(node.id).includes(term))).sort((a,b) => Number(b.label.toLowerCase() === term || b.id === term || b.aliases?.some(id => id.toLowerCase() === term)) - Number(a.label.toLowerCase() === term || a.id === term || a.aliases?.some(id => id.toLowerCase() === term)));
 }
 
 function renderSearch() {
@@ -90,10 +93,10 @@ function renderMap() {
   network?.topic(state.topic);
   $('#details-jump').hidden = !state.selected;
   $('#map-mode').textContent = state.selected ? `FOCUS / ${state.byId.get(state.selected).label.toUpperCase()}` : 'CONNECTED CORE / 2+ NEIGHBORS';
-  $('#map-count').textContent = `${state.atlas.nodes.length.toLocaleString()} nodes · ${state.atlas.edges.length.toLocaleString()} links${state.selected ? ` · ${network?.counts().connected || 0} neighbors highlighted` : ` · ${state.atlas.summary.hiddenConcepts.toLocaleString()} low-connectivity records archived`}`;
+  $('#map-count').textContent = `${state.atlas.nodes.length.toLocaleString()} nodes · ${state.atlas.edges.length.toLocaleString()} links${state.selected ? ` · ${network?.counts().connected || 0} concept neighbors available` : ` · ${state.atlas.summary.hiddenConcepts.toLocaleString()} low-connectivity records archived`}`;
   const directed = state.edgesById.get(state.selected) || [];
   state.featuredEdge = directed.find(edge => edge.record?.teaching_addition && edge.source === 'net_force') || directed.find(edge => window.PhysicsMapKey.classify(edge).id === 'causal') || directed[0] || null;
-  if (state.featuredEdge) network?.focusEdge(state.featuredEdge);
+  renderLensControls();
 }
 
 function sourceTitle(file) {
@@ -201,9 +204,9 @@ function renderInspector() {
   const relations = connections.map(edge => {
     const { other, direction, relation } = relationDescription(edge, node.id);
     const style = window.PhysicsMapKey.classify(edge);
-    return `<article class="relation-entry"><button type="button" data-concept="${escapeHtml(other?.id || '')}"><span class="relation-direction">${direction}</span><span><span class="relation-style">${lineSample(style)}${escapeHtml(style.label)}</span><small>Original relation: ${escapeHtml(humanize(edge.relation))}</small><strong>${escapeHtml(other?.label || other?.id || 'Unknown')}</strong></span><span class="relation-arrow">↗</span></button><div class="relation-proof">${other?.description ? `<p class="neighbor-description">${escapeHtml(other.description)}</p>` : ''}<span>Recorded in ${escapeHtml(sourceTitle(edge.document))}</span>${edge.semantic ? `<p>${escapeHtml(relation)}</p>` : ''}${renderFields(edge.fields || [])}${edge.evidence.length ? `<div class="claim-list"><strong>Supporting claims · ${edge.evidence.length}</strong>${edge.evidence.map(renderClaim).join('')}</div>` : '<p>No claim-level citation supplied for this relationship.</p>'}</div></article>`;
+    return `<article class="relation-entry" id="${escapeHtml(edge.id)}"><button type="button" data-concept="${escapeHtml(other?.id || '')}"><span class="relation-direction">${direction}</span><span><span class="relation-style">${lineSample(style)}${escapeHtml(style.label)}</span><small>Original relation: ${escapeHtml(humanize(edge.relation))}</small><strong>${escapeHtml(other?.label || other?.id || 'Unknown')}</strong></span><span class="relation-arrow">↗</span></button><div class="relation-proof">${other?.description ? `<p class="neighbor-description">${escapeHtml(other.description)}</p>` : ''}<span>Recorded in ${escapeHtml(sourceTitle(edge.document))}</span>${edge.semantic ? `<p>${escapeHtml(relation)}</p>` : ''}<p><b>Type:</b> ${escapeHtml(edge.kind)} · <b>Scope:</b> ${escapeHtml(edge.scope || 'Not specified by original source')}</p>${renderFields(edge.fields || [])}<details><summary>${edge.claimCount} aggregated source records</summary>${displayValue(edge.provenance)}</details>${edge.evidence.length ? `<div class="claim-list"><strong>Supporting claims · ${edge.evidence.length}</strong>${edge.evidence.map(renderClaim).join('')}</div>` : '<p>No claim-level citation supplied for this relationship.</p>'}</div></article>`;
   }).join('');
-  host.innerHTML = `<div class="inspector-content"><div class="inspector-heading"><span class="label-chip ${category(node)}">${escapeHtml(humanize(node.type))}</span><span class="record-number">${connections.length} LINKS · ${node.variants.length} SOURCES</span></div><h3>${escapeHtml(node.label)}</h3><p class="inspector-id">${escapeHtml(node.id)}</p><button type="button" id="clear-focus" class="clear-focus">Clear selection <kbd>Esc</kbd></button>${node.note?.intuition ? `<div class="insight"><span class="insight-icon">✧</span><div><strong>IN PLAIN LANGUAGE · CURATED NOTE</strong><p>${escapeHtml(node.note.intuition)}</p></div></div>` : ''}<div class="inspector-section"><h4>Concept overview</h4><p>${escapeHtml(explanation)}</p>${node.note?.example ? `<p class="example"><b>For example</b> · ${escapeHtml(node.note.example)}</p>` : ''}${node.addedByCurriculum ? '<p class="provenance-warning">Teaching note added to resolve a source reference; not an original graph node.</p>' : ''}</div>${guide}<div class="inspector-section"><h4>Original source records <span>${node.variants.length}</span></h4><div class="source-record-grid">${sourceRecords || '<p>Curriculum-only concept; no original source record.</p>'}</div></div><div class="inspector-section"><h4>Visible connections <span>${connections.length}</span></h4><p class="connection-note">Direction, meaning and source evidence are shown for each recorded link. Arrows denote recorded predicate direction, not necessarily a physical cause. Low-connectivity neighbors are omitted here but retained in source downloads. A link without a cited claim has no claim-level citation in the source data.</p><div class="relation-list">${relations || '<p>No relationships are recorded for this concept yet.</p>'}</div></div><div class="inspector-section"><details class="raw-record"><summary>Inspect complete JSON records <span>↗</span></summary><pre></pre></details></div></div>`;
+  host.innerHTML = `<div class="inspector-content"><div class="inspector-heading"><span class="label-chip ${category(node)}">${escapeHtml(humanize(node.type))}</span><span class="record-number">${connections.length} LINKS · ${node.variants.length} SOURCES</span></div><h3>${escapeHtml(node.label)}</h3><p class="inspector-id">${escapeHtml(node.id)}</p><button type="button" id="clear-focus" class="clear-focus">Clear selection <kbd>Esc</kbd></button>${node.note?.intuition ? `<div class="insight"><span class="insight-icon">✧</span><div><strong>IN PLAIN LANGUAGE · CURATED NOTE</strong><p>${escapeHtml(node.note.intuition)}</p></div></div>` : ''}<div class="inspector-section"><h4>Concept overview</h4><p>${escapeHtml(explanation)}</p>${node.note?.example ? `<p class="example"><b>For example</b> · ${escapeHtml(node.note.example)}</p>` : ''}${node.addedByCurriculum ? '<p class="provenance-warning">Teaching note added to resolve a source reference; not an original graph node.</p>' : ''}</div>${guide}<div class="inspector-section"><details><summary>Supporting metadata (not physics neighbors) · ${node.supporting?.length || 0}</summary>${displayValue(node.supporting || [])}</details><h4>Original source records <span>${node.variants.length}</span></h4><div class="source-record-grid">${sourceRecords || '<p>Curriculum-only concept; no original source record.</p>'}</div></div><div class="inspector-section"><h4>Visible connections <span>${connections.length}</span></h4><p class="connection-note">Direction, meaning and source evidence are shown for each recorded link. Arrows denote recorded predicate direction, not necessarily a physical cause. Low-connectivity neighbors are omitted here but retained in source downloads. A link without a cited claim has no claim-level citation in the source data.</p><div class="relation-list">${relations || '<p>No relationships are recorded for this concept yet.</p>'}</div></div><div class="inspector-section"><details class="raw-record"><summary>Inspect complete JSON records <span>↗</span></summary><pre></pre></details></div></div>`;
   host.querySelectorAll('[data-concept]').forEach(button => button.addEventListener('click', () => selectConcept(button.dataset.concept)));
   $('#clear-focus').addEventListener('click', () => clearSelection());
   host.querySelectorAll('.document-context').forEach(details => details.addEventListener('toggle', () => {
@@ -213,7 +216,7 @@ function renderInspector() {
     details.querySelector('pre').textContent = JSON.stringify(document.metadata, null, 2);
   }));
   const details = host.querySelector('.raw-record');
-  details.addEventListener('toggle', () => { if (details.open) details.querySelector('pre').textContent = JSON.stringify({ id: node.id, variants: node.variants, curriculum: node.note || null, relationships: connections }, null, 2); });
+  details.addEventListener('toggle', () => { if (details.open) details.querySelector('pre').textContent = JSON.stringify({ id: node.id, aliases: node.aliases, variants: node.variants, supporting: node.supporting, curriculum: node.note || null, relationships: connections }, null, 2); });
 }
 
 function renderRoutes() {
@@ -251,7 +254,8 @@ function renderCatalog() {
 }
 
 function setupMapGestures() {
-  network = window.PhysicsNetwork.mount($('#network'), $('#map-tooltip'), state.atlas, id => selectConcept(id));
+  network = window.PhysicsNetwork.mount($('#network'), $('#map-tooltip'), state.atlas, id => selectConcept(id), showEdge);
+  window.addEventListener('pagehide', () => network.destroy(), {once:true});
   $('#details-jump').addEventListener('click', () => $('#inspector').scrollIntoView({ behavior: 'smooth', block: 'start' }));
   $('#zoom-in').addEventListener('click', () => network.zoom(1.3));
   $('#zoom-out').addEventListener('click', () => network.zoom(1 / 1.3));
@@ -270,7 +274,7 @@ async function init() {
     $('#metric-overlap').textContent = state.atlas.summary.overlaps;
     $('#source-links').innerHTML = state.atlas.documents.map((doc, index) => `<a href="./data/${doc.file.split('/').map(encodeURIComponent).join('/')}" download><span>${String(index + 1).padStart(2, '0')} / ${escapeHtml(doc.title)}</span><span>↓</span></a>`).join('') + `<a href="./data/atlas.json" download><span>${String(state.atlas.documents.length + 1).padStart(2, '0')} / Unified atlas JSON</span><span>↓</span></a>`;
     setupMapGestures(); renderMapKey(); renderFilters(); renderMap(); renderPreview(); renderInspector(); renderRoutes(); renderCatalog();
-    $('#demo-force').addEventListener('click', () => selectConcept('net_force'));
+    $('#demo-force').addEventListener('click', () => selectConcept('force'));
     $('#search').addEventListener('input', event => { state.query = event.target.value; renderSearch(); });
     $('#catalog-search').addEventListener('input', event => { state.catalogQuery = event.target.value; state.catalogLimit = 36; renderCatalog(); });
     $('#catalog-more').addEventListener('click', () => { state.catalogLimit += 36; renderCatalog(); });
@@ -286,7 +290,7 @@ async function init() {
       }
     });
     const initial = new URL(location.href).searchParams.get('concept');
-    if (initial && state.byId.has(initial)) selectConcept(initial);
+    selectConcept(initial || 'force');
   } catch (error) {
     $('#inspector').innerHTML = `<div class="inspector-empty"><h3>Atlas unavailable</h3><p>${escapeHtml(error.message)}. Serve this folder over HTTP so the JSON can load.</p></div>`;
     $('#map-mode').textContent = 'ATLAS UNAVAILABLE';
@@ -294,3 +298,14 @@ async function init() {
 }
 
 init();
+
+function showEdge(edge) {
+ const host=document.querySelector('#edge-evidence');host.hidden=false;host.innerHTML='<h3>'+escapeHtml(state.byId.get(edge.source).label)+' → '+escapeHtml(state.byId.get(edge.target).label)+'</h3><b>'+escapeHtml(edge.relation.replaceAll('_',' '))+' · '+escapeHtml(edge.kind)+'</b><p>'+escapeHtml(edge.scope||'Scope not specified by original source')+'</p><p>'+escapeHtml(edge.record.mathematical_form||'')+'</p><details open><summary>Evidence · '+edge.claimCount+' source records</summary>'+displayValue(edge.provenance)+'</details>';
+}
+function renderLensControls(){
+ const snap=network?.snapshot();if(!snap)return;
+ const host=document.querySelector('#lens-controls');host.innerHTML='<p>Arrowheads point from subject to object. Causal predicates assert causation; definitions, sums and dependencies are not causal inverses. Select a node to recenter; select an arrow label for its conditions.</p><p class="mechanics-scope">Newtonian example: external forces sum to net force. A nonzero net force causes acceleration for constant positive mass in an inertial frame: a = F_net / m.</p><button id="more-neighbors" type="button">Next connections ('+(network.counts().offset<0?'overview':(network.counts().offset+1)+'–'+Math.min(network.counts().connected,network.counts().offset+snap.limit))+' of '+network.counts().connected+')</button><div class="lens-accessible">'+snap.nodes.map(n=>'<button data-lens-node="'+escapeHtml(n.id)+'">'+escapeHtml(state.byId.get(n.id).label)+'</button>').join('')+'</div>';
+ host.querySelector('#more-neighbors').onclick=()=>{network.next();renderLensControls();};host.querySelectorAll('[data-lens-node]').forEach(b=>b.onclick=()=>selectConcept(b.dataset.lensNode));
+ document.querySelector('#lens-edges').innerHTML=snap.edges.map(e=>'<button data-lens-edge="'+e.id+'">'+escapeHtml(state.byId.get(e.source).label)+' → '+escapeHtml(e.relation.replaceAll('_',' '))+' → '+escapeHtml(state.byId.get(e.target).label)+'</button>').join('');
+ document.querySelectorAll('[data-lens-edge]').forEach(b=>b.onclick=()=>showEdge(snap.edges.find(e=>e.id===b.dataset.lensEdge)));
+}

@@ -1,0 +1,642 @@
+{
+  "schemaVersion": 1,
+  "policy": "Only these exact IDs and document-scoped overrides unify; no runtime substring, fuzzy, stemming or label matching.",
+  "distinct": [
+    [
+      "force",
+      "net_force"
+    ],
+    [
+      "speed",
+      "velocity"
+    ],
+    [
+      "mass",
+      "rest_mass"
+    ],
+    [
+      "gravity",
+      "gravitational_force"
+    ],
+    [
+      "heat",
+      "temperature"
+    ],
+    [
+      "electric_field",
+      "electric_charge"
+    ],
+    [
+      "ionic_bond",
+      "covalent_bond"
+    ]
+  ],
+  "aliases": {
+    "DNA": {
+      "canonical": "dna",
+      "reason": "Reviewed exact concept label: dna"
+    },
+    "Schrodinger_equation": {
+      "canonical": "schrodinger_equation",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "ammonium": {
+      "canonical": "nh4",
+      "reason": "Reviewed exact concept label: ammonium ion"
+    },
+    "bec": {
+      "canonical": "bose_einstein_condensate",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "black_holes": {
+      "canonical": "black_hole",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "chemical_mixture": {
+      "canonical": "mixture",
+      "reason": "Reviewed exact concept label: chemical mixture"
+    },
+    "chemical_substance": {
+      "canonical": "substance",
+      "reason": "Reviewed exact concept label: chemical substance"
+    },
+    "concept_W_boson": {
+      "canonical": "w_boson",
+      "reason": "Reviewed exact concept label: w boson"
+    },
+    "concept_Z_boson": {
+      "canonical": "z_boson",
+      "reason": "Reviewed exact concept label: z boson"
+    },
+    "concept_acceleration": {
+      "canonical": "acceleration",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_angular_acceleration": {
+      "canonical": "angular_acceleration",
+      "reason": "Reviewed exact concept label: angular acceleration"
+    },
+    "concept_angular_momentum": {
+      "canonical": "angular_momentum",
+      "reason": "Reviewed exact concept label: angular momentum"
+    },
+    "concept_angular_velocity": {
+      "canonical": "angular_velocity",
+      "reason": "Reviewed exact concept label: angular velocity"
+    },
+    "concept_astrochemistry": {
+      "canonical": "astrochemistry",
+      "reason": "Reviewed exact concept label: astrochemistry"
+    },
+    "concept_astronomy": {
+      "canonical": "astronomy",
+      "reason": "Reviewed exact concept label: astronomy"
+    },
+    "concept_astroparticle": {
+      "canonical": "astroparticle_physics",
+      "reason": "Reviewed exact concept label: astroparticle physics"
+    },
+    "concept_atomic": {
+      "canonical": "atomic_physics",
+      "reason": "Reviewed exact concept label: atomic physics"
+    },
+    "concept_atomic_nucleus": {
+      "canonical": "nucleus",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_bec": {
+      "canonical": "bose_einstein_condensate",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_bell_inequality": {
+      "canonical": "Bell_inequality",
+      "reason": "Reviewed exact concept label: bell inequality"
+    },
+    "concept_beta_decay": {
+      "canonical": "beta_decay",
+      "reason": "Reviewed exact concept label: beta decay"
+    },
+    "concept_big_bang": {
+      "canonical": "big_bang",
+      "reason": "Reviewed exact concept label: big bang"
+    },
+    "concept_black_holes": {
+      "canonical": "black_hole",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_born_rule": {
+      "canonical": "Born_rule",
+      "reason": "Reviewed exact concept label: born rule"
+    },
+    "concept_center_of_mass": {
+      "canonical": "center_of_mass",
+      "reason": "Reviewed exact concept label: center of mass"
+    },
+    "concept_centripetal_acceleration": {
+      "canonical": "centripetal_acceleration",
+      "reason": "Reviewed exact concept label: centripetal acceleration"
+    },
+    "concept_charge": {
+      "canonical": "electric_charge",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_chemistry": {
+      "canonical": "chemistry",
+      "reason": "Reviewed exact concept label: chemistry"
+    },
+    "concept_classical_mech": {
+      "canonical": "classical_mechanics",
+      "reason": "Reviewed exact concept label: classical mechanics"
+    },
+    "concept_closed_system": {
+      "canonical": "closed_system",
+      "reason": "Reviewed exact concept label: closed system"
+    },
+    "concept_color_charge": {
+      "canonical": "color_charge",
+      "reason": "Reviewed exact concept label: color charge"
+    },
+    "concept_coulomb_force": {
+      "canonical": "electrostatic_force",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_curved_spacetime": {
+      "canonical": "curved_spacetime",
+      "reason": "Reviewed exact concept label: curved spacetime"
+    },
+    "concept_dark_energy": {
+      "canonical": "dark_energy",
+      "reason": "Reviewed exact concept label: dark energy"
+    },
+    "concept_dark_matter": {
+      "canonical": "dark_matter",
+      "reason": "Reviewed exact concept label: dark matter"
+    },
+    "concept_diffusion": {
+      "canonical": "diffusion",
+      "reason": "Reviewed exact concept label: diffusion"
+    },
+    "concept_domain_force": {
+      "canonical": "force",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_electric_field": {
+      "canonical": "electric_field",
+      "reason": "Reviewed exact concept label: electric field"
+    },
+    "concept_electromagnetic_force": {
+      "canonical": "electromagnetic_force",
+      "reason": "Reviewed exact concept label: electromagnetic force"
+    },
+    "concept_electromagnetism": {
+      "canonical": "electromagnetism",
+      "reason": "Reviewed exact concept label: electromagnetism"
+    },
+    "concept_electrostatic_potential": {
+      "canonical": "electrostatic_potential_energy",
+      "reason": "Force source explicitly labels electrostatic potential ENERGY"
+    },
+    "concept_electroweak": {
+      "canonical": "electroweak_theory",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_em": {
+      "canonical": "electromagnetism",
+      "reason": "Reviewed exact concept label: electromagnetism"
+    },
+    "concept_entropy": {
+      "canonical": "entropy",
+      "reason": "Reviewed exact concept label: entropy"
+    },
+    "concept_epr": {
+      "canonical": "EPR_paradox",
+      "reason": "Reviewed exact concept label: epr paradox"
+    },
+    "concept_equivalence_principle": {
+      "canonical": "equivalence_principle",
+      "reason": "Reviewed exact concept label: equivalence principle"
+    },
+    "concept_force": {
+      "canonical": "force",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_free_fall": {
+      "canonical": "free_fall",
+      "reason": "Reviewed exact concept label: free fall"
+    },
+    "concept_fundamental_gravity_interaction": {
+      "canonical": "gravity",
+      "reason": "Reviewed interaction profile describes the same interaction, not a separate physical neighbor"
+    },
+    "concept_general_relativity": {
+      "canonical": "general_relativity",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_gluon": {
+      "canonical": "gluon",
+      "reason": "Reviewed exact concept label: gluon"
+    },
+    "concept_gravitational_acceleration": {
+      "canonical": "gravitational_acceleration",
+      "reason": "Reviewed exact concept label: gravitational acceleration"
+    },
+    "concept_gravitational_field": {
+      "canonical": "gravitational_field",
+      "reason": "Reviewed exact concept label: gravitational field"
+    },
+    "concept_gravitational_lensing": {
+      "canonical": "gravitational_lensing",
+      "reason": "Reviewed exact concept label: gravitational lensing"
+    },
+    "concept_gravitational_time_dilation": {
+      "canonical": "gravitational_time_dilation",
+      "reason": "Reviewed exact concept label: gravitational time dilation"
+    },
+    "concept_gravitational_waves": {
+      "canonical": "gravitational_waves",
+      "reason": "Reviewed exact concept label: gravitational waves"
+    },
+    "concept_gravity": {
+      "canonical": "gravitational_force",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_hydrodynamics": {
+      "canonical": "hydrodynamics",
+      "reason": "Reviewed exact concept label: hydrodynamics"
+    },
+    "concept_hydrogen": {
+      "canonical": "hydrogen",
+      "reason": "Reviewed exact concept label: hydrogen"
+    },
+    "concept_impulse": {
+      "canonical": "impulse",
+      "reason": "Reviewed exact concept label: impulse"
+    },
+    "concept_inertia": {
+      "canonical": "inertia",
+      "reason": "Reviewed exact concept label: inertia"
+    },
+    "concept_inflation": {
+      "canonical": "cosmic_inflation",
+      "reason": "Reviewed exact concept label: cosmic inflation"
+    },
+    "concept_internal_energy": {
+      "canonical": "internal_energy",
+      "reason": "Reviewed exact concept label: internal energy"
+    },
+    "concept_kinetic_energy": {
+      "canonical": "kinetic_energy",
+      "reason": "Reviewed exact concept label: kinetic energy"
+    },
+    "concept_laser": {
+      "canonical": "laser",
+      "reason": "Reviewed exact concept label: laser"
+    },
+    "concept_lcdm": {
+      "canonical": "lambda_cdm",
+      "reason": "Reviewed exact concept label: lambda-cdm model"
+    },
+    "concept_lorentz_factor": {
+      "canonical": "lorentz_factor",
+      "reason": "Reviewed exact concept label: lorentz factor"
+    },
+    "concept_magnetic_field": {
+      "canonical": "magnetic_field",
+      "reason": "Reviewed exact concept label: magnetic field"
+    },
+    "concept_mass": {
+      "canonical": "mass",
+      "reason": "Reviewed exact concept label: mass"
+    },
+    "concept_mass_energy": {
+      "canonical": "mass_energy_equivalence",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_matter_waves": {
+      "canonical": "matter_waves",
+      "reason": "Reviewed exact concept label: matter waves"
+    },
+    "concept_mhd": {
+      "canonical": "magnetohydrodynamics",
+      "reason": "Reviewed exact concept label: magnetohydrodynamics"
+    },
+    "concept_molecular": {
+      "canonical": "molecular_physics",
+      "reason": "Reviewed exact concept label: molecular physics"
+    },
+    "concept_momentum": {
+      "canonical": "momentum",
+      "reason": "Reviewed exact concept label: momentum"
+    },
+    "concept_net_force": {
+      "canonical": "net_force",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_newtonian_gravitation": {
+      "canonical": "newtonian_gravitation",
+      "reason": "Reviewed exact concept label: newtonian gravitation"
+    },
+    "concept_newtonian_mechanics": {
+      "canonical": "newtonian_mechanics",
+      "reason": "Reviewed exact concept label: newtonian mechanics"
+    },
+    "concept_nonlocality": {
+      "canonical": "quantum_nonlocality",
+      "reason": "Reviewed exact concept label: quantum nonlocality"
+    },
+    "concept_nuclear": {
+      "canonical": "nuclear_physics",
+      "reason": "Reviewed exact concept label: nuclear physics"
+    },
+    "concept_particle": {
+      "canonical": "particle_physics",
+      "reason": "Reviewed exact concept label: particle physics"
+    },
+    "concept_pauli_exclusion": {
+      "canonical": "pauli_exclusion",
+      "reason": "Reviewed exact concept label: pauli exclusion principle"
+    },
+    "concept_photoelectric": {
+      "canonical": "photoelectric_effect",
+      "reason": "Reviewed exact concept label: photoelectric effect"
+    },
+    "concept_photon": {
+      "canonical": "photon",
+      "reason": "Reviewed exact concept label: photon"
+    },
+    "concept_physics": {
+      "canonical": "physics",
+      "reason": "Reviewed exact concept label: physics"
+    },
+    "concept_plasma_physics": {
+      "canonical": "plasma_physics",
+      "reason": "Reviewed exact concept label: plasma physics"
+    },
+    "concept_position": {
+      "canonical": "position",
+      "reason": "Reviewed exact concept label: position"
+    },
+    "concept_potential_energy": {
+      "canonical": "potential_energy",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_power": {
+      "canonical": "power",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_pressure": {
+      "canonical": "pressure",
+      "reason": "Reviewed exact concept label: pressure"
+    },
+    "concept_pressure_gradient": {
+      "canonical": "pressure_gradient",
+      "reason": "Reviewed exact concept label: pressure gradient"
+    },
+    "concept_qcd": {
+      "canonical": "quantum_chromodynamics",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_qed": {
+      "canonical": "quantum_electrodynamics",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_qft": {
+      "canonical": "quantum_field_theory",
+      "reason": "Reviewed exact concept label: quantum field theory"
+    },
+    "concept_quantum_mechanics": {
+      "canonical": "quantum_mechanics",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_quantum_optics": {
+      "canonical": "quantum_optics",
+      "reason": "Reviewed exact concept label: quantum optics"
+    },
+    "concept_radius": {
+      "canonical": "radius",
+      "reason": "Reviewed exact concept label: radius"
+    },
+    "concept_rest_mass": {
+      "canonical": "rest_mass",
+      "reason": "Reviewed exact concept label: rest mass"
+    },
+    "concept_riemann_geometry": {
+      "canonical": "riemannian_geometry",
+      "reason": "Reviewed exact concept label: riemannian geometry"
+    },
+    "concept_rotation": {
+      "canonical": "rotation",
+      "reason": "Reviewed exact concept label: rotation"
+    },
+    "concept_schrodinger_equation": {
+      "canonical": "schrodinger_equation",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_solar_physics": {
+      "canonical": "solar_physics",
+      "reason": "Reviewed exact concept label: solar physics"
+    },
+    "concept_special_relativity": {
+      "canonical": "special_relativity",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_spectral_line": {
+      "canonical": "spectral_line",
+      "reason": "Reviewed exact concept label: spectral line"
+    },
+    "concept_standard_model": {
+      "canonical": "standard_model",
+      "reason": "Reviewed exact concept label: standard model"
+    },
+    "concept_stat_mech": {
+      "canonical": "statistical_mechanics",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_statistical_mechanics": {
+      "canonical": "statistical_mechanics",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_stellar_astrophysics": {
+      "canonical": "stellar_astrophysics",
+      "reason": "Reviewed exact concept label: stellar astrophysics"
+    },
+    "concept_strong_interaction": {
+      "canonical": "strong_interaction",
+      "reason": "Reviewed interaction profile describes the same interaction, not a separate physical neighbor"
+    },
+    "concept_superconductivity": {
+      "canonical": "superconductivity",
+      "reason": "Reviewed exact concept label: superconductivity"
+    },
+    "concept_supernova": {
+      "canonical": "supernova",
+      "reason": "Reviewed exact concept label: supernova"
+    },
+    "concept_temperature": {
+      "canonical": "temperature",
+      "reason": "Reviewed exact concept label: temperature"
+    },
+    "concept_thermodynamics": {
+      "canonical": "thermodynamics",
+      "reason": "Reviewed exact concept label: thermodynamics"
+    },
+    "concept_time": {
+      "canonical": "time",
+      "reason": "Reviewed exact concept label: time"
+    },
+    "concept_vector": {
+      "canonical": "vector_quantity",
+      "reason": "Reviewed exact concept label: vector quantity"
+    },
+    "concept_velocity": {
+      "canonical": "velocity",
+      "reason": "Reviewed exact concept label: velocity"
+    },
+    "concept_velocity_of_light": {
+      "canonical": "speed_of_light",
+      "reason": "Reviewed exact concept label: speed of light"
+    },
+    "concept_wave_particle": {
+      "canonical": "wave_particle_duality",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_weak_force": {
+      "canonical": "weak_nuclear_force",
+      "reason": "Reviewed exact concept label: weak nuclear force"
+    },
+    "concept_weak_interaction": {
+      "canonical": "weak_interaction",
+      "reason": "Reviewed interaction profile describes the same interaction, not a separate physical neighbor"
+    },
+    "concept_work": {
+      "canonical": "work",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "concept_zero_point_energy": {
+      "canonical": "zero_point_energy",
+      "reason": "Reviewed exact concept label: zero-point energy"
+    },
+    "condensed_matter_physics": {
+      "canonical": "condensed_matter",
+      "reason": "Reviewed exact concept label: condensed matter physics"
+    },
+    "crystal_lattice": {
+      "canonical": "lattice",
+      "reason": "Reviewed exact concept label: crystal lattice"
+    },
+    "domain_astrophysics": {
+      "canonical": "astrophysics",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "domain_force": {
+      "canonical": "force",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "double_slit_experiment": {
+      "canonical": "double_slit",
+      "reason": "Reviewed exact concept label: double-slit experiment"
+    },
+    "electrical_conductivity": {
+      "canonical": "conductivity",
+      "reason": "Reviewed exact concept label: electrical conductivity"
+    },
+    "electroweak": {
+      "canonical": "electroweak_theory",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "first generation": {
+      "canonical": "first_generation",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "gravitation": {
+      "canonical": "gravity",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "magnetic_resonance_imaging": {
+      "canonical": "MRI",
+      "reason": "Reviewed exact concept label: magnetic resonance imaging"
+    },
+    "momentum_wave_number_relation": {
+      "canonical": "eq_pk",
+      "reason": "Reviewed exact concept label: p=ℏk"
+    },
+    "nuclear_magnetic_resonance_spectroscopy": {
+      "canonical": "nmr_spectroscopy",
+      "reason": "Reviewed exact concept label: nuclear magnetic resonance spectroscopy"
+    },
+    "plasma_phase": {
+      "canonical": "plasma",
+      "reason": "Reviewed exact concept label: plasma"
+    },
+    "qcd": {
+      "canonical": "quantum_chromodynamics",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "qed": {
+      "canonical": "quantum_electrodynamics",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "quantum_information_science": {
+      "canonical": "quantum_information",
+      "reason": "Reviewed exact concept label: quantum information science"
+    },
+    "second generation": {
+      "canonical": "second_generation",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "solid_state_physics": {
+      "canonical": "solid_state",
+      "reason": "Reviewed exact concept label: solid-state physics"
+    },
+    "state": {
+      "canonical": "thermodynamic_state",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "statistical_ensemble": {
+      "canonical": "ensemble",
+      "reason": "Reviewed exact concept label: statistical ensemble"
+    },
+    "sulfate": {
+      "canonical": "so4",
+      "reason": "Reviewed exact concept label: sulfate ion"
+    },
+    "third generation": {
+      "canonical": "third_generation",
+      "reason": "Reviewed domain synonym; inspect original definitions in node variants"
+    },
+    "fi_strong": {
+      "canonical": "strong_interaction",
+      "reason": "Reviewed interaction profile describes the same interaction, not a separate physical neighbor"
+    },
+    "fi_weak": {
+      "canonical": "weak_interaction",
+      "reason": "Reviewed interaction profile describes the same interaction, not a separate physical neighbor"
+    },
+    "fi_em": {
+      "canonical": "electromagnetism",
+      "reason": "Reviewed interaction profile describes the same interaction, not a separate physical neighbor"
+    },
+    "fi_gravity": {
+      "canonical": "gravity",
+      "reason": "Reviewed interaction profile describes the same interaction, not a separate physical neighbor"
+    }
+  },
+  "scoped": {
+    "albert_einstein_full_dynamic_semantic_knowledge_graph_v1.json#concept_gravity": {
+      "canonical": "gravity",
+      "reason": "Interaction Gravitation, not Newtonian gravitational force"
+    }
+  },
+  "edgeOverrides": {
+    "force_full_relationship_rich_semantic_knowledge_graph_v3.json#r_force_acceleration_full_chain": {
+      "source": "net_force",
+      "relation": "causes",
+      "reason": "Original mechanism and equation explicitly use NET force; correct overly broad domain_force endpoint without changing original provenance."
+    },
+    "force_full_relationship_rich_semantic_knowledge_graph_v3.json#r003": {
+      "source": "net_force",
+      "relation": "causes",
+      "reason": "Original effect explicitly says acceleration proportional to NET force; individual force may cancel."
+    }
+  }
+}
