@@ -24,6 +24,9 @@ test('every recorded relationship gets a visual family without losing its origin
   assert.ok(key.relationships.every(style => atlas.edges.some(edge => key.classify(edge) === style)));
   const proof = atlas.edges.find(edge => edge.source === 'net_force' && edge.target === 'acceleration');
   assert.equal(key.classify(proof).arrow, 'filled');
-  assert.equal(key.classify({ relation: 'determines' }).arrow, undefined);
+  assert.equal(key.classify({ relation: 'determines' }).arrow, 'open');
+  assert.ok(atlas.edges.every(edge => key.classify(edge).arrow), 'every relationship has a source-to-target arrow');
+  assert.equal(key.classify({ relation: 'associated_with' }).arrow, 'open');
+  assert.equal(key.classify({ relation: 'inversely_scales_at_fixed_net_force', record: { semantic_role: 'dependency' } }).id, 'effect');
   assert.equal(new Set(key.domains.map(item => item.id)).size, key.domains.length);
 });

@@ -18,6 +18,7 @@
       minX: Math.min(result.minX, node.layout.x), maxX: Math.max(result.maxX, node.layout.x),
       minY: Math.min(result.minY, node.layout.y), maxY: Math.max(result.maxY, node.layout.y)
     }), { minX: Infinity, maxX: -Infinity, minY: Infinity, maxY: -Infinity });
+    if (!nodes.length) Object.assign(bounds, { minX: 0, maxX: 1, minY: 0, maxY: 1 });
     const centerX = (bounds.minX + bounds.maxX) / 2;
     const centerY = (bounds.minY + bounds.maxY) / 2;
     let width = 960;
@@ -46,6 +47,7 @@
       context.clearRect(0, 0, width, height);
       const active = selected || hovered;
       const related = active ? neighbors.get(active) || new Set() : null;
+      const activeEdges = active ? edges.filter(edge => edge.source === active || edge.target === active) : [];
       function drawEdge(edge, highlighted) {
         const from = byId.get(edge.source), to = byId.get(edge.target);
         if (!from || !to) return;
@@ -63,11 +65,15 @@
         const start = featured ? { x: sourcePoint.x + alongX * 12, y: sourcePoint.y + alongY * 12 } : sourcePoint;
         const end = featured ? { x: targetPoint.x - alongX * 14, y: targetPoint.y - alongY * 14 } : targetPoint;
         context.beginPath(); context.moveTo(start.x, start.y); context.lineTo(end.x, end.y); context.stroke();
-        if (style.arrow && (highlighted || (style.id === 'causal' && !active && inTopic))) {
-          if (distance > 15) {
-            const tipX = end.x - alongX * (featured ? 0 : 5), tipY = end.y - alongY * (featured ? 0 : 5);
-            const baseX = tipX - alongX * (featured ? 11 : 6), baseY = tipY - alongY * (featured ? 11 : 6);
-            const halfWidth = featured ? 6 : 3;
+        // All predicates get an arrow; small quiet heads avoid an overview thicket.
+        if (style.arrow) {
+          if (distance > 2) {
+            const inset = featured ? 0 : Math.min(distance * 0.2, highlighted ? 9 : 5);
+            const tipX = end.x - alongX * inset, tipY = end.y - alongY * inset;
+            const size = Math.min(distance * 0.3, featured ? 11 : highlighted ? 7 : 3);
+            const baseX = tipX - alongX * size, baseY = tipY - alongY * size;
+            const halfWidth = size * 0.55;
+            context.setLineDash([]);
             context.beginPath();
             if (style.arrow === 'filled') {
               context.moveTo(tipX, tipY);
@@ -86,7 +92,7 @@
         }
       }
       for (const edge of edges) if (!active || (edge.source !== active && edge.target !== active)) drawEdge(edge, false);
-      if (active) for (const edge of focusedEdges) if (edge !== featuredEdge) drawEdge(edge, true);
+      if (active) for (const edge of activeEdges) if (edge !== featuredEdge) drawEdge(edge, true);
       if (featuredEdge) drawEdge(featuredEdge, true);
       context.setLineDash([]);
       const labeled = new Set(ranked.slice(0, 32).map(node => node.id));
@@ -122,9 +128,9 @@
         const dx = to.x - from.x, dy = to.y - from.y;
         const distance = Math.max(1, Math.hypot(dx, dy));
         const style = styles.get(featuredEdge);
-        const relation = style.id === 'causal' ? 'CAUSES' : 'DERIVED';
-        const formula = String(featuredEdge.record?.mathematical_form || featuredEdge.relation.replaceAll('_', ' '));
-        const caption = `${relation} · ${formula.length > 32 ? `${formula.slice(0, 31)}…` : formula}`;
+        const relation = featuredEdge.relation.replaceAll('_', ' ').toUpperCase();
+        const formula = featuredEdge.record?.mathematical_form;
+        const caption = formula ? `${relation} · ${formula}` : relation;
         context.font = '600 12px system-ui, sans-serif';
         const textWidth = Math.min(width - 20, Math.ceil((context.measureText?.(caption).width || caption.length * 7) + 20));
         const labelX = Math.max(10, Math.min(width - textWidth - 10, (from.x + to.x) / 2 - textWidth / 2 - dy / distance * 24));
@@ -200,7 +206,7 @@
     function moveTooltip(event, node, edge) {
       tooltip.hidden = !node && !edge;
       if (!node && !edge) return;
-      tooltip.textContent = node ? `${node.label} · ${node.degree} links` : `${byId.get(edge.source).label} → ${byId.get(edge.target).label} · ${edge.relation.replaceAll('_', ' ')}${edge.semantic ? ` · ${edge.semantic}` : ''}${edge.record?.mathematical_form ? ` · ${edge.record.mathematical_form}` : ''}${edge.record?.conditions ? ` · When: ${Array.isArray(edge.record.conditions) ? edge.record.conditions.join('; ') : edge.record.conditions}` : ''}`;
+      tooltip.textContent = node ? `${node.label} · ${node.degree} distinct neighbors` : `${byId.get(edge.source).label} → ${byId.get(edge.target).label} · ${edge.relation.replaceAll('_', ' ')}${edge.semantic ? ` · ${edge.semantic}` : ''}${edge.record?.mathematical_form ? ` · ${edge.record.mathematical_form}` : ''}${edge.record?.conditions ? ` · When: ${Array.isArray(edge.record.conditions) ? edge.record.conditions.join('; ') : edge.record.conditions}` : ''}`;
       const bounds = canvas.getBoundingClientRect();
       tooltip.style.left = `${Math.min(bounds.width - 190, Math.max(10, event.clientX - bounds.left + 12))}px`;
       tooltip.style.top = `${Math.max(10, event.clientY - bounds.top - 32)}px`;
@@ -218,6 +224,7 @@
       }
       const node = hitTest(event.clientX, event.clientY);
       const edge = node ? null : edgeAt(event.clientX, event.clientY);
+      if (edge && featuredEdge !== edge) { featuredEdge = edge; requestDraw(); }
       if (hovered !== node?.id) { hovered = node?.id || null; requestDraw(); }
       canvas.style.cursor = node ? 'pointer' : edge ? 'help' : drag ? 'grabbing' : 'grab';
       moveTooltip(event, node, edge);
@@ -247,7 +254,7 @@
 
     return {
       select(id) { if (selected !== id) featuredEdge = null; selected = id; focusedEdges = id ? edges.filter(edge => edge.source === id || edge.target === id) : []; hovered = null; tooltip.hidden = true; draw(); },
-      focusEdge(edge) { featuredEdge = edge; frameFeaturedEdge(); draw(); },
+      focusEdge(edge) { if (featuredEdge === edge) return; featuredEdge = edge; frameFeaturedEdge(); draw(); },
       topic(id) { topic = id; draw(); },
       zoom(factor) { zoom = Math.max(0.65, Math.min(12, zoom * factor)); draw(); },
       fit() { zoom = 1; panX = 0; panY = 0; selected = null; featuredEdge = null; focusedEdges = []; draw(); },

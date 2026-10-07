@@ -1,0 +1,54 @@
+{
+  "graph_id": "verified_newtonian_relations",
+  "title": "Verified teaching additions · Newtonian motion",
+  "domain": "Newtonian motion",
+  "source_policy": "Curated teaching additions, checked against the linked primary educational publishers on 2026-10-07. Original uploaded graph records remain unchanged. Arrows follow the predicate, not a claim that every connection is causal.",
+  "nodes": [],
+  "source_claims": [
+    {
+      "id": "verified_newton_second_law",
+      "statement": "For a constant positive mass in a Newtonian inertial frame, net external force determines acceleration by the vector relation a = F_net / m; at fixed net force, acceleration is inversely proportional to mass.",
+      "references": [
+        {
+          "title": "OpenStax University Physics Volume 1, §5.3 Newton’s Second Law",
+          "url": "https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law",
+          "section": "Newton’s Second Law of Motion; equation 5.3"
+        },
+        {
+          "title": "NASA Glenn, Airplane Motion",
+          "url": "https://www.grc.nasa.gov/WWW/K-12/BGP/motion.html",
+          "section": "Constant-mass acceleration"
+        }
+      ],
+      "verified_on": "2026-10-07"
+    }
+  ],
+  "edges": [
+    {
+      "source": "net_force",
+      "target": "acceleration",
+      "relationship": "causes_acceleration",
+      "semantic_role": "directional_causation",
+      "mathematical_form": "a = F_net / m",
+      "mechanism": "Net external force produces acceleration in the same direction.",
+      "conditions": "Newtonian mechanics; inertial reference frame; constant positive mass; vector net external force (not an individual unbalanced component assumed in isolation).",
+      "source_claim_ids": [
+        "verified_newton_second_law"
+      ],
+      "teaching_addition": true
+    },
+    {
+      "source": "mass",
+      "target": "acceleration",
+      "relationship": "inversely_scales_at_fixed_net_force",
+      "semantic_role": "dependency",
+      "mathematical_form": "a = F_net / m",
+      "mechanism": "At fixed net external force, a larger mass gives a smaller acceleration; this is a conditional dependence, not mass alone causing motion.",
+      "conditions": "Newtonian inertial frame; compare constant positive masses under the same net external force.",
+      "source_claim_ids": [
+        "verified_newton_second_law"
+      ],
+      "teaching_addition": true
+    }
+  ]
+}

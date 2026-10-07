@@ -1394,3 +1394,5 @@ p {
     transition: none !important;
   }
 }
+
+.proof-source { display: block; color: var(--mint); font-size: 11px; line-height: 1.5; overflow-wrap: anywhere; text-decoration: underline; }

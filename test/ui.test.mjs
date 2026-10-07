@@ -18,8 +18,9 @@ test('search, focus, source records and learning routes work on the full atlas',
   const virtualConsole = new VirtualConsole();
   virtualConsole.on('jsdomError', error => failures.push(error));
   const dom = new JSDOM(html, { url: 'http://localhost:4173/', runScripts: 'outside-only', virtualConsole });
-  const graph = JSON.parse(atlas);
-  dom.window.fetch = async () => ({ ok: true, json: async () => graph });
+  dom.window.eval(await readFile(new URL('../src/graph-view.js', import.meta.url), 'utf8'));
+  const graph = dom.window.PhysicsGraphView.connectedCore(JSON.parse(atlas));
+  dom.window.fetch = async () => ({ ok: true, json: async () => JSON.parse(atlas) });
   const scrolled = [];
   dom.window.HTMLElement.prototype.scrollIntoView = function () { scrolled.push(this.id); };
   const circles = [];
@@ -58,12 +59,12 @@ test('search, focus, source records and learning routes work on the full atlas',
   assert.equal(document.querySelector('#map-preview').hidden, true);
   document.querySelector('#demo-force').click();
   assert.equal(document.querySelector('#inspector h3').textContent, 'Net force');
-  assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('F_net=dp/dt=m a'));
-  assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('constant mass'));
-  assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('132'));
+  assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('a = F_net / m'));
+  assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('constant positive mass'));
+  assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('OpenStax'));
   assert.ok(document.querySelector('#map-preview .dynamic-proof').textContent.includes('Net force'));
   assert.equal(document.querySelector('#relationship-stage'), null);
-  assert.ok(graphLabels.includes('CAUSES · F_net=dp/dt=m a'));
+  assert.ok(graphLabels.includes('CAUSES ACCELERATION · a = F_net / m'));
   const indexOf = id => graph.nodes.findIndex(node => node.id === id);
   const separation = points => Math.hypot(points[indexOf('net_force')][0] - points[indexOf('acceleration')][0], points[indexOf('net_force')][1] - points[indexOf('acceleration')][1]);
   const focusedPoints = circles.slice(-graph.nodes.length);
@@ -135,12 +136,12 @@ test('search, focus, source records and learning routes work on the full atlas',
 
   document.dispatchEvent(new dom.window.KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
   assert.equal(document.querySelector('#inspector h3').textContent, 'Explore the complete field.');
-  assert.equal(document.querySelector('#map-mode').textContent, 'WHOLE FIELD / ALL NODES');
+  assert.equal(document.querySelector('#map-mode').textContent, 'CONNECTED CORE / 2+ NEIGHBORS');
   assert.equal(new URL(dom.window.location.href).searchParams.has('concept'), false);
   assert.equal(document.querySelector('#map-preview').hidden, true);
   document.querySelector('.starter-links [data-concept="entropy"]').click();
   document.querySelector('#preview-close').click();
-  assert.equal(document.querySelector('#map-mode').textContent, 'WHOLE FIELD / ALL NODES');
+  assert.equal(document.querySelector('#map-mode').textContent, 'CONNECTED CORE / 2+ NEIGHBORS');
   assert.equal(document.querySelector('#map-preview').hidden, true);
 
   document.querySelector('#route-list button').click();
