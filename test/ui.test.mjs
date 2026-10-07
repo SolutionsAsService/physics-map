@@ -19,7 +19,8 @@ test('search, focus, source records and learning routes work on the full atlas',
   const dom = new JSDOM(html, { url: 'http://localhost:4173/', runScripts: 'outside-only', virtualConsole });
   const graph = JSON.parse(atlas);
   dom.window.fetch = async () => ({ ok: true, json: async () => graph });
-  dom.window.HTMLElement.prototype.scrollIntoView = () => {};
+  const scrolled = [];
+  dom.window.HTMLElement.prototype.scrollIntoView = function () { scrolled.push(this.id); };
   const circles = [];
   dom.window.HTMLCanvasElement.prototype.getContext = () => ({
     setTransform() {}, clearRect() {}, beginPath() {}, moveTo() {}, lineTo() {}, stroke() {},
@@ -38,6 +39,7 @@ test('search, focus, source records and learning routes work on the full atlas',
   assert.ok(Math.max(...rendered.map(([, y]) => y)) >= 595);
   assert.ok(document.querySelector('#map-count').textContent.includes(`${graph.summary.concepts.toLocaleString()} nodes`));
   assert.equal(document.querySelector('#details-jump').hidden, true);
+  assert.equal(document.querySelector('#map-preview').hidden, true);
 
   const search = document.querySelector('#search');
   search.value = 'entropy';
@@ -48,6 +50,12 @@ test('search, focus, source records and learning routes work on the full atlas',
   assert.ok(document.querySelector('#inspector .relation-list').children.length > 0);
   assert.equal(document.querySelectorAll('#inspector .relation-entry').length, graph.edges.filter(edge => edge.source === 'entropy' || edge.target === 'entropy').length);
   assert.ok(document.querySelector('#map-count').textContent.includes('neighbors highlighted'));
+  assert.equal(document.querySelector('#map-preview').hidden, false);
+  assert.ok(document.querySelector('#map-preview h3').textContent.toLowerCase().includes('entropy'));
+  assert.ok(document.querySelector('#map-preview').textContent.includes('SOURCE EXCERPT'));
+  document.querySelector('#preview-read').click();
+  assert.equal(scrolled.at(-1), 'inspector');
+  assert.ok(document.querySelector('#inspector .relation-list').children.length > 0);
 
   search.value = 'net ionic charge';
   search.dispatchEvent(new dom.window.Event('input', { bubbles: true }));
@@ -56,6 +64,7 @@ test('search, focus, source records and learning routes work on the full atlas',
   assert.ok(document.querySelector('#inspector').textContent.includes('Q/e = N_protons - N_electrons'));
   assert.ok(document.querySelector('#inspector').textContent.includes('L67-L70'));
   assert.equal(document.querySelector('#details-jump').hidden, false);
+  assert.ok(document.querySelector('#map-preview').textContent.includes('recorded links'));
 
   const sourceContext = document.querySelector('#inspector .document-context');
   sourceContext.open = true;
@@ -85,9 +94,11 @@ test('search, focus, source records and learning routes work on the full atlas',
   assert.equal(document.querySelector('#inspector h3').textContent, 'Explore the complete field.');
   assert.equal(document.querySelector('#map-mode').textContent, 'WHOLE FIELD / ALL NODES');
   assert.equal(new URL(dom.window.location.href).searchParams.has('concept'), false);
+  assert.equal(document.querySelector('#map-preview').hidden, true);
   document.querySelector('.starter-links [data-concept="entropy"]').click();
-  document.querySelector('#clear-focus').click();
+  document.querySelector('#preview-close').click();
   assert.equal(document.querySelector('#map-mode').textContent, 'WHOLE FIELD / ALL NODES');
+  assert.equal(document.querySelector('#map-preview').hidden, true);
 
   document.querySelector('#route-list button').click();
   assert.equal(document.querySelector('#route-detail').hidden, false);

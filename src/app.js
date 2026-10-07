@@ -31,6 +31,7 @@ function selectConcept(id, { scroll = false } = {}) {
   if (!state.byId.has(id)) return;
   state.selected = id;
   renderMap();
+  renderPreview();
   renderInspector();
   if (scroll) $('#explorer').scrollIntoView({ behavior: 'smooth' });
   history.replaceState(null, '', `${location.pathname}?concept=${encodeURIComponent(id)}#explorer`);
@@ -41,6 +42,7 @@ function clearSelection({ fit = false } = {}) {
   state.selected = null;
   if (fit) network.fit();
   renderMap();
+  renderPreview();
   renderInspector();
   const url = new URL(location.href);
   url.searchParams.delete('concept');
@@ -91,6 +93,20 @@ function renderMap() {
 
 function sourceTitle(file) {
   return state.atlas.documents.find(document => document.file === file)?.title || file;
+}
+
+function renderPreview() {
+  const host = $('#map-preview');
+  const node = state.selected && state.byId.get(state.selected);
+  host.hidden = !node;
+  if (!node) { host.replaceChildren(); return; }
+  const sourceExcerpt = node.description || node.variants.flatMap(variant => variant.fields).find(field => ['definition', 'description', 'semantic_definition'].includes(field.key) && typeof field.value === 'string')?.value;
+  const preface = sourceExcerpt || node.note?.intuition || 'No prose definition is supplied by the source graphs. The recorded connections and original fields appear in the full entry.';
+  const provenance = sourceExcerpt ? 'SOURCE EXCERPT' : node.note?.intuition ? 'CURATED TEACHING NOTE' : 'CONNECTION-ONLY RECORD';
+  const sources = [...new Set(node.variants.map(variant => sourceTitle(variant.document)))];
+  host.innerHTML = `<div class="preview-heading"><span class="label-chip ${category(node)}">${escapeHtml(humanize(node.type))}</span><button type="button" id="preview-close" aria-label="Clear concept selection">×</button></div><p class="preview-kicker">${provenance}</p><h3>${escapeHtml(node.label)}</h3><p class="preview-id">${escapeHtml(node.id)}</p><p class="preview-preface">${escapeHtml(preface)}</p><div class="preview-meta"><span>${state.edgesById.get(node.id)?.length || 0} recorded links</span><span>${sources.length} sources</span></div><p class="preview-sources">${sources.length ? escapeHtml(sources.slice(0, 2).join(' · ')) + (sources.length > 2 ? ` · +${sources.length - 2} more` : '') : 'Curriculum addition; no original source record'}</p><button type="button" id="preview-read">Read full entry ↓</button>`;
+  $('#preview-close').addEventListener('click', () => clearSelection());
+  $('#preview-read').addEventListener('click', () => $('#inspector').scrollIntoView({ behavior: 'smooth', block: 'start' }));
 }
 
 function displayValue(value) {
@@ -207,7 +223,7 @@ async function init() {
     $('#metric-relations').textContent = state.atlas.summary.relationships.toLocaleString();
     $('#metric-overlap').textContent = state.atlas.summary.overlaps;
     $('#source-links').innerHTML = state.atlas.documents.map((doc, index) => `<a href="./data/${doc.file.split('/').map(encodeURIComponent).join('/')}" download><span>${String(index + 1).padStart(2, '0')} / ${escapeHtml(doc.title)}</span><span>↓</span></a>`).join('') + `<a href="./data/atlas.json" download><span>${String(state.atlas.documents.length + 1).padStart(2, '0')} / Unified atlas JSON</span><span>↓</span></a>`;
-    setupMapGestures(); renderFilters(); renderMap(); renderInspector(); renderRoutes(); renderCatalog();
+    setupMapGestures(); renderFilters(); renderMap(); renderPreview(); renderInspector(); renderRoutes(); renderCatalog();
     $('#search').addEventListener('input', event => { state.query = event.target.value; renderSearch(); });
     $('#catalog-search').addEventListener('input', event => { state.catalogQuery = event.target.value; state.catalogLimit = 36; renderCatalog(); });
     $('#catalog-more').addEventListener('click', () => { state.catalogLimit += 36; renderCatalog(); });
