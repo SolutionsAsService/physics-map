@@ -1,0 +1,37 @@
+{
+  "notes": {
+    "physics": {"intuition": "Physics looks for a compact set of rules that predict how the physical world changes.", "example": "A falling ball connects motion, force, energy, measurement and mathematical modeling."},
+    "motion": {"intuition": "Motion is change in position over time; the chosen reference frame matters.", "example": "A train passenger can be at rest relative to the carriage and moving relative to the platform."},
+    "force": {"intuition": "A force is an interaction that can change momentum; equal and opposite forces act on different objects.", "example": "A wheel pushes backward on the road, and the road pushes the wheel forward."},
+    "energy": {"intuition": "Energy is a conserved accounting quantity. It can be transferred between systems or converted between forms.", "example": "A falling object trades gravitational potential energy for kinetic energy."},
+    "temperature": {"intuition": "Temperature describes thermal state; it is not the same thing as the energy transferred as heat.", "example": "A small hot cup can contain less total thermal energy than a cooler swimming pool."},
+    "heat": {"intuition": "Heat means energy transfer driven by a temperature difference, not a substance stored in an object.", "example": "Energy transfers from a hot pan into cooler water."},
+    "entropy": {"intuition": "Entropy is a state quantity tied to how many microscopic configurations are compatible with a macroscopic state.", "example": "A gas spreading through a container has more accessible arrangements than gas confined to one corner."},
+    "thermodynamics": {"intuition": "Thermodynamics relates heat, work and state changes without needing to follow every particle.", "example": "An engine converts part of the energy received as heat into mechanical work, subject to limits."},
+    "statistical_mechanics": {"intuition": "Statistical mechanics connects the behavior of many particles to measurable bulk properties.", "example": "The average motion of enormous numbers of molecules helps explain gas pressure."},
+    "quantum_mechanics": {"intuition": "Quantum mechanics models microscopic systems using states and probabilities; measurement outcomes are not classical trajectories.", "example": "An atom absorbs light only at energies matching allowed transitions."},
+    "chemical_equilibrium": {"intuition": "Equilibrium is dynamic: forward and reverse processes continue while their rates balance.", "example": "Molecules keep reacting in a sealed vessel even when overall concentrations stop changing."},
+    "physical_chemistry": {"intuition": "Physical chemistry uses physical principles to understand chemical structure, transformations and bulk behavior.", "example": "Why does a reaction speed up when warmed, and how far can it proceed?"},
+    "electromagnetism": {"intuition": "Electric and magnetic fields describe a unified interaction between charges and currents.", "example": "Changing magnetic fields induce electric effects in a generator."},
+    "fundamental_interaction": {"intuition": "A fundamental interaction is one of the basic kinds of influence described in current physical theories."},
+    "natural_causes": {"intuition": "Natural causes explain observations using processes that can be investigated rather than invoking supernatural agency."},
+    "atomism": {"intuition": "Atomism proposes that matter is composed of discrete constituents; ancient atomism is historically distinct from modern atomic theory."},
+    "aristotelian_physics": {"intuition": "A historical framework for motion and the cosmos, superseded in many predictions by later mechanics."},
+    "experimental_method": {"intuition": "A way to test an explanation by measuring outcomes under controlled and reproducible conditions."},
+    "heliocentric_model": {"intuition": "A model of the Solar System with the Sun near the center of planetary orbits, distinct from a model of the whole universe."},
+    "planetary_motion_laws": {"intuition": "Empirical regularities of planetary orbits associated with Kepler, later explained through gravitation."},
+    "calculus": {"intuition": "Mathematics of continuous change and accumulation, essential to many physics models."},
+    "cosmic_expansion": {"intuition": "On large scales the separation between distant galaxies changes as space expands; it is not an explosion into pre-existing space."},
+    "radio_astronomy": {"intuition": "Observational astronomy that measures radio-frequency radiation from celestial sources."},
+    "causal_determinism": {"intuition": "The view that a system's state and dynamical laws uniquely determine later states; its applicability depends on the model."},
+    "systems_far_from_equilibrium": {"intuition": "Systems maintained away from equilibrium by ongoing flows of matter or energy; equilibrium approximations may not describe them."},
+    "world_wide_web": {"intuition": "A global information system linked by hypertext and the internet, included here as a historical application rather than a physics law."},
+    "reversibility": {"intuition": "An ideal thermodynamic process that can be reversed without net change to the system and surroundings; real processes are typically irreversible."}
+  },
+  "paths": [
+    {"id": "motion-to-energy", "title": "Why things move", "subtitle": "From measuring change to conserving energy", "color": "copper", "steps": ["physics", "motion", "force", "energy", "thermodynamics"]},
+    {"id": "heat-to-entropy", "title": "The heat story", "subtitle": "Temperature, transfers and the direction of change", "color": "amber", "steps": ["temperature", "heat", "thermodynamics", "entropy", "statistical_mechanics"]},
+    {"id": "atoms-to-reactions", "title": "From atoms to reactions", "subtitle": "How microscopic behavior becomes chemistry", "color": "violet", "steps": ["atom", "quantum_mechanics", "physical_chemistry", "chemical_equilibrium", "entropy"]},
+    {"id": "fields-and-light", "title": "Fields and light", "subtitle": "Charge, radiation and quantum transitions", "color": "cyan", "steps": ["force", "electromagnetism", "electromagnetic_radiation", "atom", "quantum_mechanics"]}
+  ]
+}

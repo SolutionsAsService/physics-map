@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#091119">
+  <meta name="description" content="Explore an interconnected map of physics, thermodynamics and physical chemistry. Follow ideas, inspect relationships and read the original graph records.">
+  <title>Physics Map — a living field guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/styles.css">
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Physics Map home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>PHYSICS<span class="brand-slash">/</span>MAP</span></a>
+      <nav class="top-nav" aria-label="Main navigation"><a href="#explorer">Explore map</a><a href="#routes">Learning routes</a><a href="#catalog">Concept index</a></nav>
+      <span class="nav-tag"><span class="signal-dot"></span> OPEN KNOWLEDGE ATLAS</span>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy"><p class="eyebrow"><span class="eyebrow-line"></span> THE PHYSICAL WORLD, CONNECTED</p><h1 id="hero-title">Everything is <em>connected.</em><br>Now you can see how.</h1><p class="hero-lead">A field guide to the ideas behind motion, matter, heat and the universe. Trace the links between concepts, follow guided routes, then go straight to the underlying knowledge graph.</p><div class="hero-actions"><a class="button primary" href="#explorer">Explore the map <span aria-hidden="true">↗</span></a><a class="button text" href="#routes">Take a learning route <span aria-hidden="true">→</span></a></div></div>
+        <div class="hero-visual" aria-hidden="true"><svg viewBox="0 0 470 350" fill="none"><circle cx="235" cy="174" r="139" stroke="#2C4652" stroke-dasharray="2 6"/><circle cx="235" cy="174" r="99" stroke="#29404B"/><circle cx="235" cy="174" r="50" stroke="#406570"/><path d="M236 174 108 89M236 174l134-80M236 174l136 171M236 174l-180 89M236 174l-29-142" stroke="#428592" stroke-width="1.4"/><path d="M108 89l99-57 163 62M56 263l151-231M372 345 370 94" stroke="#3B5962" stroke-dasharray="3 6"/><circle cx="235" cy="174" r="17" fill="#101F27" stroke="#9CEDDD" stroke-width="2"/><circle cx="235" cy="174" r="6" fill="#9CEDDD"/><circle cx="108" cy="89" r="6" fill="#FAAE76"/><circle cx="370" cy="94" r="7" fill="#A6B0FF"/><circle cx="372" cy="345" r="6" fill="#8FE0F2"/><circle cx="56" cy="263" r="6" fill="#F9BE83"/><circle cx="207" cy="32" r="6" fill="#9CEDDD"/><text x="255" y="178">PHYSICS</text><text x="15" y="78">MOTION</text><text x="378" y="87">QUANTUM</text><text x="305" y="329">MATTER</text><text x="12" y="289">ENERGY</text></svg><div class="visual-caption">IDEAS ARE NOT ISLANDS <span>FIG. 01 — CONNECTIONS</span></div></div>
+      </section>
+
+      <section class="metrics" aria-label="Atlas statistics"><div><strong id="metric-concepts">—</strong><span>connected concepts</span></div><div><strong id="metric-relations">—</strong><span>documented relationships</span></div><div><strong id="metric-overlap">—</strong><span>concepts bridging sources</span></div><div class="metric-copy"><span class="signal-dot"></span> Built from original semantic graph records, not an AI-generated summary.</div></section>
+
+      <section id="explorer" class="explorer" aria-labelledby="explorer-heading"><div class="section-top"><div><p class="eyebrow">01 / INTERACTIVE EXPLORER</p><h2 id="explorer-heading">Find your way through physics.</h2><p>Choose a concept to see its neighborhood. Every line describes a recorded relationship.</p></div><div class="section-index">01 — 03</div></div>
+        <div class="explorer-controls"><label class="searchbox"><span aria-hidden="true">⌕</span><span class="sr-only">Search concepts</span><input id="search" type="search" placeholder="Search 780+ concepts, theories or relations…" autocomplete="off"><kbd>/</kbd></label><div id="topic-filters" class="filter-row" role="group" aria-label="Filter by source graph"></div></div>
+        <div id="search-results" class="search-results" hidden></div>
+        <div class="explorer-grid"><div class="map-panel"><div class="panel-toolbar"><span><span class="signal-dot"></span><span id="map-mode">WHOLE FIELD / KEY IDEAS</span></span><div class="map-tools"><button id="reset-map" type="button">Overview</button><button id="zoom-out" type="button" aria-label="Zoom out">−</button><button id="zoom-in" type="button" aria-label="Zoom in">+</button></div></div><div class="map-canvas"><svg id="network" viewBox="0 0 960 620" role="img" aria-label="Interactive relationship network"></svg><div class="map-hint">SELECT A NODE TO EXPLORE · SCROLL TO ZOOM · DRAG TO PAN</div></div><div class="map-footer"><span><i class="legend physics"></i> Physics</span><span><i class="legend thermo"></i> Thermodynamics</span><span><i class="legend chemistry"></i> Physical chemistry</span><span class="map-count" id="map-count"></span></div></div>
+          <aside id="inspector" class="inspector" aria-live="polite"></aside></div>
+      </section>
+
+      <section id="routes" class="routes" aria-labelledby="routes-heading"><div class="section-top"><div><p class="eyebrow">02 / LEARNING ROUTES</p><h2 id="routes-heading">A place to start. A reason to keep going.</h2><p>Short, deliberate paths through ideas that build on one another.</p></div><div class="section-index">02 — 03</div></div><div id="route-list" class="route-list"></div><div id="route-detail" class="route-detail" hidden></div></section>
+
+      <section id="catalog" class="catalog" aria-labelledby="catalog-heading"><div class="section-top"><div><p class="eyebrow">03 / THE SOURCE LIBRARY</p><h2 id="catalog-heading">The whole picture, not just the highlights.</h2><p>Browse every unified concept. Open any one to inspect its complete JSON records and provenance.</p></div><div class="section-index">03 — 03</div></div><div class="catalog-layout"><div class="catalog-list"><div class="catalog-bar"><label for="catalog-search">CONCEPT INDEX</label><input id="catalog-search" type="search" placeholder="Filter the complete index…"><span id="catalog-count"></span></div><div id="catalog-items" class="catalog-items"></div><button id="catalog-more" class="button more" type="button">Show more concepts ↓</button></div><div class="source-card"><div class="source-glyph">{ }</div><p class="eyebrow">TRACE THE SOURCE</p><h3>Under the surface.</h3><p>The atlas preserves each file's original node and edge records. Shared IDs connect ideas across disciplines; missing references are marked as teaching additions, never disguised as source facts.</p><div id="source-links" class="source-links"></div><p class="source-foot">Source citations refer to the original authors' line references; pasted source texts are not bundled in this repository.</p></div></div></section>
+    </main>
+    <footer class="footer"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>PHYSICS<span class="brand-slash">/</span>MAP</span></a><span>An interconnected physics learning map.</span><a href="https://github.com/SolutionsAsService/physics-map">View source ↗</a></footer>
+  </div>
+</body>
+</html>
