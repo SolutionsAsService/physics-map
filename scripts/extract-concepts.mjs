@@ -15,6 +15,10 @@ export function claimEntries(document) {
   return Object.entries(value).map(([key, claim]) => ({ id: claim.id || key, ...claim }));
 }
 
+export function claimText(claim) {
+  return claim.statement || claim.claim || claim.description || claim.text || '';
+}
+
 export function fieldsFrom(record) {
   return Object.entries(record)
     .filter(([key]) => !excluded.has(key))
@@ -22,8 +26,35 @@ export function fieldsFrom(record) {
 }
 
 export function sourceClaimsFor(record, claimsById) {
-  const ids = Array.isArray(record.source_claims) ? record.source_claims : [];
-  return ids.map(id => claimsById.get(id) || { id, missing: true });
+  const references = record.source_claims || record.source_claim_ids || [];
+  const ids = Array.isArray(references) ? references : [];
+  return ids.map(reference => {
+    const id = typeof reference === 'string' ? reference : reference.id;
+    return claimsById.get(id) || { id, missing: true };
+  });
+}
+
+export function relatedSections(metadata, conceptIds) {
+  const sections = new Map();
+  function exactReferences(value, matches) {
+    if (typeof value === 'string') { if (conceptIds.has(value)) matches.add(value); return; }
+    if (Array.isArray(value)) { value.forEach(item => exactReferences(item, matches)); return; }
+    if (value && typeof value === 'object') Object.values(value).forEach(item => exactReferences(item, matches));
+  }
+  for (const [section, content] of Object.entries(metadata)) {
+    if (['claims', 'source_claims', 'nodes', 'edges'].includes(section)) continue;
+    const records = Array.isArray(content) ? content : [content];
+    for (const record of records) {
+      if (!record || typeof record !== 'object') continue;
+      const matches = new Set();
+      exactReferences(record, matches);
+      for (const id of matches) {
+        if (!sections.has(id)) sections.set(id, []);
+        sections.get(id).push({ section, fields: fieldsFrom(record), record });
+      }
+    }
+  }
+  return sections;
 }
 
 export function explainEdge(original, file, claimsById) {

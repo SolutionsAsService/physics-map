@@ -1,7 +1,7 @@
 import { readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { claimEntries, explainDocument, explainEdge, explainVariant } from './extract-concepts.mjs';
+import { claimEntries, claimText, explainDocument, explainEdge, explainVariant, relatedSections } from './extract-concepts.mjs';
 import { layoutGraph } from './layout-graph.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -28,12 +28,13 @@ export async function buildAtlas() {
     const graphId = data.graph_id || path.basename(file, '.json');
     const claimsById = new Map(claimEntries(data).map(claim => [claim.id, claim]));
     const { nodes: _nodes, edges: _edges, ...metadata } = data;
+    const related = relatedSections(metadata, new Set([...data.nodes.map(node => node.id), ...claimsById.keys()]));
     documentMetadata.push({ file, graphId, title: data.title || graphId, domain: data.domain || '', nodeCount: data.nodes.length, edgeCount: data.edges.length, fields: explainDocument(metadata), metadata });
     for (const original of data.nodes) {
       if (!original.id || typeof original.id !== 'string') throw new Error(`Missing node ID in ${file}`);
       const current = nodes.get(original.id) || { id: original.id, label: original.label || original.id, type: original.type || original.node_type || 'concept', description: '', topics: [], variants: [] };
       if (!current.topics.includes(graphId)) current.topics.push(graphId);
-      current.variants.push(explainVariant(original, file, claimsById));
+      current.variants.push({ ...explainVariant(original, file, claimsById), related: related.get(original.id) || [] });
       const explanation = [original.definition, original.description, original.semantic_definition].find(value => typeof value === 'string') || '';
       if (explanation.length > current.description.length) current.description = explanation;
       if (current.label === current.id && original.label) current.label = original.label;
@@ -41,9 +42,9 @@ export async function buildAtlas() {
     }
     for (const claim of claimsById.values()) {
       const original = nodes.get(claim.id);
-      const current = original || { id: claim.id, label: String(claim.statement || claim.id).slice(0, 76), type: 'source claim', description: claim.statement || '', topics: [], variants: [], claim: true };
+      const current = original || { id: claim.id, label: String(claimText(claim) || claim.id).slice(0, 76), type: 'source claim', description: claimText(claim), topics: [], variants: [], claim: true };
       if (!current.topics.includes(graphId)) current.topics.push(graphId);
-      current.variants.push(explainVariant(claim, file, claimsById));
+      current.variants.push({ ...explainVariant(claim, file, claimsById), related: related.get(claim.id) || [] });
       nodes.set(claim.id, current);
     }
     data.edges.forEach((original, index) => {

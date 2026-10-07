@@ -4,12 +4,15 @@ import { readFile } from 'node:fs/promises';
 import { JSDOM, VirtualConsole } from 'jsdom';
 
 test('search, focus, source records and learning routes work on the full atlas', async () => {
-  const [html, networkScript, script, atlas] = await Promise.all([
+  const [html, networkScript, script, atlas, styles] = await Promise.all([
     readFile(new URL('../index.html', import.meta.url), 'utf8'),
     readFile(new URL('../src/network.js', import.meta.url), 'utf8'),
     readFile(new URL('../src/app.js', import.meta.url), 'utf8'),
-    readFile(new URL('../data/atlas.json', import.meta.url), 'utf8')
+    readFile(new URL('../data/atlas.json', import.meta.url), 'utf8'),
+    readFile(new URL('../src/styles.css', import.meta.url), 'utf8')
   ]);
+  assert.match(styles, /\.map-panel\s*\{[^}]*height:\s*clamp\(720px,\s*88vh,/);
+  assert.match(styles, /\.inspector\s*\{[^}]*border-top:/);
   const failures = [];
   const virtualConsole = new VirtualConsole();
   virtualConsole.on('jsdomError', error => failures.push(error));
@@ -34,6 +37,7 @@ test('search, focus, source records and learning routes work on the full atlas',
   assert.ok(Math.min(...rendered.map(([, y]) => y)) <= 25);
   assert.ok(Math.max(...rendered.map(([, y]) => y)) >= 595);
   assert.ok(document.querySelector('#map-count').textContent.includes(`${graph.summary.concepts.toLocaleString()} nodes`));
+  assert.equal(document.querySelector('#details-jump').hidden, true);
 
   const search = document.querySelector('#search');
   search.value = 'entropy';
@@ -51,6 +55,7 @@ test('search, focus, source records and learning routes work on the full atlas',
   document.querySelector('#search-results [data-concept="ion"]').click();
   assert.ok(document.querySelector('#inspector').textContent.includes('Q/e = N_protons - N_electrons'));
   assert.ok(document.querySelector('#inspector').textContent.includes('L67-L70'));
+  assert.equal(document.querySelector('#details-jump').hidden, false);
 
   const sourceContext = document.querySelector('#inspector .document-context');
   sourceContext.open = true;
@@ -61,6 +66,20 @@ test('search, focus, source records and learning routes work on the full atlas',
   raw.open = true;
   raw.dispatchEvent(new dom.window.Event('toggle'));
   assert.ok(raw.querySelector('pre').textContent.includes('"variants"'));
+
+  document.querySelector('#catalog-search').value = 'concept_special_relativity';
+  document.querySelector('#catalog-search').dispatchEvent(new dom.window.Event('input', { bubbles: true }));
+  document.querySelector('#catalog-items [data-concept="concept_special_relativity"]').click();
+  const study = document.querySelector('#inspector .related-material');
+  assert.ok(study.textContent.includes('Learning Paths'));
+  assert.ok(study.textContent.includes('concept_special_relativity'));
+  search.value = 'Einstein: Foundations';
+  search.dispatchEvent(new dom.window.Event('input', { bubbles: true }));
+  assert.ok(document.querySelector('#search-results').textContent.includes('matches'));
+  document.querySelector('#catalog-search').value = 'Einstein: Foundations';
+  document.querySelector('#catalog-search').dispatchEvent(new dom.window.Event('input', { bubbles: true }));
+  assert.ok(document.querySelector('#catalog-items [data-concept="concept_special_relativity"]'));
+  document.querySelector('#details-jump').click();
 
   document.dispatchEvent(new dom.window.KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
   assert.equal(document.querySelector('#inspector h3').textContent, 'Explore the complete field.');
