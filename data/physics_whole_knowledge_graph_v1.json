@@ -1,0 +1,2878 @@
+{
+  "schema_version": "1.0",
+  "graph_id": "physics_whole_v1",
+  "title": "Physics — Whole-Field Knowledge Graph Seed",
+  "source": {
+    "file": "Pasted text(20261007-035718).txt",
+    "basis": "user-provided Physics source",
+    "external_research": false
+  },
+  "design": {
+    "node_edge_separation": true,
+    "directional_edges": true,
+    "preserve_historical_lineage": true,
+    "preserve_cross_field_links": true,
+    "intended_targets": [
+      "Neo4j",
+      "NetworkX",
+      "D3.js",
+      "GraphQL",
+      "RDF/knowledge graphs"
+    ]
+  },
+  "relationship_semantics": {
+    "subfield_of": "field hierarchy",
+    "core_theory": "central theory of physics",
+    "used_in": "theory is used within a field",
+    "associated_with": "conceptual association",
+    "studied_by": "phenomenon is studied by a field",
+    "demonstrates": "experiment/phenomenon demonstrates a concept",
+    "pioneered": "person made a foundational contribution",
+    "developed": "person developed a theory or framework",
+    "challenged": "person challenged an earlier framework",
+    "unified": "person unified previously separate concepts",
+    "active_research": "active research direction",
+    "research_goal": "long-term unification/explanation goal"
+  },
+  "nodes": [
+    {
+      "id": "physics",
+      "label": "Physics",
+      "type": "discipline",
+      "description": "Scientific study of matter, fundamental constituents, motion and behavior through space and time, energy and force."
+    },
+    {
+      "id": "scientific_method",
+      "label": "Scientific method",
+      "type": "method"
+    },
+    {
+      "id": "theoretical_physics",
+      "label": "Theoretical physics",
+      "type": "discipline"
+    },
+    {
+      "id": "experimental_physics",
+      "label": "Experimental physics",
+      "type": "discipline"
+    },
+    {
+      "id": "phenomenology",
+      "label": "Phenomenology",
+      "type": "discipline"
+    },
+    {
+      "id": "mathematics",
+      "label": "Mathematics",
+      "type": "supporting_discipline"
+    },
+    {
+      "id": "mathematical_physics",
+      "label": "Mathematical physics",
+      "type": "interdisciplinary_field"
+    },
+    {
+      "id": "philosophy_of_physics",
+      "label": "Philosophy of physics",
+      "type": "interdisciplinary_field"
+    },
+    {
+      "id": "applied_physics",
+      "label": "Applied physics",
+      "type": "discipline"
+    },
+    {
+      "id": "engineering",
+      "label": "Engineering",
+      "type": "application_domain"
+    },
+    {
+      "id": "technology",
+      "label": "Technology",
+      "type": "application_domain"
+    },
+    {
+      "id": "complex_systems",
+      "label": "Complex physics / complex systems",
+      "type": "research_area"
+    },
+    {
+      "id": "classical_mechanics",
+      "label": "Classical mechanics",
+      "type": "core_theory"
+    },
+    {
+      "id": "quantum_mechanics",
+      "label": "Quantum mechanics",
+      "type": "core_theory"
+    },
+    {
+      "id": "thermodynamics",
+      "label": "Thermodynamics",
+      "type": "core_theory"
+    },
+    {
+      "id": "statistical_mechanics",
+      "label": "Statistical mechanics",
+      "type": "core_theory"
+    },
+    {
+      "id": "electromagnetism",
+      "label": "Electromagnetism",
+      "type": "core_theory"
+    },
+    {
+      "id": "special_relativity",
+      "label": "Special relativity",
+      "type": "core_theory"
+    },
+    {
+      "id": "general_relativity",
+      "label": "General relativity",
+      "type": "core_theory"
+    },
+    {
+      "id": "quantum_field_theory",
+      "label": "Quantum field theory",
+      "type": "theory"
+    },
+    {
+      "id": "standard_model",
+      "label": "Standard Model",
+      "type": "theory"
+    },
+    {
+      "id": "qed",
+      "label": "Quantum electrodynamics",
+      "type": "theory"
+    },
+    {
+      "id": "qcd",
+      "label": "Quantum chromodynamics",
+      "type": "theory"
+    },
+    {
+      "id": "electroweak",
+      "label": "Electroweak theory",
+      "type": "theory"
+    },
+    {
+      "id": "gauge_theory",
+      "label": "Gauge theory",
+      "type": "theory_framework"
+    },
+    {
+      "id": "effective_field_theory",
+      "label": "Effective field theory",
+      "type": "theory_framework"
+    },
+    {
+      "id": "lattice_field_theory",
+      "label": "Lattice field theory",
+      "type": "theory_framework"
+    },
+    {
+      "id": "supersymmetry",
+      "label": "Supersymmetry",
+      "type": "hypothesis"
+    },
+    {
+      "id": "grand_unified_theory",
+      "label": "Grand Unified Theory",
+      "type": "hypothesis"
+    },
+    {
+      "id": "superstring_theory",
+      "label": "Superstring theory",
+      "type": "hypothesis"
+    },
+    {
+      "id": "m_theory",
+      "label": "M-theory",
+      "type": "hypothesis"
+    },
+    {
+      "id": "ads_cft",
+      "label": "AdS/CFT correspondence",
+      "type": "theoretical_framework"
+    },
+    {
+      "id": "big_bang",
+      "label": "Big Bang",
+      "type": "cosmological_model"
+    },
+    {
+      "id": "cosmic_inflation",
+      "label": "Cosmic inflation",
+      "type": "cosmological_model"
+    },
+    {
+      "id": "lambda_cdm",
+      "label": "Lambda-CDM model",
+      "type": "cosmological_model"
+    },
+    {
+      "id": "magnetohydrodynamics",
+      "label": "Magnetohydrodynamics",
+      "type": "theory"
+    },
+    {
+      "id": "bcs_theory",
+      "label": "BCS theory",
+      "type": "theory"
+    },
+    {
+      "id": "bloch_theorem",
+      "label": "Bloch's theorem",
+      "type": "theory"
+    },
+    {
+      "id": "density_functional_theory",
+      "label": "Density functional theory",
+      "type": "theory"
+    },
+    {
+      "id": "fermi_gas",
+      "label": "Fermi gas",
+      "type": "model"
+    },
+    {
+      "id": "fermi_liquid",
+      "label": "Fermi liquid theory",
+      "type": "theory"
+    },
+    {
+      "id": "many_body_theory",
+      "label": "Many-body theory",
+      "type": "theory"
+    },
+    {
+      "id": "quantum_optics",
+      "label": "Quantum optics",
+      "type": "theory_field"
+    },
+    {
+      "id": "quantum_chemistry",
+      "label": "Quantum chemistry",
+      "type": "interdisciplinary_theory"
+    },
+    {
+      "id": "quantum_information",
+      "label": "Quantum information science",
+      "type": "interdisciplinary_field"
+    },
+    {
+      "id": "classical_physics",
+      "label": "Classical physics",
+      "type": "field"
+    },
+    {
+      "id": "mechanics",
+      "label": "Mechanics",
+      "type": "field"
+    },
+    {
+      "id": "statics",
+      "label": "Statics",
+      "type": "field"
+    },
+    {
+      "id": "kinematics",
+      "label": "Kinematics",
+      "type": "field"
+    },
+    {
+      "id": "dynamics",
+      "label": "Dynamics",
+      "type": "field"
+    },
+    {
+      "id": "solid_mechanics",
+      "label": "Solid mechanics",
+      "type": "field"
+    },
+    {
+      "id": "fluid_mechanics",
+      "label": "Fluid mechanics",
+      "type": "field"
+    },
+    {
+      "id": "hydrostatics",
+      "label": "Hydrostatics",
+      "type": "field"
+    },
+    {
+      "id": "hydrodynamics",
+      "label": "Hydrodynamics",
+      "type": "field"
+    },
+    {
+      "id": "pneumatics",
+      "label": "Pneumatics",
+      "type": "field"
+    },
+    {
+      "id": "acoustics",
+      "label": "Acoustics",
+      "type": "field"
+    },
+    {
+      "id": "optics",
+      "label": "Optics",
+      "type": "field"
+    },
+    {
+      "id": "atomic_molecular_optical",
+      "label": "Atomic, molecular, and optical physics",
+      "type": "field"
+    },
+    {
+      "id": "atomic_physics",
+      "label": "Atomic physics",
+      "type": "field"
+    },
+    {
+      "id": "molecular_physics",
+      "label": "Molecular physics",
+      "type": "field"
+    },
+    {
+      "id": "optical_physics",
+      "label": "Optical physics",
+      "type": "field"
+    },
+    {
+      "id": "photonics",
+      "label": "Photonics",
+      "type": "field"
+    },
+    {
+      "id": "condensed_matter",
+      "label": "Condensed matter physics",
+      "type": "field"
+    },
+    {
+      "id": "solid_state",
+      "label": "Solid-state physics",
+      "type": "field"
+    },
+    {
+      "id": "high_pressure",
+      "label": "High-pressure physics",
+      "type": "field"
+    },
+    {
+      "id": "low_temperature",
+      "label": "Low-temperature physics",
+      "type": "field"
+    },
+    {
+      "id": "surface_physics",
+      "label": "Surface physics",
+      "type": "field"
+    },
+    {
+      "id": "nanoscale_mesoscopic",
+      "label": "Nanoscale and mesoscopic physics",
+      "type": "field"
+    },
+    {
+      "id": "polymer_physics",
+      "label": "Polymer physics",
+      "type": "field"
+    },
+    {
+      "id": "nuclear_particle",
+      "label": "Nuclear and particle physics",
+      "type": "field"
+    },
+    {
+      "id": "nuclear_physics",
+      "label": "Nuclear physics",
+      "type": "field"
+    },
+    {
+      "id": "particle_physics",
+      "label": "Particle physics",
+      "type": "field"
+    },
+    {
+      "id": "nuclear_astrophysics",
+      "label": "Nuclear astrophysics",
+      "type": "field"
+    },
+    {
+      "id": "astroparticle_physics",
+      "label": "Astroparticle physics",
+      "type": "field"
+    },
+    {
+      "id": "particle_phenomenology",
+      "label": "Particle physics phenomenology",
+      "type": "field"
+    },
+    {
+      "id": "astrophysics",
+      "label": "Astrophysics",
+      "type": "field"
+    },
+    {
+      "id": "astronomy",
+      "label": "Astronomy",
+      "type": "field"
+    },
+    {
+      "id": "astrometry",
+      "label": "Astrometry",
+      "type": "field"
+    },
+    {
+      "id": "cosmology",
+      "label": "Cosmology",
+      "type": "field"
+    },
+    {
+      "id": "gravitation_physics",
+      "label": "Gravitation physics",
+      "type": "field"
+    },
+    {
+      "id": "high_energy_astrophysics",
+      "label": "High-energy astrophysics",
+      "type": "field"
+    },
+    {
+      "id": "plasma_physics",
+      "label": "Plasma physics",
+      "type": "field"
+    },
+    {
+      "id": "solar_physics",
+      "label": "Solar physics",
+      "type": "field"
+    },
+    {
+      "id": "space_physics",
+      "label": "Space physics",
+      "type": "field"
+    },
+    {
+      "id": "stellar_astrophysics",
+      "label": "Stellar astrophysics",
+      "type": "field"
+    },
+    {
+      "id": "planetary_astrophysics",
+      "label": "Planetary astrophysics",
+      "type": "field"
+    },
+    {
+      "id": "applied_fields",
+      "label": "Applied physics fields",
+      "type": "field"
+    },
+    {
+      "id": "accelerator_physics",
+      "label": "Accelerator physics",
+      "type": "field"
+    },
+    {
+      "id": "biophysics",
+      "label": "Biophysics",
+      "type": "field"
+    },
+    {
+      "id": "chemical_physics",
+      "label": "Chemical physics",
+      "type": "field"
+    },
+    {
+      "id": "communication_physics",
+      "label": "Communication physics",
+      "type": "field"
+    },
+    {
+      "id": "econophysics",
+      "label": "Econophysics",
+      "type": "field"
+    },
+    {
+      "id": "engineering_physics",
+      "label": "Engineering physics",
+      "type": "field"
+    },
+    {
+      "id": "fluid_dynamics",
+      "label": "Fluid dynamics",
+      "type": "field"
+    },
+    {
+      "id": "geophysics",
+      "label": "Geophysics",
+      "type": "field"
+    },
+    {
+      "id": "laser_physics",
+      "label": "Laser physics",
+      "type": "field"
+    },
+    {
+      "id": "materials_physics",
+      "label": "Materials physics",
+      "type": "field"
+    },
+    {
+      "id": "medical_physics",
+      "label": "Medical physics",
+      "type": "field"
+    },
+    {
+      "id": "nanotechnology",
+      "label": "Nanotechnology",
+      "type": "field"
+    },
+    {
+      "id": "optoelectronics",
+      "label": "Optoelectronics",
+      "type": "field"
+    },
+    {
+      "id": "photovoltaics",
+      "label": "Photovoltaics",
+      "type": "field"
+    },
+    {
+      "id": "physical_chemistry",
+      "label": "Physical chemistry",
+      "type": "field"
+    },
+    {
+      "id": "physical_oceanography",
+      "label": "Physical oceanography",
+      "type": "field"
+    },
+    {
+      "id": "physics_of_computation",
+      "label": "Physics of computation",
+      "type": "field"
+    },
+    {
+      "id": "quantum_electronics",
+      "label": "Quantum electronics",
+      "type": "field"
+    },
+    {
+      "id": "vehicle_dynamics",
+      "label": "Vehicle dynamics",
+      "type": "field"
+    },
+    {
+      "id": "chaos_theory",
+      "label": "Chaos theory",
+      "type": "field"
+    },
+    {
+      "id": "matter",
+      "label": "Matter",
+      "type": "concept"
+    },
+    {
+      "id": "energy",
+      "label": "Energy",
+      "type": "concept"
+    },
+    {
+      "id": "force",
+      "label": "Force",
+      "type": "concept"
+    },
+    {
+      "id": "motion",
+      "label": "Motion",
+      "type": "concept"
+    },
+    {
+      "id": "space",
+      "label": "Space",
+      "type": "concept"
+    },
+    {
+      "id": "time",
+      "label": "Time",
+      "type": "concept"
+    },
+    {
+      "id": "action",
+      "label": "Action",
+      "type": "concept"
+    },
+    {
+      "id": "causality",
+      "label": "Causality",
+      "type": "concept"
+    },
+    {
+      "id": "covariance",
+      "label": "Covariance",
+      "type": "concept"
+    },
+    {
+      "id": "particle",
+      "label": "Particle",
+      "type": "concept"
+    },
+    {
+      "id": "physical_field",
+      "label": "Physical field",
+      "type": "concept"
+    },
+    {
+      "id": "physical_interaction",
+      "label": "Physical interaction",
+      "type": "concept"
+    },
+    {
+      "id": "quantum",
+      "label": "Quantum",
+      "type": "concept"
+    },
+    {
+      "id": "statistical_ensemble",
+      "label": "Statistical ensemble",
+      "type": "concept"
+    },
+    {
+      "id": "symmetry",
+      "label": "Symmetry",
+      "type": "concept"
+    },
+    {
+      "id": "wave",
+      "label": "Wave",
+      "type": "concept"
+    },
+    {
+      "id": "entropy",
+      "label": "Entropy",
+      "type": "concept"
+    },
+    {
+      "id": "gravity",
+      "label": "Gravity",
+      "type": "concept"
+    },
+    {
+      "id": "electromagnetic_radiation",
+      "label": "Electromagnetic radiation",
+      "type": "concept"
+    },
+    {
+      "id": "spin",
+      "label": "Spin",
+      "type": "concept"
+    },
+    {
+      "id": "antimatter",
+      "label": "Antimatter",
+      "type": "concept"
+    },
+    {
+      "id": "spontaneous_symmetry_breaking",
+      "label": "Spontaneous symmetry breaking",
+      "type": "concept"
+    },
+    {
+      "id": "neutrino_oscillation",
+      "label": "Neutrino oscillation",
+      "type": "phenomenon"
+    },
+    {
+      "id": "seesaw_mechanism",
+      "label": "Seesaw mechanism",
+      "type": "mechanism"
+    },
+    {
+      "id": "brane",
+      "label": "Brane",
+      "type": "concept"
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "type": "concept"
+    },
+    {
+      "id": "quantum_gravity",
+      "label": "Quantum gravity",
+      "type": "research_problem"
+    },
+    {
+      "id": "theory_of_everything",
+      "label": "Theory of everything",
+      "type": "research_goal"
+    },
+    {
+      "id": "vacuum_energy",
+      "label": "Vacuum energy",
+      "type": "concept"
+    },
+    {
+      "id": "photon",
+      "label": "Photon",
+      "type": "particle"
+    },
+    {
+      "id": "atom",
+      "label": "Atom",
+      "type": "entity"
+    },
+    {
+      "id": "molecule",
+      "label": "Molecule",
+      "type": "entity"
+    },
+    {
+      "id": "diffraction",
+      "label": "Diffraction",
+      "type": "phenomenon"
+    },
+    {
+      "id": "laser",
+      "label": "Laser",
+      "type": "technology"
+    },
+    {
+      "id": "polarization",
+      "label": "Polarization",
+      "type": "phenomenon"
+    },
+    {
+      "id": "spectral_line",
+      "label": "Spectral line",
+      "type": "phenomenon"
+    },
+    {
+      "id": "casimir_effect",
+      "label": "Casimir effect",
+      "type": "phenomenon"
+    },
+    {
+      "id": "gas",
+      "label": "Gas",
+      "type": "phase"
+    },
+    {
+      "id": "liquid",
+      "label": "Liquid",
+      "type": "phase"
+    },
+    {
+      "id": "solid",
+      "label": "Solid",
+      "type": "phase"
+    },
+    {
+      "id": "bose_einstein_condensate",
+      "label": "Bose–Einstein condensate",
+      "type": "phase"
+    },
+    {
+      "id": "electrical_conduction",
+      "label": "Electrical conduction",
+      "type": "phenomenon"
+    },
+    {
+      "id": "phonon",
+      "label": "Phonon",
+      "type": "quasiparticle"
+    },
+    {
+      "id": "magnetism",
+      "label": "Magnetism",
+      "type": "phenomenon"
+    },
+    {
+      "id": "self_organization",
+      "label": "Self-organization",
+      "type": "phenomenon"
+    },
+    {
+      "id": "semiconductor",
+      "label": "Semiconductor",
+      "type": "material"
+    },
+    {
+      "id": "superconductor",
+      "label": "Superconductor",
+      "type": "material"
+    },
+    {
+      "id": "superfluidity",
+      "label": "Superfluidity",
+      "type": "phenomenon"
+    },
+    {
+      "id": "black_hole",
+      "label": "Black hole",
+      "type": "astrophysical_object"
+    },
+    {
+      "id": "cosmic_background_radiation",
+      "label": "Cosmic background radiation",
+      "type": "phenomenon"
+    },
+    {
+      "id": "cosmic_string",
+      "label": "Cosmic string",
+      "type": "hypothetical_object"
+    },
+    {
+      "id": "dark_energy",
+      "label": "Dark energy",
+      "type": "concept"
+    },
+    {
+      "id": "dark_matter",
+      "label": "Dark matter",
+      "type": "concept"
+    },
+    {
+      "id": "galaxy",
+      "label": "Galaxy",
+      "type": "astronomical_object"
+    },
+    {
+      "id": "gravitational_radiation",
+      "label": "Gravitational radiation",
+      "type": "phenomenon"
+    },
+    {
+      "id": "gravitational_singularity",
+      "label": "Gravitational singularity",
+      "type": "concept"
+    },
+    {
+      "id": "planet",
+      "label": "Planet",
+      "type": "astronomical_object"
+    },
+    {
+      "id": "solar_system",
+      "label": "Solar System",
+      "type": "system"
+    },
+    {
+      "id": "star",
+      "label": "Star",
+      "type": "astronomical_object"
+    },
+    {
+      "id": "supernova",
+      "label": "Supernova",
+      "type": "phenomenon"
+    },
+    {
+      "id": "universe",
+      "label": "Universe",
+      "type": "system"
+    },
+    {
+      "id": "quarks",
+      "label": "Quarks",
+      "type": "particle_family"
+    },
+    {
+      "id": "leptons",
+      "label": "Leptons",
+      "type": "particle_family"
+    },
+    {
+      "id": "gluons",
+      "label": "Gluons",
+      "type": "particle"
+    },
+    {
+      "id": "w_z_bosons",
+      "label": "W and Z bosons",
+      "type": "particle"
+    },
+    {
+      "id": "higgs_boson",
+      "label": "Higgs boson",
+      "type": "particle"
+    },
+    {
+      "id": "neutrino",
+      "label": "Neutrino",
+      "type": "particle"
+    },
+    {
+      "id": "blackbody_radiation",
+      "label": "Black-body radiation",
+      "type": "phenomenon"
+    },
+    {
+      "id": "photoelectric_effect",
+      "label": "Photoelectric effect",
+      "type": "phenomenon"
+    },
+    {
+      "id": "double_slit",
+      "label": "Double-slit experiment",
+      "type": "experiment"
+    },
+    {
+      "id": "beta_decay",
+      "label": "Beta decay",
+      "type": "phenomenon"
+    },
+    {
+      "id": "gravitational_lensing",
+      "label": "Gravitational lensing",
+      "type": "phenomenon"
+    },
+    {
+      "id": "meissner_effect",
+      "label": "Meissner effect",
+      "type": "phenomenon"
+    },
+    {
+      "id": "turbulence",
+      "label": "Turbulence",
+      "type": "phenomenon"
+    },
+    {
+      "id": "chaos",
+      "label": "Chaos",
+      "type": "phenomenon"
+    },
+    {
+      "id": "surface_tension",
+      "label": "Surface tension",
+      "type": "phenomenon"
+    },
+    {
+      "id": "pattern_formation",
+      "label": "Pattern formation",
+      "type": "phenomenon"
+    },
+    {
+      "id": "standing_waves",
+      "label": "Standing waves",
+      "type": "phenomenon"
+    },
+    {
+      "id": "resonance",
+      "label": "Resonance",
+      "type": "phenomenon"
+    },
+    {
+      "id": "reflection",
+      "label": "Reflection",
+      "type": "phenomenon"
+    },
+    {
+      "id": "refraction",
+      "label": "Refraction",
+      "type": "phenomenon"
+    },
+    {
+      "id": "interference",
+      "label": "Interference",
+      "type": "phenomenon"
+    },
+    {
+      "id": "dispersion",
+      "label": "Dispersion",
+      "type": "phenomenon"
+    },
+    {
+      "id": "electricity",
+      "label": "Electricity",
+      "type": "phenomenon"
+    },
+    {
+      "id": "magnetic_field",
+      "label": "Magnetic field",
+      "type": "field"
+    },
+    {
+      "id": "high_temperature_superconductivity",
+      "label": "High-temperature superconductivity",
+      "type": "research_problem"
+    },
+    {
+      "id": "spintronics",
+      "label": "Spintronics",
+      "type": "research_area"
+    },
+    {
+      "id": "quantum_computing",
+      "label": "Quantum computing",
+      "type": "research_area"
+    },
+    {
+      "id": "solar_neutrino_problem",
+      "label": "Solar neutrino problem",
+      "type": "historical_problem"
+    },
+    {
+      "id": "thales",
+      "label": "Thales",
+      "type": "person",
+      "dates": "6th century BCE"
+    },
+    {
+      "id": "leucippus",
+      "label": "Leucippus",
+      "type": "person",
+      "dates": "5th century BCE"
+    },
+    {
+      "id": "democritus",
+      "label": "Democritus",
+      "type": "person",
+      "dates": "c. 460–370 BCE"
+    },
+    {
+      "id": "plato",
+      "label": "Plato",
+      "type": "person",
+      "dates": "428/427–348/347 BCE"
+    },
+    {
+      "id": "aristotle",
+      "label": "Aristotle",
+      "type": "person",
+      "dates": "384–322 BCE"
+    },
+    {
+      "id": "archimedes",
+      "label": "Archimedes",
+      "type": "person",
+      "dates": "c. 287–212 BCE"
+    },
+    {
+      "id": "john_philoponus",
+      "label": "John Philoponus",
+      "type": "person",
+      "dates": "6th century"
+    },
+    {
+      "id": "ibn_sahl",
+      "label": "Ibn Sahl",
+      "type": "person"
+    },
+    {
+      "id": "al_kindi",
+      "label": "Al-Kindi",
+      "type": "person"
+    },
+    {
+      "id": "ibn_al_haytham",
+      "label": "Ibn al-Haytham",
+      "type": "person",
+      "dates": "c. 965–1040"
+    },
+    {
+      "id": "al_farisi",
+      "label": "Al-Farisi",
+      "type": "person"
+    },
+    {
+      "id": "avicenna",
+      "label": "Avicenna",
+      "type": "person",
+      "dates": "980–1037"
+    },
+    {
+      "id": "copernicus",
+      "label": "Nicolaus Copernicus",
+      "type": "person",
+      "dates": "1473–1543"
+    },
+    {
+      "id": "kepler",
+      "label": "Johannes Kepler",
+      "type": "person",
+      "dates": "1571–1630"
+    },
+    {
+      "id": "galileo",
+      "label": "Galileo Galilei",
+      "type": "person",
+      "dates": "1564–1642"
+    },
+    {
+      "id": "newton",
+      "label": "Isaac Newton",
+      "type": "person",
+      "dates": "1642–1727"
+    },
+    {
+      "id": "leibniz",
+      "label": "Gottfried Wilhelm Leibniz",
+      "type": "person",
+      "dates": "1646–1716"
+    },
+    {
+      "id": "maxwell",
+      "label": "James Clerk Maxwell",
+      "type": "person",
+      "dates": "1831–1879"
+    },
+    {
+      "id": "planck",
+      "label": "Max Planck",
+      "type": "person",
+      "dates": "1858–1947"
+    },
+    {
+      "id": "einstein",
+      "label": "Albert Einstein",
+      "type": "person",
+      "dates": "1879–1955"
+    },
+    {
+      "id": "heisenberg",
+      "label": "Werner Heisenberg",
+      "type": "person",
+      "dates": "1901–1976"
+    },
+    {
+      "id": "schrodinger",
+      "label": "Erwin Schrödinger",
+      "type": "person",
+      "dates": "1887–1961"
+    },
+    {
+      "id": "dirac",
+      "label": "Paul Dirac",
+      "type": "person",
+      "dates": "1902–1984"
+    },
+    {
+      "id": "feynman",
+      "label": "Richard Feynman",
+      "type": "person",
+      "dates": "1918–1988"
+    },
+    {
+      "id": "hubble",
+      "label": "Edwin Hubble",
+      "type": "person",
+      "dates": "1889–1953"
+    },
+    {
+      "id": "jansky",
+      "label": "Karl Jansky",
+      "type": "person",
+      "dates": "1905–1950"
+    },
+    {
+      "id": "anderson",
+      "label": "Philip Anderson",
+      "type": "person",
+      "dates": "1923–2020"
+    },
+    {
+      "id": "landau",
+      "label": "Lev Landau",
+      "type": "person",
+      "dates": "1908–1968"
+    },
+    {
+      "id": "lamb",
+      "label": "Horace Lamb",
+      "type": "person",
+      "dates": "1849–1934"
+    },
+    {
+      "id": "laplace",
+      "label": "Pierre-Simon Laplace",
+      "type": "person",
+      "dates": "1749–1827"
+    },
+    {
+      "id": "penrose",
+      "label": "Roger Penrose",
+      "type": "person",
+      "dates": "1931–"
+    },
+    {
+      "id": "hawking",
+      "label": "Stephen Hawking",
+      "type": "person",
+      "dates": "1942–2018"
+    },
+    {
+      "id": "putnam",
+      "label": "Hilary Putnam",
+      "type": "person",
+      "dates": "1926–2016"
+    },
+    {
+      "id": "maddy",
+      "label": "Penelope Maddy",
+      "type": "person"
+    },
+    {
+      "id": "prigogine",
+      "label": "Ilya Prigogine",
+      "type": "person",
+      "dates": "1917–2003"
+    },
+    {
+      "id": "oersted",
+      "label": "Hans Christian Ørsted",
+      "type": "person",
+      "dates": "1777–1851"
+    },
+    {
+      "id": "kant",
+      "label": "Immanuel Kant",
+      "type": "person",
+      "dates": "1724–1804"
+    },
+    {
+      "id": "ritter",
+      "label": "Johann Wilhelm Ritter",
+      "type": "person",
+      "dates": "1776–1810"
+    },
+    {
+      "id": "tim_berners_lee",
+      "label": "Tim Berners-Lee",
+      "type": "person",
+      "dates": "1955–"
+    },
+    {
+      "id": "ancient_astronomy",
+      "label": "Ancient astronomy",
+      "type": "historical_period"
+    },
+    {
+      "id": "natural_philosophy",
+      "label": "Natural philosophy",
+      "type": "historical_framework"
+    },
+    {
+      "id": "scientific_revolution",
+      "label": "Scientific Revolution",
+      "type": "historical_period"
+    },
+    {
+      "id": "industrial_revolution",
+      "label": "Industrial Revolution",
+      "type": "historical_period"
+    },
+    {
+      "id": "modern_physics",
+      "label": "Modern physics",
+      "type": "historical_framework"
+    },
+    {
+      "id": "physics_beyond_standard_model",
+      "label": "Physics beyond the Standard Model",
+      "type": "research_program"
+    },
+    {
+      "id": "dark_matter_problem",
+      "label": "Dark matter problem",
+      "type": "research_problem"
+    },
+    {
+      "id": "dark_energy_problem",
+      "label": "Dark energy problem",
+      "type": "research_problem"
+    },
+    {
+      "id": "turbulence_problem",
+      "label": "Turbulence problem",
+      "type": "research_problem"
+    },
+    {
+      "id": "television",
+      "label": "Television",
+      "type": "application_or_technology"
+    },
+    {
+      "id": "computers",
+      "label": "Computers",
+      "type": "application_or_technology"
+    },
+    {
+      "id": "nuclear_weapons",
+      "label": "Nuclear Weapons",
+      "type": "application_or_technology"
+    },
+    {
+      "id": "industrialization",
+      "label": "Industrialization",
+      "type": "application_or_technology"
+    },
+    {
+      "id": "nuclear_power",
+      "label": "Nuclear Power",
+      "type": "application_or_technology"
+    },
+    {
+      "id": "nuclear_medicine",
+      "label": "Nuclear Medicine",
+      "type": "application_or_technology"
+    },
+    {
+      "id": "magnetic_resonance_imaging",
+      "label": "Magnetic Resonance Imaging",
+      "type": "application_or_technology"
+    },
+    {
+      "id": "ion_implantation",
+      "label": "Ion Implantation",
+      "type": "application_or_technology"
+    },
+    {
+      "id": "radiocarbon_dating",
+      "label": "Radiocarbon Dating",
+      "type": "application_or_technology"
+    },
+    {
+      "id": "transistors",
+      "label": "Transistors",
+      "type": "application_or_technology"
+    },
+    {
+      "id": "flight_simulators",
+      "label": "Flight Simulators",
+      "type": "application_or_technology"
+    },
+    {
+      "id": "video_games",
+      "label": "Video Games",
+      "type": "application_or_technology"
+    },
+    {
+      "id": "forensic_investigations",
+      "label": "Forensic Investigations",
+      "type": "application_or_technology"
+    },
+    {
+      "id": "chemistry",
+      "label": "Chemistry",
+      "type": "external_discipline"
+    },
+    {
+      "id": "astronomy",
+      "label": "Astronomy",
+      "type": "external_discipline"
+    },
+    {
+      "id": "geology",
+      "label": "Geology",
+      "type": "external_discipline"
+    },
+    {
+      "id": "biology",
+      "label": "Biology",
+      "type": "external_discipline"
+    },
+    {
+      "id": "philosophy",
+      "label": "Philosophy",
+      "type": "external_discipline"
+    },
+    {
+      "id": "economics",
+      "label": "Economics",
+      "type": "external_discipline"
+    },
+    {
+      "id": "computer_science",
+      "label": "Computer Science",
+      "type": "external_discipline"
+    }
+  ],
+  "edges": [
+    {
+      "source": "physics",
+      "relationship": "has_component",
+      "target": "scientific_method"
+    },
+    {
+      "source": "physics",
+      "relationship": "has_component",
+      "target": "theoretical_physics"
+    },
+    {
+      "source": "physics",
+      "relationship": "has_component",
+      "target": "experimental_physics"
+    },
+    {
+      "source": "physics",
+      "relationship": "has_component",
+      "target": "phenomenology"
+    },
+    {
+      "source": "physics",
+      "relationship": "has_component",
+      "target": "mathematics"
+    },
+    {
+      "source": "physics",
+      "relationship": "has_component",
+      "target": "mathematical_physics"
+    },
+    {
+      "source": "physics",
+      "relationship": "has_component",
+      "target": "philosophy_of_physics"
+    },
+    {
+      "source": "physics",
+      "relationship": "has_component",
+      "target": "applied_physics"
+    },
+    {
+      "source": "physics",
+      "relationship": "has_component",
+      "target": "engineering"
+    },
+    {
+      "source": "physics",
+      "relationship": "has_component",
+      "target": "technology"
+    },
+    {
+      "source": "physics",
+      "relationship": "has_component",
+      "target": "complex_systems"
+    },
+    {
+      "source": "physics",
+      "relationship": "core_theory",
+      "target": "classical_mechanics"
+    },
+    {
+      "source": "physics",
+      "relationship": "core_theory",
+      "target": "quantum_mechanics"
+    },
+    {
+      "source": "physics",
+      "relationship": "core_theory",
+      "target": "thermodynamics"
+    },
+    {
+      "source": "physics",
+      "relationship": "core_theory",
+      "target": "statistical_mechanics"
+    },
+    {
+      "source": "physics",
+      "relationship": "core_theory",
+      "target": "electromagnetism"
+    },
+    {
+      "source": "physics",
+      "relationship": "core_theory",
+      "target": "special_relativity"
+    },
+    {
+      "source": "mechanics",
+      "relationship": "subfield_of",
+      "target": "classical_physics"
+    },
+    {
+      "source": "acoustics",
+      "relationship": "subfield_of",
+      "target": "classical_physics"
+    },
+    {
+      "source": "optics",
+      "relationship": "subfield_of",
+      "target": "classical_physics"
+    },
+    {
+      "source": "statics",
+      "relationship": "subfield_of",
+      "target": "mechanics"
+    },
+    {
+      "source": "kinematics",
+      "relationship": "subfield_of",
+      "target": "mechanics"
+    },
+    {
+      "source": "dynamics",
+      "relationship": "subfield_of",
+      "target": "mechanics"
+    },
+    {
+      "source": "solid_mechanics",
+      "relationship": "subfield_of",
+      "target": "mechanics"
+    },
+    {
+      "source": "fluid_mechanics",
+      "relationship": "subfield_of",
+      "target": "mechanics"
+    },
+    {
+      "source": "hydrostatics",
+      "relationship": "subfield_of",
+      "target": "fluid_mechanics"
+    },
+    {
+      "source": "hydrodynamics",
+      "relationship": "subfield_of",
+      "target": "fluid_mechanics"
+    },
+    {
+      "source": "pneumatics",
+      "relationship": "subfield_of",
+      "target": "fluid_mechanics"
+    },
+    {
+      "source": "classical_physics",
+      "relationship": "subfield_of",
+      "target": "electromagnetism"
+    },
+    {
+      "source": "atomic_physics",
+      "relationship": "subfield_of",
+      "target": "atomic_molecular_optical"
+    },
+    {
+      "source": "molecular_physics",
+      "relationship": "subfield_of",
+      "target": "atomic_molecular_optical"
+    },
+    {
+      "source": "optical_physics",
+      "relationship": "subfield_of",
+      "target": "atomic_molecular_optical"
+    },
+    {
+      "source": "photonics",
+      "relationship": "subfield_of",
+      "target": "atomic_molecular_optical"
+    },
+    {
+      "source": "solid_state",
+      "relationship": "subfield_of",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "high_pressure",
+      "relationship": "subfield_of",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "low_temperature",
+      "relationship": "subfield_of",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "surface_physics",
+      "relationship": "subfield_of",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "nanoscale_mesoscopic",
+      "relationship": "subfield_of",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "polymer_physics",
+      "relationship": "subfield_of",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "nuclear_physics",
+      "relationship": "subfield_of",
+      "target": "nuclear_particle"
+    },
+    {
+      "source": "particle_physics",
+      "relationship": "subfield_of",
+      "target": "nuclear_particle"
+    },
+    {
+      "source": "nuclear_astrophysics",
+      "relationship": "subfield_of",
+      "target": "nuclear_particle"
+    },
+    {
+      "source": "astroparticle_physics",
+      "relationship": "subfield_of",
+      "target": "nuclear_particle"
+    },
+    {
+      "source": "particle_phenomenology",
+      "relationship": "subfield_of",
+      "target": "nuclear_particle"
+    },
+    {
+      "source": "astronomy",
+      "relationship": "subfield_of",
+      "target": "astrophysics"
+    },
+    {
+      "source": "astrometry",
+      "relationship": "subfield_of",
+      "target": "astrophysics"
+    },
+    {
+      "source": "cosmology",
+      "relationship": "subfield_of",
+      "target": "astrophysics"
+    },
+    {
+      "source": "gravitation_physics",
+      "relationship": "subfield_of",
+      "target": "astrophysics"
+    },
+    {
+      "source": "high_energy_astrophysics",
+      "relationship": "subfield_of",
+      "target": "astrophysics"
+    },
+    {
+      "source": "plasma_physics",
+      "relationship": "subfield_of",
+      "target": "astrophysics"
+    },
+    {
+      "source": "solar_physics",
+      "relationship": "subfield_of",
+      "target": "astrophysics"
+    },
+    {
+      "source": "space_physics",
+      "relationship": "subfield_of",
+      "target": "astrophysics"
+    },
+    {
+      "source": "stellar_astrophysics",
+      "relationship": "subfield_of",
+      "target": "astrophysics"
+    },
+    {
+      "source": "planetary_astrophysics",
+      "relationship": "subfield_of",
+      "target": "astrophysics"
+    },
+    {
+      "source": "accelerator_physics",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "biophysics",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "chemical_physics",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "communication_physics",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "econophysics",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "engineering_physics",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "fluid_dynamics",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "geophysics",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "laser_physics",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "materials_physics",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "medical_physics",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "nanotechnology",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "optoelectronics",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "photovoltaics",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "physical_chemistry",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "physical_oceanography",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "physics_of_computation",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "quantum_electronics",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "vehicle_dynamics",
+      "relationship": "subfield_of",
+      "target": "applied_fields"
+    },
+    {
+      "source": "classical_physics",
+      "relationship": "field_of",
+      "target": "physics"
+    },
+    {
+      "source": "atomic_molecular_optical",
+      "relationship": "field_of",
+      "target": "physics"
+    },
+    {
+      "source": "condensed_matter",
+      "relationship": "field_of",
+      "target": "physics"
+    },
+    {
+      "source": "nuclear_particle",
+      "relationship": "field_of",
+      "target": "physics"
+    },
+    {
+      "source": "astrophysics",
+      "relationship": "field_of",
+      "target": "physics"
+    },
+    {
+      "source": "applied_fields",
+      "relationship": "field_of",
+      "target": "physics"
+    },
+    {
+      "source": "chaos_theory",
+      "relationship": "field_of",
+      "target": "physics"
+    },
+    {
+      "source": "quantum_field_theory",
+      "relationship": "used_in",
+      "target": "nuclear_particle"
+    },
+    {
+      "source": "qed",
+      "relationship": "used_in",
+      "target": "nuclear_particle"
+    },
+    {
+      "source": "qcd",
+      "relationship": "used_in",
+      "target": "nuclear_particle"
+    },
+    {
+      "source": "electroweak",
+      "relationship": "used_in",
+      "target": "nuclear_particle"
+    },
+    {
+      "source": "gauge_theory",
+      "relationship": "used_in",
+      "target": "nuclear_particle"
+    },
+    {
+      "source": "effective_field_theory",
+      "relationship": "used_in",
+      "target": "nuclear_particle"
+    },
+    {
+      "source": "lattice_field_theory",
+      "relationship": "used_in",
+      "target": "nuclear_particle"
+    },
+    {
+      "source": "supersymmetry",
+      "relationship": "used_in",
+      "target": "nuclear_particle"
+    },
+    {
+      "source": "grand_unified_theory",
+      "relationship": "used_in",
+      "target": "nuclear_particle"
+    },
+    {
+      "source": "superstring_theory",
+      "relationship": "used_in",
+      "target": "nuclear_particle"
+    },
+    {
+      "source": "m_theory",
+      "relationship": "used_in",
+      "target": "nuclear_particle"
+    },
+    {
+      "source": "ads_cft",
+      "relationship": "used_in",
+      "target": "nuclear_particle"
+    },
+    {
+      "source": "quantum_optics",
+      "relationship": "used_in",
+      "target": "atomic_molecular_optical"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relationship": "used_in",
+      "target": "atomic_molecular_optical"
+    },
+    {
+      "source": "quantum_information",
+      "relationship": "used_in",
+      "target": "atomic_molecular_optical"
+    },
+    {
+      "source": "bcs_theory",
+      "relationship": "used_in",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "bloch_theorem",
+      "relationship": "used_in",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "density_functional_theory",
+      "relationship": "used_in",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "fermi_gas",
+      "relationship": "used_in",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "fermi_liquid",
+      "relationship": "used_in",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "many_body_theory",
+      "relationship": "used_in",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "big_bang",
+      "relationship": "used_in",
+      "target": "astrophysics"
+    },
+    {
+      "source": "cosmic_inflation",
+      "relationship": "used_in",
+      "target": "astrophysics"
+    },
+    {
+      "source": "lambda_cdm",
+      "relationship": "used_in",
+      "target": "astrophysics"
+    },
+    {
+      "source": "magnetohydrodynamics",
+      "relationship": "used_in",
+      "target": "astrophysics"
+    },
+    {
+      "source": "general_relativity",
+      "relationship": "used_in",
+      "target": "astrophysics"
+    },
+    {
+      "source": "classical_mechanics",
+      "relationship": "used_in",
+      "target": "astrophysics"
+    },
+    {
+      "source": "matter",
+      "relationship": "associated_with",
+      "target": "physics"
+    },
+    {
+      "source": "energy",
+      "relationship": "associated_with",
+      "target": "physics"
+    },
+    {
+      "source": "force",
+      "relationship": "associated_with",
+      "target": "physics"
+    },
+    {
+      "source": "motion",
+      "relationship": "associated_with",
+      "target": "classical_mechanics"
+    },
+    {
+      "source": "space",
+      "relationship": "associated_with",
+      "target": "special_relativity"
+    },
+    {
+      "source": "time",
+      "relationship": "associated_with",
+      "target": "special_relativity"
+    },
+    {
+      "source": "action",
+      "relationship": "associated_with",
+      "target": "physics"
+    },
+    {
+      "source": "causality",
+      "relationship": "associated_with",
+      "target": "physics"
+    },
+    {
+      "source": "covariance",
+      "relationship": "associated_with",
+      "target": "special_relativity"
+    },
+    {
+      "source": "particle",
+      "relationship": "associated_with",
+      "target": "quantum_mechanics"
+    },
+    {
+      "source": "physical_field",
+      "relationship": "associated_with",
+      "target": "quantum_field_theory"
+    },
+    {
+      "source": "physical_interaction",
+      "relationship": "associated_with",
+      "target": "standard_model"
+    },
+    {
+      "source": "quantum",
+      "relationship": "associated_with",
+      "target": "quantum_mechanics"
+    },
+    {
+      "source": "statistical_ensemble",
+      "relationship": "associated_with",
+      "target": "statistical_mechanics"
+    },
+    {
+      "source": "symmetry",
+      "relationship": "associated_with",
+      "target": "physics"
+    },
+    {
+      "source": "wave",
+      "relationship": "associated_with",
+      "target": "quantum_mechanics"
+    },
+    {
+      "source": "entropy",
+      "relationship": "associated_with",
+      "target": "thermodynamics"
+    },
+    {
+      "source": "gravity",
+      "relationship": "associated_with",
+      "target": "general_relativity"
+    },
+    {
+      "source": "electromagnetic_radiation",
+      "relationship": "associated_with",
+      "target": "electromagnetism"
+    },
+    {
+      "source": "spin",
+      "relationship": "associated_with",
+      "target": "quantum_mechanics"
+    },
+    {
+      "source": "antimatter",
+      "relationship": "associated_with",
+      "target": "standard_model"
+    },
+    {
+      "source": "spontaneous_symmetry_breaking",
+      "relationship": "associated_with",
+      "target": "standard_model"
+    },
+    {
+      "source": "neutrino_oscillation",
+      "relationship": "associated_with",
+      "target": "particle_physics"
+    },
+    {
+      "source": "seesaw_mechanism",
+      "relationship": "associated_with",
+      "target": "particle_physics"
+    },
+    {
+      "source": "quantum_gravity",
+      "relationship": "associated_with",
+      "target": "general_relativity"
+    },
+    {
+      "source": "quantum_gravity",
+      "relationship": "associated_with",
+      "target": "quantum_mechanics"
+    },
+    {
+      "source": "theory_of_everything",
+      "relationship": "associated_with",
+      "target": "physics"
+    },
+    {
+      "source": "vacuum_energy",
+      "relationship": "associated_with",
+      "target": "cosmology"
+    },
+    {
+      "source": "photon",
+      "relationship": "associated_with",
+      "target": "standard_model"
+    },
+    {
+      "source": "photon",
+      "relationship": "associated_with",
+      "target": "optics"
+    },
+    {
+      "source": "atom",
+      "relationship": "associated_with",
+      "target": "atomic_physics"
+    },
+    {
+      "source": "molecule",
+      "relationship": "associated_with",
+      "target": "molecular_physics"
+    },
+    {
+      "source": "diffraction",
+      "relationship": "associated_with",
+      "target": "optics"
+    },
+    {
+      "source": "laser",
+      "relationship": "associated_with",
+      "target": "photonics"
+    },
+    {
+      "source": "polarization",
+      "relationship": "associated_with",
+      "target": "optics"
+    },
+    {
+      "source": "spectral_line",
+      "relationship": "associated_with",
+      "target": "atomic_physics"
+    },
+    {
+      "source": "casimir_effect",
+      "relationship": "associated_with",
+      "target": "quantum_field_theory"
+    },
+    {
+      "source": "gas",
+      "relationship": "associated_with",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "liquid",
+      "relationship": "associated_with",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "solid",
+      "relationship": "associated_with",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "bose_einstein_condensate",
+      "relationship": "associated_with",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "electrical_conduction",
+      "relationship": "associated_with",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "phonon",
+      "relationship": "associated_with",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "magnetism",
+      "relationship": "associated_with",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "self_organization",
+      "relationship": "associated_with",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "semiconductor",
+      "relationship": "associated_with",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "superconductor",
+      "relationship": "associated_with",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "superfluidity",
+      "relationship": "associated_with",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "black_hole",
+      "relationship": "associated_with",
+      "target": "astrophysics"
+    },
+    {
+      "source": "cosmic_background_radiation",
+      "relationship": "associated_with",
+      "target": "cosmology"
+    },
+    {
+      "source": "cosmic_string",
+      "relationship": "associated_with",
+      "target": "astrophysics"
+    },
+    {
+      "source": "dark_energy",
+      "relationship": "associated_with",
+      "target": "cosmology"
+    },
+    {
+      "source": "dark_matter",
+      "relationship": "associated_with",
+      "target": "cosmology"
+    },
+    {
+      "source": "galaxy",
+      "relationship": "associated_with",
+      "target": "astrophysics"
+    },
+    {
+      "source": "gravitational_radiation",
+      "relationship": "associated_with",
+      "target": "general_relativity"
+    },
+    {
+      "source": "gravitational_singularity",
+      "relationship": "associated_with",
+      "target": "general_relativity"
+    },
+    {
+      "source": "planet",
+      "relationship": "associated_with",
+      "target": "astrophysics"
+    },
+    {
+      "source": "solar_system",
+      "relationship": "associated_with",
+      "target": "astrophysics"
+    },
+    {
+      "source": "star",
+      "relationship": "associated_with",
+      "target": "astrophysics"
+    },
+    {
+      "source": "supernova",
+      "relationship": "associated_with",
+      "target": "astrophysics"
+    },
+    {
+      "source": "universe",
+      "relationship": "associated_with",
+      "target": "cosmology"
+    },
+    {
+      "source": "standard_model",
+      "relationship": "contains_matter_family",
+      "target": "quarks"
+    },
+    {
+      "source": "standard_model",
+      "relationship": "contains_matter_family",
+      "target": "leptons"
+    },
+    {
+      "source": "standard_model",
+      "relationship": "includes_particle",
+      "target": "gluons"
+    },
+    {
+      "source": "standard_model",
+      "relationship": "includes_particle",
+      "target": "w_z_bosons"
+    },
+    {
+      "source": "standard_model",
+      "relationship": "includes_particle",
+      "target": "photon"
+    },
+    {
+      "source": "standard_model",
+      "relationship": "includes_particle",
+      "target": "higgs_boson"
+    },
+    {
+      "source": "standard_model",
+      "relationship": "describes",
+      "target": "fundamental_interaction"
+    },
+    {
+      "source": "higgs_boson",
+      "relationship": "associated_with",
+      "target": "spontaneous_symmetry_breaking"
+    },
+    {
+      "source": "double_slit",
+      "relationship": "studied_by",
+      "target": "quantum_mechanics"
+    },
+    {
+      "source": "beta_decay",
+      "relationship": "studied_by",
+      "target": "nuclear_physics"
+    },
+    {
+      "source": "gravitational_lensing",
+      "relationship": "studied_by",
+      "target": "general_relativity"
+    },
+    {
+      "source": "meissner_effect",
+      "relationship": "studied_by",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "turbulence",
+      "relationship": "studied_by",
+      "target": "fluid_mechanics"
+    },
+    {
+      "source": "chaos",
+      "relationship": "studied_by",
+      "target": "chaos_theory"
+    },
+    {
+      "source": "surface_tension",
+      "relationship": "studied_by",
+      "target": "fluid_mechanics"
+    },
+    {
+      "source": "pattern_formation",
+      "relationship": "studied_by",
+      "target": "complex_systems"
+    },
+    {
+      "source": "standing_waves",
+      "relationship": "studied_by",
+      "target": "acoustics"
+    },
+    {
+      "source": "resonance",
+      "relationship": "studied_by",
+      "target": "acoustics"
+    },
+    {
+      "source": "reflection",
+      "relationship": "studied_by",
+      "target": "optics"
+    },
+    {
+      "source": "refraction",
+      "relationship": "studied_by",
+      "target": "optics"
+    },
+    {
+      "source": "interference",
+      "relationship": "studied_by",
+      "target": "optics"
+    },
+    {
+      "source": "dispersion",
+      "relationship": "studied_by",
+      "target": "optics"
+    },
+    {
+      "source": "electricity",
+      "relationship": "studied_by",
+      "target": "electromagnetism"
+    },
+    {
+      "source": "magnetic_field",
+      "relationship": "studied_by",
+      "target": "electromagnetism"
+    },
+    {
+      "source": "blackbody_radiation",
+      "relationship": "studied_by",
+      "target": "thermodynamics"
+    },
+    {
+      "source": "photoelectric_effect",
+      "relationship": "studied_by",
+      "target": "quantum_mechanics"
+    },
+    {
+      "source": "double_slit",
+      "relationship": "demonstrates",
+      "target": "wave"
+    },
+    {
+      "source": "double_slit",
+      "relationship": "demonstrates",
+      "target": "particle"
+    },
+    {
+      "source": "double_slit",
+      "relationship": "demonstrates",
+      "target": "interference"
+    },
+    {
+      "source": "gravitational_lensing",
+      "relationship": "changes_path_of",
+      "target": "photon"
+    },
+    {
+      "source": "meissner_effect",
+      "relationship": "demonstrates",
+      "target": "superconductor"
+    },
+    {
+      "source": "standing_waves",
+      "relationship": "associated_with",
+      "target": "resonance"
+    },
+    {
+      "source": "thales",
+      "relationship": "promoted",
+      "target": "natural_causes"
+    },
+    {
+      "source": "leucippus",
+      "relationship": "associated_with",
+      "target": "democritus"
+    },
+    {
+      "source": "democritus",
+      "relationship": "developed",
+      "target": "atomism"
+    },
+    {
+      "source": "aristotle",
+      "relationship": "developed",
+      "target": "aristotelian_physics"
+    },
+    {
+      "source": "john_philoponus",
+      "relationship": "challenged",
+      "target": "aristotle"
+    },
+    {
+      "source": "ibn_al_haytham",
+      "relationship": "developed",
+      "target": "optics"
+    },
+    {
+      "source": "ibn_al_haytham",
+      "relationship": "used",
+      "target": "experimental_method"
+    },
+    {
+      "source": "copernicus",
+      "relationship": "proposed",
+      "target": "heliocentric_model"
+    },
+    {
+      "source": "kepler",
+      "relationship": "formulated",
+      "target": "planetary_motion_laws"
+    },
+    {
+      "source": "galileo",
+      "relationship": "connected",
+      "target": "mathematics"
+    },
+    {
+      "source": "galileo",
+      "relationship": "worked_in",
+      "target": "experimental_physics"
+    },
+    {
+      "source": "galileo",
+      "relationship": "worked_in",
+      "target": "astronomy"
+    },
+    {
+      "source": "newton",
+      "relationship": "formulated",
+      "target": "classical_mechanics"
+    },
+    {
+      "source": "newton",
+      "relationship": "formulated",
+      "target": "gravity"
+    },
+    {
+      "source": "newton",
+      "relationship": "used",
+      "target": "mathematics"
+    },
+    {
+      "source": "leibniz",
+      "relationship": "developed",
+      "target": "calculus"
+    },
+    {
+      "source": "maxwell",
+      "relationship": "unified",
+      "target": "electricity"
+    },
+    {
+      "source": "maxwell",
+      "relationship": "unified",
+      "target": "magnetism"
+    },
+    {
+      "source": "planck",
+      "relationship": "proposed",
+      "target": "quantum"
+    },
+    {
+      "source": "planck",
+      "relationship": "explained",
+      "target": "blackbody_radiation"
+    },
+    {
+      "source": "einstein",
+      "relationship": "developed",
+      "target": "special_relativity"
+    },
+    {
+      "source": "einstein",
+      "relationship": "developed",
+      "target": "general_relativity"
+    },
+    {
+      "source": "einstein",
+      "relationship": "explained",
+      "target": "photoelectric_effect"
+    },
+    {
+      "source": "heisenberg",
+      "relationship": "pioneered",
+      "target": "quantum_mechanics"
+    },
+    {
+      "source": "schrodinger",
+      "relationship": "pioneered",
+      "target": "quantum_mechanics"
+    },
+    {
+      "source": "dirac",
+      "relationship": "pioneered",
+      "target": "quantum_mechanics"
+    },
+    {
+      "source": "feynman",
+      "relationship": "worked_in",
+      "target": "qed"
+    },
+    {
+      "source": "hubble",
+      "relationship": "observed",
+      "target": "cosmic_expansion"
+    },
+    {
+      "source": "jansky",
+      "relationship": "initiated",
+      "target": "radio_astronomy"
+    },
+    {
+      "source": "anderson",
+      "relationship": "associated_with",
+      "target": "condensed_matter"
+    },
+    {
+      "source": "landau",
+      "relationship": "associated_with",
+      "target": "physics"
+    },
+    {
+      "source": "lamb",
+      "relationship": "associated_with",
+      "target": "turbulence"
+    },
+    {
+      "source": "lamb",
+      "relationship": "associated_with",
+      "target": "qed"
+    },
+    {
+      "source": "laplace",
+      "relationship": "advocated",
+      "target": "causal_determinism"
+    },
+    {
+      "source": "penrose",
+      "relationship": "discussed",
+      "target": "philosophy_of_physics"
+    },
+    {
+      "source": "hawking",
+      "relationship": "discussed",
+      "target": "penrose"
+    },
+    {
+      "source": "prigogine",
+      "relationship": "studied",
+      "target": "systems_far_from_equilibrium"
+    },
+    {
+      "source": "kant",
+      "relationship": "influenced",
+      "target": "oersted"
+    },
+    {
+      "source": "ritter",
+      "relationship": "influenced",
+      "target": "oersted"
+    },
+    {
+      "source": "tim_berners_lee",
+      "relationship": "created",
+      "target": "world_wide_web"
+    },
+    {
+      "source": "ancient_astronomy",
+      "relationship": "laid_foundations_for",
+      "target": "astronomy"
+    },
+    {
+      "source": "natural_philosophy",
+      "relationship": "preceded",
+      "target": "physics"
+    },
+    {
+      "source": "scientific_revolution",
+      "relationship": "transformed",
+      "target": "physics"
+    },
+    {
+      "source": "scientific_revolution",
+      "relationship": "enabled",
+      "target": "experimental_physics"
+    },
+    {
+      "source": "industrial_revolution",
+      "relationship": "accelerated",
+      "target": "thermodynamics"
+    },
+    {
+      "source": "modern_physics",
+      "relationship": "includes",
+      "target": "quantum_mechanics"
+    },
+    {
+      "source": "modern_physics",
+      "relationship": "includes",
+      "target": "special_relativity"
+    },
+    {
+      "source": "modern_physics",
+      "relationship": "includes",
+      "target": "general_relativity"
+    },
+    {
+      "source": "physics",
+      "relationship": "active_research",
+      "target": "high_temperature_superconductivity"
+    },
+    {
+      "source": "physics",
+      "relationship": "active_research",
+      "target": "spintronics"
+    },
+    {
+      "source": "physics",
+      "relationship": "active_research",
+      "target": "quantum_computing"
+    },
+    {
+      "source": "physics",
+      "relationship": "active_research",
+      "target": "solar_neutrino_problem"
+    },
+    {
+      "source": "physics",
+      "relationship": "active_research",
+      "target": "physics_beyond_standard_model"
+    },
+    {
+      "source": "physics",
+      "relationship": "active_research",
+      "target": "dark_matter_problem"
+    },
+    {
+      "source": "physics",
+      "relationship": "active_research",
+      "target": "dark_energy_problem"
+    },
+    {
+      "source": "physics",
+      "relationship": "active_research",
+      "target": "turbulence_problem"
+    },
+    {
+      "source": "physics",
+      "relationship": "research_goal",
+      "target": "theory_of_everything"
+    },
+    {
+      "source": "physics_beyond_standard_model",
+      "relationship": "includes",
+      "target": "supersymmetry"
+    },
+    {
+      "source": "solar_neutrino_problem",
+      "relationship": "related_to",
+      "target": "neutrino_oscillation"
+    },
+    {
+      "source": "dark_matter_problem",
+      "relationship": "concerns",
+      "target": "dark_matter"
+    },
+    {
+      "source": "dark_energy_problem",
+      "relationship": "concerns",
+      "target": "dark_energy"
+    },
+    {
+      "source": "turbulence_problem",
+      "relationship": "concerns",
+      "target": "turbulence"
+    },
+    {
+      "source": "quantum_gravity",
+      "relationship": "connects",
+      "target": "general_relativity"
+    },
+    {
+      "source": "quantum_gravity",
+      "relationship": "connects",
+      "target": "quantum_mechanics"
+    },
+    {
+      "source": "electromagnetism",
+      "relationship": "enables_or_supports",
+      "target": "television"
+    },
+    {
+      "source": "solid_state",
+      "relationship": "enables_or_supports",
+      "target": "computers"
+    },
+    {
+      "source": "nuclear_physics",
+      "relationship": "enables_or_supports",
+      "target": "nuclear_weapons"
+    },
+    {
+      "source": "thermodynamics",
+      "relationship": "enables_or_supports",
+      "target": "industrialization"
+    },
+    {
+      "source": "nuclear_physics",
+      "relationship": "enables_or_supports",
+      "target": "nuclear_power"
+    },
+    {
+      "source": "nuclear_physics",
+      "relationship": "enables_or_supports",
+      "target": "nuclear_medicine"
+    },
+    {
+      "source": "nuclear_physics",
+      "relationship": "enables_or_supports",
+      "target": "magnetic_resonance_imaging"
+    },
+    {
+      "source": "nuclear_physics",
+      "relationship": "enables_or_supports",
+      "target": "ion_implantation"
+    },
+    {
+      "source": "nuclear_physics",
+      "relationship": "enables_or_supports",
+      "target": "radiocarbon_dating"
+    },
+    {
+      "source": "solid_state",
+      "relationship": "enables_or_supports",
+      "target": "transistors"
+    },
+    {
+      "source": "physics",
+      "relationship": "enables_or_supports",
+      "target": "flight_simulators"
+    },
+    {
+      "source": "physics",
+      "relationship": "enables_or_supports",
+      "target": "video_games"
+    },
+    {
+      "source": "physics",
+      "relationship": "enables_or_supports",
+      "target": "forensic_investigations"
+    },
+    {
+      "source": "physics",
+      "relationship": "constrains_or_intersects",
+      "target": "chemistry"
+    },
+    {
+      "source": "physics",
+      "relationship": "constrains_or_intersects",
+      "target": "astronomy"
+    },
+    {
+      "source": "physics",
+      "relationship": "constrains_or_intersects",
+      "target": "geology"
+    },
+    {
+      "source": "physics",
+      "relationship": "constrains_or_intersects",
+      "target": "biology"
+    },
+    {
+      "source": "physics",
+      "relationship": "constrains_or_intersects",
+      "target": "philosophy"
+    },
+    {
+      "source": "biophysics",
+      "relationship": "intersects",
+      "target": "biology"
+    },
+    {
+      "source": "chemical_physics",
+      "relationship": "intersects",
+      "target": "chemistry"
+    },
+    {
+      "source": "physical_chemistry",
+      "relationship": "intersects",
+      "target": "chemistry"
+    },
+    {
+      "source": "geophysics",
+      "relationship": "intersects",
+      "target": "geology"
+    },
+    {
+      "source": "econophysics",
+      "relationship": "intersects",
+      "target": "economics"
+    },
+    {
+      "source": "physics_of_computation",
+      "relationship": "intersects",
+      "target": "computer_science"
+    }
+  ],
+  "statistics": {
+    "nodes": 264,
+    "edges": 288
+  },
+  "next_expansion": {
+    "priority_1": [
+      "classical mechanics",
+      "thermodynamics",
+      "electromagnetism",
+      "quantum mechanics",
+      "relativity",
+      "statistical mechanics"
+    ],
+    "priority_2": [
+      "waves",
+      "optics",
+      "atomic molecular optical",
+      "condensed matter",
+      "nuclear physics",
+      "particle physics",
+      "astrophysics",
+      "cosmology"
+    ],
+    "priority_3": [
+      "important people",
+      "experiments",
+      "instruments",
+      "equations",
+      "mathematical structures",
+      "discoveries",
+      "papers",
+      "institutions"
+    ],
+    "priority_4": [
+      "detailed concept-to-concept edges",
+      "person-to-person influence",
+      "experiment-to-theory evidence",
+      "technology lineage",
+      "open problems"
+    ]
+  }
+}

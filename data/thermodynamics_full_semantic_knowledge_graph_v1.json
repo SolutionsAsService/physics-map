@@ -1,0 +1,3140 @@
+{
+  "schema_version": "2.0",
+  "graph_id": "thermodynamics_full_semantic_graph_v1",
+  "title": "Thermodynamics — Full Semantic Knowledge Graph",
+  "purpose": "Semantics-first machine-readable representation of thermodynamics: concepts, definitions, laws, equations, variables, constraints, processes, systems, historical lineage, people, works, applications, limits and source traceability.",
+  "source_policy": {
+    "primary_source": "Pasted text(20261007-040710).txt",
+    "external_research_used": false,
+    "source_basis": "User-provided source",
+    "preservation_rule": "Source claims are preserved with provenance; normalized semantic relationships are explicit edges rather than silent substitutions.",
+    "accuracy_note": "The source contains pedagogical/simplified formulations. The graph preserves them as source claims while separating ontology semantics, allowing later refinement without deleting provenance."
+  },
+  "core_semantic_distinctions": {
+    "state_vs_process": "States are described by state quantities; processes connect states and can involve path-dependent transfers.",
+    "state_vs_path_quantity": "Internal energy and entropy are represented as state functions; heat and work as transfer/process quantities.",
+    "intensive_vs_extensive": "Intensive quantities do not scale with system size; extensive quantities do.",
+    "equilibrium_vs_nonequilibrium": "Equilibrium has no macroscopic unbalanced driving forces/flows in the source's formulation; non-equilibrium systems require broader treatment.",
+    "law_vs_definition": "Laws are modeled separately from operational/mathematical definitions.",
+    "potential_vs_property": "Potentials are special state functions selected for particular constraint sets.",
+    "classical_vs_statistical": "Classical thermodynamics is macroscopic; statistical mechanics provides microscopic interpretation."
+  },
+  "nodes": [
+    {
+      "id": "thermodynamics",
+      "label": "Thermodynamics",
+      "type": "discipline",
+      "description": "Branch of physics dealing with heat, work, temperature, and their relations to energy, entropy, and physical properties of matter and radiation.",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "88-99"
+      }
+    },
+    {
+      "id": "thermal_physics",
+      "label": "Thermal physics",
+      "type": "umbrella_field",
+      "description": "Broader domain encompassing thermodynamics and statistical mechanics."
+    },
+    {
+      "id": "physics",
+      "label": "Physics",
+      "type": "parent_discipline"
+    },
+    {
+      "id": "statistical_mechanics",
+      "label": "Statistical mechanics",
+      "type": "branch",
+      "description": "Microscopic/statistical description relating atomic or molecular behavior and quantum states to macroscopic thermodynamic properties.",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "135-136"
+      }
+    },
+    {
+      "id": "classical_thermodynamics",
+      "label": "Classical thermodynamics",
+      "type": "branch",
+      "description": "Macroscopic, near-equilibrium description using measurable thermodynamic properties and the laws of thermodynamics.",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "132-133"
+      }
+    },
+    {
+      "id": "chemical_thermodynamics",
+      "label": "Chemical thermodynamics",
+      "type": "branch",
+      "description": "Study of energy relations in chemical reactions and physical changes of state, with emphasis on spontaneity.",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "138-139"
+      }
+    },
+    {
+      "id": "equilibrium_thermodynamics",
+      "label": "Equilibrium thermodynamics",
+      "type": "branch",
+      "description": "Study of matter and energy transfers between equilibrium states and calculation of final equilibrium states after specified operations.",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "141-143"
+      }
+    },
+    {
+      "id": "nonequilibrium_thermodynamics",
+      "label": "Non-equilibrium thermodynamics",
+      "type": "branch",
+      "description": "Thermodynamics of systems outside thermodynamic equilibrium; requires more general concepts and does not generally determine rates of approach to equilibrium.",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "144-145"
+      }
+    },
+    {
+      "id": "axiomatic_thermodynamics",
+      "label": "Axiomatic thermodynamics",
+      "type": "branch",
+      "description": "Mathematical discipline seeking rigorous axiomatic foundations for thermodynamics.",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "416-419"
+      }
+    },
+    {
+      "id": "system",
+      "label": "Thermodynamic system",
+      "type": "system",
+      "description": "Precisely defined region of the universe selected for study."
+    },
+    {
+      "id": "surroundings",
+      "label": "Surroundings",
+      "type": "system_context",
+      "description": "Everything outside the thermodynamic system."
+    },
+    {
+      "id": "boundary",
+      "label": "System boundary",
+      "type": "boundary",
+      "description": "Real or notional boundary separating system from surroundings."
+    },
+    {
+      "id": "wall",
+      "label": "Thermodynamic wall",
+      "type": "boundary",
+      "description": "Boundary segment characterized by what it permits or prevents crossing."
+    },
+    {
+      "id": "universe_thermo",
+      "label": "Thermodynamic universe",
+      "type": "system_context",
+      "description": "System plus surroundings."
+    },
+    {
+      "id": "state",
+      "label": "Thermodynamic state",
+      "type": "state",
+      "description": "Quantitative specification of a system under defined conditions."
+    },
+    {
+      "id": "state_variable",
+      "label": "State variable",
+      "type": "quantity_class",
+      "description": "Property determined by the state, independent of the path used to reach it."
+    },
+    {
+      "id": "process",
+      "label": "Thermodynamic process",
+      "type": "process",
+      "description": "Energetic evolution from an initial state to a final state."
+    },
+    {
+      "id": "process_quantity",
+      "label": "Process quantity",
+      "type": "quantity_class",
+      "description": "Quantity associated with a thermodynamic process rather than determined solely by the state."
+    },
+    {
+      "id": "equilibrium",
+      "label": "Thermodynamic equilibrium",
+      "type": "state",
+      "description": "State in which macroscopic flows are zero and, for simple systems, intensive properties are homogeneous."
+    },
+    {
+      "id": "thermal_equilibrium",
+      "label": "Thermal equilibrium",
+      "type": "equilibrium_type",
+      "description": "Mutual thermal balance used to define temperature operationally."
+    },
+    {
+      "id": "mechanical_equilibrium",
+      "label": "Mechanical equilibrium",
+      "type": "equilibrium_type",
+      "description": "Absence of unbalanced mechanical driving forces such as pressure differences."
+    },
+    {
+      "id": "chemical_equilibrium",
+      "label": "Chemical equilibrium",
+      "type": "equilibrium_type",
+      "description": "Absence of net chemical driving tendency between phases/species under specified constraints."
+    },
+    {
+      "id": "phase_equilibrium",
+      "label": "Phase equilibrium",
+      "type": "equilibrium_type",
+      "description": "Equilibrium between phases under specified thermodynamic conditions."
+    },
+    {
+      "id": "intensive_property",
+      "label": "Intensive property",
+      "type": "quantity_class",
+      "description": "Property that does not scale with system size."
+    },
+    {
+      "id": "extensive_property",
+      "label": "Extensive property",
+      "type": "quantity_class",
+      "description": "Property that scales with system size."
+    },
+    {
+      "id": "equation_of_state",
+      "label": "Equation of state",
+      "type": "relation",
+      "description": "Relation specifying constraints among thermodynamic state variables."
+    },
+    {
+      "id": "constitutive_relation",
+      "label": "Constitutive relation",
+      "type": "relation",
+      "description": "Material/system-specific relation connecting thermodynamic variables."
+    },
+    {
+      "id": "constraint",
+      "label": "Thermodynamic constraint",
+      "type": "constraint",
+      "description": "Restriction imposed by walls, external conditions, conserved quantities, or other conditions."
+    },
+    {
+      "id": "driving_force",
+      "label": "Thermodynamic driving force",
+      "type": "concept",
+      "description": "Unbalanced potential or gradient tending to drive a system toward another state."
+    },
+    {
+      "id": "flow",
+      "label": "Thermodynamic flow",
+      "type": "process_feature",
+      "description": "Macroscopic transport of matter or energy."
+    },
+    {
+      "id": "open_system",
+      "label": "Open system",
+      "type": "system_type",
+      "description": "Allows mass, work and heat transfer."
+    },
+    {
+      "id": "closed_system",
+      "label": "Closed system",
+      "type": "system_type",
+      "description": "Allows work and heat transfer but no mass transfer."
+    },
+    {
+      "id": "thermally_isolated_system",
+      "label": "Thermally isolated system",
+      "type": "system_type",
+      "description": "No heat transfer; work may cross."
+    },
+    {
+      "id": "mechanically_isolated_system",
+      "label": "Mechanically isolated system",
+      "type": "system_type",
+      "description": "No work transfer; heat may cross."
+    },
+    {
+      "id": "isolated_system",
+      "label": "Isolated system",
+      "type": "system_type",
+      "description": "No mass, heat or work transfer."
+    },
+    {
+      "id": "mass_transfer",
+      "label": "Mass Transfer",
+      "type": "transfer_mode"
+    },
+    {
+      "id": "work_transfer",
+      "label": "Work Transfer",
+      "type": "transfer_mode"
+    },
+    {
+      "id": "heat_transfer",
+      "label": "Heat Transfer",
+      "type": "transfer_mode"
+    },
+    {
+      "id": "temperature",
+      "label": "Temperature",
+      "type": "intensive_property",
+      "description": "Thermodynamic quantity associated with thermal equilibrium."
+    },
+    {
+      "id": "pressure",
+      "label": "Pressure",
+      "type": "intensive_property",
+      "description": "Mechanical thermodynamic variable."
+    },
+    {
+      "id": "volume",
+      "label": "Volume",
+      "type": "extensive_property",
+      "description": "Geometric thermodynamic variable."
+    },
+    {
+      "id": "internal_energy",
+      "label": "Internal energy",
+      "type": "state_function",
+      "description": "Energy property of a thermodynamic system; depends only on state."
+    },
+    {
+      "id": "heat",
+      "label": "Heat",
+      "type": "path_quantity",
+      "description": "Energy transferred by heating across a boundary."
+    },
+    {
+      "id": "work",
+      "label": "Thermodynamic work",
+      "type": "path_quantity",
+      "description": "Energy transferred by work across a boundary."
+    },
+    {
+      "id": "entropy",
+      "label": "Entropy",
+      "type": "state_function",
+      "description": "State quantity introduced by the second law and given an absolute reference by the third law."
+    },
+    {
+      "id": "enthalpy",
+      "label": "Enthalpy",
+      "type": "thermodynamic_potential",
+      "description": "H = U + pV."
+    },
+    {
+      "id": "helmholtz_free_energy",
+      "label": "Helmholtz free energy",
+      "type": "thermodynamic_potential",
+      "description": "A = U − TS."
+    },
+    {
+      "id": "gibbs_free_energy",
+      "label": "Gibbs free energy",
+      "type": "thermodynamic_potential",
+      "description": "G = U + pV − TS."
+    },
+    {
+      "id": "grand_potential",
+      "label": "Grand potential / Landau potential",
+      "type": "thermodynamic_potential",
+      "description": "Ω = U − TS − Σ μᵢNᵢ."
+    },
+    {
+      "id": "chemical_potential",
+      "label": "Chemical potential",
+      "type": "intensive_property",
+      "description": "Material conjugate variable paired with particle number."
+    },
+    {
+      "id": "particle_number",
+      "label": "Particle number",
+      "type": "extensive_property",
+      "description": "Amount of a particle species."
+    },
+    {
+      "id": "heat_capacity",
+      "label": "Heat capacity",
+      "type": "material_property",
+      "description": "Thermal property developed historically by Joseph Black."
+    },
+    {
+      "id": "latent_heat",
+      "label": "Latent heat",
+      "type": "material_property",
+      "description": "Energy associated with phase change."
+    },
+    {
+      "id": "zeroth_law",
+      "label": "Zeroth law of thermodynamics",
+      "type": "law",
+      "description": "If two systems are each in thermal equilibrium with a third, they are also in thermal equilibrium with each other.",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "153-158"
+      }
+    },
+    {
+      "id": "thermal_equilibrium_relation",
+      "label": "Thermal equilibrium equivalence relation",
+      "type": "semantic_consequence"
+    },
+    {
+      "id": "thermometer",
+      "label": "Thermometer",
+      "type": "instrument"
+    },
+    {
+      "id": "first_law",
+      "label": "First law of thermodynamics",
+      "type": "law",
+      "description": "For a closed system using the source's sign convention, ΔU = Q − W.",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "160-211"
+      }
+    },
+    {
+      "id": "energy_conservation",
+      "label": "Conservation of energy",
+      "type": "principle"
+    },
+    {
+      "id": "perpetual_motion_first_kind",
+      "label": "Impossibility of perpetual motion of the first kind",
+      "type": "constraint"
+    },
+    {
+      "id": "first_law_equation",
+      "label": "ΔU = Q − W",
+      "type": "equation",
+      "description": "Q is heat supplied to the system; W is work done by the system.",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "163-194"
+      }
+    },
+    {
+      "id": "matter_transfer_energy_balance",
+      "label": "Energy balance with matter transfer",
+      "type": "equation_concept"
+    },
+    {
+      "id": "second_law",
+      "label": "Second law of thermodynamics",
+      "type": "law",
+      "description": "Expresses thermodynamic irreversibility and introduces entropy; in the isolated-system formulation entropy increases toward equilibrium.",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "213-218"
+      }
+    },
+    {
+      "id": "entropy_increase",
+      "label": "Entropy increase",
+      "type": "law_consequence"
+    },
+    {
+      "id": "cold_to_hot_spontaneous",
+      "label": "No spontaneous heat flow from colder to hotter body",
+      "type": "law_formulation"
+    },
+    {
+      "id": "irreversibility",
+      "label": "Thermodynamic irreversibility",
+      "type": "concept"
+    },
+    {
+      "id": "equilibrium_entropy_maximum",
+      "label": "Maximum entropy at equilibrium",
+      "type": "principle"
+    },
+    {
+      "id": "rate_of_equilibration",
+      "label": "Rate of approach to equilibrium",
+      "type": "open_problem"
+    },
+    {
+      "id": "third_law",
+      "label": "Third law of thermodynamics",
+      "type": "law",
+      "description": "As temperature approaches absolute zero, entropy approaches a minimum; the source also states unattainability of absolute zero by any finite number of processes.",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "220-225"
+      }
+    },
+    {
+      "id": "absolute_zero",
+      "label": "Absolute zero",
+      "type": "limit_state",
+      "description": "0 K = −273.15 °C = −459.67 °F = 0 °R."
+    },
+    {
+      "id": "absolute_entropy",
+      "label": "Absolute entropy",
+      "type": "concept"
+    },
+    {
+      "id": "unattainability_of_absolute_zero",
+      "label": "Unattainability of absolute zero",
+      "type": "principle"
+    },
+    {
+      "id": "adiabatic_process",
+      "label": "Adiabatic process",
+      "type": "process_type",
+      "description": "No heat transfer."
+    },
+    {
+      "id": "isenthalpic_process",
+      "label": "Isenthalpic process",
+      "type": "process_type",
+      "description": "Constant enthalpy."
+    },
+    {
+      "id": "isentropic_process",
+      "label": "Isentropic process",
+      "type": "process_type",
+      "description": "Reversible adiabatic process with constant entropy."
+    },
+    {
+      "id": "isobaric_process",
+      "label": "Isobaric process",
+      "type": "process_type",
+      "description": "Constant pressure."
+    },
+    {
+      "id": "isochoric_process",
+      "label": "Isochoric process",
+      "type": "process_type",
+      "description": "Constant volume."
+    },
+    {
+      "id": "isothermal_process",
+      "label": "Isothermal process",
+      "type": "process_type",
+      "description": "Constant temperature."
+    },
+    {
+      "id": "steady_state_process",
+      "label": "Steady-state process",
+      "type": "process_type",
+      "description": "Source description: no change in internal energy."
+    },
+    {
+      "id": "reversible_process",
+      "label": "Reversible process",
+      "type": "process_type",
+      "description": "Idealized process whose intermediate states remain equilibrium states."
+    },
+    {
+      "id": "quasistatic_process",
+      "label": "Quasi-static process",
+      "type": "process_type",
+      "description": "Process slow enough for intermediate states to be treated as equilibrium states."
+    },
+    {
+      "id": "conjugate_variable_pair",
+      "label": "Conjugate thermodynamic variables",
+      "type": "relationship_class",
+      "description": "Thermodynamic variable pairs analogous to generalized force and displacement; their differential/product structure represents energy transfer.",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "268-276"
+      }
+    },
+    {
+      "id": "pair_pressure_volume",
+      "label": "Pressure–Volume conjugate pair",
+      "type": "conjugate_pair",
+      "domain": "mechanical",
+      "members": [
+        "pressure",
+        "volume"
+      ]
+    },
+    {
+      "id": "pair_temperature_entropy",
+      "label": "Temperature–Entropy conjugate pair",
+      "type": "conjugate_pair",
+      "domain": "thermal",
+      "members": [
+        "temperature",
+        "entropy"
+      ]
+    },
+    {
+      "id": "pair_chemical_potential_particle_number",
+      "label": "Chemical_Potential–Particle_Number conjugate pair",
+      "type": "conjugate_pair",
+      "domain": "material",
+      "members": [
+        "chemical_potential",
+        "particle_number"
+      ]
+    },
+    {
+      "id": "fundamental_thermodynamic_relation",
+      "label": "Fundamental thermodynamic relation",
+      "type": "equation",
+      "description": "dU = T dS − p dV + Σ μᵢ dNᵢ."
+    },
+    {
+      "id": "internal_energy_natural_variables",
+      "label": "Natural variables of U",
+      "type": "variable_set",
+      "variables": "S,V,{Nᵢ}"
+    },
+    {
+      "id": "helmholtz_natural_variables",
+      "label": "Natural variables of A",
+      "type": "variable_set",
+      "variables": "T,V,{Nᵢ}"
+    },
+    {
+      "id": "enthalpy_natural_variables",
+      "label": "Natural variables of H",
+      "type": "variable_set",
+      "variables": "S,p,{Nᵢ}"
+    },
+    {
+      "id": "gibbs_natural_variables",
+      "label": "Natural variables of G",
+      "type": "variable_set",
+      "variables": "T,p,{Nᵢ}"
+    },
+    {
+      "id": "grand_potential_natural_variables",
+      "label": "Natural variables of Ω",
+      "type": "variable_set",
+      "variables": "T,V,{μᵢ}"
+    },
+    {
+      "id": "legendre_transform",
+      "label": "Legendre transformation",
+      "type": "mathematical_operation",
+      "description": "Mathematical operation used to construct alternative thermodynamic potentials with different natural variables."
+    },
+    {
+      "id": "eq_internal_energy",
+      "label": "U",
+      "type": "equation"
+    },
+    {
+      "id": "eq_helmholtz",
+      "label": "A = U − TS",
+      "type": "equation"
+    },
+    {
+      "id": "eq_enthalpy",
+      "label": "H = U + pV",
+      "type": "equation"
+    },
+    {
+      "id": "eq_gibbs",
+      "label": "G = U + pV − TS",
+      "type": "equation"
+    },
+    {
+      "id": "eq_grand",
+      "label": "Ω = U − TS − Σ μᵢNᵢ",
+      "type": "equation"
+    },
+    {
+      "id": "thermodynamic_meter",
+      "label": "Thermodynamic meter",
+      "type": "instrument",
+      "description": "Measures a thermodynamic parameter."
+    },
+    {
+      "id": "ideal_gas_thermometer",
+      "label": "Ideal-gas thermometer",
+      "type": "instrument",
+      "description": "Uses ideal-gas behavior at constant pressure as a temperature indicator."
+    },
+    {
+      "id": "barometer",
+      "label": "Barometer",
+      "type": "instrument",
+      "description": "Pressure-measuring device."
+    },
+    {
+      "id": "calorimeter",
+      "label": "Calorimeter",
+      "type": "instrument",
+      "description": "Measures/defines internal energy."
+    },
+    {
+      "id": "pressure_reservoir",
+      "label": "Pressure reservoir",
+      "type": "reservoir",
+      "description": "Large system whose state parameters are negligibly changed by contact."
+    },
+    {
+      "id": "temperature_reservoir",
+      "label": "Temperature reservoir",
+      "type": "reservoir",
+      "description": "Large system whose state parameters are negligibly changed by contact."
+    },
+    {
+      "id": "ideal_gas_law",
+      "label": "Ideal gas law",
+      "type": "equation",
+      "description": "pV = nRT."
+    },
+    {
+      "id": "earth_atmosphere_pressure_reservoir",
+      "label": "Earth atmosphere as pressure reservoir",
+      "type": "reservoir_example"
+    },
+    {
+      "id": "ocean_temperature_reservoir",
+      "label": "Ocean as temperature reservoir",
+      "type": "reservoir_example"
+    },
+    {
+      "id": "otto_von_guericke",
+      "label": "Otto von Guericke",
+      "type": "person",
+      "description": "1650 vacuum pump and vacuum demonstration."
+    },
+    {
+      "id": "robert_boyle",
+      "label": "Robert Boyle",
+      "type": "person",
+      "description": "Air-pump work and pressure/volume/temperature observations."
+    },
+    {
+      "id": "robert_hooke",
+      "label": "Robert Hooke",
+      "type": "person",
+      "description": "Collaborated with Boyle on the air pump."
+    },
+    {
+      "id": "denis_papin",
+      "label": "Denis Papin",
+      "type": "person",
+      "description": "Steam digester and piston-cylinder concept."
+    },
+    {
+      "id": "thomas_savery",
+      "label": "Thomas Savery",
+      "type": "person",
+      "description": "Built early steam engine in 1697."
+    },
+    {
+      "id": "thomas_newcomen",
+      "label": "Thomas Newcomen",
+      "type": "person",
+      "description": "Built early steam engine in 1712."
+    },
+    {
+      "id": "joseph_black",
+      "label": "Joseph Black",
+      "type": "person",
+      "description": "Developed heat capacity and latent heat concepts."
+    },
+    {
+      "id": "james_watt",
+      "label": "James Watt",
+      "type": "person",
+      "description": "External condenser and steam-engine efficiency improvement."
+    },
+    {
+      "id": "sadi_carnot",
+      "label": "Sadi Carnot",
+      "type": "person",
+      "description": "1824 analysis of motive power of heat; father of thermodynamics."
+    },
+    {
+      "id": "william_thomson_kelvin",
+      "label": "William Thomson (Lord Kelvin)",
+      "type": "person",
+      "description": "1854 concise definition of thermodynamics; work on Carnot."
+    },
+    {
+      "id": "rudolf_clausius",
+      "label": "Rudolf Clausius",
+      "type": "person",
+      "description": "Second-law formulation and entropy."
+    },
+    {
+      "id": "william_rankine",
+      "label": "William Rankine",
+      "type": "person",
+      "description": "First thermodynamic textbook and law formulations."
+    },
+    {
+      "id": "james_clerk_maxwell",
+      "label": "James Clerk Maxwell",
+      "type": "person",
+      "description": "Foundation of statistical thermodynamics."
+    },
+    {
+      "id": "ludwig_boltzmann",
+      "label": "Ludwig Boltzmann",
+      "type": "person",
+      "description": "Foundation of statistical mechanics."
+    },
+    {
+      "id": "max_planck",
+      "label": "Max Planck",
+      "type": "person",
+      "description": "Foundation of statistical thermodynamics."
+    },
+    {
+      "id": "j_willard_gibbs",
+      "label": "Josiah Willard Gibbs",
+      "type": "person",
+      "description": "Equilibrium of heterogeneous substances; chemical thermodynamics."
+    },
+    {
+      "id": "pierre_duhem",
+      "label": "Pierre Duhem",
+      "type": "person",
+      "description": "Chemical thermodynamics."
+    },
+    {
+      "id": "gilbert_lewis",
+      "label": "Gilbert N. Lewis",
+      "type": "person",
+      "description": "Applied Gibbs methods to chemical processes."
+    },
+    {
+      "id": "merle_randall",
+      "label": "Merle Randall",
+      "type": "person",
+      "description": "Applied Gibbs methods to chemical processes."
+    },
+    {
+      "id": "e_a_guggenheim",
+      "label": "E. A. Guggenheim",
+      "type": "person",
+      "description": "Developed Gibbsian thermodynamics."
+    },
+    {
+      "id": "constantin_caratheodory",
+      "label": "Constantin Carathéodory",
+      "type": "person",
+      "description": "1909 axiomatic thermodynamics."
+    },
+    {
+      "id": "kerry_emanuel",
+      "label": "Kerry Emanuel",
+      "type": "person",
+      "description": "Atmospheric thermodynamics and tropical cyclone modeling."
+    },
+    {
+      "id": "carnot_1824",
+      "label": "Reflections on the Motive Power of Fire",
+      "type": "work",
+      "description": "Carnot, 1824."
+    },
+    {
+      "id": "clausius_1850",
+      "label": "On the Moving Force of Heat",
+      "type": "paper",
+      "description": "Clausius, 1850."
+    },
+    {
+      "id": "clausius_book",
+      "label": "The Mechanical Theory of Heat",
+      "type": "book",
+      "description": "Clausius; English edition/reference listed by source."
+    },
+    {
+      "id": "rankine_1859",
+      "label": "Thermodynamic textbook",
+      "type": "book",
+      "description": "Rankine, 1859; source identifies it as the first thermodynamic textbook."
+    },
+    {
+      "id": "gibbs_1873_76",
+      "label": "On the Equilibrium of Heterogeneous Substances",
+      "type": "paper_series",
+      "description": "Gibbs, 1873–76."
+    },
+    {
+      "id": "duhem_1886",
+      "label": "Le Potential Thermodynamique et ses Applications",
+      "type": "book",
+      "description": "Duhem, 1886."
+    },
+    {
+      "id": "lewis_randall_1923",
+      "label": "Thermodynamics and the Free Energy of Chemical Substances",
+      "type": "book",
+      "description": "Lewis and Randall, 1923."
+    },
+    {
+      "id": "guggenheim_1933",
+      "label": "Modern Thermodynamics by the Methods of J.W. Gibbs",
+      "type": "book",
+      "description": "Guggenheim, 1933."
+    },
+    {
+      "id": "caratheodory_1909",
+      "label": "Investigations on the Foundations of Thermodynamics",
+      "type": "paper",
+      "description": "Carathéodory, 1909."
+    },
+    {
+      "id": "vacuum_pump",
+      "label": "Vacuum Pump",
+      "type": "concept"
+    },
+    {
+      "id": "air_pump",
+      "label": "Air Pump",
+      "type": "concept"
+    },
+    {
+      "id": "pressure_volume_temperature_relation",
+      "label": "Pressure Volume Temperature Relation",
+      "type": "concept"
+    },
+    {
+      "id": "steam_digester",
+      "label": "Steam Digester",
+      "type": "concept"
+    },
+    {
+      "id": "piston_cylinder_engine",
+      "label": "Piston Cylinder Engine",
+      "type": "concept"
+    },
+    {
+      "id": "steam_engine",
+      "label": "Steam Engine",
+      "type": "concept"
+    },
+    {
+      "id": "external_condenser",
+      "label": "External Condenser",
+      "type": "concept"
+    },
+    {
+      "id": "steam_engine_efficiency",
+      "label": "Steam Engine Efficiency",
+      "type": "concept"
+    },
+    {
+      "id": "carnot_cycle",
+      "label": "Carnot Cycle",
+      "type": "concept"
+    },
+    {
+      "id": "adiabatic_accessibility",
+      "label": "Adiabatic Accessibility",
+      "type": "concept"
+    },
+    {
+      "id": "pfaffian_system",
+      "label": "Pfaffian System",
+      "type": "concept"
+    },
+    {
+      "id": "heat_engine",
+      "label": "Heat engine",
+      "type": "machine",
+      "description": "Device whose thermodynamic behavior is constrained by the laws of thermodynamics."
+    },
+    {
+      "id": "hot_reservoir",
+      "label": "Hot reservoir",
+      "type": "reservoir",
+      "description": "High-temperature thermal reservoir."
+    },
+    {
+      "id": "cold_reservoir",
+      "label": "Cold reservoir",
+      "type": "reservoir",
+      "description": "Low-temperature thermal reservoir."
+    },
+    {
+      "id": "engine_efficiency",
+      "label": "Thermal efficiency",
+      "type": "performance_metric",
+      "description": "Measure of heat-engine performance."
+    },
+    {
+      "id": "heat_engine_cycle",
+      "label": "Heat-engine cycle",
+      "type": "cycle"
+    },
+    {
+      "id": "microstate",
+      "label": "Microstate",
+      "type": "statistical_concept",
+      "description": "Microscopic configuration underlying a macroscopic state."
+    },
+    {
+      "id": "macrostate",
+      "label": "Macrostate",
+      "type": "statistical_concept",
+      "description": "Macroscopic thermodynamic description compatible with many microstates."
+    },
+    {
+      "id": "ensemble",
+      "label": "Statistical ensemble",
+      "type": "statistical_concept",
+      "description": "Statistical description connecting microscopic states to macroscopic behavior."
+    },
+    {
+      "id": "molecular_motion",
+      "label": "Molecular motion",
+      "type": "microscopic_process",
+      "description": "Microscopic particle motion."
+    },
+    {
+      "id": "atomic_molecular_theory",
+      "label": "Atomic and molecular theory",
+      "type": "microscopic_framework",
+      "description": "Microscopic framework underlying statistical thermodynamics."
+    },
+    {
+      "id": "quantum_states",
+      "label": "Quantum-mechanical states",
+      "type": "microscopic_framework",
+      "description": "Microscopic quantum states contributing to statistical descriptions."
+    },
+    {
+      "id": "molecular_statistics",
+      "label": "Molecular statistics",
+      "type": "statistical_method",
+      "description": "Statistical treatment of molecular behavior."
+    },
+    {
+      "id": "chemical_reaction",
+      "label": "Chemical reaction",
+      "type": "chemical_process"
+    },
+    {
+      "id": "physical_change_of_state",
+      "label": "Physical change of state",
+      "type": "phase_process"
+    },
+    {
+      "id": "spontaneity",
+      "label": "Thermodynamic spontaneity",
+      "type": "criterion"
+    },
+    {
+      "id": "heterogeneous_equilibrium",
+      "label": "Heterogeneous equilibrium",
+      "type": "equilibrium_type"
+    },
+    {
+      "id": "phase",
+      "label": "Phase",
+      "type": "state_category"
+    },
+    {
+      "id": "solid_phase",
+      "label": "Solid phase",
+      "type": "phase"
+    },
+    {
+      "id": "liquid_phase",
+      "label": "Liquid phase",
+      "type": "phase"
+    },
+    {
+      "id": "gas_phase",
+      "label": "Gas phase",
+      "type": "phase"
+    },
+    {
+      "id": "plasma_phase",
+      "label": "Plasma",
+      "type": "phase"
+    },
+    {
+      "id": "phase_transition",
+      "label": "Phase transition",
+      "type": "process"
+    },
+    {
+      "id": "melting",
+      "label": "Melting",
+      "type": "phase_transition"
+    },
+    {
+      "id": "freezing",
+      "label": "Freezing",
+      "type": "phase_transition"
+    },
+    {
+      "id": "vaporization",
+      "label": "Vaporization",
+      "type": "phase_transition"
+    },
+    {
+      "id": "condensation",
+      "label": "Condensation",
+      "type": "phase_transition"
+    },
+    {
+      "id": "sublimation",
+      "label": "Sublimation",
+      "type": "phase_transition"
+    },
+    {
+      "id": "deposition",
+      "label": "Deposition",
+      "type": "phase_transition"
+    },
+    {
+      "id": "transport_phenomena",
+      "label": "Transport phenomena",
+      "type": "research_area"
+    },
+    {
+      "id": "heat_conduction",
+      "label": "Heat conduction",
+      "type": "transport_process"
+    },
+    {
+      "id": "diffusion",
+      "label": "Diffusion",
+      "type": "transport_process"
+    },
+    {
+      "id": "viscous_flow",
+      "label": "Viscous flow",
+      "type": "transport_process"
+    },
+    {
+      "id": "mass_transport",
+      "label": "Mass transport",
+      "type": "transport_process"
+    },
+    {
+      "id": "energy_flux",
+      "label": "Energy flux",
+      "type": "flux"
+    },
+    {
+      "id": "heat_flux",
+      "label": "Heat flux",
+      "type": "flux"
+    },
+    {
+      "id": "matter_flux",
+      "label": "Matter flux",
+      "type": "flux"
+    },
+    {
+      "id": "temperature_gradient",
+      "label": "Temperature gradient",
+      "type": "driving_gradient"
+    },
+    {
+      "id": "chemical_potential_gradient",
+      "label": "Chemical-potential gradient",
+      "type": "driving_gradient"
+    },
+    {
+      "id": "pressure_gradient",
+      "label": "Pressure gradient",
+      "type": "driving_gradient"
+    },
+    {
+      "id": "atmospheric_thermodynamics",
+      "label": "Atmospheric thermodynamics",
+      "type": "applied_field"
+    },
+    {
+      "id": "biological_thermodynamics",
+      "label": "Biological thermodynamics",
+      "type": "applied_field"
+    },
+    {
+      "id": "black_hole_thermodynamics",
+      "label": "Black hole thermodynamics",
+      "type": "applied_field"
+    },
+    {
+      "id": "industrial_ecology",
+      "label": "Industrial ecology",
+      "type": "applied_field"
+    },
+    {
+      "id": "maximum_entropy_thermodynamics",
+      "label": "Maximum entropy thermodynamics",
+      "type": "applied_field"
+    },
+    {
+      "id": "psychrometrics",
+      "label": "Psychrometrics",
+      "type": "applied_field"
+    },
+    {
+      "id": "quantum_thermodynamics",
+      "label": "Quantum thermodynamics",
+      "type": "applied_field"
+    },
+    {
+      "id": "thermoeconomics",
+      "label": "Thermoeconomics",
+      "type": "applied_field"
+    },
+    {
+      "id": "polymer_chemistry",
+      "label": "Polymer chemistry",
+      "type": "applied_field"
+    },
+    {
+      "id": "nonequilibrium_limit",
+      "label": "Limits of macroscopic non-equilibrium thermodynamics",
+      "type": "research_frontier",
+      "description": "Many natural systems remain beyond currently known macroscopic thermodynamic methods.",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "144-145"
+      }
+    },
+    {
+      "id": "ref_carnot",
+      "label": "Carnot, S. (1824). Reflections on the Motive Power of Fire.",
+      "type": "historical_reference"
+    },
+    {
+      "id": "ref_clausius",
+      "label": "Clausius, R. (1867). The Mechanical Theory of Heat.",
+      "type": "book_reference"
+    },
+    {
+      "id": "ref_clausius_1870",
+      "label": "Clausius, R. (1870). On a Mechanical Theorem Applicable to Heat.",
+      "type": "paper_reference"
+    },
+    {
+      "id": "ref_van_ness",
+      "label": "Van Ness, H.C. Understanding Thermodynamics.",
+      "type": "textbook"
+    },
+    {
+      "id": "ref_dugdale",
+      "label": "Dugdale, J.S. Entropy and its Physical Meaning.",
+      "type": "book_reference"
+    },
+    {
+      "id": "ref_smith_van_ness",
+      "label": "Smith, Van Ness & Abbott. Introduction to Chemical Engineering Thermodynamics.",
+      "type": "textbook"
+    },
+    {
+      "id": "ref_haynie",
+      "label": "Haynie. Biological Thermodynamics.",
+      "type": "book_reference"
+    },
+    {
+      "id": "ref_perrot",
+      "label": "Perrot. A to Z of Thermodynamics.",
+      "type": "reference_book"
+    },
+    {
+      "id": "ref_cengel",
+      "label": "Çengel & Boles. Thermodynamics – An Engineering Approach.",
+      "type": "textbook"
+    },
+    {
+      "id": "ref_cardwell",
+      "label": "Cardwell. From Watt to Clausius.",
+      "type": "history_book"
+    },
+    {
+      "id": "ref_gibbs",
+      "label": "Gibbs. Transactions of the Connecticut Academy of Arts and Sciences, Vol. III.",
+      "type": "primary_collection"
+    },
+    {
+      "id": "ref_gibbs_collected",
+      "label": "Gibbs. Scientific Papers, Volume One: Thermodynamics.",
+      "type": "primary_collection"
+    },
+    {
+      "id": "ref_duhem",
+      "label": "Duhem. Le Potential Thermodynamique et ses Applications.",
+      "type": "book_reference"
+    },
+    {
+      "id": "ref_lewis_randall",
+      "label": "Lewis & Randall. Thermodynamics and the Free Energy of Chemical Substances.",
+      "type": "book_reference"
+    },
+    {
+      "id": "ref_guggenheim",
+      "label": "Guggenheim. Modern Thermodynamics by the Methods of J.W. Gibbs.",
+      "type": "book_reference"
+    },
+    {
+      "id": "ref_caratheodory",
+      "label": "Carathéodory. Untersuchungen über die Grundlagen der Thermodynamik.",
+      "type": "primary_paper"
+    },
+    {
+      "id": "ref_frankel",
+      "label": "Frankel. The Geometry of Physics.",
+      "type": "book_reference"
+    },
+    {
+      "id": "ref_callen",
+      "label": "Callen. Thermodynamics and an Introduction to Thermostatistics.",
+      "type": "textbook"
+    },
+    {
+      "id": "ref_kroemer_kittel",
+      "label": "Kroemer & Kittel. Thermal Physics.",
+      "type": "textbook"
+    },
+    {
+      "id": "ref_shell",
+      "label": "Shell. Thermodynamics and Statistical Mechanics: An Integrated Approach.",
+      "type": "textbook"
+    },
+    {
+      "id": "ref_nitzke",
+      "label": "Nitzke, Stephan, Vrabec. Topology of thermodynamic potentials using physical models.",
+      "type": "paper_reference"
+    },
+    {
+      "id": "claim_definition",
+      "label": "Definition and scope",
+      "type": "source_claim",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "88-99"
+      }
+    },
+    {
+      "id": "claim_history",
+      "label": "History",
+      "type": "source_claim",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "90-116"
+      }
+    },
+    {
+      "id": "claim_classical",
+      "label": "Classical thermodynamics",
+      "type": "source_claim",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "132-133"
+      }
+    },
+    {
+      "id": "claim_statistical",
+      "label": "Statistical mechanics",
+      "type": "source_claim",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "135-136"
+      }
+    },
+    {
+      "id": "claim_chemical",
+      "label": "Chemical thermodynamics",
+      "type": "source_claim",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "138-139"
+      }
+    },
+    {
+      "id": "claim_equilibrium",
+      "label": "Equilibrium thermodynamics",
+      "type": "source_claim",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "141-143"
+      }
+    },
+    {
+      "id": "claim_noneq",
+      "label": "Non-equilibrium thermodynamics",
+      "type": "source_claim",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "144-145"
+      }
+    },
+    {
+      "id": "claim_zeroth",
+      "label": "Zeroth law",
+      "type": "source_claim",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "153-158"
+      }
+    },
+    {
+      "id": "claim_first",
+      "label": "First law",
+      "type": "source_claim",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "160-211"
+      }
+    },
+    {
+      "id": "claim_second",
+      "label": "Second law",
+      "type": "source_claim",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "213-218"
+      }
+    },
+    {
+      "id": "claim_third",
+      "label": "Third law",
+      "type": "source_claim",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "220-225"
+      }
+    },
+    {
+      "id": "claim_systems",
+      "label": "Systems",
+      "type": "source_claim",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "227-245"
+      }
+    },
+    {
+      "id": "claim_states",
+      "label": "States and processes",
+      "type": "source_claim",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "249-262"
+      }
+    },
+    {
+      "id": "claim_instrumentation",
+      "label": "Instrumentation",
+      "type": "source_claim",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "263-266"
+      }
+    },
+    {
+      "id": "claim_conjugates",
+      "label": "Conjugate variables",
+      "type": "source_claim",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "268-276"
+      }
+    },
+    {
+      "id": "claim_potentials",
+      "label": "Thermodynamic potentials",
+      "type": "source_claim",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "277-414"
+      }
+    },
+    {
+      "id": "claim_axiomatic",
+      "label": "Axiomatic thermodynamics",
+      "type": "source_claim",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "416-419"
+      }
+    },
+    {
+      "id": "claim_applied",
+      "label": "Applied fields",
+      "type": "source_claim",
+      "source": {
+        "file": "Pasted text(20261007-040710).txt",
+        "lines": "421-435"
+      }
+    },
+    {
+      "id": "axiom_state_path",
+      "label": "State/path distinction",
+      "type": "semantic_axiom",
+      "description": "State functions depend only on state; heat/work are process transfers."
+    },
+    {
+      "id": "axiom_equilibrium",
+      "label": "Equilibrium distinction",
+      "type": "semantic_axiom",
+      "description": "Equilibrium has no macroscopic unbalanced driving forces/flows in the source's formulation."
+    },
+    {
+      "id": "axiom_energy",
+      "label": "Energy conservation",
+      "type": "semantic_axiom",
+      "description": "First law constrains transformations through conservation of energy."
+    },
+    {
+      "id": "axiom_direction",
+      "label": "Thermodynamic directionality",
+      "type": "semantic_axiom",
+      "description": "Second law constrains spontaneous direction and introduces entropy."
+    },
+    {
+      "id": "axiom_absolute",
+      "label": "Absolute entropy reference",
+      "type": "semantic_axiom",
+      "description": "Third law establishes an absolute entropy reference and absolute-zero unattainability."
+    },
+    {
+      "id": "axiom_potentials",
+      "label": "Constraint-dependent potentials",
+      "type": "semantic_axiom",
+      "description": "Choice of potential follows fixed natural variables/constraints."
+    },
+    {
+      "id": "axiom_micro_macro",
+      "label": "Micro-to-macro bridge",
+      "type": "semantic_axiom",
+      "description": "Statistical mechanics relates microscopic states to macroscopic thermodynamic properties."
+    }
+  ],
+  "edges": [
+    {
+      "source": "thermodynamics",
+      "relationship": "subfield_of",
+      "target": "physics"
+    },
+    {
+      "source": "thermal_physics",
+      "relationship": "includes",
+      "target": "thermodynamics"
+    },
+    {
+      "source": "thermal_physics",
+      "relationship": "includes",
+      "target": "statistical_mechanics"
+    },
+    {
+      "source": "thermodynamics",
+      "relationship": "has_branch",
+      "target": "classical_thermodynamics"
+    },
+    {
+      "source": "thermodynamics",
+      "relationship": "has_branch",
+      "target": "statistical_mechanics"
+    },
+    {
+      "source": "thermodynamics",
+      "relationship": "has_branch",
+      "target": "chemical_thermodynamics"
+    },
+    {
+      "source": "thermodynamics",
+      "relationship": "has_branch",
+      "target": "equilibrium_thermodynamics"
+    },
+    {
+      "source": "thermodynamics",
+      "relationship": "has_branch",
+      "target": "nonequilibrium_thermodynamics"
+    },
+    {
+      "source": "thermodynamics",
+      "relationship": "has_branch",
+      "target": "axiomatic_thermodynamics"
+    },
+    {
+      "source": "system",
+      "relationship": "defined_against",
+      "target": "surroundings"
+    },
+    {
+      "source": "system",
+      "relationship": "separated_from",
+      "target": "surroundings"
+    },
+    {
+      "source": "boundary",
+      "relationship": "separates",
+      "target": "system"
+    },
+    {
+      "source": "wall",
+      "relationship": "part_of",
+      "target": "boundary"
+    },
+    {
+      "source": "system",
+      "relationship": "has",
+      "target": "state"
+    },
+    {
+      "source": "state",
+      "relationship": "described_by",
+      "target": "state_variable"
+    },
+    {
+      "source": "process",
+      "relationship": "connects",
+      "target": "state"
+    },
+    {
+      "source": "process",
+      "relationship": "has",
+      "target": "process_quantity"
+    },
+    {
+      "source": "equilibrium",
+      "relationship": "is_a",
+      "target": "state"
+    },
+    {
+      "source": "equilibrium",
+      "relationship": "requires_absence_of",
+      "target": "driving_force"
+    },
+    {
+      "source": "state_variable",
+      "relationship": "classified_as",
+      "target": "intensive_property"
+    },
+    {
+      "source": "state_variable",
+      "relationship": "classified_as",
+      "target": "extensive_property"
+    },
+    {
+      "source": "state",
+      "relationship": "constrained_by",
+      "target": "equation_of_state"
+    },
+    {
+      "source": "system",
+      "relationship": "has",
+      "target": "constraint"
+    },
+    {
+      "source": "constraint",
+      "relationship": "can_create",
+      "target": "driving_force"
+    },
+    {
+      "source": "driving_force",
+      "relationship": "can_produce",
+      "target": "flow"
+    },
+    {
+      "source": "equilibrium",
+      "relationship": "has_type",
+      "target": "thermal_equilibrium"
+    },
+    {
+      "source": "equilibrium",
+      "relationship": "has_type",
+      "target": "mechanical_equilibrium"
+    },
+    {
+      "source": "equilibrium",
+      "relationship": "has_type",
+      "target": "chemical_equilibrium"
+    },
+    {
+      "source": "equilibrium",
+      "relationship": "has_type",
+      "target": "phase_equilibrium"
+    },
+    {
+      "source": "open_system",
+      "relationship": "permits",
+      "target": "mass_transfer"
+    },
+    {
+      "source": "open_system",
+      "relationship": "permits",
+      "target": "work_transfer"
+    },
+    {
+      "source": "open_system",
+      "relationship": "permits",
+      "target": "heat_transfer"
+    },
+    {
+      "source": "closed_system",
+      "relationship": "forbids",
+      "target": "mass_transfer"
+    },
+    {
+      "source": "closed_system",
+      "relationship": "permits",
+      "target": "work_transfer"
+    },
+    {
+      "source": "closed_system",
+      "relationship": "permits",
+      "target": "heat_transfer"
+    },
+    {
+      "source": "thermally_isolated_system",
+      "relationship": "forbids",
+      "target": "mass_transfer"
+    },
+    {
+      "source": "thermally_isolated_system",
+      "relationship": "permits",
+      "target": "work_transfer"
+    },
+    {
+      "source": "thermally_isolated_system",
+      "relationship": "forbids",
+      "target": "heat_transfer"
+    },
+    {
+      "source": "mechanically_isolated_system",
+      "relationship": "forbids",
+      "target": "mass_transfer"
+    },
+    {
+      "source": "mechanically_isolated_system",
+      "relationship": "forbids",
+      "target": "work_transfer"
+    },
+    {
+      "source": "mechanically_isolated_system",
+      "relationship": "permits",
+      "target": "heat_transfer"
+    },
+    {
+      "source": "isolated_system",
+      "relationship": "forbids",
+      "target": "mass_transfer"
+    },
+    {
+      "source": "isolated_system",
+      "relationship": "forbids",
+      "target": "work_transfer"
+    },
+    {
+      "source": "isolated_system",
+      "relationship": "forbids",
+      "target": "heat_transfer"
+    },
+    {
+      "source": "temperature",
+      "relationship": "describes",
+      "target": "state"
+    },
+    {
+      "source": "pressure",
+      "relationship": "describes",
+      "target": "state"
+    },
+    {
+      "source": "volume",
+      "relationship": "describes",
+      "target": "state"
+    },
+    {
+      "source": "internal_energy",
+      "relationship": "describes",
+      "target": "state"
+    },
+    {
+      "source": "entropy",
+      "relationship": "describes",
+      "target": "state"
+    },
+    {
+      "source": "enthalpy",
+      "relationship": "describes",
+      "target": "state"
+    },
+    {
+      "source": "helmholtz_free_energy",
+      "relationship": "describes",
+      "target": "state"
+    },
+    {
+      "source": "gibbs_free_energy",
+      "relationship": "describes",
+      "target": "state"
+    },
+    {
+      "source": "grand_potential",
+      "relationship": "describes",
+      "target": "state"
+    },
+    {
+      "source": "chemical_potential",
+      "relationship": "describes",
+      "target": "state"
+    },
+    {
+      "source": "particle_number",
+      "relationship": "describes",
+      "target": "state"
+    },
+    {
+      "source": "heat",
+      "relationship": "changes",
+      "target": "internal_energy"
+    },
+    {
+      "source": "heat",
+      "relationship": "is_not",
+      "target": "state_function"
+    },
+    {
+      "source": "work",
+      "relationship": "changes",
+      "target": "internal_energy"
+    },
+    {
+      "source": "work",
+      "relationship": "is_not",
+      "target": "state_function"
+    },
+    {
+      "source": "internal_energy",
+      "relationship": "is_a",
+      "target": "state_function"
+    },
+    {
+      "source": "entropy",
+      "relationship": "is_a",
+      "target": "state_function"
+    },
+    {
+      "source": "temperature",
+      "relationship": "supports",
+      "target": "thermal_equilibrium"
+    },
+    {
+      "source": "heat_capacity",
+      "relationship": "historically_developed_by",
+      "target": "joseph_black"
+    },
+    {
+      "source": "latent_heat",
+      "relationship": "historically_developed_by",
+      "target": "joseph_black"
+    },
+    {
+      "source": "zeroth_law",
+      "relationship": "defines",
+      "target": "thermal_equilibrium"
+    },
+    {
+      "source": "zeroth_law",
+      "relationship": "implies",
+      "target": "thermal_equilibrium_relation"
+    },
+    {
+      "source": "zeroth_law",
+      "relationship": "justifies",
+      "target": "thermometer"
+    },
+    {
+      "source": "temperature",
+      "relationship": "measured_by",
+      "target": "thermometer"
+    },
+    {
+      "source": "thermal_equilibrium",
+      "relationship": "defines",
+      "target": "temperature"
+    },
+    {
+      "source": "first_law",
+      "relationship": "expressed_as",
+      "target": "energy_conservation"
+    },
+    {
+      "source": "first_law",
+      "relationship": "equation",
+      "target": "first_law_equation"
+    },
+    {
+      "source": "first_law_equation",
+      "relationship": "defines",
+      "target": "first_law"
+    },
+    {
+      "source": "first_law",
+      "relationship": "uses",
+      "target": "internal_energy"
+    },
+    {
+      "source": "first_law",
+      "relationship": "uses",
+      "target": "heat"
+    },
+    {
+      "source": "first_law",
+      "relationship": "uses",
+      "target": "work"
+    },
+    {
+      "source": "first_law",
+      "relationship": "rules_out",
+      "target": "perpetual_motion_first_kind"
+    },
+    {
+      "source": "first_law",
+      "relationship": "extended_to",
+      "target": "matter_transfer_energy_balance"
+    },
+    {
+      "source": "second_law",
+      "relationship": "has_formulation",
+      "target": "cold_to_hot_spontaneous"
+    },
+    {
+      "source": "second_law",
+      "relationship": "defines",
+      "target": "entropy"
+    },
+    {
+      "source": "second_law",
+      "relationship": "implies",
+      "target": "irreversibility"
+    },
+    {
+      "source": "second_law",
+      "relationship": "implies",
+      "target": "entropy_increase"
+    },
+    {
+      "source": "entropy_increase",
+      "relationship": "tends_toward",
+      "target": "equilibrium_entropy_maximum"
+    },
+    {
+      "source": "second_law",
+      "relationship": "does_not_generally_determine",
+      "target": "rate_of_equilibration"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relationship": "interprets",
+      "target": "second_law"
+    },
+    {
+      "source": "third_law",
+      "relationship": "defines_reference_for",
+      "target": "absolute_entropy"
+    },
+    {
+      "source": "third_law",
+      "relationship": "concerns",
+      "target": "absolute_zero"
+    },
+    {
+      "source": "third_law",
+      "relationship": "implies",
+      "target": "unattainability_of_absolute_zero"
+    },
+    {
+      "source": "entropy",
+      "relationship": "has_reference",
+      "target": "absolute_entropy"
+    },
+    {
+      "source": "adiabatic_process",
+      "relationship": "is_a",
+      "target": "process"
+    },
+    {
+      "source": "isenthalpic_process",
+      "relationship": "is_a",
+      "target": "process"
+    },
+    {
+      "source": "isentropic_process",
+      "relationship": "is_a",
+      "target": "process"
+    },
+    {
+      "source": "isobaric_process",
+      "relationship": "is_a",
+      "target": "process"
+    },
+    {
+      "source": "isochoric_process",
+      "relationship": "is_a",
+      "target": "process"
+    },
+    {
+      "source": "isothermal_process",
+      "relationship": "is_a",
+      "target": "process"
+    },
+    {
+      "source": "steady_state_process",
+      "relationship": "is_a",
+      "target": "process"
+    },
+    {
+      "source": "adiabatic_process",
+      "relationship": "constraint",
+      "target": "heat_transfer"
+    },
+    {
+      "source": "isenthalpic_process",
+      "relationship": "constraint",
+      "target": "enthalpy"
+    },
+    {
+      "source": "isentropic_process",
+      "relationship": "constraint",
+      "target": "entropy"
+    },
+    {
+      "source": "isobaric_process",
+      "relationship": "constraint",
+      "target": "pressure"
+    },
+    {
+      "source": "isochoric_process",
+      "relationship": "constraint",
+      "target": "volume"
+    },
+    {
+      "source": "isothermal_process",
+      "relationship": "constraint",
+      "target": "temperature"
+    },
+    {
+      "source": "isentropic_process",
+      "relationship": "requires",
+      "target": "adiabatic_process"
+    },
+    {
+      "source": "isentropic_process",
+      "relationship": "requires",
+      "target": "reversibility"
+    },
+    {
+      "source": "reversible_process",
+      "relationship": "is_idealization_of",
+      "target": "process"
+    },
+    {
+      "source": "quasistatic_process",
+      "relationship": "approximates",
+      "target": "equilibrium"
+    },
+    {
+      "source": "pair_pressure_volume",
+      "relationship": "instance_of",
+      "target": "conjugate_variable_pair"
+    },
+    {
+      "source": "pressure",
+      "relationship": "thermodynamic_conjugate_to",
+      "target": "volume",
+      "domain": "mechanical"
+    },
+    {
+      "source": "volume",
+      "relationship": "thermodynamic_conjugate_to",
+      "target": "pressure",
+      "domain": "mechanical"
+    },
+    {
+      "source": "pair_temperature_entropy",
+      "relationship": "instance_of",
+      "target": "conjugate_variable_pair"
+    },
+    {
+      "source": "temperature",
+      "relationship": "thermodynamic_conjugate_to",
+      "target": "entropy",
+      "domain": "thermal"
+    },
+    {
+      "source": "entropy",
+      "relationship": "thermodynamic_conjugate_to",
+      "target": "temperature",
+      "domain": "thermal"
+    },
+    {
+      "source": "pair_chemical_potential_particle_number",
+      "relationship": "instance_of",
+      "target": "conjugate_variable_pair"
+    },
+    {
+      "source": "chemical_potential",
+      "relationship": "thermodynamic_conjugate_to",
+      "target": "particle_number",
+      "domain": "material"
+    },
+    {
+      "source": "particle_number",
+      "relationship": "thermodynamic_conjugate_to",
+      "target": "chemical_potential",
+      "domain": "material"
+    },
+    {
+      "source": "internal_energy",
+      "relationship": "has_natural_variables",
+      "target": "internal_energy_natural_variables"
+    },
+    {
+      "source": "helmholtz_free_energy",
+      "relationship": "has_natural_variables",
+      "target": "helmholtz_natural_variables"
+    },
+    {
+      "source": "enthalpy",
+      "relationship": "has_natural_variables",
+      "target": "enthalpy_natural_variables"
+    },
+    {
+      "source": "gibbs_free_energy",
+      "relationship": "has_natural_variables",
+      "target": "gibbs_natural_variables"
+    },
+    {
+      "source": "grand_potential",
+      "relationship": "has_natural_variables",
+      "target": "grand_potential_natural_variables"
+    },
+    {
+      "source": "fundamental_thermodynamic_relation",
+      "relationship": "defines_differential",
+      "target": "internal_energy"
+    },
+    {
+      "source": "helmholtz_free_energy",
+      "relationship": "obtainable_via",
+      "target": "legendre_transform"
+    },
+    {
+      "source": "enthalpy",
+      "relationship": "obtainable_via",
+      "target": "legendre_transform"
+    },
+    {
+      "source": "gibbs_free_energy",
+      "relationship": "obtainable_via",
+      "target": "legendre_transform"
+    },
+    {
+      "source": "grand_potential",
+      "relationship": "obtainable_via",
+      "target": "legendre_transform"
+    },
+    {
+      "source": "eq_internal_energy",
+      "relationship": "defines",
+      "target": "internal_energy"
+    },
+    {
+      "source": "eq_helmholtz",
+      "relationship": "defines",
+      "target": "helmholtz_free_energy"
+    },
+    {
+      "source": "eq_enthalpy",
+      "relationship": "defines",
+      "target": "enthalpy"
+    },
+    {
+      "source": "eq_gibbs",
+      "relationship": "defines",
+      "target": "gibbs_free_energy"
+    },
+    {
+      "source": "eq_grand",
+      "relationship": "defines",
+      "target": "grand_potential"
+    },
+    {
+      "source": "ideal_gas_thermometer",
+      "relationship": "uses",
+      "target": "ideal_gas_law"
+    },
+    {
+      "source": "ideal_gas_law",
+      "relationship": "relates",
+      "target": "pressure"
+    },
+    {
+      "source": "ideal_gas_law",
+      "relationship": "relates",
+      "target": "volume"
+    },
+    {
+      "source": "ideal_gas_law",
+      "relationship": "relates",
+      "target": "temperature"
+    },
+    {
+      "source": "ideal_gas_law",
+      "relationship": "relates",
+      "target": "particle_number"
+    },
+    {
+      "source": "barometer",
+      "relationship": "measures",
+      "target": "pressure"
+    },
+    {
+      "source": "calorimeter",
+      "relationship": "measures",
+      "target": "internal_energy"
+    },
+    {
+      "source": "pressure_reservoir",
+      "relationship": "imposes",
+      "target": "pressure"
+    },
+    {
+      "source": "temperature_reservoir",
+      "relationship": "imposes",
+      "target": "temperature"
+    },
+    {
+      "source": "earth_atmosphere_pressure_reservoir",
+      "relationship": "instance_of",
+      "target": "pressure_reservoir"
+    },
+    {
+      "source": "ocean_temperature_reservoir",
+      "relationship": "instance_of",
+      "target": "temperature_reservoir"
+    },
+    {
+      "source": "otto_von_guericke",
+      "relationship": "built",
+      "target": "vacuum_pump"
+    },
+    {
+      "source": "robert_boyle",
+      "relationship": "built",
+      "target": "air_pump"
+    },
+    {
+      "source": "robert_hooke",
+      "relationship": "collaborated_with",
+      "target": "robert_boyle"
+    },
+    {
+      "source": "robert_boyle",
+      "relationship": "studied",
+      "target": "pressure_volume_temperature_relation"
+    },
+    {
+      "source": "denis_papin",
+      "relationship": "built",
+      "target": "steam_digester"
+    },
+    {
+      "source": "denis_papin",
+      "relationship": "conceived",
+      "target": "piston_cylinder_engine"
+    },
+    {
+      "source": "thomas_savery",
+      "relationship": "built",
+      "target": "steam_engine"
+    },
+    {
+      "source": "thomas_newcomen",
+      "relationship": "built",
+      "target": "steam_engine"
+    },
+    {
+      "source": "joseph_black",
+      "relationship": "developed",
+      "target": "heat_capacity"
+    },
+    {
+      "source": "joseph_black",
+      "relationship": "developed",
+      "target": "latent_heat"
+    },
+    {
+      "source": "james_watt",
+      "relationship": "conceived",
+      "target": "external_condenser"
+    },
+    {
+      "source": "james_watt",
+      "relationship": "improved",
+      "target": "steam_engine_efficiency"
+    },
+    {
+      "source": "sadi_carnot",
+      "relationship": "authored",
+      "target": "carnot_1824"
+    },
+    {
+      "source": "carnot_1824",
+      "relationship": "developed",
+      "target": "carnot_cycle"
+    },
+    {
+      "source": "rudolf_clausius",
+      "relationship": "authored",
+      "target": "clausius_1850"
+    },
+    {
+      "source": "rudolf_clausius",
+      "relationship": "introduced",
+      "target": "entropy"
+    },
+    {
+      "source": "rudolf_clausius",
+      "relationship": "formulated",
+      "target": "second_law"
+    },
+    {
+      "source": "william_thomson_kelvin",
+      "relationship": "defined",
+      "target": "thermodynamics"
+    },
+    {
+      "source": "william_rankine",
+      "relationship": "authored",
+      "target": "rankine_1859"
+    },
+    {
+      "source": "j_willard_gibbs",
+      "relationship": "authored",
+      "target": "gibbs_1873_76"
+    },
+    {
+      "source": "gibbs_1873_76",
+      "relationship": "launched",
+      "target": "chemical_thermodynamics"
+    },
+    {
+      "source": "pierre_duhem",
+      "relationship": "authored",
+      "target": "duhem_1886"
+    },
+    {
+      "source": "gilbert_lewis",
+      "relationship": "coauthored",
+      "target": "lewis_randall_1923"
+    },
+    {
+      "source": "merle_randall",
+      "relationship": "coauthored",
+      "target": "lewis_randall_1923"
+    },
+    {
+      "source": "e_a_guggenheim",
+      "relationship": "authored",
+      "target": "guggenheim_1933"
+    },
+    {
+      "source": "constantin_caratheodory",
+      "relationship": "authored",
+      "target": "caratheodory_1909"
+    },
+    {
+      "source": "caratheodory_1909",
+      "relationship": "uses",
+      "target": "adiabatic_accessibility"
+    },
+    {
+      "source": "caratheodory_1909",
+      "relationship": "uses",
+      "target": "pfaffian_system"
+    },
+    {
+      "source": "james_clerk_maxwell",
+      "relationship": "contributed_to",
+      "target": "statistical_mechanics"
+    },
+    {
+      "source": "ludwig_boltzmann",
+      "relationship": "contributed_to",
+      "target": "statistical_mechanics"
+    },
+    {
+      "source": "max_planck",
+      "relationship": "contributed_to",
+      "target": "statistical_mechanics"
+    },
+    {
+      "source": "otto_von_guericke",
+      "relationship": "built",
+      "target": "vacuum_pump"
+    },
+    {
+      "source": "robert_boyle",
+      "relationship": "built",
+      "target": "air_pump"
+    },
+    {
+      "source": "robert_hooke",
+      "relationship": "collaborated_with",
+      "target": "robert_boyle"
+    },
+    {
+      "source": "robert_boyle",
+      "relationship": "studied",
+      "target": "pressure_volume_temperature_relation"
+    },
+    {
+      "source": "denis_papin",
+      "relationship": "built",
+      "target": "steam_digester"
+    },
+    {
+      "source": "denis_papin",
+      "relationship": "conceived",
+      "target": "piston_cylinder_engine"
+    },
+    {
+      "source": "thomas_savery",
+      "relationship": "built",
+      "target": "steam_engine"
+    },
+    {
+      "source": "thomas_newcomen",
+      "relationship": "built",
+      "target": "steam_engine"
+    },
+    {
+      "source": "joseph_black",
+      "relationship": "developed",
+      "target": "heat_capacity"
+    },
+    {
+      "source": "joseph_black",
+      "relationship": "developed",
+      "target": "latent_heat"
+    },
+    {
+      "source": "james_watt",
+      "relationship": "conceived",
+      "target": "external_condenser"
+    },
+    {
+      "source": "james_watt",
+      "relationship": "improved",
+      "target": "steam_engine_efficiency"
+    },
+    {
+      "source": "sadi_carnot",
+      "relationship": "authored",
+      "target": "carnot_1824"
+    },
+    {
+      "source": "carnot_1824",
+      "relationship": "developed",
+      "target": "carnot_cycle"
+    },
+    {
+      "source": "rudolf_clausius",
+      "relationship": "authored",
+      "target": "clausius_1850"
+    },
+    {
+      "source": "rudolf_clausius",
+      "relationship": "introduced",
+      "target": "entropy"
+    },
+    {
+      "source": "rudolf_clausius",
+      "relationship": "formulated",
+      "target": "second_law"
+    },
+    {
+      "source": "william_thomson_kelvin",
+      "relationship": "defined",
+      "target": "thermodynamics"
+    },
+    {
+      "source": "william_rankine",
+      "relationship": "authored",
+      "target": "rankine_1859"
+    },
+    {
+      "source": "j_willard_gibbs",
+      "relationship": "authored",
+      "target": "gibbs_1873_76"
+    },
+    {
+      "source": "gibbs_1873_76",
+      "relationship": "launched",
+      "target": "chemical_thermodynamics"
+    },
+    {
+      "source": "pierre_duhem",
+      "relationship": "authored",
+      "target": "duhem_1886"
+    },
+    {
+      "source": "gilbert_lewis",
+      "relationship": "coauthored",
+      "target": "lewis_randall_1923"
+    },
+    {
+      "source": "merle_randall",
+      "relationship": "coauthored",
+      "target": "lewis_randall_1923"
+    },
+    {
+      "source": "e_a_guggenheim",
+      "relationship": "authored",
+      "target": "guggenheim_1933"
+    },
+    {
+      "source": "constantin_caratheodory",
+      "relationship": "authored",
+      "target": "caratheodory_1909"
+    },
+    {
+      "source": "caratheodory_1909",
+      "relationship": "uses",
+      "target": "adiabatic_accessibility"
+    },
+    {
+      "source": "caratheodory_1909",
+      "relationship": "uses",
+      "target": "pfaffian_system"
+    },
+    {
+      "source": "james_clerk_maxwell",
+      "relationship": "contributed_to",
+      "target": "statistical_mechanics"
+    },
+    {
+      "source": "ludwig_boltzmann",
+      "relationship": "contributed_to",
+      "target": "statistical_mechanics"
+    },
+    {
+      "source": "max_planck",
+      "relationship": "contributed_to",
+      "target": "statistical_mechanics"
+    },
+    {
+      "source": "carnot_cycle",
+      "relationship": "is_a",
+      "target": "heat_engine_cycle"
+    },
+    {
+      "source": "heat_engine_cycle",
+      "relationship": "uses",
+      "target": "hot_reservoir"
+    },
+    {
+      "source": "heat_engine_cycle",
+      "relationship": "uses",
+      "target": "cold_reservoir"
+    },
+    {
+      "source": "heat_engine_cycle",
+      "relationship": "associated_with",
+      "target": "heat_engine"
+    },
+    {
+      "source": "heat_engine",
+      "relationship": "subject_to",
+      "target": "first_law"
+    },
+    {
+      "source": "heat_engine",
+      "relationship": "subject_to",
+      "target": "second_law"
+    },
+    {
+      "source": "carnot_cycle",
+      "relationship": "associated_with",
+      "target": "engine_efficiency"
+    },
+    {
+      "source": "steam_engine",
+      "relationship": "is_a",
+      "target": "heat_engine"
+    },
+    {
+      "source": "external_condenser",
+      "relationship": "improves",
+      "target": "engine_efficiency"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relationship": "relates",
+      "target": "microstate"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relationship": "relates",
+      "target": "macrostate"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relationship": "uses",
+      "target": "ensemble"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relationship": "uses",
+      "target": "molecular_motion"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relationship": "uses",
+      "target": "quantum_states"
+    },
+    {
+      "source": "macrostate",
+      "relationship": "compatible_with",
+      "target": "microstate"
+    },
+    {
+      "source": "atomic_molecular_theory",
+      "relationship": "supports",
+      "target": "statistical_mechanics"
+    },
+    {
+      "source": "quantum_states",
+      "relationship": "supports",
+      "target": "statistical_mechanics"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relationship": "explains",
+      "target": "classical_thermodynamics"
+    },
+    {
+      "source": "second_law",
+      "relationship": "statistical_interpretation",
+      "target": "molecular_statistics"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relationship": "studies",
+      "target": "chemical_reaction"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relationship": "studies",
+      "target": "physical_change_of_state"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relationship": "determines",
+      "target": "spontaneity"
+    },
+    {
+      "source": "gibbs_free_energy",
+      "relationship": "used_for",
+      "target": "spontaneity"
+    },
+    {
+      "source": "gibbs_1873_76",
+      "relationship": "analyzes",
+      "target": "heterogeneous_equilibrium"
+    },
+    {
+      "source": "phase_transition",
+      "relationship": "changes",
+      "target": "state"
+    },
+    {
+      "source": "phase_transition",
+      "relationship": "involves",
+      "target": "latent_heat"
+    },
+    {
+      "source": "nonequilibrium_thermodynamics",
+      "relationship": "studies",
+      "target": "transport_phenomena"
+    },
+    {
+      "source": "transport_phenomena",
+      "relationship": "includes",
+      "target": "heat_conduction"
+    },
+    {
+      "source": "transport_phenomena",
+      "relationship": "includes",
+      "target": "diffusion"
+    },
+    {
+      "source": "transport_phenomena",
+      "relationship": "includes",
+      "target": "viscous_flow"
+    },
+    {
+      "source": "transport_phenomena",
+      "relationship": "includes",
+      "target": "mass_transport"
+    },
+    {
+      "source": "temperature_gradient",
+      "relationship": "drives",
+      "target": "heat_flux"
+    },
+    {
+      "source": "chemical_potential_gradient",
+      "relationship": "drives",
+      "target": "matter_flux"
+    },
+    {
+      "source": "pressure_gradient",
+      "relationship": "drives",
+      "target": "viscous_flow"
+    },
+    {
+      "source": "thermodynamics",
+      "relationship": "applied_to",
+      "target": "atmospheric_thermodynamics"
+    },
+    {
+      "source": "thermodynamics",
+      "relationship": "applied_to",
+      "target": "biological_thermodynamics"
+    },
+    {
+      "source": "thermodynamics",
+      "relationship": "applied_to",
+      "target": "black_hole_thermodynamics"
+    },
+    {
+      "source": "thermodynamics",
+      "relationship": "applied_to",
+      "target": "industrial_ecology"
+    },
+    {
+      "source": "thermodynamics",
+      "relationship": "applied_to",
+      "target": "maximum_entropy_thermodynamics"
+    },
+    {
+      "source": "thermodynamics",
+      "relationship": "applied_to",
+      "target": "psychrometrics"
+    },
+    {
+      "source": "thermodynamics",
+      "relationship": "applied_to",
+      "target": "quantum_thermodynamics"
+    },
+    {
+      "source": "thermodynamics",
+      "relationship": "applied_to",
+      "target": "thermoeconomics"
+    },
+    {
+      "source": "thermodynamics",
+      "relationship": "applied_to",
+      "target": "polymer_chemistry"
+    },
+    {
+      "source": "nonequilibrium_thermodynamics",
+      "relationship": "has_limit",
+      "target": "nonequilibrium_limit"
+    },
+    {
+      "source": "ref_carnot",
+      "relationship": "supports_or_documents",
+      "target": "carnot_1824"
+    },
+    {
+      "source": "ref_carnot",
+      "relationship": "supports_or_documents",
+      "target": "sadi_carnot"
+    },
+    {
+      "source": "ref_carnot",
+      "relationship": "supports_or_documents",
+      "target": "carnot_cycle"
+    },
+    {
+      "source": "ref_clausius",
+      "relationship": "supports_or_documents",
+      "target": "clausius_1850"
+    },
+    {
+      "source": "ref_clausius",
+      "relationship": "supports_or_documents",
+      "target": "clausius_book"
+    },
+    {
+      "source": "ref_clausius",
+      "relationship": "supports_or_documents",
+      "target": "rudolf_clausius"
+    },
+    {
+      "source": "ref_clausius_1870",
+      "relationship": "supports_or_documents",
+      "target": "rudolf_clausius"
+    },
+    {
+      "source": "ref_dugdale",
+      "relationship": "supports_or_documents",
+      "target": "entropy"
+    },
+    {
+      "source": "ref_smith_van_ness",
+      "relationship": "supports_or_documents",
+      "target": "chemical_thermodynamics"
+    },
+    {
+      "source": "ref_haynie",
+      "relationship": "supports_or_documents",
+      "target": "biological_thermodynamics"
+    },
+    {
+      "source": "ref_perrot",
+      "relationship": "supports_or_documents",
+      "target": "thermodynamics"
+    },
+    {
+      "source": "ref_cengel",
+      "relationship": "supports_or_documents",
+      "target": "classical_thermodynamics"
+    },
+    {
+      "source": "ref_cardwell",
+      "relationship": "supports_or_documents",
+      "target": "steam_engine"
+    },
+    {
+      "source": "ref_cardwell",
+      "relationship": "supports_or_documents",
+      "target": "sadi_carnot"
+    },
+    {
+      "source": "ref_cardwell",
+      "relationship": "supports_or_documents",
+      "target": "rudolf_clausius"
+    },
+    {
+      "source": "ref_gibbs",
+      "relationship": "supports_or_documents",
+      "target": "j_willard_gibbs"
+    },
+    {
+      "source": "ref_gibbs",
+      "relationship": "supports_or_documents",
+      "target": "gibbs_1873_76"
+    },
+    {
+      "source": "ref_gibbs_collected",
+      "relationship": "supports_or_documents",
+      "target": "j_willard_gibbs"
+    },
+    {
+      "source": "ref_duhem",
+      "relationship": "supports_or_documents",
+      "target": "pierre_duhem"
+    },
+    {
+      "source": "ref_duhem",
+      "relationship": "supports_or_documents",
+      "target": "duhem_1886"
+    },
+    {
+      "source": "ref_lewis_randall",
+      "relationship": "supports_or_documents",
+      "target": "gilbert_lewis"
+    },
+    {
+      "source": "ref_lewis_randall",
+      "relationship": "supports_or_documents",
+      "target": "merle_randall"
+    },
+    {
+      "source": "ref_lewis_randall",
+      "relationship": "supports_or_documents",
+      "target": "lewis_randall_1923"
+    },
+    {
+      "source": "ref_guggenheim",
+      "relationship": "supports_or_documents",
+      "target": "e_a_guggenheim"
+    },
+    {
+      "source": "ref_guggenheim",
+      "relationship": "supports_or_documents",
+      "target": "guggenheim_1933"
+    },
+    {
+      "source": "ref_caratheodory",
+      "relationship": "supports_or_documents",
+      "target": "constantin_caratheodory"
+    },
+    {
+      "source": "ref_caratheodory",
+      "relationship": "supports_or_documents",
+      "target": "caratheodory_1909"
+    },
+    {
+      "source": "ref_frankel",
+      "relationship": "supports_or_documents",
+      "target": "axiomatic_thermodynamics"
+    },
+    {
+      "source": "ref_callen",
+      "relationship": "supports_or_documents",
+      "target": "thermodynamics"
+    },
+    {
+      "source": "ref_callen",
+      "relationship": "supports_or_documents",
+      "target": "statistical_mechanics"
+    },
+    {
+      "source": "ref_kroemer_kittel",
+      "relationship": "supports_or_documents",
+      "target": "thermal_physics"
+    },
+    {
+      "source": "ref_kroemer_kittel",
+      "relationship": "supports_or_documents",
+      "target": "statistical_mechanics"
+    },
+    {
+      "source": "ref_shell",
+      "relationship": "supports_or_documents",
+      "target": "thermodynamics"
+    },
+    {
+      "source": "ref_shell",
+      "relationship": "supports_or_documents",
+      "target": "statistical_mechanics"
+    },
+    {
+      "source": "ref_nitzke",
+      "relationship": "supports_or_documents",
+      "target": "helmholtz_free_energy"
+    },
+    {
+      "source": "ref_nitzke",
+      "relationship": "supports_or_documents",
+      "target": "gibbs_free_energy"
+    },
+    {
+      "source": "ref_nitzke",
+      "relationship": "supports_or_documents",
+      "target": "grand_potential"
+    },
+    {
+      "source": "claim_definition",
+      "relationship": "supports",
+      "target": "thermodynamics"
+    },
+    {
+      "source": "claim_history",
+      "relationship": "supports",
+      "target": "thermodynamics"
+    },
+    {
+      "source": "claim_classical",
+      "relationship": "supports",
+      "target": "classical_thermodynamics"
+    },
+    {
+      "source": "claim_statistical",
+      "relationship": "supports",
+      "target": "statistical_mechanics"
+    },
+    {
+      "source": "claim_chemical",
+      "relationship": "supports",
+      "target": "chemical_thermodynamics"
+    },
+    {
+      "source": "claim_equilibrium",
+      "relationship": "supports",
+      "target": "equilibrium_thermodynamics"
+    },
+    {
+      "source": "claim_noneq",
+      "relationship": "supports",
+      "target": "nonequilibrium_thermodynamics"
+    },
+    {
+      "source": "claim_zeroth",
+      "relationship": "supports",
+      "target": "zeroth_law"
+    },
+    {
+      "source": "claim_first",
+      "relationship": "supports",
+      "target": "first_law"
+    },
+    {
+      "source": "claim_second",
+      "relationship": "supports",
+      "target": "second_law"
+    },
+    {
+      "source": "claim_third",
+      "relationship": "supports",
+      "target": "third_law"
+    },
+    {
+      "source": "claim_systems",
+      "relationship": "supports",
+      "target": "system"
+    },
+    {
+      "source": "claim_states",
+      "relationship": "supports",
+      "target": "state"
+    },
+    {
+      "source": "claim_instrumentation",
+      "relationship": "supports",
+      "target": "thermodynamic_meter"
+    },
+    {
+      "source": "claim_conjugates",
+      "relationship": "supports",
+      "target": "conjugate_variable_pair"
+    },
+    {
+      "source": "claim_potentials",
+      "relationship": "supports",
+      "target": "helmholtz_free_energy"
+    },
+    {
+      "source": "claim_axiomatic",
+      "relationship": "supports",
+      "target": "axiomatic_thermodynamics"
+    },
+    {
+      "source": "claim_applied",
+      "relationship": "supports",
+      "target": "thermodynamics"
+    },
+    {
+      "source": "axiom_state_path",
+      "relationship": "governs",
+      "target": "state_variable"
+    },
+    {
+      "source": "axiom_state_path",
+      "relationship": "governs",
+      "target": "heat"
+    },
+    {
+      "source": "axiom_state_path",
+      "relationship": "governs",
+      "target": "work"
+    },
+    {
+      "source": "axiom_equilibrium",
+      "relationship": "governs",
+      "target": "equilibrium"
+    },
+    {
+      "source": "axiom_energy",
+      "relationship": "governs",
+      "target": "first_law"
+    },
+    {
+      "source": "axiom_direction",
+      "relationship": "governs",
+      "target": "second_law"
+    },
+    {
+      "source": "axiom_absolute",
+      "relationship": "governs",
+      "target": "third_law"
+    },
+    {
+      "source": "axiom_potentials",
+      "relationship": "governs",
+      "target": "thermodynamics"
+    },
+    {
+      "source": "axiom_micro_macro",
+      "relationship": "governs",
+      "target": "statistical_mechanics"
+    }
+  ],
+  "statistics": {
+    "node_count": 242,
+    "edge_count": 310
+  },
+  "expansion_targets": {
+    "fundamental_math": [
+      "Maxwell relations",
+      "Gibbs-Duhem relation",
+      "Euler relation",
+      "exact differentials",
+      "Jacobian identities",
+      "Legendre transform network"
+    ],
+    "laws": [
+      "Clausius inequality",
+      "Kelvin-Planck statement",
+      "entropy balance",
+      "Carathéodory formulation"
+    ],
+    "properties": [
+      "equations of state",
+      "compressibility",
+      "thermal expansion",
+      "heat capacities",
+      "response functions",
+      "chemical-potential derivatives"
+    ],
+    "cycles": [
+      "Carnot",
+      "Otto",
+      "Diesel",
+      "Rankine",
+      "Brayton",
+      "refrigeration",
+      "heat pumps"
+    ],
+    "chemistry": [
+      "activities",
+      "fugacity",
+      "reaction quotient",
+      "equilibrium constants",
+      "Gibbs phase rule"
+    ],
+    "statistical": [
+      "microcanonical",
+      "canonical",
+      "grand canonical",
+      "partition function",
+      "Boltzmann distribution",
+      "fluctuation theory"
+    ],
+    "nonequilibrium": [
+      "Onsager relations",
+      "entropy production",
+      "linear irreversible thermodynamics",
+      "transport coefficients"
+    ],
+    "modern": [
+      "quantum thermodynamics",
+      "black-hole thermodynamics",
+      "information thermodynamics",
+      "stochastic thermodynamics"
+    ],
+    "history": [
+      "exact intellectual influence",
+      "chronology",
+      "primary publications",
+      "institutional relationships"
+    ],
+    "evidence": [
+      "experiments",
+      "instruments",
+      "measurements",
+      "historical artifacts"
+    ]
+  }
+}

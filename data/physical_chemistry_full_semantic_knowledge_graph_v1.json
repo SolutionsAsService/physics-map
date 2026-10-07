@@ -1,0 +1,5674 @@
+{
+  "schema_version": "3.0",
+  "graph_id": "physical_chemistry_full_semantic_knowledge_graph_v1",
+  "title": "Physical Chemistry — Full Semantic Knowledge Graph",
+  "domain": "Physical chemistry",
+  "source": {
+    "file": "/mnt/data/Pasted text(20261007-041453).txt",
+    "source_type": "user-provided pasted article",
+    "source_description": "Physical chemistry article text, including scope, concepts, disciplines, history, journals, branches, references and external resources.",
+    "provenance_policy": "Source-derived claims retain exact source line ranges. Relationships marked with source_claims are traceable to one or more source claims. Additional ontology nodes may be semantic normalization rather than literal source wording."
+  },
+  "semantic_policy": {
+    "preserve_definitions": true,
+    "preserve_distinctions": true,
+    "preserve_mechanisms": true,
+    "preserve_scale_bridges": true,
+    "preserve_people": true,
+    "preserve_historical_chronology": true,
+    "preserve_publications": true,
+    "preserve_journals": true,
+    "preserve_methods": true,
+    "preserve_branch_taxonomy": true,
+    "preserve_source_provenance": true,
+    "avoid_flat_taxonomy": true,
+    "allow_inferred_semantic_links": true,
+    "inference_policy": "Do not represent normalized/inferred relations as direct quotations; direct source support is carried by source_claims."
+  },
+  "core_semantic_distinctions": [
+    {
+      "distinction": "physical_chemistry_vs_chemical_physics",
+      "meaning": "The source contrasts physical chemistry's predominantly supramolecular/bulk orientation with chemical physics; the boundary is explicitly non-absolute ('predominantly, but not always').",
+      "source_claims": [
+        "c_contrast"
+      ]
+    },
+    {
+      "distinction": "macro_vs_micro",
+      "meaning": "Physical chemistry spans both macroscopic and microscopic chemical phenomena.",
+      "source_claims": [
+        "c_scope"
+      ]
+    },
+    {
+      "distinction": "thermodynamic_feasibility_vs_kinetic_rate",
+      "meaning": "Chemical thermodynamics addresses what is possible/spontaneous and limits extent/energy conversion; chemical kinetics addresses whether/how fast reactions occur.",
+      "source_claims": [
+        "c_thermo",
+        "c_kinetics"
+      ]
+    },
+    {
+      "distinction": "equilibrium_vs_far_from_equilibrium",
+      "meaning": "Classical thermodynamics primarily treats equilibrium and reversible changes; quasi-equilibrium/non-equilibrium thermodynamics provide limited descriptions of irreversible changes.",
+      "source_claims": [
+        "c_classical_limit"
+      ]
+    },
+    {
+      "distinction": "microscopic_description_vs_macroscopic_description",
+      "meaning": "Statistical mechanics explains why very large molecular populations can often be represented by a small set of macroscopic variables.",
+      "source_claims": [
+        "c_statistical_scale"
+      ]
+    },
+    {
+      "distinction": "structure_vs_dynamics",
+      "meaning": "Quantum chemistry describes structural/electronic features and nuclear motion; kinetics describes reaction pathways and rates.",
+      "source_claims": [
+        "c_quantum",
+        "c_kinetics"
+      ]
+    },
+    {
+      "distinction": "physics_principles_vs_chemical_application",
+      "meaning": "Physical chemistry is framed as applying general physics to chemical problems rather than being detached from chemical systems.",
+      "source_claims": [
+        "c_key_concept"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "c_scope",
+      "statement": "Physical chemistry studies macroscopic and microscopic phenomena in chemical systems using physics concepts.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 65,
+        "line_end": 65
+      }
+    },
+    {
+      "id": "c_contrast",
+      "statement": "Physical chemistry is predominantly, but not always, supramolecular and bulk-oriented in contrast with chemical physics.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 67,
+        "line_end": 67
+      }
+    },
+    {
+      "id": "c_relationships",
+      "statement": "The field seeks relationships involving intermolecular forces, kinetics, ions/conductivity, surfaces/electrochemistry, heat/work, thermochemistry, colligative properties, phase rule, electrochemical cells, statistical thermodynamics, and electron-motion energies.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 69,
+        "line_end": 81
+      }
+    },
+    {
+      "id": "c_key_concept",
+      "statement": "Physical chemistry applies pure physics to chemical problems.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 83,
+        "line_end": 83
+      }
+    },
+    {
+      "id": "c_atoms_bonds",
+      "statement": "Chemical compounds are described as groups of bonded atoms; reactions involve making/breaking bonds; predicting properties from atomic structure/bonding is a major goal; nuclei positions and electron distributions are needed for precision.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 85,
+        "line_end": 85
+      }
+    },
+    {
+      "id": "c_quantum",
+      "statement": "Quantum chemistry applies quantum mechanics to chemical problems and provides tools for bond strength/shape, nuclear motion, and absorption/emission.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 88,
+        "line_end": 88
+      }
+    },
+    {
+      "id": "c_spectroscopy",
+      "statement": "Spectroscopy concerns interaction of electromagnetic radiation with matter.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 88,
+        "line_end": 88
+      }
+    },
+    {
+      "id": "c_thermo",
+      "statement": "Chemical thermodynamics studies spontaneity and mixture properties, limits reaction extent and energy conversion, links thermodynamic derivatives, assesses feasibility and validates experimental data, and has limited quasi-/non-equilibrium applications.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 90,
+        "line_end": 90
+      }
+    },
+    {
+      "id": "c_classical_limit",
+      "statement": "Classical thermodynamics mainly concerns equilibrium systems and reversible changes, not actual behavior or rates far from equilibrium.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 90,
+        "line_end": 90
+      }
+    },
+    {
+      "id": "c_kinetics",
+      "statement": "Chemical kinetics studies which reactions occur and how fast; transition states are higher-energy barriers; higher barriers generally imply slower reaction; reactions often consist of elementary steps; rate depends on temperature, concentrations, catalysts and conditions.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 92,
+        "line_end": 92
+      }
+    },
+    {
+      "id": "c_statistical_scale",
+      "statement": "Large particle populations can often be described with a few variables such as pressure, temperature and concentration; statistical mechanics explains why and predicts macroscopic properties from molecular properties without empirical chemical-similarity correlations.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 94,
+        "line_end": 94
+      }
+    },
+    {
+      "id": "c_history_term",
+      "statement": "Lomonosov coined the term physical chemistry in 1752 and taught a course titled A Course in True Physical Chemistry.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 100,
+        "line_end": 100
+      }
+    },
+    {
+      "id": "c_modern_origin",
+      "statement": "Modern physical chemistry originated in the 1860s–1880s around chemical thermodynamics, electrolytes, kinetics and related work; Gibbs's 1876 paper was a milestone introducing Gibbs energy, chemical potentials and Gibbs phase rule.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 102,
+        "line_end": 102
+      }
+    },
+    {
+      "id": "c_journal_history",
+      "statement": "The first scientific journal specifically in physical chemistry was Zeitschrift für Physikalische Chemie, founded in 1887 by Ostwald and van 't Hoff; Ostwald, van 't Hoff and Arrhenius were leading figures and all won Nobel Prizes in Chemistry between 1901 and 1909.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 104,
+        "line_end": 104
+      }
+    },
+    {
+      "id": "c_developments",
+      "statement": "Later developments included statistical mechanics applied to chemistry, colloids and surface chemistry, Langmuir's contributions, quantum chemistry from the 1930s, and spectroscopy developments including IR, microwave, EPR and NMR.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 106,
+        "line_end": 106
+      }
+    },
+    {
+      "id": "c_later",
+      "statement": "Further development included nuclear chemistry/isotope separation, astrochemistry, and computational methods for additive physicochemical properties.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 108,
+        "line_end": 108
+      }
+    },
+    {
+      "id": "c_methods",
+      "statement": "The source names group contribution, Lydersen, Joback, Benson group increment theory, and QSAR.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 110,
+        "line_end": 110
+      }
+    },
+    {
+      "id": "c_journals",
+      "statement": "The source lists physical chemistry journals and historical chemistry/physics journals.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 112,
+        "line_end": 127
+      }
+    },
+    {
+      "id": "c_branches",
+      "statement": "The source lists chemical thermodynamics, kinetics, statistical mechanics, quantum chemistry, ion chemistry, microwave chemistry, electrochemistry, photochemistry, surface chemistry, solid-state chemistry, spectroscopy, biophysical chemistry, materials science, physical organic chemistry and micromeritics.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 129,
+        "line_end": 144
+      }
+    },
+    {
+      "id": "c_references",
+      "statement": "The source provides books, papers and historical works supporting the field.",
+      "source": {
+        "file": "/mnt/data/Pasted text(20261007-041453).txt",
+        "line_start": 150,
+        "line_end": 176
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "id": "physical_chemistry",
+      "type": "discipline",
+      "label": "Physical chemistry",
+      "definition": "Study of macroscopic and microscopic phenomena in chemical systems using principles, practices, and concepts of physics.",
+      "scope": [
+        "macroscopic phenomena",
+        "microscopic phenomena",
+        "chemical systems"
+      ],
+      "conceptual_basis": [
+        "motion",
+        "energy",
+        "force",
+        "time",
+        "thermodynamics",
+        "quantum chemistry",
+        "statistical mechanics",
+        "analytical dynamics",
+        "chemical equilibria"
+      ],
+      "source_claims": [
+        "c_scope"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "chemical_physics",
+      "type": "discipline",
+      "label": "Chemical physics",
+      "definition": "Neighboring field contrasted with physical chemistry; the source characterizes physical chemistry as predominantly supramolecular/bulk-oriented rather than exclusively molecular or atomic.",
+      "distinction": "Contrast category used to delimit scope; not presented as an absolute boundary.",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "physiological_chemistry",
+      "type": "discipline",
+      "label": "Physiological chemistry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "supramolecular_science",
+      "type": "scope",
+      "label": "Supramolecular / bulk-oriented science",
+      "definition": "Scale/orientation emphasized for physical chemistry: many foundational principles concern bulk matter rather than molecular or atomic structure alone.",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "macroscopic_phenomena",
+      "type": "scale",
+      "label": "Macroscopic phenomena",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "microscopic_phenomena",
+      "type": "scale",
+      "label": "Microscopic phenomena",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "chemical_system",
+      "type": "entity",
+      "label": "Chemical system",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "physical_principles",
+      "type": "concept",
+      "label": "Principles of physics applied to chemistry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "motion",
+      "type": "physical_quantity_or_concept",
+      "label": "Motion",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "energy",
+      "type": "physical_quantity_or_concept",
+      "label": "Energy",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "force",
+      "type": "physical_quantity_or_concept",
+      "label": "Force",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "time",
+      "type": "physical_quantity_or_concept",
+      "label": "Time",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "thermodynamics",
+      "type": "discipline",
+      "label": "Thermodynamics",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "quantum_chemistry",
+      "type": "discipline",
+      "label": "Quantum chemistry",
+      "definition": "Subfield applying quantum mechanics to chemical problems; used to determine bond strength/shape, nuclear motion, and radiation absorption/emission.",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "statistical_mechanics",
+      "type": "discipline",
+      "label": "Statistical mechanics",
+      "definition": "Framework connecting microscopic properties and dynamics with macroscopic observables using statistical descriptions.",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "statistical_thermodynamics",
+      "type": "discipline",
+      "label": "Statistical thermodynamics",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "analytical_dynamics",
+      "type": "discipline",
+      "label": "Analytical dynamics",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "chemical_equilibrium",
+      "type": "concept",
+      "label": "Chemical equilibrium",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "intermolecular_forces",
+      "type": "mechanism",
+      "label": "Intermolecular forces",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "plasticity",
+      "type": "property",
+      "label": "Plasticity",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "tensile_strength",
+      "type": "property",
+      "label": "Tensile strength",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "surface_tension",
+      "type": "property",
+      "label": "Surface tension",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "reaction_kinetics",
+      "type": "discipline",
+      "label": "Reaction kinetics",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "reaction_rate",
+      "type": "quantity",
+      "label": "Reaction rate",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ion",
+      "type": "entity",
+      "label": "Ion",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "electrical_conductivity",
+      "type": "property",
+      "label": "Electrical conductivity",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "surface_science",
+      "type": "discipline",
+      "label": "Surface science",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "electrochemistry",
+      "type": "discipline",
+      "label": "Electrochemistry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "cell_membrane",
+      "type": "entity",
+      "label": "Cell membrane",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "heat",
+      "type": "quantity",
+      "label": "Heat",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "work",
+      "type": "quantity",
+      "label": "Work",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "thermochemistry",
+      "type": "discipline",
+      "label": "Thermochemistry",
+      "definition": "Study of heat transfer between a chemical system and surroundings during phase changes or chemical reactions.",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "phase",
+      "type": "concept",
+      "label": "Phase",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "phase_rule",
+      "type": "law_or_rule",
+      "label": "Phase rule",
+      "definition": "Framework correlating number of phases, number of components, and degree of freedom/variance.",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "component",
+      "type": "concept",
+      "label": "Component",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "degree_of_freedom",
+      "type": "quantity",
+      "label": "Degree of freedom / variance",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "electrochemical_cell",
+      "type": "system",
+      "label": "Electrochemical cell",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "colligative_properties",
+      "type": "property_class",
+      "label": "Colligative properties",
+      "definition": "Properties of solutions depending on the number of species present.",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "solution",
+      "type": "system",
+      "label": "Chemical solution",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "molecule",
+      "type": "entity",
+      "label": "Molecule",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "atom",
+      "type": "entity",
+      "label": "Atom",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "nucleus",
+      "type": "entity",
+      "label": "Atomic nucleus",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "electron",
+      "type": "entity",
+      "label": "Electron",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "chemical_bond",
+      "type": "concept",
+      "label": "Chemical bond",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "chemical_reaction",
+      "type": "process",
+      "label": "Chemical reaction",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "reactant",
+      "type": "role",
+      "label": "Reactant",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "product",
+      "type": "role",
+      "label": "Product",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "bond_making",
+      "type": "process",
+      "label": "Bond making",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "bond_breaking",
+      "type": "process",
+      "label": "Bond breaking",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "chemical_structure",
+      "type": "representation",
+      "label": "Chemical structure",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "electron_distribution",
+      "type": "state",
+      "label": "Electron distribution",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "nuclear_configuration",
+      "type": "state",
+      "label": "Nuclear positions/configuration",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "material",
+      "type": "entity",
+      "label": "Material",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "metal_complex",
+      "type": "entity",
+      "label": "Metal complex",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "electromagnetic_radiation",
+      "type": "physical_entity",
+      "label": "Electromagnetic radiation",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "spectroscopy",
+      "type": "discipline",
+      "label": "Spectroscopy",
+      "definition": "Sub-discipline concerned specifically with interaction of electromagnetic radiation with matter.",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "spontaneity",
+      "type": "concept",
+      "label": "Chemical spontaneity",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "chemical_mixture",
+      "type": "system",
+      "label": "Chemical mixture",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "thermodynamic_limit",
+      "type": "concept",
+      "label": "Thermodynamic limit / allowed extent",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "internal_combustion_engine",
+      "type": "machine",
+      "label": "Internal combustion engine",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "thermal_expansion_coefficient",
+      "type": "property",
+      "label": "Thermal expansion coefficient",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "entropy",
+      "type": "quantity",
+      "label": "Entropy",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "pressure",
+      "type": "quantity",
+      "label": "Pressure",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "gas",
+      "type": "state_of_matter",
+      "label": "Gas",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "liquid",
+      "type": "state_of_matter",
+      "label": "Liquid",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "reactor",
+      "type": "machine",
+      "label": "Chemical reactor",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "engine",
+      "type": "machine",
+      "label": "Engine",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "experimental_data",
+      "type": "evidence",
+      "label": "Experimental data",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "quasi_equilibrium_thermodynamics",
+      "type": "discipline",
+      "label": "Quasi-equilibrium thermodynamics",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "nonequilibrium_thermodynamics",
+      "type": "discipline",
+      "label": "Non-equilibrium thermodynamics",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "irreversible_change",
+      "type": "process",
+      "label": "Irreversible change",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "classical_thermodynamics",
+      "type": "discipline",
+      "label": "Classical thermodynamics",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "equilibrium",
+      "type": "concept",
+      "label": "Thermodynamic equilibrium",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "reversible_change",
+      "type": "process",
+      "label": "Reversible change",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "transition_state",
+      "type": "concept",
+      "label": "Transition state",
+      "definition": "Higher-energy state/barrier configuration through which reacting species generally pass on the way from reactants to products.",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "activation_barrier",
+      "type": "concept",
+      "label": "Reaction energy barrier",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "elementary_reaction",
+      "type": "process",
+      "label": "Elementary reaction",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "reaction_mechanism",
+      "type": "model",
+      "label": "Reaction mechanism",
+      "definition": "Sequence of elementary reactions describing a chemical reaction pathway.",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "temperature",
+      "type": "quantity",
+      "label": "Temperature",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "concentration",
+      "type": "quantity",
+      "label": "Concentration",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "catalyst",
+      "type": "entity",
+      "label": "Catalyst",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "reaction_conditions",
+      "type": "constraint",
+      "label": "Reaction conditions",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "engineering_optimization",
+      "type": "goal",
+      "label": "Reaction-rate engineering / optimization",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "avogadro_constant",
+      "type": "constant",
+      "label": "Avogadro constant",
+      "value": "~6 × 10^23 particles per mole",
+      "source_claims": [
+        "c_statistical_scale"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "molecular_position",
+      "type": "state_variable",
+      "label": "Molecular positions",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "molecular_speed",
+      "type": "state_variable",
+      "label": "Molecular speeds",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "macroscopic_state_variables",
+      "type": "concept",
+      "label": "Macroscopic state variables",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "pressure_temperature_concentration",
+      "type": "state_description",
+      "label": "Pressure, temperature, concentration",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "molecular_properties",
+      "type": "concept",
+      "label": "Molecular properties",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "empirical_correlations",
+      "type": "method",
+      "label": "Empirical chemical correlations",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "bulk_properties",
+      "type": "concept",
+      "label": "Bulk properties",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "everyday_observables",
+      "type": "concept",
+      "label": "Everyday macroscopic observables",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "predictive_statistical_mechanics",
+      "type": "method",
+      "label": "Statistical-mechanical prediction of macroscopic properties",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "quantum_mechanics",
+      "type": "discipline",
+      "label": "Quantum mechanics",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "bond_strength",
+      "type": "property",
+      "label": "Bond strength",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "bond_geometry",
+      "type": "property",
+      "label": "Bond shape / geometry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "nuclear_motion",
+      "type": "process",
+      "label": "Nuclear motion",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "absorption",
+      "type": "process",
+      "label": "Radiative absorption",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "emission",
+      "type": "process",
+      "label": "Radiative emission",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "light_matter_interaction",
+      "type": "phenomenon",
+      "label": "Light–matter interaction",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "thermal_expansion_entropy_relation",
+      "type": "relation",
+      "label": "Thermal-expansion / entropy derivative relation",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "feasibility_assessment",
+      "type": "method",
+      "label": "Reactor/engine feasibility assessment",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "data_validation",
+      "type": "method",
+      "label": "Experimental-data validity checking",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "rate_temperature_dependence",
+      "type": "relation",
+      "label": "Reaction-rate dependence on temperature",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "rate_concentration_dependence",
+      "type": "relation",
+      "label": "Reaction-rate dependence on concentration",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "rate_catalyst_dependence",
+      "type": "relation",
+      "label": "Reaction-rate dependence on catalysts",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "molecular_ensemble",
+      "type": "concept",
+      "label": "Molecular ensemble / statistical description",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "mikhail_lomonosov",
+      "type": "person",
+      "label": "Mikhail Lomonosov",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "josiah_willard_gibbs",
+      "type": "person",
+      "label": "Josiah Willard Gibbs",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "wilhelm_ostwald",
+      "type": "person",
+      "label": "Wilhelm Ostwald",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "jacobus_henricus_vant_hoff",
+      "type": "person",
+      "label": "Jacobus Henricus van 't Hoff",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "svante_arrhenius",
+      "type": "person",
+      "label": "Svante Arrhenius",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "irving_langmuir",
+      "type": "person",
+      "label": "Irving Langmuir",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "linus_pauling",
+      "type": "person",
+      "label": "Linus Pauling",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "peter_atkins",
+      "type": "person",
+      "label": "Peter Atkins",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ronald_friedman",
+      "type": "person",
+      "label": "Ronald Friedman",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "lanny_schmidt",
+      "type": "person",
+      "label": "Lanny D. Schmidt",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "david_chandler",
+      "type": "person",
+      "label": "David Chandler",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "terrell_hill",
+      "type": "person",
+      "label": "Terrell L. Hill",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "lev_landau",
+      "type": "person",
+      "label": "L. D. Landau",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "yevgeny_lifshitz",
+      "type": "person",
+      "label": "E. M. Lifshitz",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "alexander_vucinich",
+      "type": "person",
+      "label": "Alexander Vucinich",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "keith_laidler",
+      "type": "person",
+      "label": "Keith Laidler",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "eric_herbst",
+      "type": "person",
+      "label": "Eric Herbst",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "torben_smith_sorensen",
+      "type": "person",
+      "label": "Torben Smith Sørensen",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "lomonosov_1752_lecture",
+      "type": "historical_work",
+      "label": "A Course in True Physical Chemistry (1752)",
+      "original_language": "Russian: Курс истинной физической химии",
+      "type_detail": "lecture course",
+      "source_claims": [
+        "c_history_term"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "id": "gibbs_1876_paper",
+      "type": "publication",
+      "label": "On the Equilibrium of Heterogeneous Substances (1876)",
+      "author": "Josiah Willard Gibbs",
+      "venue": "Transactions of the Connecticut Academy of Sciences",
+      "significance": [
+        "Gibbs energy",
+        "chemical potentials",
+        "Gibbs phase rule"
+      ],
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "zeitschrift_fuer_physikalische_chemie",
+      "type": "journal",
+      "label": "Zeitschrift für Physikalische Chemie",
+      "founded": 1887,
+      "founders": [
+        "wilhelm_ostwald",
+        "jacobus_henricus_vant_hoff"
+      ],
+      "significance": "First scientific journal specifically in physical chemistry according to the source.",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "journal_of_physical_chemistry",
+      "type": "journal",
+      "label": "Journal of Physical Chemistry",
+      "founded": 1896,
+      "history_note": "renamed Journal of Physical Chemistry A in 1997",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "physical_chemistry_chemical_physics",
+      "type": "journal",
+      "label": "Physical Chemistry Chemical Physics",
+      "founded": 1999,
+      "history_note": "formerly Faraday Transactions; history dating to 1905",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "macromolecular_chemistry_physics",
+      "type": "journal",
+      "label": "Macromolecular Chemistry and Physics",
+      "founded": 1947,
+      "history_note": null,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "annual_review_physical_chemistry",
+      "type": "journal",
+      "label": "Annual Review of Physical Chemistry",
+      "founded": 1950,
+      "history_note": null,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "molecular_physics",
+      "type": "journal",
+      "label": "Molecular Physics",
+      "founded": 1957,
+      "history_note": null,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "journal_physical_organic_chemistry",
+      "type": "journal",
+      "label": "Journal of Physical Organic Chemistry",
+      "founded": 1988,
+      "history_note": null,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "journal_physical_chemistry_b",
+      "type": "journal",
+      "label": "Journal of Physical Chemistry B",
+      "founded": 1997,
+      "history_note": null,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "chemphyschem",
+      "type": "journal",
+      "label": "ChemPhysChem",
+      "founded": 2000,
+      "history_note": null,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "journal_physical_chemistry_c",
+      "type": "journal",
+      "label": "Journal of Physical Chemistry C",
+      "founded": 2007,
+      "history_note": null,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "journal_physical_chemistry_letters",
+      "type": "journal",
+      "label": "Journal of Physical Chemistry Letters",
+      "founded": 2010,
+      "history_note": "combined letters previously published separately",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "annales_chimie_physique",
+      "type": "journal",
+      "label": "Annales de chimie et de physique",
+      "founded": 1789,
+      "history_note": "published under this name 1815–1914",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "gas_phase_ion_chemistry",
+      "type": "discipline_or_method",
+      "label": "Gas-phase ion chemistry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "microwave_chemistry",
+      "type": "discipline_or_method",
+      "label": "Microwave chemistry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "photochemistry",
+      "type": "discipline_or_method",
+      "label": "Photochemistry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "surface_chemistry",
+      "type": "discipline_or_method",
+      "label": "Surface chemistry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "solid_state_chemistry",
+      "type": "discipline_or_method",
+      "label": "Solid-state chemistry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "biophysical_chemistry",
+      "type": "discipline_or_method",
+      "label": "Biophysical chemistry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "materials_science",
+      "type": "discipline_or_method",
+      "label": "Materials science",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "physical_organic_chemistry",
+      "type": "discipline_or_method",
+      "label": "Physical organic chemistry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "micromeritics",
+      "type": "discipline_or_method",
+      "label": "Micromeritics",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "physical_biochemistry",
+      "type": "discipline_or_method",
+      "label": "Physical biochemistry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "nuclear_chemistry",
+      "type": "discipline_or_method",
+      "label": "Nuclear chemistry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "astrochemistry",
+      "type": "discipline_or_method",
+      "label": "Astrochemistry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "colloid_science",
+      "type": "discipline_or_method",
+      "label": "Colloid science",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "isotope_separation",
+      "type": "discipline_or_method",
+      "label": "Isotope separation",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "surface_chemistry_langmuir",
+      "type": "discipline_or_method",
+      "label": "Surface chemistry / colloid work",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "additive_physicochemical_properties",
+      "type": "discipline_or_method",
+      "label": "Additive physicochemical property prediction",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "group_contribution_method",
+      "type": "discipline_or_method",
+      "label": "Group contribution method",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "lydersen_method",
+      "type": "discipline_or_method",
+      "label": "Lydersen method",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "joback_method",
+      "type": "discipline_or_method",
+      "label": "Joback method",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "benson_group_increment_theory",
+      "type": "discipline_or_method",
+      "label": "Benson group increment theory",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "quantitative_structure_activity_relationship",
+      "type": "discipline_or_method",
+      "label": "Quantitative structure–activity relationship",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ref_sorensen_1999",
+      "type": "bibliographic_reference",
+      "label": "Torben Smith Sørensen (1999). Surface chemistry and electrochemistry of membranes.",
+      "reference_type": "book",
+      "publisher_or_venue": "CRC Press",
+      "identifier": "ISBN 0-8247-1922-0",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ref_atkins_2005_p245",
+      "type": "bibliographic_reference",
+      "label": "Atkins (2005), p. 245.",
+      "reference_type": "book",
+      "publisher_or_venue": null,
+      "identifier": null,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ref_atkins_2005_p324",
+      "type": "bibliographic_reference",
+      "label": "Atkins (2005), p. 324.",
+      "reference_type": "book",
+      "publisher_or_venue": null,
+      "identifier": null,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ref_landau_lifshitz_1980",
+      "type": "bibliographic_reference",
+      "label": "L. D. Landau and E. M. Lifshitz (1980). Statistical Physics, 3rd ed.",
+      "reference_type": "book",
+      "publisher_or_venue": "Elsevier Butterworth Heinemann",
+      "identifier": "ISBN 0-7506-3372-7",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ref_hill_1986",
+      "type": "bibliographic_reference",
+      "label": "Terrell L. Hill (1986). Introduction to Statistical Thermodynamics.",
+      "reference_type": "book",
+      "publisher_or_venue": "Dover Publications",
+      "identifier": "ISBN 0-486-65242-4",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ref_schmidt_2005_p30",
+      "type": "bibliographic_reference",
+      "label": "Schmidt (2005), p. 30.",
+      "reference_type": "book",
+      "publisher_or_venue": "Oxford University Press",
+      "identifier": null,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ref_schmidt_2005_pp25_32",
+      "type": "bibliographic_reference",
+      "label": "Schmidt (2005), pp. 25, 32.",
+      "reference_type": "book",
+      "publisher_or_venue": "Oxford University Press",
+      "identifier": null,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ref_chandler_1987",
+      "type": "bibliographic_reference",
+      "label": "David Chandler (1987). Introduction to Modern Statistical Mechanics.",
+      "reference_type": "book",
+      "publisher_or_venue": "Oxford University Press",
+      "identifier": "ISBN 978-0-19-504277-1",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ref_vucinich_1963",
+      "type": "bibliographic_reference",
+      "label": "Alexander Vucinich (1963). Science in Russian Culture.",
+      "reference_type": "book",
+      "publisher_or_venue": "Stanford University Press",
+      "identifier": "ISBN 0-8047-0738-3",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ref_gibbs_1876",
+      "type": "bibliographic_reference",
+      "label": "Josiah Willard Gibbs (1876). On the Equilibrium of Heterogeneous Substances.",
+      "reference_type": "publication",
+      "publisher_or_venue": "Transactions of the Connecticut Academy of Sciences",
+      "identifier": null,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ref_laidler_1993",
+      "type": "bibliographic_reference",
+      "label": "Keith Laidler (1993). The World of Physical Chemistry.",
+      "reference_type": "book",
+      "publisher_or_venue": "Oxford University Press",
+      "identifier": "ISBN 0-19-855919-4",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ref_herbst_2005",
+      "type": "bibliographic_reference",
+      "label": "Eric Herbst (2005). Chemistry of Star-Forming Regions.",
+      "reference_type": "article",
+      "publisher_or_venue": "Journal of Physical Chemistry A",
+      "identifier": "doi:10.1021/jp050461c",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ref_atkins_friedman_2005",
+      "type": "bibliographic_reference",
+      "label": "Peter Atkins; Ronald Friedman (2005). Molecular Quantum Mechanics.",
+      "reference_type": "book",
+      "publisher_or_venue": "Oxford University Press",
+      "identifier": "ISBN 0-19-927498-3",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ref_schmidt_2005",
+      "type": "bibliographic_reference",
+      "label": "Lanny D. Schmidt (2005). The Engineering of Chemical Reactions, 2nd ed.",
+      "reference_type": "book",
+      "publisher_or_venue": "Oxford University Press",
+      "identifier": "ISBN 0-19-516925-5",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ref_servos_1996",
+      "type": "bibliographic_reference",
+      "label": "William Servos (1996). Physical Chemistry from Ostwald to Pauling.",
+      "reference_type": "book",
+      "publisher_or_venue": null,
+      "identifier": null,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ref_schummer_1998",
+      "type": "bibliographic_reference",
+      "label": "Joachim Schummer (1998). Physical Chemistry: neither Fish nor Fowl?",
+      "reference_type": "chapter",
+      "publisher_or_venue": "The Autonomy of Chemistry",
+      "identifier": null,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ref_nye_2003",
+      "type": "bibliographic_reference",
+      "label": "Mary Jo Nye (2003). The Cambridge History of Science: The modern physical and mathematical sciences.",
+      "reference_type": "book",
+      "publisher_or_venue": null,
+      "identifier": null,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "chemical_compound",
+      "type": "entity",
+      "label": "Chemical compound",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "groups_of_atoms",
+      "type": "structure",
+      "label": "Groups of bonded atoms",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "properties_of_chemical_compounds",
+      "type": "property_class",
+      "label": "Properties of chemical compounds",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "matter",
+      "type": "entity",
+      "label": "Matter",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "reaction_slowing",
+      "type": "phenomenon",
+      "label": "Slower reaction at higher barrier",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "molecular_description",
+      "type": "representation",
+      "label": "Microscopic molecular description",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "modern_physical_chemistry",
+      "type": "historical_period",
+      "label": "Modern physical chemistry",
+      "period": "1860s–1880s",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "electrolytes_in_solutions",
+      "type": "discipline_or_topic",
+      "label": "Electrolytes In Solutions",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "chemical_kinetics",
+      "type": "discipline_or_topic",
+      "label": "Chemical Kinetics",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "gibbs_energy",
+      "type": "concept",
+      "label": "Gibbs Energy",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "chemical_potential",
+      "type": "concept",
+      "label": "Chemical Potential",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "gibbs_phase_rule",
+      "type": "concept",
+      "label": "Gibbs Phase Rule",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "first_field_specific_journal_claim",
+      "type": "historical_claim",
+      "label": "First scientific journal specifically in physical chemistry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "nobel_prize_in_chemistry",
+      "type": "award",
+      "label": "Nobel Prize in Chemistry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "infrared_spectroscopy",
+      "type": "spectroscopy_method",
+      "label": "Infrared Spectroscopy",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "microwave_spectroscopy",
+      "type": "spectroscopy_method",
+      "label": "Microwave Spectroscopy",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "electron_paramagnetic_resonance",
+      "type": "spectroscopy_method",
+      "label": "Electron Paramagnetic Resonance",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "nuclear_magnetic_resonance_spectroscopy",
+      "type": "spectroscopy_method",
+      "label": "Nuclear Magnetic Resonance Spectroscopy",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "wikimedia_commons_physical_chemistry",
+      "type": "external_resource",
+      "label": "Wikimedia Commons — Physical chemistry media",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "wikibooks_physical_chemistry",
+      "type": "external_resource",
+      "label": "Wikibooks — Physical chemistry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "wikiversity_physical_chemistry",
+      "type": "external_resource",
+      "label": "Wikiversity — Physical chemistry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "gas_phase_ion",
+      "type": "concept",
+      "label": "Ion in gas phase",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ion_molecule_reaction",
+      "type": "concept",
+      "label": "Ion–molecule reaction",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "mass_spectrometric_ion",
+      "type": "concept",
+      "label": "Mass-spectrometric ion",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "gas_phase_reactivity",
+      "type": "concept",
+      "label": "Gas-phase reactivity",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "microwave_radiation",
+      "type": "concept",
+      "label": "Microwave radiation",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "rotational_spectroscopy",
+      "type": "concept",
+      "label": "Rotational spectroscopy",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "microwave_matter_interaction",
+      "type": "concept",
+      "label": "Microwave–matter interaction",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "electronic_excited_state",
+      "type": "concept",
+      "label": "Electronic excited state",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "photochemical_reaction",
+      "type": "concept",
+      "label": "Photochemical reaction",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "quantum_yield",
+      "type": "concept",
+      "label": "Quantum yield",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "nonradiative_relaxation",
+      "type": "concept",
+      "label": "Nonradiative relaxation",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "adsorption",
+      "type": "concept",
+      "label": "Adsorption",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "desorption",
+      "type": "concept",
+      "label": "Desorption",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "surface_adsorbate",
+      "type": "concept",
+      "label": "Surface adsorbate",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "surface_free_energy",
+      "type": "concept",
+      "label": "Surface free energy",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "wetting",
+      "type": "concept",
+      "label": "Wetting",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "crystal_structure",
+      "type": "concept",
+      "label": "Crystal structure",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "lattice",
+      "type": "concept",
+      "label": "Crystal lattice",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "defect",
+      "type": "concept",
+      "label": "Material defect",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "phase_transition",
+      "type": "concept",
+      "label": "Phase transition",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "electronic_band_structure",
+      "type": "concept",
+      "label": "Electronic band structure",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "biomolecular_system",
+      "type": "concept",
+      "label": "Biomolecular system",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "protein",
+      "type": "concept",
+      "label": "Protein",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "membrane_biophysics",
+      "type": "concept",
+      "label": "Membrane biophysics",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "material_property",
+      "type": "concept",
+      "label": "Material property",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "structure_property_relation",
+      "type": "concept",
+      "label": "Structure–property relationship",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "materials_processing",
+      "type": "concept",
+      "label": "Materials processing",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "reaction_mechanism_physical_organic",
+      "type": "concept",
+      "label": "Physical-organic reaction mechanism",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "substituent_effect",
+      "type": "concept",
+      "label": "Substituent effect",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "structure_reactivity_relationship",
+      "type": "concept",
+      "label": "Structure–reactivity relationship",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "particle_size",
+      "type": "concept",
+      "label": "Particle size",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "particle_surface_area",
+      "type": "concept",
+      "label": "Particle surface area",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "powder_characterization",
+      "type": "concept",
+      "label": "Powder characterization",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "electrode",
+      "type": "concept",
+      "label": "Electrode",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "electrode_potential",
+      "type": "concept",
+      "label": "Electrode potential",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "electrolyte",
+      "type": "concept",
+      "label": "Electrolyte",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "galvanic_cell",
+      "type": "concept",
+      "label": "Galvanic cell",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "electrolytic_cell",
+      "type": "concept",
+      "label": "Electrolytic cell",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "chemical_thermodynamics",
+      "type": "discipline_or_method",
+      "label": "Chemical Thermodynamics",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "gibbs_free_energy",
+      "type": "concept",
+      "label": "Gibbs free energy",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "enthalpy",
+      "type": "concept",
+      "label": "Enthalpy",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "activity",
+      "type": "concept",
+      "label": "Activity",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "fugacity",
+      "type": "concept",
+      "label": "Fugacity",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "reaction_quotient",
+      "type": "concept",
+      "label": "Reaction quotient",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "equilibrium_constant",
+      "type": "concept",
+      "label": "Equilibrium constant",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "first_law",
+      "type": "concept",
+      "label": "First law of thermodynamics",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "second_law",
+      "type": "concept",
+      "label": "Second law of thermodynamics",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "third_law",
+      "type": "concept",
+      "label": "Third law of thermodynamics",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "state_function",
+      "type": "concept",
+      "label": "State function",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "path_function",
+      "type": "concept",
+      "label": "Path function",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "microstate",
+      "type": "concept",
+      "label": "Microstate",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "macrostate",
+      "type": "concept",
+      "label": "Macrostate",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "ensemble",
+      "type": "concept",
+      "label": "Ensemble",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "partition_function",
+      "type": "concept",
+      "label": "Partition function",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "boltzmann_distribution",
+      "type": "concept",
+      "label": "Boltzmann distribution",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "fluctuation",
+      "type": "concept",
+      "label": "Thermodynamic fluctuation",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "schrodinger_equation",
+      "type": "concept",
+      "label": "Schrödinger equation",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "born_oppenheimer_approximation",
+      "type": "concept",
+      "label": "Born–Oppenheimer approximation",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "molecular_orbital",
+      "type": "concept",
+      "label": "Molecular orbital",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "electron_density",
+      "type": "concept",
+      "label": "Electron density",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "density_functional_theory",
+      "type": "concept",
+      "label": "Density functional theory",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "basis_set",
+      "type": "concept",
+      "label": "Quantum-chemistry basis set",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "rate_law",
+      "type": "concept",
+      "label": "Rate law",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "arrhenius_equation",
+      "type": "concept",
+      "label": "Arrhenius equation",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "transition_state_theory",
+      "type": "concept",
+      "label": "Transition-state theory",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "activation_energy",
+      "type": "concept",
+      "label": "Activation energy",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "catalytic_cycle",
+      "type": "concept",
+      "label": "Catalytic cycle",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "enthalpy_change",
+      "type": "concept",
+      "label": "Enthalpy change",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "hess_law",
+      "type": "concept",
+      "label": "Hess's law",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "calorimetry",
+      "type": "concept",
+      "label": "Calorimetry",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "heat_capacity",
+      "type": "concept",
+      "label": "Heat capacity",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "uv_visible_spectroscopy",
+      "type": "concept",
+      "label": "UV–visible spectroscopy",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "nmr_spectroscopy",
+      "type": "concept",
+      "label": "Nuclear magnetic resonance spectroscopy",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "epr_spectroscopy",
+      "type": "concept",
+      "label": "Electron paramagnetic resonance spectroscopy",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "spectral_line",
+      "type": "concept",
+      "label": "Spectral line",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "interface",
+      "type": "concept",
+      "label": "Interface",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "interfacial_energy",
+      "type": "concept",
+      "label": "Interfacial energy",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "surface_adsorption",
+      "type": "concept",
+      "label": "Surface adsorption",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "quantum_state",
+      "type": "concept",
+      "label": "Quantum State",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "molecular_vibrations",
+      "type": "concept",
+      "label": "Molecular Vibrations",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "electronic_excitation",
+      "type": "concept",
+      "label": "Electronic Excitation",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "nuclear_spin",
+      "type": "concept",
+      "label": "Nuclear Spin",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "unpaired_electrons",
+      "type": "concept",
+      "label": "Unpaired Electrons",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "molecular_motion",
+      "type": "concept",
+      "label": "Molecular Motion",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "mass_action",
+      "type": "concept",
+      "label": "Mass Action",
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "section_scope",
+      "type": "source_section",
+      "label": "Scope and definition",
+      "line_start": 65,
+      "line_end": 67,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "section_relationships",
+      "type": "source_section",
+      "label": "Relationships studied",
+      "line_start": 69,
+      "line_end": 81,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "section_key_concepts",
+      "type": "source_section",
+      "label": "Key concepts",
+      "line_start": 82,
+      "line_end": 85,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "section_disciplines",
+      "type": "source_section",
+      "label": "Disciplines",
+      "line_start": 87,
+      "line_end": 94,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "section_history",
+      "type": "source_section",
+      "label": "History",
+      "line_start": 96,
+      "line_end": 110,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "section_journals",
+      "type": "source_section",
+      "label": "Journals",
+      "line_start": 112,
+      "line_end": 127,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "section_branches",
+      "type": "source_section",
+      "label": "Branches and related topics",
+      "line_start": 129,
+      "line_end": 149,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "section_references",
+      "type": "source_section",
+      "label": "References and sources",
+      "line_start": 150,
+      "line_end": 176,
+      "epistemic_status": "normalized_or_ontology_expansion"
+    },
+    {
+      "id": "thermal_response",
+      "type": "Thermal response",
+      "label": "concept"
+    },
+    {
+      "id": "thermodynamic_properties",
+      "type": "Thermodynamic properties",
+      "label": "property_class"
+    }
+  ],
+  "edges": [
+    {
+      "source": "physical_chemistry",
+      "relation": "has_core_domain",
+      "target": "thermodynamics",
+      "semantic": "core domain of the discipline",
+      "source_claims": [
+        "c_scope",
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_core_domain",
+      "target": "quantum_chemistry",
+      "semantic": "core domain of the discipline",
+      "source_claims": [
+        "c_scope",
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_core_domain",
+      "target": "statistical_mechanics",
+      "semantic": "core domain of the discipline",
+      "source_claims": [
+        "c_scope",
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_core_domain",
+      "target": "analytical_dynamics",
+      "semantic": "core domain of the discipline",
+      "source_claims": [
+        "c_scope",
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_core_domain",
+      "target": "chemical_equilibrium",
+      "semantic": "core domain of the discipline",
+      "source_claims": [
+        "c_scope",
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_core_domain",
+      "target": "reaction_kinetics",
+      "semantic": "core domain of the discipline",
+      "source_claims": [
+        "c_scope",
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_core_domain",
+      "target": "electrochemistry",
+      "semantic": "core domain of the discipline",
+      "source_claims": [
+        "c_scope",
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_core_domain",
+      "target": "surface_science",
+      "semantic": "core domain of the discipline",
+      "source_claims": [
+        "c_scope",
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_core_domain",
+      "target": "spectroscopy",
+      "semantic": "core domain of the discipline",
+      "source_claims": [
+        "c_scope",
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_core_domain",
+      "target": "chemical_system",
+      "semantic": "core domain of the discipline",
+      "source_claims": [
+        "c_scope",
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "studies_scale",
+      "target": "macroscopic_phenomena",
+      "source_claims": [
+        "c_scope"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "studies_scale",
+      "target": "microscopic_phenomena",
+      "source_claims": [
+        "c_scope"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "is_predominantly_oriented_toward",
+      "target": "supramolecular_science",
+      "source_claims": [
+        "c_contrast"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "contrasted_with",
+      "target": "chemical_physics",
+      "source_claims": [
+        "c_contrast"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "applies",
+      "target": "physical_principles",
+      "source_claims": [
+        "c_key_concept"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_principles",
+      "relation": "includes",
+      "target": "motion",
+      "source_claims": [
+        "c_scope"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_principles",
+      "relation": "includes",
+      "target": "energy",
+      "source_claims": [
+        "c_scope"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_principles",
+      "relation": "includes",
+      "target": "force",
+      "source_claims": [
+        "c_scope"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_principles",
+      "relation": "includes",
+      "target": "time",
+      "source_claims": [
+        "c_scope"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "intermolecular_forces",
+      "relation": "affects",
+      "target": "plasticity",
+      "source_claims": [
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "intermolecular_forces",
+      "relation": "affects",
+      "target": "tensile_strength",
+      "source_claims": [
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "intermolecular_forces",
+      "relation": "affects",
+      "target": "surface_tension",
+      "source_claims": [
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "reaction_kinetics",
+      "relation": "determines_or_describes",
+      "target": "reaction_rate",
+      "source_claims": [
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ion",
+      "relation": "affects_or_identifies",
+      "target": "electrical_conductivity",
+      "source_claims": [
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "surface_science",
+      "relation": "studies",
+      "target": "cell_membrane",
+      "source_claims": [
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "electrochemistry",
+      "relation": "studies",
+      "target": "cell_membrane",
+      "source_claims": [
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "thermodynamics",
+      "relation": "quantifies_transfer_between_systems",
+      "target": "heat",
+      "source_claims": [
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "thermodynamics",
+      "relation": "quantifies_transfer_between_systems",
+      "target": "work",
+      "source_claims": [
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "thermochemistry",
+      "relation": "studies_transfer_of",
+      "target": "heat",
+      "source_claims": [
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "thermochemistry",
+      "relation": "during",
+      "target": "chemical_reaction",
+      "source_claims": [
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "thermochemistry",
+      "relation": "during",
+      "target": "phase",
+      "source_claims": [
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "phase_rule",
+      "relation": "correlates",
+      "target": "phase",
+      "source_claims": [
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "phase_rule",
+      "relation": "correlates",
+      "target": "component",
+      "source_claims": [
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "phase_rule",
+      "relation": "correlates",
+      "target": "degree_of_freedom",
+      "source_claims": [
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "electrochemistry",
+      "relation": "studies",
+      "target": "electrochemical_cell",
+      "source_claims": [
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "colligative_properties",
+      "relation": "depends_on",
+      "target": "solution",
+      "source_claims": [
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "colligative_properties",
+      "relation": "depends_on",
+      "target": "ion",
+      "source_claims": [
+        "c_relationships"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_compound",
+      "relation": "described_as",
+      "target": "groups_of_atoms",
+      "semantic": "source says compounds can be described as groups of atoms bonded together",
+      "source_claims": [
+        "c_atoms_bonds"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_compound",
+      "relation": "has_structural_description",
+      "target": "groups_of_atoms",
+      "source_claims": [
+        "c_atoms_bonds"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "groups_of_atoms",
+      "relation": "contains",
+      "target": "atom",
+      "source_claims": [
+        "c_atoms_bonds"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "groups_of_atoms",
+      "relation": "connected_by",
+      "target": "chemical_bond",
+      "source_claims": [
+        "c_atoms_bonds"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_reaction",
+      "relation": "involves",
+      "target": "bond_making",
+      "source_claims": [
+        "c_atoms_bonds"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_reaction",
+      "relation": "involves",
+      "target": "bond_breaking",
+      "source_claims": [
+        "c_atoms_bonds"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "aims_to_predict",
+      "target": "properties_of_chemical_compounds",
+      "semantic": "major goal stated in source",
+      "source_claims": [
+        "c_atoms_bonds"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_structure",
+      "relation": "requires_knowledge_of",
+      "target": "nuclear_configuration",
+      "source_claims": [
+        "c_atoms_bonds"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_structure",
+      "relation": "requires_knowledge_of",
+      "target": "electron_distribution",
+      "source_claims": [
+        "c_atoms_bonds"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "nuclear_configuration",
+      "relation": "describes",
+      "target": "nucleus",
+      "source_claims": [
+        "c_atoms_bonds"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "electron_distribution",
+      "relation": "describes",
+      "target": "electron",
+      "source_claims": [
+        "c_atoms_bonds"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relation": "applies",
+      "target": "quantum_mechanics",
+      "source_claims": [
+        "c_quantum"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relation": "provides_tools_for",
+      "target": "bond_strength",
+      "source_claims": [
+        "c_quantum"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relation": "provides_tools_for",
+      "target": "bond_geometry",
+      "source_claims": [
+        "c_quantum"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relation": "provides_tools_for",
+      "target": "nuclear_motion",
+      "source_claims": [
+        "c_quantum"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relation": "provides_tools_for",
+      "target": "absorption",
+      "source_claims": [
+        "c_quantum"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relation": "provides_tools_for",
+      "target": "emission",
+      "source_claims": [
+        "c_quantum"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "absorption",
+      "relation": "is_interaction_between",
+      "target": "electromagnetic_radiation",
+      "source_claims": [
+        "c_quantum"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "emission",
+      "relation": "is_interaction_between",
+      "target": "electromagnetic_radiation",
+      "source_claims": [
+        "c_quantum"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "spectroscopy",
+      "relation": "studies",
+      "target": "light_matter_interaction",
+      "source_claims": [
+        "c_spectroscopy"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "light_matter_interaction",
+      "relation": "involves",
+      "target": "electromagnetic_radiation",
+      "source_claims": [
+        "c_spectroscopy"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "light_matter_interaction",
+      "relation": "involves",
+      "target": "matter",
+      "source_claims": [
+        "c_spectroscopy"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "studies_or_constrains",
+      "target": "spontaneity",
+      "source_claims": [
+        "c_thermo"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "studies_or_constrains",
+      "target": "chemical_mixture",
+      "source_claims": [
+        "c_thermo"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "studies_or_constrains",
+      "target": "thermodynamic_limit",
+      "source_claims": [
+        "c_thermo"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "constrains",
+      "target": "internal_combustion_engine",
+      "source_claims": [
+        "c_thermo"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "links",
+      "target": "thermal_expansion_entropy_relation",
+      "source_claims": [
+        "c_thermo"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "thermal_expansion_entropy_relation",
+      "relation": "involves",
+      "target": "thermal_expansion_coefficient",
+      "source_claims": [
+        "c_thermo"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "thermal_expansion_entropy_relation",
+      "relation": "involves",
+      "target": "entropy",
+      "source_claims": [
+        "c_thermo"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "thermal_expansion_entropy_relation",
+      "relation": "involves",
+      "target": "pressure",
+      "source_claims": [
+        "c_thermo"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "supports",
+      "target": "feasibility_assessment",
+      "source_claims": [
+        "c_thermo"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "supports",
+      "target": "data_validation",
+      "source_claims": [
+        "c_thermo"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "classical_thermodynamics",
+      "relation": "primarily_models",
+      "target": "equilibrium",
+      "source_claims": [
+        "c_classical_limit"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "classical_thermodynamics",
+      "relation": "primarily_models",
+      "target": "reversible_change",
+      "source_claims": [
+        "c_classical_limit"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "classical_thermodynamics",
+      "relation": "limited_for",
+      "target": "irreversible_change",
+      "source_claims": [
+        "c_classical_limit"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "quasi_equilibrium_thermodynamics",
+      "relation": "can_describe",
+      "target": "irreversible_change",
+      "source_claims": [
+        "c_thermo"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "nonequilibrium_thermodynamics",
+      "relation": "can_describe",
+      "target": "irreversible_change",
+      "source_claims": [
+        "c_thermo"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_kinetics",
+      "relation": "studies",
+      "target": "chemical_reaction",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_kinetics",
+      "relation": "studies",
+      "target": "reaction_rate",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "reactant",
+      "relation": "transforms_through",
+      "target": "transition_state",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "transition_state",
+      "relation": "lies_above_in_energy",
+      "target": "reactant",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "transition_state",
+      "relation": "lies_above_in_energy",
+      "target": "product",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "activation_barrier",
+      "relation": "is_represented_by",
+      "target": "transition_state",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "activation_barrier",
+      "relation": "generally_correlates_with",
+      "target": "reaction_slowing",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_reaction",
+      "relation": "often_consists_of",
+      "target": "elementary_reaction",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "elementary_reaction",
+      "relation": "has",
+      "target": "transition_state",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "reaction_mechanism",
+      "relation": "is_sequence_of",
+      "target": "elementary_reaction",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_kinetics",
+      "relation": "analyzes_dependence_on",
+      "target": "temperature",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_kinetics",
+      "relation": "analyzes_dependence_on",
+      "target": "concentration",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_kinetics",
+      "relation": "analyzes_dependence_on",
+      "target": "catalyst",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_kinetics",
+      "relation": "analyzes_dependence_on",
+      "target": "reaction_conditions",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_kinetics",
+      "relation": "describes",
+      "target": "rate_temperature_dependence",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_kinetics",
+      "relation": "describes",
+      "target": "rate_concentration_dependence",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_kinetics",
+      "relation": "describes",
+      "target": "rate_catalyst_dependence",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "reaction_conditions",
+      "relation": "can_be_engineered_for",
+      "target": "engineering_optimization",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "catalyst",
+      "relation": "modifies",
+      "target": "reaction_rate",
+      "source_claims": [
+        "c_kinetics"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relation": "explains",
+      "target": "macroscopic_state_variables",
+      "source_claims": [
+        "c_statistical_scale"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relation": "bridges",
+      "target": "molecular_properties",
+      "source_claims": [
+        "c_statistical_scale"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relation": "predicts",
+      "target": "everyday_observables",
+      "source_claims": [
+        "c_statistical_scale"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relation": "reduces_description_of",
+      "target": "molecular_ensemble",
+      "source_claims": [
+        "c_statistical_scale"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "molecular_ensemble",
+      "relation": "contains",
+      "target": "molecule",
+      "source_claims": [
+        "c_statistical_scale"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "macroscopic_state_variables",
+      "relation": "can_include",
+      "target": "pressure",
+      "source_claims": [
+        "c_statistical_scale"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "macroscopic_state_variables",
+      "relation": "can_include",
+      "target": "temperature",
+      "source_claims": [
+        "c_statistical_scale"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "macroscopic_state_variables",
+      "relation": "can_include",
+      "target": "concentration",
+      "source_claims": [
+        "c_statistical_scale"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "molecular_description",
+      "relation": "may_require",
+      "target": "molecular_position",
+      "source_claims": [
+        "c_statistical_scale"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "molecular_description",
+      "relation": "may_require",
+      "target": "molecular_speed",
+      "source_claims": [
+        "c_statistical_scale"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relation": "reduces_dependence_on",
+      "target": "empirical_correlations",
+      "semantic": "source says it predicts properties without relying on empirical correlations based on chemical similarities",
+      "source_claims": [
+        "c_statistical_scale"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relation": "uses",
+      "target": "avogadro_constant",
+      "source_claims": [
+        "c_statistical_scale"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "mikhail_lomonosov",
+      "relation": "coined_term",
+      "target": "physical_chemistry",
+      "year": 1752,
+      "source_claims": [
+        "c_history_term"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "mikhail_lomonosov",
+      "relation": "taught",
+      "target": "lomonosov_1752_lecture",
+      "year": 1752,
+      "source_claims": [
+        "c_history_term"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "lomonosov_1752_lecture",
+      "relation": "defined",
+      "target": "physical_chemistry",
+      "source_claims": [
+        "c_history_term"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "modern_physical_chemistry",
+      "relation": "developed_around",
+      "target": "thermodynamics",
+      "source_claims": [
+        "c_modern_origin"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "modern_physical_chemistry",
+      "relation": "developed_around",
+      "target": "electrolytes_in_solutions",
+      "source_claims": [
+        "c_modern_origin"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "modern_physical_chemistry",
+      "relation": "developed_around",
+      "target": "chemical_kinetics",
+      "source_claims": [
+        "c_modern_origin"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "modern_physical_chemistry",
+      "relation": "developed_around",
+      "target": "electrolytes_in_solutions",
+      "source_claims": [
+        "c_modern_origin"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "josiah_willard_gibbs",
+      "relation": "authored",
+      "target": "gibbs_1876_paper",
+      "year": 1876,
+      "source_claims": [
+        "c_modern_origin"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "gibbs_1876_paper",
+      "relation": "introduced_or_established",
+      "target": "gibbs_energy",
+      "source_claims": [
+        "c_modern_origin"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "gibbs_1876_paper",
+      "relation": "introduced_or_established",
+      "target": "chemical_potential",
+      "source_claims": [
+        "c_modern_origin"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "gibbs_1876_paper",
+      "relation": "introduced_or_established",
+      "target": "gibbs_phase_rule",
+      "source_claims": [
+        "c_modern_origin"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "wilhelm_ostwald",
+      "relation": "founded",
+      "target": "zeitschrift_fuer_physikalische_chemie",
+      "year": 1887,
+      "source_claims": [
+        "c_journal_history"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "jacobus_henricus_vant_hoff",
+      "relation": "founded",
+      "target": "zeitschrift_fuer_physikalische_chemie",
+      "year": 1887,
+      "source_claims": [
+        "c_journal_history"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "zeitschrift_fuer_physikalische_chemie",
+      "relation": "supports_claim",
+      "target": "first_field_specific_journal_claim",
+      "source_claims": [
+        "c_journal_history"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "svante_arrhenius",
+      "relation": "leading_figure_in",
+      "target": "physical_chemistry",
+      "period": "late 19th/early 20th century",
+      "source_claims": [
+        "c_journal_history"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "wilhelm_ostwald",
+      "relation": "leading_figure_in",
+      "target": "physical_chemistry",
+      "period": "late 19th/early 20th century",
+      "source_claims": [
+        "c_journal_history"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "wilhelm_ostwald",
+      "relation": "received",
+      "target": "nobel_prize_in_chemistry",
+      "period": "1901–1909",
+      "source_claims": [
+        "c_journal_history"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "jacobus_henricus_vant_hoff",
+      "relation": "leading_figure_in",
+      "target": "physical_chemistry",
+      "period": "late 19th/early 20th century",
+      "source_claims": [
+        "c_journal_history"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "jacobus_henricus_vant_hoff",
+      "relation": "received",
+      "target": "nobel_prize_in_chemistry",
+      "period": "1901–1909",
+      "source_claims": [
+        "c_journal_history"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "svante_arrhenius",
+      "relation": "leading_figure_in",
+      "target": "physical_chemistry",
+      "period": "late 19th/early 20th century",
+      "source_claims": [
+        "c_journal_history"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "svante_arrhenius",
+      "relation": "received",
+      "target": "nobel_prize_in_chemistry",
+      "period": "1901–1909",
+      "source_claims": [
+        "c_journal_history"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "irving_langmuir",
+      "relation": "contributed_to",
+      "target": "colloid_science",
+      "source_claims": [
+        "c_developments"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "irving_langmuir",
+      "relation": "contributed_to",
+      "target": "surface_chemistry",
+      "source_claims": [
+        "c_developments"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "incorporated",
+      "target": "statistical_mechanics",
+      "source_claims": [
+        "c_developments"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relation": "developed_from",
+      "target": "quantum_mechanics",
+      "period": "1930s",
+      "source_claims": [
+        "c_developments"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "linus_pauling",
+      "relation": "leading_name_in",
+      "target": "quantum_chemistry",
+      "period": "1930s onward",
+      "source_claims": [
+        "c_developments"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "spectroscopy",
+      "relation": "includes_or_uses",
+      "target": "infrared_spectroscopy",
+      "source_claims": [
+        "c_developments"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "spectroscopy",
+      "relation": "includes_or_uses",
+      "target": "microwave_spectroscopy",
+      "source_claims": [
+        "c_developments"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "spectroscopy",
+      "relation": "includes_or_uses",
+      "target": "electron_paramagnetic_resonance",
+      "source_claims": [
+        "c_developments"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "spectroscopy",
+      "relation": "includes_or_uses",
+      "target": "nuclear_magnetic_resonance_spectroscopy",
+      "source_claims": [
+        "c_developments"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "nuclear_chemistry",
+      "relation": "enabled_or_advanced",
+      "target": "isotope_separation",
+      "source_claims": [
+        "c_later"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "developed_with",
+      "target": "astrochemistry",
+      "source_claims": [
+        "c_later"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "developed_with",
+      "target": "additive_physicochemical_properties",
+      "source_claims": [
+        "c_later"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "additive_physicochemical_properties",
+      "relation": "includes_method",
+      "target": "group_contribution_method",
+      "source_claims": [
+        "c_methods"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "additive_physicochemical_properties",
+      "relation": "includes_method",
+      "target": "lydersen_method",
+      "source_claims": [
+        "c_methods"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "additive_physicochemical_properties",
+      "relation": "includes_method",
+      "target": "joback_method",
+      "source_claims": [
+        "c_methods"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "additive_physicochemical_properties",
+      "relation": "includes_method",
+      "target": "benson_group_increment_theory",
+      "source_claims": [
+        "c_methods"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "additive_physicochemical_properties",
+      "relation": "includes_method",
+      "target": "quantitative_structure_activity_relationship",
+      "source_claims": [
+        "c_methods"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_journal",
+      "target": "journal_of_physical_chemistry",
+      "source_claims": [
+        "c_journals"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_journal",
+      "target": "physical_chemistry_chemical_physics",
+      "source_claims": [
+        "c_journals"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_journal",
+      "target": "macromolecular_chemistry_physics",
+      "source_claims": [
+        "c_journals"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_journal",
+      "target": "annual_review_physical_chemistry",
+      "source_claims": [
+        "c_journals"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_journal",
+      "target": "molecular_physics",
+      "source_claims": [
+        "c_journals"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_journal",
+      "target": "journal_physical_organic_chemistry",
+      "source_claims": [
+        "c_journals"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_journal",
+      "target": "journal_physical_chemistry_b",
+      "source_claims": [
+        "c_journals"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_journal",
+      "target": "chemphyschem",
+      "source_claims": [
+        "c_journals"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_journal",
+      "target": "journal_physical_chemistry_c",
+      "source_claims": [
+        "c_journals"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_journal",
+      "target": "journal_physical_chemistry_letters",
+      "source_claims": [
+        "c_journals"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_journal",
+      "target": "annales_chimie_physique",
+      "source_claims": [
+        "c_journals"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_branch_or_related_topic",
+      "target": "thermodynamics",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_branch_or_related_topic",
+      "target": "chemical_kinetics",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_branch_or_related_topic",
+      "target": "statistical_mechanics",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_branch_or_related_topic",
+      "target": "quantum_chemistry",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_branch_or_related_topic",
+      "target": "gas_phase_ion_chemistry",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_branch_or_related_topic",
+      "target": "microwave_chemistry",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_branch_or_related_topic",
+      "target": "electrochemistry",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_branch_or_related_topic",
+      "target": "photochemistry",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_branch_or_related_topic",
+      "target": "surface_chemistry",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_branch_or_related_topic",
+      "target": "solid_state_chemistry",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_branch_or_related_topic",
+      "target": "spectroscopy",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_branch_or_related_topic",
+      "target": "biophysical_chemistry",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_branch_or_related_topic",
+      "target": "materials_science",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_branch_or_related_topic",
+      "target": "physical_organic_chemistry",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_branch_or_related_topic",
+      "target": "micromeritics",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ref_sorensen_1999",
+      "relation": "supports",
+      "target": "c_relationships",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ref_atkins_2005_p245",
+      "relation": "supports",
+      "target": "c_quantum",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ref_atkins_2005_p324",
+      "relation": "supports",
+      "target": "c_quantum",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ref_landau_lifshitz_1980",
+      "relation": "supports",
+      "target": "c_statistical_scale",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ref_hill_1986",
+      "relation": "supports",
+      "target": "c_statistical_scale",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ref_schmidt_2005_p30",
+      "relation": "supports",
+      "target": "c_kinetics",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ref_schmidt_2005_pp25_32",
+      "relation": "supports",
+      "target": "c_kinetics",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ref_chandler_1987",
+      "relation": "supports",
+      "target": "c_statistical_scale",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ref_vucinich_1963",
+      "relation": "supports",
+      "target": "c_history_term",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ref_gibbs_1876",
+      "relation": "supports",
+      "target": "c_modern_origin",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ref_laidler_1993",
+      "relation": "supports",
+      "target": "c_modern_origin",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ref_laidler_1993",
+      "relation": "supports",
+      "target": "c_journals",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ref_herbst_2005",
+      "relation": "supports",
+      "target": "c_later",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ref_atkins_friedman_2005",
+      "relation": "supports",
+      "target": "c_quantum",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ref_schmidt_2005",
+      "relation": "supports",
+      "target": "c_kinetics",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ref_servos_1996",
+      "relation": "supports",
+      "target": "c_references",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ref_schummer_1998",
+      "relation": "supports",
+      "target": "c_references",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "ref_nye_2003",
+      "relation": "supports",
+      "target": "c_references",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_external_resource",
+      "target": "wikimedia_commons_physical_chemistry",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_external_resource",
+      "target": "wikibooks_physical_chemistry",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_external_resource",
+      "target": "wikiversity_physical_chemistry",
+      "source_claims": [
+        "c_references"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "gas_phase_ion_chemistry",
+      "relation": "studies_or_uses",
+      "target": "gas_phase_ion",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "gas_phase_ion_chemistry",
+      "relation": "studies_or_uses",
+      "target": "ion_molecule_reaction",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "gas_phase_ion_chemistry",
+      "relation": "studies_or_uses",
+      "target": "mass_spectrometric_ion",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "gas_phase_ion_chemistry",
+      "relation": "studies_or_uses",
+      "target": "gas_phase_reactivity",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "microwave_chemistry",
+      "relation": "studies_or_uses",
+      "target": "microwave_radiation",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "microwave_chemistry",
+      "relation": "studies_or_uses",
+      "target": "rotational_spectroscopy",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "microwave_chemistry",
+      "relation": "studies_or_uses",
+      "target": "microwave_matter_interaction",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "photochemistry",
+      "relation": "studies_or_uses",
+      "target": "electronic_excited_state",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "photochemistry",
+      "relation": "studies_or_uses",
+      "target": "photochemical_reaction",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "photochemistry",
+      "relation": "studies_or_uses",
+      "target": "quantum_yield",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "photochemistry",
+      "relation": "studies_or_uses",
+      "target": "nonradiative_relaxation",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "surface_chemistry",
+      "relation": "studies_or_uses",
+      "target": "adsorption",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "surface_chemistry",
+      "relation": "studies_or_uses",
+      "target": "desorption",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "surface_chemistry",
+      "relation": "studies_or_uses",
+      "target": "surface_adsorbate",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "surface_chemistry",
+      "relation": "studies_or_uses",
+      "target": "surface_free_energy",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "surface_chemistry",
+      "relation": "studies_or_uses",
+      "target": "wetting",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "solid_state_chemistry",
+      "relation": "studies_or_uses",
+      "target": "crystal_structure",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "solid_state_chemistry",
+      "relation": "studies_or_uses",
+      "target": "lattice",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "solid_state_chemistry",
+      "relation": "studies_or_uses",
+      "target": "defect",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "solid_state_chemistry",
+      "relation": "studies_or_uses",
+      "target": "phase_transition",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "solid_state_chemistry",
+      "relation": "studies_or_uses",
+      "target": "electronic_band_structure",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "biophysical_chemistry",
+      "relation": "studies_or_uses",
+      "target": "biomolecular_system",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "biophysical_chemistry",
+      "relation": "studies_or_uses",
+      "target": "protein",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "biophysical_chemistry",
+      "relation": "studies_or_uses",
+      "target": "membrane_biophysics",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "materials_science",
+      "relation": "studies_or_uses",
+      "target": "material_property",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "materials_science",
+      "relation": "studies_or_uses",
+      "target": "structure_property_relation",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "materials_science",
+      "relation": "studies_or_uses",
+      "target": "materials_processing",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_organic_chemistry",
+      "relation": "studies_or_uses",
+      "target": "reaction_mechanism_physical_organic",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_organic_chemistry",
+      "relation": "studies_or_uses",
+      "target": "substituent_effect",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "physical_organic_chemistry",
+      "relation": "studies_or_uses",
+      "target": "structure_reactivity_relationship",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "micromeritics",
+      "relation": "studies_or_uses",
+      "target": "particle_size",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "micromeritics",
+      "relation": "studies_or_uses",
+      "target": "particle_surface_area",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "micromeritics",
+      "relation": "studies_or_uses",
+      "target": "powder_characterization",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "electrochemistry",
+      "relation": "studies_or_uses",
+      "target": "electrode",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "electrochemistry",
+      "relation": "studies_or_uses",
+      "target": "electrode_potential",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "electrochemistry",
+      "relation": "studies_or_uses",
+      "target": "electrolyte",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "electrochemistry",
+      "relation": "studies_or_uses",
+      "target": "galvanic_cell",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "electrochemistry",
+      "relation": "studies_or_uses",
+      "target": "electrolytic_cell",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "studies_or_uses",
+      "target": "gibbs_free_energy",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "studies_or_uses",
+      "target": "chemical_potential",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "studies_or_uses",
+      "target": "enthalpy",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "studies_or_uses",
+      "target": "activity",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "studies_or_uses",
+      "target": "fugacity",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "studies_or_uses",
+      "target": "reaction_quotient",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "studies_or_uses",
+      "target": "equilibrium_constant",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "thermodynamics",
+      "relation": "studies_or_uses",
+      "target": "first_law",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "thermodynamics",
+      "relation": "studies_or_uses",
+      "target": "second_law",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "thermodynamics",
+      "relation": "studies_or_uses",
+      "target": "third_law",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "thermodynamics",
+      "relation": "studies_or_uses",
+      "target": "state_function",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "thermodynamics",
+      "relation": "studies_or_uses",
+      "target": "path_function",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relation": "studies_or_uses",
+      "target": "microstate",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relation": "studies_or_uses",
+      "target": "macrostate",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relation": "studies_or_uses",
+      "target": "ensemble",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relation": "studies_or_uses",
+      "target": "partition_function",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relation": "studies_or_uses",
+      "target": "boltzmann_distribution",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relation": "studies_or_uses",
+      "target": "fluctuation",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relation": "studies_or_uses",
+      "target": "schrodinger_equation",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relation": "studies_or_uses",
+      "target": "born_oppenheimer_approximation",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relation": "studies_or_uses",
+      "target": "molecular_orbital",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relation": "studies_or_uses",
+      "target": "electron_density",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relation": "studies_or_uses",
+      "target": "density_functional_theory",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relation": "studies_or_uses",
+      "target": "basis_set",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_kinetics",
+      "relation": "studies_or_uses",
+      "target": "rate_law",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_kinetics",
+      "relation": "studies_or_uses",
+      "target": "arrhenius_equation",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_kinetics",
+      "relation": "studies_or_uses",
+      "target": "transition_state_theory",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_kinetics",
+      "relation": "studies_or_uses",
+      "target": "activation_energy",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "chemical_kinetics",
+      "relation": "studies_or_uses",
+      "target": "catalytic_cycle",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "thermochemistry",
+      "relation": "studies_or_uses",
+      "target": "enthalpy_change",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "thermochemistry",
+      "relation": "studies_or_uses",
+      "target": "hess_law",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "thermochemistry",
+      "relation": "studies_or_uses",
+      "target": "calorimetry",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "thermochemistry",
+      "relation": "studies_or_uses",
+      "target": "heat_capacity",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "spectroscopy",
+      "relation": "studies_or_uses",
+      "target": "infrared_spectroscopy",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "spectroscopy",
+      "relation": "studies_or_uses",
+      "target": "uv_visible_spectroscopy",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "spectroscopy",
+      "relation": "studies_or_uses",
+      "target": "nmr_spectroscopy",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "spectroscopy",
+      "relation": "studies_or_uses",
+      "target": "epr_spectroscopy",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "spectroscopy",
+      "relation": "studies_or_uses",
+      "target": "spectral_line",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "surface_science",
+      "relation": "studies_or_uses",
+      "target": "interface",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "surface_science",
+      "relation": "studies_or_uses",
+      "target": "interfacial_energy",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "surface_science",
+      "relation": "studies_or_uses",
+      "target": "surface_adsorption",
+      "source_claims": [
+        "c_branches"
+      ],
+      "epistemic_status": "source_derived"
+    },
+    {
+      "source": "rate_law",
+      "relation": "describes",
+      "target": "reaction_rate",
+      "semantic": "normalized disciplinary relationship",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "arrhenius_equation",
+      "relation": "relates",
+      "target": "rate_temperature_dependence",
+      "semantic": "normalized disciplinary relationship",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "activation_energy",
+      "relation": "is_related_to",
+      "target": "activation_barrier",
+      "semantic": "normalized disciplinary relationship",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "transition_state_theory",
+      "relation": "models",
+      "target": "transition_state",
+      "semantic": "normalized disciplinary relationship",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "transition_state_theory",
+      "relation": "explains",
+      "target": "reaction_rate",
+      "semantic": "normalized disciplinary relationship",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "catalytic_cycle",
+      "relation": "contains",
+      "target": "catalyst",
+      "semantic": "normalized disciplinary relationship",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "chemical_kinetics",
+      "relation": "uses",
+      "target": "rate_law",
+      "semantic": "normalized disciplinary relationship",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "chemical_kinetics",
+      "relation": "uses",
+      "target": "arrhenius_equation",
+      "semantic": "normalized disciplinary relationship",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "chemical_kinetics",
+      "relation": "uses",
+      "target": "transition_state_theory",
+      "semantic": "normalized disciplinary relationship",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "gibbs_free_energy",
+      "relation": "is",
+      "target": "gibbs_energy",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "chemical_potential",
+      "relation": "is",
+      "target": "chemical_potential",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "uses",
+      "target": "gibbs_free_energy",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "uses",
+      "target": "chemical_potential",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "uses",
+      "target": "activity",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "uses",
+      "target": "fugacity",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "uses",
+      "target": "reaction_quotient",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "uses",
+      "target": "equilibrium_constant",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "reaction_quotient",
+      "relation": "relates_to",
+      "target": "equilibrium_constant",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "chemical_potential",
+      "relation": "describes",
+      "target": "chemical_mixture",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "gibbs_free_energy",
+      "relation": "constrains",
+      "target": "spontaneity",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "enthalpy",
+      "relation": "is_related_to",
+      "target": "heat",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "hess_law",
+      "relation": "operates_on",
+      "target": "enthalpy_change",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "calorimetry",
+      "relation": "measures",
+      "target": "heat",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "heat_capacity",
+      "relation": "quantifies",
+      "target": "thermal_response",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "microstate",
+      "relation": "contributes_to",
+      "target": "macrostate",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "macrostate",
+      "relation": "represents",
+      "target": "macroscopic_state_variables",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "ensemble",
+      "relation": "contains",
+      "target": "microstate",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "partition_function",
+      "relation": "encodes",
+      "target": "ensemble",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "partition_function",
+      "relation": "derives",
+      "target": "thermodynamic_properties",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "boltzmann_distribution",
+      "relation": "weights",
+      "target": "microstate",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "fluctuation",
+      "relation": "arises_from",
+      "target": "microstate",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relation": "uses",
+      "target": "ensemble",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relation": "uses",
+      "target": "partition_function",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relation": "uses",
+      "target": "boltzmann_distribution",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "schrodinger_equation",
+      "relation": "describes",
+      "target": "quantum_state",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "quantum_state",
+      "relation": "determines",
+      "target": "electron_distribution",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "born_oppenheimer_approximation",
+      "relation": "separates",
+      "target": "nuclear_motion",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "born_oppenheimer_approximation",
+      "relation": "separates",
+      "target": "electron",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "molecular_orbital",
+      "relation": "describes",
+      "target": "electron_distribution",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "density_functional_theory",
+      "relation": "computes",
+      "target": "electron_density",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "basis_set",
+      "relation": "represents",
+      "target": "molecular_orbital",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relation": "uses",
+      "target": "schrodinger_equation",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relation": "uses",
+      "target": "density_functional_theory",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relation": "uses",
+      "target": "molecular_orbital",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "infrared_spectroscopy",
+      "relation": "probes",
+      "target": "molecular_vibrations",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "uv_visible_spectroscopy",
+      "relation": "probes",
+      "target": "electronic_excitation",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "nmr_spectroscopy",
+      "relation": "probes",
+      "target": "nuclear_spin",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "epr_spectroscopy",
+      "relation": "probes",
+      "target": "unpaired_electrons",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "spectral_line",
+      "relation": "is_observation_of",
+      "target": "light_matter_interaction",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "spectroscopy",
+      "relation": "produces",
+      "target": "experimental_data",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "electrode",
+      "relation": "contacts",
+      "target": "electrolyte",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "electrode_potential",
+      "relation": "characterizes",
+      "target": "electrode",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "galvanic_cell",
+      "relation": "contains",
+      "target": "electrode",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "electrolytic_cell",
+      "relation": "contains",
+      "target": "electrode",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "electrochemical_cell",
+      "relation": "is_generalized_by",
+      "target": "galvanic_cell",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "electrochemical_cell",
+      "relation": "is_generalized_by",
+      "target": "electrolytic_cell",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "electrochemistry",
+      "relation": "studies",
+      "target": "electrode_potential",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "electrochemistry",
+      "relation": "studies",
+      "target": "electrolyte",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "adsorption",
+      "relation": "occurs_at",
+      "target": "interface",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "desorption",
+      "relation": "reverses",
+      "target": "adsorption",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "surface_adsorbate",
+      "relation": "results_from",
+      "target": "adsorption",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "surface_free_energy",
+      "relation": "characterizes",
+      "target": "surface_science",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "wetting",
+      "relation": "depends_on",
+      "target": "interfacial_energy",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "surface_chemistry",
+      "relation": "studies",
+      "target": "adsorption",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "surface_chemistry",
+      "relation": "studies",
+      "target": "desorption",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "surface_science",
+      "relation": "studies",
+      "target": "interface",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "crystal_structure",
+      "relation": "uses",
+      "target": "lattice",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "defect",
+      "relation": "modifies",
+      "target": "crystal_structure",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "phase_transition",
+      "relation": "changes",
+      "target": "phase",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "electronic_band_structure",
+      "relation": "describes",
+      "target": "material",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "materials_science",
+      "relation": "studies",
+      "target": "material_property",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "materials_science",
+      "relation": "studies",
+      "target": "structure_property_relation",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "structure_property_relation",
+      "relation": "links",
+      "target": "crystal_structure",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "structure_property_relation",
+      "relation": "links",
+      "target": "material_property",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "biophysical_chemistry",
+      "relation": "studies",
+      "target": "biomolecular_system",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "biomolecular_system",
+      "relation": "includes",
+      "target": "protein",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "membrane_biophysics",
+      "relation": "studies",
+      "target": "cell_membrane",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "physical_organic_chemistry",
+      "relation": "studies",
+      "target": "reaction_mechanism_physical_organic",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "substituent_effect",
+      "relation": "affects",
+      "target": "reaction_rate",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "structure_reactivity_relationship",
+      "relation": "links",
+      "target": "chemical_structure",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "micromeritics",
+      "relation": "measures",
+      "target": "particle_size",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "micromeritics",
+      "relation": "measures",
+      "target": "particle_surface_area",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "powder_characterization",
+      "relation": "uses",
+      "target": "particle_size",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "powder_characterization",
+      "relation": "uses",
+      "target": "particle_surface_area",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relation": "provides_microscopic_basis_for",
+      "target": "chemical_kinetics",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "quantum_chemistry",
+      "relation": "provides_microscopic_basis_for",
+      "target": "spectroscopy",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "statistical_mechanics",
+      "relation": "bridges",
+      "target": "thermodynamics",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "constrains",
+      "target": "chemical_kinetics",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "chemical_thermodynamics",
+      "relation": "constrains",
+      "target": "phase",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "chemical_kinetics",
+      "relation": "describes_time_dependence_of",
+      "target": "chemical_reaction",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "thermochemistry",
+      "relation": "connects",
+      "target": "chemical_reaction",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "thermochemistry",
+      "relation": "connects",
+      "target": "thermodynamics",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "electrochemistry",
+      "relation": "connects",
+      "target": "thermodynamics",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "electrochemistry",
+      "relation": "connects",
+      "target": "chemical_kinetics",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "surface_chemistry",
+      "relation": "connects",
+      "target": "intermolecular_forces",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "surface_chemistry",
+      "relation": "connects",
+      "target": "materials_science",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "photochemistry",
+      "relation": "connects",
+      "target": "quantum_chemistry",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "photochemistry",
+      "relation": "connects",
+      "target": "spectroscopy",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "microwave_chemistry",
+      "relation": "connects",
+      "target": "spectroscopy",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "microwave_chemistry",
+      "relation": "connects",
+      "target": "molecular_motion",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "solid_state_chemistry",
+      "relation": "connects",
+      "target": "quantum_chemistry",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "solid_state_chemistry",
+      "relation": "connects",
+      "target": "materials_science",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "biophysical_chemistry",
+      "relation": "connects",
+      "target": "statistical_mechanics",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "biophysical_chemistry",
+      "relation": "connects",
+      "target": "thermodynamics",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "physical_organic_chemistry",
+      "relation": "connects",
+      "target": "chemical_kinetics",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "physical_organic_chemistry",
+      "relation": "connects",
+      "target": "quantum_chemistry",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "gas_phase_ion_chemistry",
+      "relation": "connects",
+      "target": "mass_action",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "ref_gibbs_1876",
+      "relation": "about_or_by",
+      "target": "josiah_willard_gibbs",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "ref_vucinich_1963",
+      "relation": "about_or_by",
+      "target": "mikhail_lomonosov",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "ref_laidler_1993",
+      "relation": "about_or_by",
+      "target": "wilhelm_ostwald",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "ref_servos_1996",
+      "relation": "about_or_by",
+      "target": "wilhelm_ostwald",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "ref_atkins_friedman_2005",
+      "relation": "about_or_by",
+      "target": "peter_atkins",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "ref_schmidt_2005",
+      "relation": "about_or_by",
+      "target": "lanny_schmidt",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "ref_chandler_1987",
+      "relation": "about_or_by",
+      "target": "david_chandler",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "ref_hill_1986",
+      "relation": "about_or_by",
+      "target": "terrell_hill",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "ref_landau_lifshitz_1980",
+      "relation": "about_or_by",
+      "target": "lev_landau",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_source_section",
+      "target": "section_scope",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_source_section",
+      "target": "section_relationships",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_source_section",
+      "target": "section_key_concepts",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_source_section",
+      "target": "section_disciplines",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_source_section",
+      "target": "section_history",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_source_section",
+      "target": "section_journals",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_source_section",
+      "target": "section_branches",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "physical_chemistry",
+      "relation": "has_source_section",
+      "target": "section_references",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_scope",
+      "relation": "contains_claim",
+      "target": "c_scope",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_scope",
+      "relation": "contains_claim",
+      "target": "c_contrast",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_relationships",
+      "relation": "contains_claim",
+      "target": "c_relationships",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_key_concepts",
+      "relation": "contains_claim",
+      "target": "c_key_concept",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_key_concepts",
+      "relation": "contains_claim",
+      "target": "c_atoms_bonds",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_disciplines",
+      "relation": "contains_claim",
+      "target": "c_quantum",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_disciplines",
+      "relation": "contains_claim",
+      "target": "c_spectroscopy",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_disciplines",
+      "relation": "contains_claim",
+      "target": "c_thermo",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_disciplines",
+      "relation": "contains_claim",
+      "target": "c_classical_limit",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_disciplines",
+      "relation": "contains_claim",
+      "target": "c_kinetics",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_disciplines",
+      "relation": "contains_claim",
+      "target": "c_statistical_scale",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_history",
+      "relation": "contains_claim",
+      "target": "c_history_term",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_history",
+      "relation": "contains_claim",
+      "target": "c_modern_origin",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_history",
+      "relation": "contains_claim",
+      "target": "c_journal_history",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_history",
+      "relation": "contains_claim",
+      "target": "c_developments",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_history",
+      "relation": "contains_claim",
+      "target": "c_later",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_history",
+      "relation": "contains_claim",
+      "target": "c_methods",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_journals",
+      "relation": "contains_claim",
+      "target": "c_journals",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_branches",
+      "relation": "contains_claim",
+      "target": "c_branches",
+      "epistemic_status": "normalized_or_inferred"
+    },
+    {
+      "source": "section_references",
+      "relation": "contains_claim",
+      "target": "c_references",
+      "epistemic_status": "normalized_or_inferred"
+    }
+  ],
+  "statistics": {
+    "node_count": 293,
+    "edge_count": 413,
+    "claim_count": 20,
+    "node_types": {
+      "discipline": 17,
+      "scope": 1,
+      "scale": 2,
+      "entity": 12,
+      "concept": 102,
+      "physical_quantity_or_concept": 4,
+      "mechanism": 1,
+      "property": 7,
+      "quantity": 8,
+      "law_or_rule": 1,
+      "system": 3,
+      "property_class": 2,
+      "process": 9,
+      "role": 2,
+      "representation": 2,
+      "state": 2,
+      "physical_entity": 1,
+      "machine": 3,
+      "state_of_matter": 2,
+      "evidence": 1,
+      "model": 1,
+      "constraint": 1,
+      "goal": 1,
+      "constant": 1,
+      "state_variable": 2,
+      "state_description": 1,
+      "method": 4,
+      "phenomenon": 2,
+      "relation": 4,
+      "person": 18,
+      "historical_work": 1,
+      "publication": 1,
+      "journal": 12,
+      "discipline_or_method": 22,
+      "bibliographic_reference": 17,
+      "structure": 1,
+      "historical_period": 1,
+      "discipline_or_topic": 2,
+      "historical_claim": 1,
+      "award": 1,
+      "spectroscopy_method": 4,
+      "external_resource": 3,
+      "source_section": 8,
+      "Thermal response": 1,
+      "Thermodynamic properties": 1
+    },
+    "relation_types": {
+      "has_core_domain": 10,
+      "studies_scale": 2,
+      "is_predominantly_oriented_toward": 1,
+      "contrasted_with": 1,
+      "applies": 2,
+      "includes": 5,
+      "affects": 4,
+      "determines_or_describes": 1,
+      "affects_or_identifies": 1,
+      "studies": 16,
+      "quantifies_transfer_between_systems": 2,
+      "studies_transfer_of": 1,
+      "during": 2,
+      "correlates": 3,
+      "depends_on": 3,
+      "described_as": 1,
+      "has_structural_description": 1,
+      "contains": 6,
+      "connected_by": 1,
+      "involves": 7,
+      "aims_to_predict": 1,
+      "requires_knowledge_of": 2,
+      "describes": 10,
+      "provides_tools_for": 5,
+      "is_interaction_between": 2,
+      "studies_or_constrains": 3,
+      "constrains": 4,
+      "links": 4,
+      "supports": 20,
+      "primarily_models": 2,
+      "limited_for": 1,
+      "can_describe": 2,
+      "transforms_through": 1,
+      "lies_above_in_energy": 2,
+      "is_represented_by": 1,
+      "generally_correlates_with": 1,
+      "often_consists_of": 1,
+      "has": 1,
+      "is_sequence_of": 1,
+      "analyzes_dependence_on": 4,
+      "can_be_engineered_for": 1,
+      "modifies": 2,
+      "explains": 2,
+      "bridges": 2,
+      "predicts": 1,
+      "reduces_description_of": 1,
+      "can_include": 3,
+      "may_require": 2,
+      "reduces_dependence_on": 1,
+      "uses": 19,
+      "coined_term": 1,
+      "taught": 1,
+      "defined": 1,
+      "developed_around": 4,
+      "authored": 1,
+      "introduced_or_established": 3,
+      "founded": 2,
+      "supports_claim": 1,
+      "leading_figure_in": 4,
+      "received": 3,
+      "contributed_to": 2,
+      "incorporated": 1,
+      "developed_from": 1,
+      "leading_name_in": 1,
+      "includes_or_uses": 4,
+      "enabled_or_advanced": 1,
+      "developed_with": 2,
+      "includes_method": 5,
+      "has_journal": 11,
+      "has_branch_or_related_topic": 15,
+      "has_external_resource": 3,
+      "studies_or_uses": 79,
+      "relates": 1,
+      "is_related_to": 2,
+      "models": 1,
+      "is": 2,
+      "relates_to": 1,
+      "operates_on": 1,
+      "measures": 3,
+      "quantifies": 1,
+      "contributes_to": 1,
+      "represents": 2,
+      "encodes": 1,
+      "derives": 1,
+      "weights": 1,
+      "arises_from": 1,
+      "determines": 1,
+      "separates": 2,
+      "computes": 1,
+      "probes": 4,
+      "is_observation_of": 1,
+      "produces": 1,
+      "contacts": 1,
+      "characterizes": 2,
+      "is_generalized_by": 2,
+      "occurs_at": 1,
+      "reverses": 1,
+      "results_from": 1,
+      "changes": 1,
+      "provides_microscopic_basis_for": 2,
+      "describes_time_dependence_of": 1,
+      "connects": 17,
+      "about_or_by": 9,
+      "has_source_section": 8,
+      "contains_claim": 20
+    }
+  },
+  "expansion_targets": [
+    "full chemical thermodynamics: fundamental relation, chemical potential, activities, fugacity, reaction quotient, equilibrium constants, Gibbs phase rule derivation",
+    "full kinetics: rate laws, Arrhenius/Eyring, transition-state theory, elementary mechanisms, steady-state approximation, catalysis",
+    "full quantum chemistry: Schrödinger equation, Born-Oppenheimer approximation, molecular orbitals, Hartree-Fock, DFT, basis sets, spectroscopy selection rules",
+    "full statistical mechanics: ensembles, partition functions, Boltzmann distribution, fluctuations, chemical potential derivations",
+    "electrochemistry: electrode potentials, Nernst equation, galvanic/electrolytic cells, double layers, kinetics, impedance",
+    "surface chemistry: adsorption, Langmuir/isotherms, surface free energy, wetting, catalysis",
+    "colloids: colloidal stability, Brownian motion, DLVO, interfaces",
+    "transport: diffusion, conduction, viscosity, coupled fluxes",
+    "photochemistry: excited states, quantum yields, nonradiative/radiative pathways",
+    "solid-state and materials chemistry: crystal structure, band theory, defects, phase transitions",
+    "thermochemistry: Hess law, calorimetry, enthalpy, heat capacities",
+    "phase behavior: phase diagrams, criticality, phase transitions, nucleation",
+    "history: primary-source papers, exact intellectual influence, institutions, Nobel records",
+    "bibliography: DOI/ISBN/edition/page-level provenance and citation graph",
+    "evidence: experiments, instruments, measurements and which claims each observation supports",
+    "formal ontology: RDF/OWL-compatible classes, predicates, provenance vocabulary, uncertainty and epistemic status"
+  ]
+}
