@@ -1,0 +1,2913 @@
+{
+  "schema_version": "3.1-semantic-provenance",
+  "graph_id": "ionic_bonding_full_semantic_knowledge_graph_v3",
+  "title": "Ionic Bonding — Full Semantic Knowledge Graph",
+  "domain": "chemistry / chemical bonding / physical chemistry / solid-state chemistry / supramolecular chemistry",
+  "source": {
+    "filename": "Pasted text(20261007-042829).txt",
+    "source_kind": "user_provided_source",
+    "preservation_policy": "Preserve concepts, definitions, mechanisms, qualifications, comparisons, examples, quantitative statements, measurement methods, historical/reference objects, and source provenance without silently replacing source framing.",
+    "source_line_count": 184
+  },
+  "semantic_distinctions": [
+    {
+      "id": "d1",
+      "distinction": "ionic_bond_vs_pure_electrostatic_pair",
+      "meaning": "The source treats ionic bonding in solids as a collective lattice interaction, not merely one isolated cation-anion pair."
+    },
+    {
+      "id": "d2",
+      "distinction": "ionic_vs_covalent_character",
+      "meaning": "Bonding is treated as a continuum; ionic compounds retain some covalent character."
+    },
+    {
+      "id": "d3",
+      "distinction": "bond_energy_vs_lattice_energy",
+      "meaning": "Bond energy concerns mean gaseous bond breaking, while lattice energy concerns formation of the crystalline ionic solid from gaseous ions."
+    },
+    {
+      "id": "d4",
+      "distinction": "lattice_energy_vs_solution_binding",
+      "meaning": "Crystal lattice energetics and solution-phase ionic/salt-bridge binding are different physical contexts."
+    },
+    {
+      "id": "d5",
+      "distinction": "ionic_polarization_vs_field_induced_lattice_displacement",
+      "meaning": "Fajans-rule polarization of an anion electron cloud is explicitly distinguished from displacement of ions in a lattice by an applied electric field."
+    },
+    {
+      "id": "d6",
+      "distinction": "localized_bond_vs_collective_lattice",
+      "meaning": "Ionic solids generally require a collective lattice description rather than discrete localized two-atom bonds."
+    },
+    {
+      "id": "d7",
+      "distinction": "stoichiometric_ionic_solid_vs_nonstoichiometric_transition",
+      "meaning": "Charge neutrality usually imposes stoichiometric ratios, but mixed ionic/metallic systems can exhibit non-stoichiometry."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ionic_bond",
+      "label": "Ionic bond",
+      "node_type": "chemical_bond",
+      "description": "Chemical bonding involving electrostatic attraction between oppositely charged ions; primary interaction in ionic compounds."
+    },
+    {
+      "id": "electrostatic_attraction",
+      "label": "Electrostatic attraction",
+      "node_type": "physical_interaction",
+      "description": "Attraction between oppositely charged electric charges."
+    },
+    {
+      "id": "ion",
+      "label": "Ion",
+      "node_type": "charged_chemical_entity",
+      "description": "Atom or group of atoms carrying net electrostatic charge."
+    },
+    {
+      "id": "cation",
+      "label": "Cation",
+      "node_type": "ion_subclass",
+      "description": "Positively charged ion formed when an atom or group has fewer electrons than protons."
+    },
+    {
+      "id": "anion",
+      "label": "Anion",
+      "node_type": "ion_subclass",
+      "description": "Negatively charged ion formed when an atom or group has more electrons than protons."
+    },
+    {
+      "id": "electron",
+      "label": "Electron",
+      "node_type": "subatomic_particle",
+      "description": "Negatively charged particle transferred or redistributed in ionic-bond formation."
+    },
+    {
+      "id": "proton",
+      "label": "Proton",
+      "node_type": "subatomic_particle",
+      "description": "Positively charged constituent of nuclei; contributes to net ionic charge."
+    },
+    {
+      "id": "electrovalence",
+      "label": "Electrovalence",
+      "node_type": "bonding_concept",
+      "description": "Electron transfer associated with ionic bonding, contrasted by the source with covalence."
+    },
+    {
+      "id": "covalence",
+      "label": "Covalence",
+      "node_type": "bonding_concept",
+      "description": "Electron sharing associated with covalent bonding."
+    },
+    {
+      "id": "covalent_bond",
+      "label": "Covalent bond",
+      "node_type": "chemical_bond",
+      "description": "Bonding based on sharing electrons between atoms."
+    },
+    {
+      "id": "metallic_bond",
+      "label": "Metallic bond",
+      "node_type": "chemical_bond",
+      "description": "Chemical bonding mode associated with metallic materials."
+    },
+    {
+      "id": "ionic_character",
+      "label": "Ionic character",
+      "node_type": "bond_character",
+      "description": "Degree to which bonding behavior is ionic rather than covalent."
+    },
+    {
+      "id": "covalent_character",
+      "label": "Covalent character",
+      "node_type": "bond_character",
+      "description": "Degree to which bonding involves shared electron density."
+    },
+    {
+      "id": "polar_covalent_bond",
+      "label": "Polar covalent bond",
+      "node_type": "chemical_bond",
+      "description": "Bond with partially ionic and partially covalent character."
+    },
+    {
+      "id": "electronegativity",
+      "label": "Electronegativity",
+      "node_type": "chemical_property",
+      "description": "Tendency relevant to electron attraction; difference between bonded atoms correlates with ionic character."
+    },
+    {
+      "id": "valence_shell",
+      "label": "Valence shell",
+      "node_type": "electronic_structure",
+      "description": "Outer electron shell involved in common ionic-bond formation."
+    },
+    {
+      "id": "valence_electron",
+      "label": "Valence electron",
+      "node_type": "electron_class",
+      "description": "Electron in the outer shell that can be transferred in common ionic bonding."
+    },
+    {
+      "id": "stable_electronic_configuration",
+      "label": "Stable electronic configuration",
+      "node_type": "electronic_structure",
+      "description": "Electron configuration sought through electron loss/gain; often noble-gas-like for s- and p-block elements."
+    },
+    {
+      "id": "noble_gas_configuration",
+      "label": "Noble-gas configuration",
+      "node_type": "electronic_structure",
+      "description": "Stable configuration commonly reached by s- and p-block atoms through electron transfer."
+    },
+    {
+      "id": "electron_affinity",
+      "label": "Electron affinity",
+      "node_type": "energetic_property",
+      "description": "Energetic tendency of an atom to accept an electron."
+    },
+    {
+      "id": "ionization_energy",
+      "label": "Ionization energy",
+      "node_type": "energetic_property",
+      "description": "Energy required to remove an electron; low values favor cation formation."
+    },
+    {
+      "id": "redox_reaction",
+      "label": "Redox reaction",
+      "node_type": "chemical_process",
+      "description": "Reaction involving oxidation/electron loss and reduction/electron gain."
+    },
+    {
+      "id": "electron_transfer",
+      "label": "Electron transfer",
+      "node_type": "chemical_process",
+      "description": "Transfer of electron density from donor atom/species to acceptor."
+    },
+    {
+      "id": "lattice_energy",
+      "label": "Lattice energy",
+      "node_type": "thermochemical_quantity",
+      "description": "Enthalpy change associated with forming a crystalline ionic solid from gaseous ions as defined in the source."
+    },
+    {
+      "id": "cohesive_force",
+      "label": "Cohesive force",
+      "node_type": "physical_interaction",
+      "description": "Collective attraction holding an ionic crystal together."
+    },
+    {
+      "id": "crystal_lattice",
+      "label": "Crystal lattice",
+      "node_type": "solid_structure",
+      "description": "Periodic arrangement of ions in an ionic solid."
+    },
+    {
+      "id": "crystallographic_lattice",
+      "label": "Crystallographic lattice",
+      "node_type": "solid_structure",
+      "description": "Crystal structure arising from ordered ionic packing."
+    },
+    {
+      "id": "stoichiometry",
+      "label": "Stoichiometry",
+      "node_type": "chemical_constraint",
+      "description": "Charge-neutral composition constraint governing ionic-compound ratios."
+    },
+    {
+      "id": "charge_neutrality",
+      "label": "Charge neutrality",
+      "node_type": "physical_constraint",
+      "description": "Requirement that total positive and negative charge balance in a bulk ionic compound."
+    },
+    {
+      "id": "ionic_compound",
+      "label": "Ionic compound",
+      "node_type": "chemical_compound",
+      "description": "Compound whose primary interaction is ionic and whose solid structure is generally a crystal lattice."
+    },
+    {
+      "id": "salt",
+      "label": "Salt",
+      "node_type": "chemical_compound_class",
+      "description": "Ionic compound that can be formed by neutralization reactions such as acid-base neutralization."
+    },
+    {
+      "id": "solvation",
+      "label": "Solvation",
+      "node_type": "solution_process",
+      "description": "Process by which ions interact with and become stabilized by solvent."
+    },
+    {
+      "id": "polar_solvent",
+      "label": "Polar solvent",
+      "node_type": "solvent_class",
+      "description": "Solvent capable of stabilizing separated ions; water is the principal example in the source."
+    },
+    {
+      "id": "aqueous_solution",
+      "label": "Aqueous solution",
+      "node_type": "solution",
+      "description": "Water-based ionic solution containing mobile ions."
+    },
+    {
+      "id": "molten_ionic_compound",
+      "label": "Molten ionic compound",
+      "node_type": "phase_state",
+      "description": "Ionic compound above its melting point with mobile ions."
+    },
+    {
+      "id": "electrical_conductivity",
+      "label": "Electrical conductivity",
+      "node_type": "physical_property",
+      "description": "Ability of a material or solution to carry electric current; ionic mobility enables conduction in molten/solution states."
+    },
+    {
+      "id": "melting",
+      "label": "Melting",
+      "node_type": "phase_transition",
+      "description": "Heating process that destroys the ordered ionic lattice and permits ion mobility."
+    },
+    {
+      "id": "dissolution",
+      "label": "Dissolution",
+      "node_type": "chemical_process",
+      "description": "Process in which an ionic crystal separates into solvated ions in a suitable solvent."
+    },
+    {
+      "id": "salt_neutralization",
+      "label": "Acid-base neutralization",
+      "node_type": "chemical_process",
+      "description": "Formation of salt and water from an Arrhenius acid and base."
+    },
+    {
+      "id": "arrhenius_acid",
+      "label": "Arrhenius acid",
+      "node_type": "chemical_concept",
+      "description": "Acid category used in the source's salt-formation example."
+    },
+    {
+      "id": "arrhenius_base",
+      "label": "Arrhenius base",
+      "node_type": "chemical_concept",
+      "description": "Base category used in the source's salt-formation example."
+    },
+    {
+      "id": "coulombs_law",
+      "label": "Coulomb's law",
+      "node_type": "physical_law",
+      "description": "Electrostatic interaction law relating force/energy to charge and separation."
+    },
+    {
+      "id": "interionic_separation",
+      "label": "Interionic separation",
+      "node_type": "structural_parameter",
+      "description": "Distance between interacting ions in an ionic structure."
+    },
+    {
+      "id": "madelung_constant",
+      "label": "Madelung constant",
+      "node_type": "crystal_parameter",
+      "description": "Geometric factor accounting for lattice-wide electrostatic interactions."
+    },
+    {
+      "id": "born_lande_equation",
+      "label": "Born–Landé equation",
+      "node_type": "equation",
+      "description": "Model for lattice energy using electrostatic potential plus short-range repulsion."
+    },
+    {
+      "id": "born_haber_cycle",
+      "label": "Born–Haber cycle",
+      "node_type": "thermochemical_cycle",
+      "description": "Thermochemical method for experimentally determining lattice energy."
+    },
+    {
+      "id": "electrostatic_potential_energy",
+      "label": "Electrostatic potential energy",
+      "node_type": "energy_quantity",
+      "description": "Electrostatic contribution to lattice energy."
+    },
+    {
+      "id": "short_range_repulsion",
+      "label": "Short-range repulsive potential",
+      "node_type": "interaction",
+      "description": "Repulsive contribution in the Born–Landé description."
+    },
+    {
+      "id": "shielding",
+      "label": "Electronic shielding",
+      "node_type": "electronic_effect",
+      "description": "Reduction of effective nuclear attraction with increasing distance/electron shielding."
+    },
+    {
+      "id": "bjerrum_equation",
+      "label": "Bjerrum equation",
+      "node_type": "equation",
+      "description": "Source-described aqueous binding-strength relation for ionic interactions."
+    },
+    {
+      "id": "fuoss_equation",
+      "label": "Fuoss equation",
+      "node_type": "equation",
+      "description": "Source-described relation for binding strength of ions in solution."
+    },
+    {
+      "id": "salt_bridge",
+      "label": "Salt bridge",
+      "node_type": "supramolecular_interaction",
+      "description": "Interaction between cationic and anionic sites; strength can be assessed from solution equilibria."
+    },
+    {
+      "id": "equilibrium_constant",
+      "label": "Equilibrium constant",
+      "node_type": "thermodynamic_quantity",
+      "description": "Quantity used to infer binding/free-energy contributions from equilibria."
+    },
+    {
+      "id": "free_energy",
+      "label": "Free energy",
+      "node_type": "thermodynamic_quantity",
+      "description": "Thermodynamic energy quantity used in describing salt-bridge contributions."
+    },
+    {
+      "id": "fajans_rules",
+      "label": "Fajans' rules",
+      "node_type": "chemical_rules",
+      "description": "Rules relating cation size/charge and anion polarizability to covalent character in nominally ionic bonds."
+    },
+    {
+      "id": "polarization",
+      "label": "Ionic-bond polarization",
+      "node_type": "electronic_effect",
+      "description": "Distortion of an anion's electron cloud by a small/highly charged cation, producing partial covalency."
+    },
+    {
+      "id": "polarizability",
+      "label": "Polarizability",
+      "node_type": "material_property",
+      "description": "Ease with which an electron cloud can be distorted."
+    },
+    {
+      "id": "partial_covalency",
+      "label": "Partial covalency",
+      "node_type": "bond_character",
+      "description": "Covalent contribution induced within predominantly ionic bonding."
+    },
+    {
+      "id": "electric_field_gradient",
+      "label": "Electric field gradient",
+      "node_type": "tensor_field_property",
+      "description": "Spatial gradient of electric field used in nuclear quadrupole/NMR/NQR analysis."
+    },
+    {
+      "id": "quadrupolar_nucleus",
+      "label": "Quadrupolar nucleus",
+      "node_type": "nuclear_property",
+      "description": "Nucleus with quadrupole moment suitable for NQR/NMR investigation of ionic character."
+    },
+    {
+      "id": "nuclear_quadrupole_moment",
+      "label": "Nuclear quadrupole moment",
+      "node_type": "nuclear_property",
+      "description": "Nuclear property interacting with electric field gradients."
+    },
+    {
+      "id": "qcc",
+      "label": "Nuclear quadrupole coupling constant",
+      "node_type": "spectroscopic_quantity",
+      "description": "QCC connecting nuclear quadrupole moment and principal electric-field-gradient component."
+    },
+    {
+      "id": "nqr",
+      "label": "Nuclear quadrupole resonance",
+      "node_type": "spectroscopy",
+      "description": "Technique used to investigate ionic character via quadrupolar nuclei."
+    },
+    {
+      "id": "nmr",
+      "label": "Nuclear magnetic resonance",
+      "node_type": "spectroscopy",
+      "description": "Technique used to determine quadrupolar coupling and bonding information."
+    },
+    {
+      "id": "bond_energy",
+      "label": "Bond energy",
+      "node_type": "energetic_property",
+      "description": "Mean energy required to break a bond in the gaseous state."
+    },
+    {
+      "id": "coordination_number",
+      "label": "Coordination number",
+      "node_type": "structural_property",
+      "description": "Number of nearest ionic neighbors in a crystal structure."
+    },
+    {
+      "id": "rock_salt_structure",
+      "label": "Rock salt structure",
+      "node_type": "crystal_structure",
+      "description": "Ionic crystal structure exemplified by NaCl and adopted by many related compounds."
+    },
+    {
+      "id": "pauling_rules",
+      "label": "Pauling's rules",
+      "node_type": "crystal_structure_rules",
+      "description": "Guidelines for predicting and rationalizing ionic crystal structures."
+    },
+    {
+      "id": "maximum_packing",
+      "label": "Maximum packing",
+      "node_type": "structural_principle",
+      "description": "Packing principle emphasized for ionic solids."
+    },
+    {
+      "id": "vsepr",
+      "label": "VSEPR rules",
+      "node_type": "molecular_geometry_rules",
+      "description": "Rules describing covalent molecular geometry from valence-shell electron-pair repulsion."
+    },
+    {
+      "id": "band_structure",
+      "label": "Band structure",
+      "node_type": "solid_state_description",
+      "description": "Extended electronic description required for collective bonding in crystals when bonding is not localized."
+    },
+    {
+      "id": "molecular_orbital",
+      "label": "Molecular orbital",
+      "node_type": "electronic_structure",
+      "description": "Orbital description that can extend across an entire crystal in the source's collective-bonding discussion."
+    },
+    {
+      "id": "semiconductor",
+      "label": "Semiconductor",
+      "node_type": "material_class",
+      "description": ""
+    },
+    {
+      "id": "semimetal",
+      "label": "Semimetal",
+      "node_type": "material_class",
+      "description": ""
+    },
+    {
+      "id": "metallic_conductor",
+      "label": "Metallic conductor",
+      "node_type": "material_class",
+      "description": ""
+    },
+    {
+      "id": "metallic_bonding_transition",
+      "label": "Transition toward metallic bonding",
+      "node_type": "bonding_transition",
+      "description": ""
+    },
+    {
+      "id": "ionic_potential",
+      "label": "Ionic potential",
+      "node_type": "chemical_concept",
+      "description": ""
+    },
+    {
+      "id": "chemical_polarity",
+      "label": "Chemical polarity",
+      "node_type": "bonding_concept",
+      "description": ""
+    },
+    {
+      "id": "electron_configuration",
+      "label": "Electron configuration",
+      "node_type": "electronic_structure",
+      "description": ""
+    },
+    {
+      "id": "aufbau_principle",
+      "label": "Aufbau principle",
+      "node_type": "electronic_structure_principle",
+      "description": ""
+    },
+    {
+      "id": "quantum_numbers",
+      "label": "Quantum numbers",
+      "node_type": "quantum_description",
+      "description": ""
+    },
+    {
+      "id": "principal_quantum_number",
+      "label": "Principal quantum number",
+      "node_type": "quantum_number",
+      "description": ""
+    },
+    {
+      "id": "azimuthal_quantum_number",
+      "label": "Azimuthal quantum number",
+      "node_type": "quantum_number",
+      "description": ""
+    },
+    {
+      "id": "magnetic_quantum_number",
+      "label": "Magnetic quantum number",
+      "node_type": "quantum_number",
+      "description": ""
+    },
+    {
+      "id": "spin_quantum_number",
+      "label": "Spin quantum number",
+      "node_type": "quantum_number",
+      "description": ""
+    },
+    {
+      "id": "sodium",
+      "label": "Sodium",
+      "node_type": "element",
+      "description": "Weakly electronegative alkali metal example."
+    },
+    {
+      "id": "chlorine",
+      "label": "Chlorine",
+      "node_type": "element",
+      "description": "Strongly electronegative halogen example."
+    },
+    {
+      "id": "lithium",
+      "label": "Lithium",
+      "node_type": "element",
+      "description": "Low-ionization-energy metal example."
+    },
+    {
+      "id": "fluorine",
+      "label": "Fluorine",
+      "node_type": "element",
+      "description": "Electron-accepting nonmetal example."
+    },
+    {
+      "id": "magnesium",
+      "label": "Magnesium",
+      "node_type": "element",
+      "description": "Doubly charged ionic solid example."
+    },
+    {
+      "id": "aluminum",
+      "label": "Aluminum",
+      "node_type": "element",
+      "description": "Small/highly charged cation example in Fajans' rules."
+    },
+    {
+      "id": "beryllium",
+      "label": "Beryllium",
+      "node_type": "element",
+      "description": "Small 2+ cation with significant polarizing power."
+    },
+    {
+      "id": "silicon",
+      "label": "Silicon",
+      "node_type": "element",
+      "description": "Example whose Si–O bonding has substantial mixed character."
+    },
+    {
+      "id": "sodium_chloride",
+      "label": "Sodium chloride",
+      "node_type": "ionic_compound",
+      "description": "NaCl; canonical ionic compound and rock-salt structure example."
+    },
+    {
+      "id": "sodium_fluoride",
+      "label": "Sodium fluoride",
+      "node_type": "ionic_compound",
+      "description": "NaF; illustrative ionic-bond formation example."
+    },
+    {
+      "id": "magnesium_oxide",
+      "label": "Magnesium oxide",
+      "node_type": "ionic_compound",
+      "description": "MgO; mixed ionic/covalent character example."
+    },
+    {
+      "id": "lithium_fluoride",
+      "label": "Lithium fluoride",
+      "node_type": "ionic_compound",
+      "description": "LiF; illustrative electron-transfer and isoelectronic example."
+    },
+    {
+      "id": "lithium_iodide",
+      "label": "Lithium iodide",
+      "node_type": "ionic_compound",
+      "description": "LiI; nominally ionic but with covalent contribution."
+    },
+    {
+      "id": "mercuric_oxide",
+      "label": "Mercuric oxide",
+      "node_type": "compound",
+      "description": "HgO; example whose formation can be endothermic."
+    },
+    {
+      "id": "silicon_oxygen_bond",
+      "label": "Si–O bond",
+      "node_type": "chemical_bond",
+      "description": "Source-described bond with approximately mixed ionic/covalent character."
+    },
+    {
+      "id": "nh4",
+      "label": "Ammonium ion",
+      "node_type": "polyatomic_ion",
+      "description": "NH4+ example."
+    },
+    {
+      "id": "so4",
+      "label": "Sulfate ion",
+      "node_type": "polyatomic_ion",
+      "description": "SO4^2− example."
+    },
+    {
+      "id": "acetate",
+      "label": "Acetate ion",
+      "node_type": "polyatomic_ion",
+      "description": "Complex anion example."
+    },
+    {
+      "id": "naoh",
+      "label": "Sodium hydroxide",
+      "node_type": "compound",
+      "description": "Arrhenius-base example in salt neutralization."
+    },
+    {
+      "id": "hcl",
+      "label": "Hydrochloric acid",
+      "node_type": "compound",
+      "description": "Arrhenius-acid example in salt neutralization."
+    },
+    {
+      "id": "water",
+      "label": "Water",
+      "node_type": "compound",
+      "description": "Product of NaOH + HCl neutralization."
+    },
+    {
+      "id": "iupac_goldbook_2009",
+      "label": "IUPAC Compendium of Chemical Terminology",
+      "node_type": "reference",
+      "description": "Bibliographic source listed by the supplied article.",
+      "year": "2009",
+      "doi": "10.1351/goldbook.IT07058"
+    },
+    {
+      "id": "seifert_2023",
+      "label": "Do bond classifications help or hinder chemistry?",
+      "node_type": "article",
+      "description": "Bibliographic source listed by the supplied article.",
+      "year": "2023",
+      "doi": ""
+    },
+    {
+      "id": "schneider_2012",
+      "label": "Ionic Interactions in Supramolecular Complexes",
+      "node_type": "book_chapter",
+      "description": "Bibliographic source listed by the supplied article.",
+      "year": "2012",
+      "doi": "10.1002/9781118165850.ch2"
+    },
+    {
+      "id": "johnson_2002",
+      "label": "Metals and Chemical Change",
+      "node_type": "book",
+      "description": "Bibliographic source listed by the supplied article.",
+      "year": "2002",
+      "doi": ""
+    },
+    {
+      "id": "pauling_1960",
+      "label": "The Nature of the Chemical Bond and the Structure of Molecules and Crystals",
+      "node_type": "book",
+      "description": "Bibliographic source listed by the supplied article.",
+      "year": "1960",
+      "doi": "10.1021/ja01355a027"
+    },
+    {
+      "id": "schneider_yatsimirsky_2000",
+      "label": "Principles and Methods in Supramolecular Chemistry",
+      "node_type": "book",
+      "description": "Bibliographic source listed by the supplied article.",
+      "year": "2000",
+      "doi": ""
+    },
+    {
+      "id": "biedermann_schneider_2016",
+      "label": "Experimental Binding Energies in Supramolecular Complexes",
+      "node_type": "journal_article",
+      "description": "Bibliographic source listed by the supplied article.",
+      "year": "2016",
+      "doi": "10.1021/acs.chemrev.5b00583"
+    },
+    {
+      "id": "soboyejo_2003",
+      "label": "Mechanical properties of engineered materials",
+      "node_type": "book",
+      "description": "Bibliographic source listed by the supplied article.",
+      "year": "2003",
+      "doi": ""
+    },
+    {
+      "id": "askeland_2015",
+      "label": "The science and engineering of materials",
+      "node_type": "book",
+      "description": "Bibliographic source listed by the supplied article.",
+      "year": "2015",
+      "doi": ""
+    },
+    {
+      "id": "c_def",
+      "label": "Ionic bonding is electrostatic attraction between oppositely charged ions or atoms with sharply different electronegativities and is the primary interaction in ionic compounds.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "definition",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L57-L60",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_no_pure",
+      "label": "The source states that perfectly clean ionic bonding does not exist; ionic compounds retain some covalent/electron-sharing character.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "qualification",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L62-L62",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_properties",
+      "label": "Ionic compounds generally conduct when molten or dissolved, not when solid, and commonly have high melting points dependent on ionic charge.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "properties",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L64-L64",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_reactivity",
+      "label": "Nearly full/empty valence shells, electronegativity, and electron-transfer tendencies drive common ionic-bond formation.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "mechanism",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L66-L67",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_strength",
+      "label": "Ionic bonds are described as among the strongest bond types and ionic compounds are often stable.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "strength",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L69-L73",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_solvent",
+      "label": "Polar solvents can disrupt ionic lattices, solvate ions, and thereby produce conductive solutions.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "solvation",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L72-L73",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_redox",
+      "label": "Ionic bonding can arise from redox reactions in which low-ionization-energy atoms donate electrons and electron-affine atoms accept them.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "formation",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L74-L75",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_lattice",
+      "label": "Electrostatic attraction leads to alternating ions in a crystallographic lattice; discrete molecular units generally cannot be identified in the lattice.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "structure",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L75-L75",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_na_cl",
+      "label": "Na and Cl transfer electrons to form Na+ and Cl−, which aggregate in a 1:1 stoichiometric ratio to form NaCl.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "example",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L78-L82",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_stoich",
+      "label": "Charge neutrality imposes strict cation/anion ratios in ionic compounds, although some transition toward metallic bonding can yield non-stoichiometric compounds.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "stoichiometry",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L82-L82",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_salt",
+      "label": "Salts can form through neutralization of Arrhenius acids and bases, exemplified by NaOH + HCl → NaCl + H2O.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "neutralization",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L84-L87",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_energy",
+      "label": "Electron removal is endothermic, while electron acceptance and subsequent lattice attraction can release lattice energy and lower overall energy.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "thermochemistry",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L89-L91",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_favorable",
+      "label": "Ionic bonding occurs when the overall energy change is favorable; formation is generally exothermic but HgO is cited as an endothermic exception.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "thermodynamics",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L91-L91",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_charge_strength",
+      "label": "Charge magnitude strongly affects ionic-bond strength; a simplistic Coulomb-law comparison gives approximately fourfold stronger electrostatic interaction for 2+/2− versus 1+/1− charges when size/packing are ignored.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "electrostatics",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L91-L91",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_structure",
+      "label": "Ionic lattice structure depends principally on relative ionic charges and sizes; Pauling's rules help rationalize crystal structures.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "crystal_structure",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L96-L97",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_lattice_energy",
+      "label": "Lattice energy can be determined experimentally with the Born–Haber cycle or predicted with the Born–Landé equation.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "lattice_energy",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L100-L101",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_born_lande",
+      "label": "Born–Landé treats lattice energy as electrostatic potential plus short-range repulsion and uses the Madelung constant for crystal geometry.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "model",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L100-L101",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_na_values",
+      "label": "The source gives −756 kJ/mol as a calculated NaCl lattice-energy value and −787 kJ/mol from a Born–Haber cycle.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "quantitative_example",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L100-L101",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_solution_strength",
+      "label": "In aqueous solution, Bjerrum/Fuoss relations describe binding strength as a function of ionic charges, while salt-bridge strength can be evaluated through equilibria.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "solution",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L101-L102",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_coulomb",
+      "label": "Ionic bond strength can be modeled by Coulomb's law; cited ranges are approximately 170–1500 kJ/mol.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "law",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L103-L103",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_fajans",
+      "label": "Small/highly charged positive ions can distort negative-ion electron clouds, creating charge density between nuclei and increasing covalent character.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "polarization",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L105-L106",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_polarizability",
+      "label": "Larger negative ions are easier to polarize; strong polarization is particularly associated with highly charged or very small cations.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "effect",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L106-L106",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_cov_compare",
+      "label": "Ionic bonding is dominated by attraction of ions whereas covalent bonding is based on electron sharing; ionic materials favor efficient packing rather than directional bond angles.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "comparison",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L108-L109",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_pure_character",
+      "label": "All ionic bonding contains some covalent character; greater electronegativity difference generally corresponds to greater ionic character.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "bonding_continuum",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L111-L111",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_pauling_17",
+      "label": "Pauling estimated an electronegativity difference of 1.7 to correspond to about 50% ionic character on the Pauling scale.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "threshold",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L111-L111",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_measure",
+      "label": "Ionic character can be investigated through quadrupolar nuclei using NQR/NMR and nuclear quadrupole coupling constants.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "measurement",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L113-L120",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_collective",
+      "label": "In ionic solids the bonding is generally collective rather than a set of localized pairwise bonds; extended band/molecular-orbital descriptions can become appropriate.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "collective",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L122-L122",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_transition",
+      "label": "As electronegativity differences decrease, materials can progress toward semiconductor, semimetal, or metallic-conductor behavior.",
+      "node_type": "source_claim",
+      "description": "Source-derived claim/provenance object.",
+      "claim_type": "materials_transition",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L122-L122",
+        "source_kind": "user_provided_source"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "c_def",
+      "claim_type": "definition",
+      "statement": "Ionic bonding is electrostatic attraction between oppositely charged ions or atoms with sharply different electronegativities and is the primary interaction in ionic compounds.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L57-L60",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_no_pure",
+      "claim_type": "qualification",
+      "statement": "The source states that perfectly clean ionic bonding does not exist; ionic compounds retain some covalent/electron-sharing character.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L62-L62",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_properties",
+      "claim_type": "properties",
+      "statement": "Ionic compounds generally conduct when molten or dissolved, not when solid, and commonly have high melting points dependent on ionic charge.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L64-L64",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_reactivity",
+      "claim_type": "mechanism",
+      "statement": "Nearly full/empty valence shells, electronegativity, and electron-transfer tendencies drive common ionic-bond formation.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L66-L67",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_strength",
+      "claim_type": "strength",
+      "statement": "Ionic bonds are described as among the strongest bond types and ionic compounds are often stable.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L69-L73",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_solvent",
+      "claim_type": "solvation",
+      "statement": "Polar solvents can disrupt ionic lattices, solvate ions, and thereby produce conductive solutions.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L72-L73",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_redox",
+      "claim_type": "formation",
+      "statement": "Ionic bonding can arise from redox reactions in which low-ionization-energy atoms donate electrons and electron-affine atoms accept them.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L74-L75",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_lattice",
+      "claim_type": "structure",
+      "statement": "Electrostatic attraction leads to alternating ions in a crystallographic lattice; discrete molecular units generally cannot be identified in the lattice.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L75-L75",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_na_cl",
+      "claim_type": "example",
+      "statement": "Na and Cl transfer electrons to form Na+ and Cl−, which aggregate in a 1:1 stoichiometric ratio to form NaCl.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L78-L82",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_stoich",
+      "claim_type": "stoichiometry",
+      "statement": "Charge neutrality imposes strict cation/anion ratios in ionic compounds, although some transition toward metallic bonding can yield non-stoichiometric compounds.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L82-L82",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_salt",
+      "claim_type": "neutralization",
+      "statement": "Salts can form through neutralization of Arrhenius acids and bases, exemplified by NaOH + HCl → NaCl + H2O.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L84-L87",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_energy",
+      "claim_type": "thermochemistry",
+      "statement": "Electron removal is endothermic, while electron acceptance and subsequent lattice attraction can release lattice energy and lower overall energy.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L89-L91",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_favorable",
+      "claim_type": "thermodynamics",
+      "statement": "Ionic bonding occurs when the overall energy change is favorable; formation is generally exothermic but HgO is cited as an endothermic exception.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L91-L91",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_charge_strength",
+      "claim_type": "electrostatics",
+      "statement": "Charge magnitude strongly affects ionic-bond strength; a simplistic Coulomb-law comparison gives approximately fourfold stronger electrostatic interaction for 2+/2− versus 1+/1− charges when size/packing are ignored.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L91-L91",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_structure",
+      "claim_type": "crystal_structure",
+      "statement": "Ionic lattice structure depends principally on relative ionic charges and sizes; Pauling's rules help rationalize crystal structures.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L96-L97",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_lattice_energy",
+      "claim_type": "lattice_energy",
+      "statement": "Lattice energy can be determined experimentally with the Born–Haber cycle or predicted with the Born–Landé equation.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L100-L101",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_born_lande",
+      "claim_type": "model",
+      "statement": "Born–Landé treats lattice energy as electrostatic potential plus short-range repulsion and uses the Madelung constant for crystal geometry.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L100-L101",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_na_values",
+      "claim_type": "quantitative_example",
+      "statement": "The source gives −756 kJ/mol as a calculated NaCl lattice-energy value and −787 kJ/mol from a Born–Haber cycle.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L100-L101",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_solution_strength",
+      "claim_type": "solution",
+      "statement": "In aqueous solution, Bjerrum/Fuoss relations describe binding strength as a function of ionic charges, while salt-bridge strength can be evaluated through equilibria.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L101-L102",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_coulomb",
+      "claim_type": "law",
+      "statement": "Ionic bond strength can be modeled by Coulomb's law; cited ranges are approximately 170–1500 kJ/mol.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L103-L103",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_fajans",
+      "claim_type": "polarization",
+      "statement": "Small/highly charged positive ions can distort negative-ion electron clouds, creating charge density between nuclei and increasing covalent character.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L105-L106",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_polarizability",
+      "claim_type": "effect",
+      "statement": "Larger negative ions are easier to polarize; strong polarization is particularly associated with highly charged or very small cations.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L106-L106",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_cov_compare",
+      "claim_type": "comparison",
+      "statement": "Ionic bonding is dominated by attraction of ions whereas covalent bonding is based on electron sharing; ionic materials favor efficient packing rather than directional bond angles.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L108-L109",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_pure_character",
+      "claim_type": "bonding_continuum",
+      "statement": "All ionic bonding contains some covalent character; greater electronegativity difference generally corresponds to greater ionic character.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L111-L111",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_pauling_17",
+      "claim_type": "threshold",
+      "statement": "Pauling estimated an electronegativity difference of 1.7 to correspond to about 50% ionic character on the Pauling scale.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L111-L111",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_measure",
+      "claim_type": "measurement",
+      "statement": "Ionic character can be investigated through quadrupolar nuclei using NQR/NMR and nuclear quadrupole coupling constants.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L113-L120",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_collective",
+      "claim_type": "collective",
+      "statement": "In ionic solids the bonding is generally collective rather than a set of localized pairwise bonds; extended band/molecular-orbital descriptions can become appropriate.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L122-L122",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    },
+    {
+      "id": "c_transition",
+      "claim_type": "materials_transition",
+      "statement": "As electronegativity differences decrease, materials can progress toward semiconductor, semimetal, or metallic-conductor behavior.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042829).txt",
+        "source_lines": "L122-L122",
+        "source_kind": "user_provided_source"
+      },
+      "supports": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0001",
+      "source": "ionic_bond",
+      "target": "electrostatic_attraction",
+      "relationship": "defined_by",
+      "source_claims": [
+        "c_def"
+      ]
+    },
+    {
+      "id": "e0002",
+      "source": "ionic_bond",
+      "target": "ion",
+      "relationship": "involves",
+      "source_claims": [
+        "c_def"
+      ]
+    },
+    {
+      "id": "e0003",
+      "source": "ionic_bond",
+      "target": "ionic_compound",
+      "relationship": "primary_interaction_in",
+      "source_claims": [
+        "c_def"
+      ]
+    },
+    {
+      "id": "e0004",
+      "source": "cation",
+      "target": "ion",
+      "relationship": "subclass_of",
+      "source_claims": [
+        "c_def"
+      ]
+    },
+    {
+      "id": "e0005",
+      "source": "anion",
+      "target": "ion",
+      "relationship": "subclass_of",
+      "source_claims": [
+        "c_def"
+      ]
+    },
+    {
+      "id": "e0006",
+      "source": "electron",
+      "target": "electron_transfer",
+      "relationship": "participates_in",
+      "source_claims": [
+        "c_redox"
+      ]
+    },
+    {
+      "id": "e0007",
+      "source": "electron_transfer",
+      "target": "redox_reaction",
+      "relationship": "can_be_part_of",
+      "source_claims": [
+        "c_redox"
+      ]
+    },
+    {
+      "id": "e0008",
+      "source": "ionization_energy",
+      "target": "cation",
+      "relationship": "lower_value_favors_formation_of",
+      "source_claims": [
+        "c_redox"
+      ]
+    },
+    {
+      "id": "e0009",
+      "source": "electron_affinity",
+      "target": "anion",
+      "relationship": "higher_acceptance_favors_formation_of",
+      "source_claims": [
+        "c_redox"
+      ]
+    },
+    {
+      "id": "e0010",
+      "source": "valence_shell",
+      "target": "valence_electron",
+      "relationship": "contains",
+      "source_claims": [
+        "c_reactivity"
+      ]
+    },
+    {
+      "id": "e0011",
+      "source": "stable_electronic_configuration",
+      "target": "valence_shell",
+      "relationship": "target_state_for",
+      "source_claims": [
+        "c_reactivity"
+      ]
+    },
+    {
+      "id": "e0012",
+      "source": "noble_gas_configuration",
+      "target": "stable_electronic_configuration",
+      "relationship": "is_common_form_of",
+      "source_claims": [
+        "c_redox"
+      ]
+    },
+    {
+      "id": "e0013",
+      "source": "ionic_bond",
+      "target": "electrovalence",
+      "relationship": "characterized_by",
+      "source_claims": [
+        "c_def"
+      ]
+    },
+    {
+      "id": "e0014",
+      "source": "covalent_bond",
+      "target": "covalence",
+      "relationship": "characterized_by",
+      "source_claims": [
+        "c_def"
+      ]
+    },
+    {
+      "id": "e0015",
+      "source": "ionic_bond",
+      "target": "covalent_bond",
+      "relationship": "contrasted_with",
+      "source_claims": [
+        "c_cov_compare"
+      ]
+    },
+    {
+      "id": "e0016",
+      "source": "ionic_bond",
+      "target": "metallic_bond",
+      "relationship": "contrasted_with",
+      "source_claims": [
+        "c_def"
+      ]
+    },
+    {
+      "id": "e0017",
+      "source": "ionic_character",
+      "target": "covalent_character",
+      "relationship": "forms_continuum_with",
+      "source_claims": [
+        "c_no_pure"
+      ]
+    },
+    {
+      "id": "e0018",
+      "source": "ionic_character",
+      "target": "electronegativity",
+      "relationship": "correlates_with_difference_in",
+      "source_claims": [
+        "c_pure_character"
+      ]
+    },
+    {
+      "id": "e0019",
+      "source": "polar_covalent_bond",
+      "target": "ionic_character",
+      "relationship": "has_partial",
+      "source_claims": [
+        "c_no_pure"
+      ]
+    },
+    {
+      "id": "e0020",
+      "source": "polar_covalent_bond",
+      "target": "covalent_character",
+      "relationship": "has_partial",
+      "source_claims": [
+        "c_no_pure"
+      ]
+    },
+    {
+      "id": "e0021",
+      "source": "ionic_compound",
+      "target": "crystal_lattice",
+      "relationship": "generally_forms",
+      "source_claims": [
+        "c_strength"
+      ]
+    },
+    {
+      "id": "e0022",
+      "source": "crystal_lattice",
+      "target": "cohesive_force",
+      "relationship": "is_held_by",
+      "source_claims": [
+        "c_strength"
+      ]
+    },
+    {
+      "id": "e0023",
+      "source": "ionic_compound",
+      "target": "electrical_conductivity",
+      "relationship": "has_in_molten_or_solution_state",
+      "source_claims": [
+        "c_properties"
+      ]
+    },
+    {
+      "id": "e0024",
+      "source": "ionic_compound",
+      "target": "electrical_conductivity",
+      "relationship": "generally_lacks_in_solid_state",
+      "source_claims": [
+        "c_properties"
+      ]
+    },
+    {
+      "id": "e0025",
+      "source": "dissolution",
+      "target": "solvation",
+      "relationship": "includes",
+      "source_claims": [
+        "c_solvent"
+      ]
+    },
+    {
+      "id": "e0026",
+      "source": "solvation",
+      "target": "polar_solvent",
+      "relationship": "uses",
+      "source_claims": [
+        "c_solvent"
+      ]
+    },
+    {
+      "id": "e0027",
+      "source": "aqueous_solution",
+      "target": "electrical_conductivity",
+      "relationship": "enabled_by_mobile_ions",
+      "source_claims": [
+        "c_solvent"
+      ]
+    },
+    {
+      "id": "e0028",
+      "source": "melting",
+      "target": "crystal_lattice",
+      "relationship": "disrupts",
+      "source_claims": [
+        "c_solvent"
+      ]
+    },
+    {
+      "id": "e0029",
+      "source": "molten_ionic_compound",
+      "target": "electrical_conductivity",
+      "relationship": "has_mobile_ions_for",
+      "source_claims": [
+        "c_properties"
+      ]
+    },
+    {
+      "id": "e0030",
+      "source": "redox_reaction",
+      "target": "ionic_bond",
+      "relationship": "can_produce",
+      "source_claims": [
+        "c_redox"
+      ]
+    },
+    {
+      "id": "e0031",
+      "source": "electron_transfer",
+      "target": "cation",
+      "relationship": "forms_by_electron_loss",
+      "source_claims": [
+        "c_redox"
+      ]
+    },
+    {
+      "id": "e0032",
+      "source": "electron_transfer",
+      "target": "anion",
+      "relationship": "forms_by_electron_gain",
+      "source_claims": [
+        "c_redox"
+      ]
+    },
+    {
+      "id": "e0033",
+      "source": "cation",
+      "target": "anion",
+      "relationship": "electrostatically_attracts",
+      "source_claims": [
+        "c_def"
+      ]
+    },
+    {
+      "id": "e0034",
+      "source": "ionic_bond",
+      "target": "crystallographic_lattice",
+      "relationship": "produces_collective_structure",
+      "source_claims": [
+        "c_lattice"
+      ]
+    },
+    {
+      "id": "e0035",
+      "source": "crystallographic_lattice",
+      "target": "ionic_compound",
+      "relationship": "structure_of",
+      "source_claims": [
+        "c_lattice"
+      ]
+    },
+    {
+      "id": "e0036",
+      "source": "charge_neutrality",
+      "target": "stoichiometry",
+      "relationship": "constrains",
+      "source_claims": [
+        "c_stoich"
+      ]
+    },
+    {
+      "id": "e0037",
+      "source": "stoichiometry",
+      "target": "ionic_compound",
+      "relationship": "determines_ratios_in",
+      "source_claims": [
+        "c_stoich"
+      ]
+    },
+    {
+      "id": "e0038",
+      "source": "lattice_energy",
+      "target": "born_haber_cycle",
+      "relationship": "determined_by",
+      "source_claims": [
+        "c_lattice_energy"
+      ]
+    },
+    {
+      "id": "e0039",
+      "source": "lattice_energy",
+      "target": "born_lande_equation",
+      "relationship": "predicted_by",
+      "source_claims": [
+        "c_lattice_energy"
+      ]
+    },
+    {
+      "id": "e0040",
+      "source": "born_lande_equation",
+      "target": "electrostatic_potential_energy",
+      "relationship": "contains_term",
+      "source_claims": [
+        "c_born_lande"
+      ]
+    },
+    {
+      "id": "e0041",
+      "source": "born_lande_equation",
+      "target": "short_range_repulsion",
+      "relationship": "contains_term",
+      "source_claims": [
+        "c_born_lande"
+      ]
+    },
+    {
+      "id": "e0042",
+      "source": "born_lande_equation",
+      "target": "madelung_constant",
+      "relationship": "uses",
+      "source_claims": [
+        "c_born_lande"
+      ]
+    },
+    {
+      "id": "e0043",
+      "source": "madelung_constant",
+      "target": "crystal_lattice",
+      "relationship": "encodes_geometry_of",
+      "source_claims": [
+        "c_born_lande"
+      ]
+    },
+    {
+      "id": "e0044",
+      "source": "electrostatic_potential_energy",
+      "target": "interionic_separation",
+      "relationship": "depends_on",
+      "source_claims": [
+        "c_born_lande"
+      ]
+    },
+    {
+      "id": "e0045",
+      "source": "shielding",
+      "target": "electrostatic_potential_energy",
+      "relationship": "affects",
+      "source_claims": [
+        "c_born_lande"
+      ]
+    },
+    {
+      "id": "e0046",
+      "source": "bjerrum_equation",
+      "target": "free_energy",
+      "relationship": "relates_to",
+      "source_claims": [
+        "c_solution_strength"
+      ]
+    },
+    {
+      "id": "e0047",
+      "source": "fuoss_equation",
+      "target": "free_energy",
+      "relationship": "relates_to",
+      "source_claims": [
+        "c_solution_strength"
+      ]
+    },
+    {
+      "id": "e0048",
+      "source": "salt_bridge",
+      "target": "equilibrium_constant",
+      "relationship": "strength_can_be_inferred_from",
+      "source_claims": [
+        "c_solution_strength"
+      ]
+    },
+    {
+      "id": "e0049",
+      "source": "equilibrium_constant",
+      "target": "free_energy",
+      "relationship": "provides_information_about",
+      "source_claims": [
+        "c_solution_strength"
+      ]
+    },
+    {
+      "id": "e0050",
+      "source": "ionic_bond",
+      "target": "bond_energy",
+      "relationship": "has",
+      "source_claims": [
+        "c_strength"
+      ]
+    },
+    {
+      "id": "e0051",
+      "source": "ionic_bond",
+      "target": "coulombs_law",
+      "relationship": "modeled_by",
+      "source_claims": [
+        "c_coulomb"
+      ]
+    },
+    {
+      "id": "e0052",
+      "source": "coulombs_law",
+      "target": "electrostatic_attraction",
+      "relationship": "quantifies",
+      "source_claims": [
+        "c_charge_strength"
+      ]
+    },
+    {
+      "id": "e0053",
+      "source": "ionic_bond",
+      "target": "fajans_rules",
+      "relationship": "interpreted_by",
+      "source_claims": [
+        "c_fajans"
+      ]
+    },
+    {
+      "id": "e0054",
+      "source": "fajans_rules",
+      "target": "polarization",
+      "relationship": "describes",
+      "source_claims": [
+        "c_fajans"
+      ]
+    },
+    {
+      "id": "e0055",
+      "source": "polarization",
+      "target": "partial_covalency",
+      "relationship": "produces",
+      "source_claims": [
+        "c_fajans"
+      ]
+    },
+    {
+      "id": "e0056",
+      "source": "polarizability",
+      "target": "polarization",
+      "relationship": "controls_susceptibility_to",
+      "source_claims": [
+        "c_polarizability"
+      ]
+    },
+    {
+      "id": "e0057",
+      "source": "ionic_bond",
+      "target": "quadrupolar_nucleus",
+      "relationship": "can_be_studied_using",
+      "source_claims": [
+        "c_measure"
+      ]
+    },
+    {
+      "id": "e0058",
+      "source": "quadrupolar_nucleus",
+      "target": "nuclear_quadrupole_moment",
+      "relationship": "has",
+      "source_claims": [
+        "c_measure"
+      ]
+    },
+    {
+      "id": "e0059",
+      "source": "nuclear_quadrupole_moment",
+      "target": "electric_field_gradient",
+      "relationship": "interacts_with",
+      "source_claims": [
+        "c_measure"
+      ]
+    },
+    {
+      "id": "e0060",
+      "source": "electric_field_gradient",
+      "target": "qcc",
+      "relationship": "determines",
+      "source_claims": [
+        "c_measure"
+      ]
+    },
+    {
+      "id": "e0061",
+      "source": "nqr",
+      "target": "qcc",
+      "relationship": "measures",
+      "source_claims": [
+        "c_measure"
+      ]
+    },
+    {
+      "id": "e0062",
+      "source": "nmr",
+      "target": "qcc",
+      "relationship": "measures",
+      "source_claims": [
+        "c_measure"
+      ]
+    },
+    {
+      "id": "e0063",
+      "source": "ionic_bond",
+      "target": "maximum_packing",
+      "relationship": "favors",
+      "source_claims": [
+        "c_cov_compare"
+      ]
+    },
+    {
+      "id": "e0064",
+      "source": "covalent_bond",
+      "target": "vsepr",
+      "relationship": "geometry_described_by",
+      "source_claims": [
+        "c_cov_compare"
+      ]
+    },
+    {
+      "id": "e0065",
+      "source": "ionic_compound",
+      "target": "coordination_number",
+      "relationship": "can_have_high",
+      "source_claims": [
+        "c_cov_compare"
+      ]
+    },
+    {
+      "id": "e0066",
+      "source": "rock_salt_structure",
+      "target": "sodium_chloride",
+      "relationship": "exemplified_by",
+      "source_claims": [
+        "c_structure"
+      ]
+    },
+    {
+      "id": "e0067",
+      "source": "rock_salt_structure",
+      "target": "coordination_number",
+      "relationship": "has_six_for_NaCl",
+      "source_claims": [
+        "c_cov_compare"
+      ]
+    },
+    {
+      "id": "e0068",
+      "source": "pauling_rules",
+      "target": "crystal_lattice",
+      "relationship": "rationalizes",
+      "source_claims": [
+        "c_structure"
+      ]
+    },
+    {
+      "id": "e0069",
+      "source": "ionic_bond",
+      "target": "band_structure",
+      "relationship": "may_require",
+      "source_claims": [
+        "c_collective"
+      ]
+    },
+    {
+      "id": "e0070",
+      "source": "band_structure",
+      "target": "molecular_orbital",
+      "relationship": "can_span_crystal_as",
+      "source_claims": [
+        "c_collective"
+      ]
+    },
+    {
+      "id": "e0071",
+      "source": "ionic_character",
+      "target": "semiconductor",
+      "relationship": "can_transition_toward",
+      "source_claims": [
+        "c_transition"
+      ]
+    },
+    {
+      "id": "e0072",
+      "source": "ionic_character",
+      "target": "semimetal",
+      "relationship": "can_transition_toward",
+      "source_claims": [
+        "c_transition"
+      ]
+    },
+    {
+      "id": "e0073",
+      "source": "ionic_character",
+      "target": "metallic_conductor",
+      "relationship": "can_transition_toward",
+      "source_claims": [
+        "c_transition"
+      ]
+    },
+    {
+      "id": "e0074",
+      "source": "metallic_conductor",
+      "target": "metallic_bonding_transition",
+      "relationship": "represents",
+      "source_claims": [
+        "c_transition"
+      ]
+    },
+    {
+      "id": "e0075",
+      "source": "sodium",
+      "target": "ionic_bond",
+      "relationship": "participates_in"
+    },
+    {
+      "id": "e0076",
+      "source": "chlorine",
+      "target": "ionic_bond",
+      "relationship": "participates_in"
+    },
+    {
+      "id": "e0077",
+      "source": "lithium",
+      "target": "ionic_bond",
+      "relationship": "participates_in"
+    },
+    {
+      "id": "e0078",
+      "source": "fluorine",
+      "target": "ionic_bond",
+      "relationship": "participates_in"
+    },
+    {
+      "id": "e0079",
+      "source": "magnesium",
+      "target": "ionic_bond",
+      "relationship": "participates_in"
+    },
+    {
+      "id": "e0080",
+      "source": "aluminum",
+      "target": "ionic_bond",
+      "relationship": "participates_in"
+    },
+    {
+      "id": "e0081",
+      "source": "beryllium",
+      "target": "ionic_bond",
+      "relationship": "participates_in"
+    },
+    {
+      "id": "e0082",
+      "source": "silicon",
+      "target": "ionic_bond",
+      "relationship": "participates_in"
+    },
+    {
+      "id": "e0083",
+      "source": "sodium",
+      "target": "sodium_chloride",
+      "relationship": "is_component_of",
+      "source_claims": [
+        "c_na_cl"
+      ]
+    },
+    {
+      "id": "e0084",
+      "source": "chlorine",
+      "target": "sodium_chloride",
+      "relationship": "is_component_of",
+      "source_claims": [
+        "c_na_cl"
+      ]
+    },
+    {
+      "id": "e0085",
+      "source": "sodium_chloride",
+      "target": "rock_salt_structure",
+      "relationship": "adopts",
+      "source_claims": [
+        "c_structure"
+      ]
+    },
+    {
+      "id": "e0086",
+      "source": "sodium_chloride",
+      "target": "born_haber_cycle",
+      "relationship": "used_as_example_for",
+      "source_claims": [
+        "c_na_values"
+      ]
+    },
+    {
+      "id": "e0087",
+      "source": "sodium_chloride",
+      "target": "born_lande_equation",
+      "relationship": "used_as_example_for",
+      "source_claims": [
+        "c_na_values"
+      ]
+    },
+    {
+      "id": "e0088",
+      "source": "lithium",
+      "target": "lithium_fluoride",
+      "relationship": "forms"
+    },
+    {
+      "id": "e0089",
+      "source": "fluorine",
+      "target": "lithium_fluoride",
+      "relationship": "forms"
+    },
+    {
+      "id": "e0090",
+      "source": "lithium_fluoride",
+      "target": "stable_electronic_configuration",
+      "relationship": "illustrates",
+      "source_claims": [
+        "c_redox"
+      ]
+    },
+    {
+      "id": "e0091",
+      "source": "magnesium_oxide",
+      "target": "ionic_bond",
+      "relationship": "has"
+    },
+    {
+      "id": "e0092",
+      "source": "magnesium_oxide",
+      "target": "covalent_character",
+      "relationship": "has_some",
+      "source_claims": [
+        "c_pure_character"
+      ]
+    },
+    {
+      "id": "e0093",
+      "source": "lithium_iodide",
+      "target": "covalent_character",
+      "relationship": "has_some",
+      "source_claims": [
+        "c_fajans"
+      ]
+    },
+    {
+      "id": "e0094",
+      "source": "aluminum",
+      "target": "fajans_rules",
+      "relationship": "illustrates",
+      "source_claims": [
+        "c_fajans"
+      ]
+    },
+    {
+      "id": "e0095",
+      "source": "beryllium",
+      "target": "fajans_rules",
+      "relationship": "illustrates",
+      "source_claims": [
+        "c_fajans"
+      ]
+    },
+    {
+      "id": "e0096",
+      "source": "silicon_oxygen_bond",
+      "target": "ionic_character",
+      "relationship": "has_substantial",
+      "source_claims": [
+        "c_pure_character"
+      ]
+    },
+    {
+      "id": "e0097",
+      "source": "silicon_oxygen_bond",
+      "target": "covalent_character",
+      "relationship": "has_substantial",
+      "source_claims": [
+        "c_pure_character"
+      ]
+    },
+    {
+      "id": "e0098",
+      "source": "nh4",
+      "target": "ion",
+      "relationship": "instance_of"
+    },
+    {
+      "id": "e0099",
+      "source": "so4",
+      "target": "ion",
+      "relationship": "instance_of"
+    },
+    {
+      "id": "e0100",
+      "source": "acetate",
+      "target": "ion",
+      "relationship": "instance_of"
+    },
+    {
+      "id": "e0101",
+      "source": "naoh",
+      "target": "arrhenius_base",
+      "relationship": "is_example_of",
+      "source_claims": [
+        "c_salt"
+      ]
+    },
+    {
+      "id": "e0102",
+      "source": "hcl",
+      "target": "arrhenius_acid",
+      "relationship": "is_example_of",
+      "source_claims": [
+        "c_salt"
+      ]
+    },
+    {
+      "id": "e0103",
+      "source": "salt_neutralization",
+      "target": "naoh",
+      "relationship": "reactant",
+      "source_claims": [
+        "c_salt"
+      ]
+    },
+    {
+      "id": "e0104",
+      "source": "salt_neutralization",
+      "target": "hcl",
+      "relationship": "reactant",
+      "source_claims": [
+        "c_salt"
+      ]
+    },
+    {
+      "id": "e0105",
+      "source": "salt_neutralization",
+      "target": "sodium_chloride",
+      "relationship": "produces",
+      "source_claims": [
+        "c_salt"
+      ]
+    },
+    {
+      "id": "e0106",
+      "source": "salt_neutralization",
+      "target": "water",
+      "relationship": "produces",
+      "source_claims": [
+        "c_salt"
+      ]
+    },
+    {
+      "id": "e0107",
+      "source": "mercuric_oxide",
+      "target": "ionic_bond",
+      "relationship": "endothermic_formation_exception",
+      "source_claims": [
+        "c_favorable"
+      ]
+    },
+    {
+      "id": "e0108",
+      "source": "iupac_goldbook_2009",
+      "target": "ionic_bond",
+      "relationship": "defines_or_standardizes",
+      "source_claims": [
+        "c_def"
+      ]
+    },
+    {
+      "id": "e0109",
+      "source": "seifert_2023",
+      "target": "ionic_character",
+      "relationship": "discusses",
+      "source_claims": [
+        "c_no_pure"
+      ]
+    },
+    {
+      "id": "e0110",
+      "source": "schneider_2012",
+      "target": "ionic_bond",
+      "relationship": "discusses",
+      "source_claims": [
+        "c_no_pure"
+      ]
+    },
+    {
+      "id": "e0111",
+      "source": "johnson_2002",
+      "target": "ionic_bond",
+      "relationship": "discusses"
+    },
+    {
+      "id": "e0112",
+      "source": "pauling_1960",
+      "target": "pauling_rules",
+      "relationship": "associated_with",
+      "source_claims": [
+        "c_structure"
+      ]
+    },
+    {
+      "id": "e0113",
+      "source": "pauling_1960",
+      "target": "ionic_character",
+      "relationship": "discusses"
+    },
+    {
+      "id": "e0114",
+      "source": "schneider_yatsimirsky_2000",
+      "target": "salt_bridge",
+      "relationship": "discusses"
+    },
+    {
+      "id": "e0115",
+      "source": "biedermann_schneider_2016",
+      "target": "salt_bridge",
+      "relationship": "provides_experimental_context",
+      "source_claims": [
+        "c_solution_strength"
+      ]
+    },
+    {
+      "id": "e0116",
+      "source": "soboyejo_2003",
+      "target": "bond_energy",
+      "relationship": "contextualizes"
+    },
+    {
+      "id": "e0117",
+      "source": "askeland_2015",
+      "target": "ionic_bond",
+      "relationship": "contextualizes"
+    },
+    {
+      "id": "e0118",
+      "source": "c_def",
+      "target": "ionic_bond",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0119",
+      "source": "c_def",
+      "target": "cation",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0120",
+      "source": "c_def",
+      "target": "anion",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0121",
+      "source": "c_redox",
+      "target": "electron",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0122",
+      "source": "c_redox",
+      "target": "electron_transfer",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0123",
+      "source": "c_redox",
+      "target": "ionization_energy",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0124",
+      "source": "c_redox",
+      "target": "electron_affinity",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0125",
+      "source": "c_reactivity",
+      "target": "valence_shell",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0126",
+      "source": "c_reactivity",
+      "target": "stable_electronic_configuration",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0127",
+      "source": "c_redox",
+      "target": "noble_gas_configuration",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0128",
+      "source": "c_def",
+      "target": "covalent_bond",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0129",
+      "source": "c_cov_compare",
+      "target": "ionic_bond",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0130",
+      "source": "c_no_pure",
+      "target": "ionic_character",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0131",
+      "source": "c_pure_character",
+      "target": "ionic_character",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0132",
+      "source": "c_no_pure",
+      "target": "polar_covalent_bond",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0133",
+      "source": "c_strength",
+      "target": "ionic_compound",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0134",
+      "source": "c_strength",
+      "target": "crystal_lattice",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0135",
+      "source": "c_properties",
+      "target": "ionic_compound",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0136",
+      "source": "c_solvent",
+      "target": "dissolution",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0137",
+      "source": "c_solvent",
+      "target": "solvation",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0138",
+      "source": "c_solvent",
+      "target": "aqueous_solution",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0139",
+      "source": "c_solvent",
+      "target": "melting",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0140",
+      "source": "c_properties",
+      "target": "molten_ionic_compound",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0141",
+      "source": "c_redox",
+      "target": "redox_reaction",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0142",
+      "source": "c_lattice",
+      "target": "ionic_bond",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0143",
+      "source": "c_lattice",
+      "target": "crystallographic_lattice",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0144",
+      "source": "c_stoich",
+      "target": "charge_neutrality",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0145",
+      "source": "c_stoich",
+      "target": "stoichiometry",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0146",
+      "source": "c_lattice_energy",
+      "target": "lattice_energy",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0147",
+      "source": "c_born_lande",
+      "target": "born_lande_equation",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0148",
+      "source": "c_born_lande",
+      "target": "madelung_constant",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0149",
+      "source": "c_born_lande",
+      "target": "electrostatic_potential_energy",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0150",
+      "source": "c_born_lande",
+      "target": "shielding",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0151",
+      "source": "c_solution_strength",
+      "target": "bjerrum_equation",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0152",
+      "source": "c_solution_strength",
+      "target": "fuoss_equation",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0153",
+      "source": "c_solution_strength",
+      "target": "salt_bridge",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0154",
+      "source": "c_solution_strength",
+      "target": "equilibrium_constant",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0155",
+      "source": "c_strength",
+      "target": "ionic_bond",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0156",
+      "source": "c_coulomb",
+      "target": "ionic_bond",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0157",
+      "source": "c_charge_strength",
+      "target": "coulombs_law",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0158",
+      "source": "c_fajans",
+      "target": "ionic_bond",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0159",
+      "source": "c_fajans",
+      "target": "fajans_rules",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0160",
+      "source": "c_fajans",
+      "target": "polarization",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0161",
+      "source": "c_polarizability",
+      "target": "polarizability",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0162",
+      "source": "c_measure",
+      "target": "ionic_bond",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0163",
+      "source": "c_measure",
+      "target": "quadrupolar_nucleus",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0164",
+      "source": "c_measure",
+      "target": "nuclear_quadrupole_moment",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0165",
+      "source": "c_measure",
+      "target": "electric_field_gradient",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0166",
+      "source": "c_measure",
+      "target": "nqr",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0167",
+      "source": "c_measure",
+      "target": "nmr",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0168",
+      "source": "c_cov_compare",
+      "target": "covalent_bond",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0169",
+      "source": "c_cov_compare",
+      "target": "ionic_compound",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0170",
+      "source": "c_structure",
+      "target": "rock_salt_structure",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0171",
+      "source": "c_cov_compare",
+      "target": "rock_salt_structure",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0172",
+      "source": "c_structure",
+      "target": "pauling_rules",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0173",
+      "source": "c_collective",
+      "target": "ionic_bond",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0174",
+      "source": "c_collective",
+      "target": "band_structure",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0175",
+      "source": "c_transition",
+      "target": "ionic_character",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0176",
+      "source": "c_transition",
+      "target": "metallic_conductor",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0177",
+      "source": "c_na_cl",
+      "target": "sodium",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0178",
+      "source": "c_na_cl",
+      "target": "chlorine",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0179",
+      "source": "c_structure",
+      "target": "sodium_chloride",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0180",
+      "source": "c_na_values",
+      "target": "sodium_chloride",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0181",
+      "source": "c_redox",
+      "target": "lithium_fluoride",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0182",
+      "source": "c_pure_character",
+      "target": "magnesium_oxide",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0183",
+      "source": "c_fajans",
+      "target": "lithium_iodide",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0184",
+      "source": "c_fajans",
+      "target": "aluminum",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0185",
+      "source": "c_fajans",
+      "target": "beryllium",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0186",
+      "source": "c_pure_character",
+      "target": "silicon_oxygen_bond",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0187",
+      "source": "c_salt",
+      "target": "naoh",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0188",
+      "source": "c_salt",
+      "target": "hcl",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0189",
+      "source": "c_salt",
+      "target": "salt_neutralization",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0190",
+      "source": "c_favorable",
+      "target": "mercuric_oxide",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0191",
+      "source": "c_def",
+      "target": "iupac_goldbook_2009",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0192",
+      "source": "c_no_pure",
+      "target": "seifert_2023",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0193",
+      "source": "c_no_pure",
+      "target": "schneider_2012",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0194",
+      "source": "c_structure",
+      "target": "pauling_1960",
+      "relationship": "supports_source_derived_relationship"
+    },
+    {
+      "id": "e0195",
+      "source": "c_solution_strength",
+      "target": "biedermann_schneider_2016",
+      "relationship": "supports_source_derived_relationship"
+    }
+  ],
+  "statistics": {
+    "node_count": 143,
+    "edge_count": 195,
+    "claim_count": 28,
+    "validation": "passed"
+  },
+  "validation": {
+    "all_edge_endpoints_exist": true,
+    "all_source_claim_refs_exist": true,
+    "duplicate_node_ids": true,
+    "duplicate_edge_ids": true
+  },
+  "expansion_targets": [
+    "Coulomb-law derivation and lattice electrostatics",
+    "Born-Mayer and improved lattice-energy models",
+    "full Born-Haber thermochemical network",
+    "Kapustinskii equation",
+    "lattice enthalpy versus lattice energy sign conventions",
+    "hydration enthalpy and dissolution thermodynamics",
+    "solubility-energy cycles",
+    "Fajans-rule quantitative limitations",
+    "Pauling electronegativity scale",
+    "Mulliken and Allen electronegativity",
+    "quantitative bond ionicity measures",
+    "charge density and electron localization",
+    "quantum-chemical decomposition of ionic/covalent bonding",
+    "crystal field and ligand-field relationships",
+    "defects and non-stoichiometric ionic solids",
+    "ionic conductivity and vacancy/interstitial transport",
+    "band-gap evolution from ionic to covalent/metallic materials",
+    "phonons and lattice dynamics",
+    "high-pressure ionic phases",
+    "ionic liquids",
+    "molten salts",
+    "solid electrolytes",
+    "ceramic materials",
+    "salt bridges in biomolecules",
+    "supramolecular ion pairing",
+    "experimental crystallography and diffraction evidence",
+    "NMR/NQR derivation of QCC",
+    "complete primary-source bibliographic metadata"
+  ]
+}

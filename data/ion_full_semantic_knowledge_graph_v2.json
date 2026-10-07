@@ -1,0 +1,6493 @@
+{
+  "schema_version": "3.0-semantic-provenance",
+  "graph_id": "ion_full_semantic_knowledge_graph_v2",
+  "title": "Ion — Full Semantic Knowledge Graph",
+  "domain": "chemistry / physical chemistry / electrochemistry / atomic and molecular physics",
+  "source": {
+    "filename": "Pasted text(20261007-042138).txt",
+    "source_type": "user_provided_article_text",
+    "source_scope": "The supplied Ion article and its embedded references, examples, classifications, historical claims, technologies and terminology.",
+    "preservation_policy": "Preserve source meaning, distinctions, examples, terminology, historical relationships, equations/relations, references and provenance. Do not silently normalize source claims into unsupported external facts."
+  },
+  "semantic_model": {
+    "entity_principle": "Every scientifically meaningful entity is represented separately when it can participate in a relationship.",
+    "relationship_principle": "Relationships carry typed semantics rather than generic association labels.",
+    "provenance_principle": "Source claims remain separately addressable and can support nodes and edges.",
+    "notation_principle": "Chemical notation, oxidation-state notation and spectroscopic notation are represented as distinct semantic systems.",
+    "historical_principle": "People, terminology origins, publications and intellectual contributions remain distinct from present-day concepts.",
+    "example_principle": "Specific ions are instances with their own formula, charge, class and provenance rather than being lost in a generic common-ion list."
+  },
+  "core_semantic_distinctions": [
+    {
+      "distinction": "ion_vs_neutral_entity",
+      "meaning": "An ion has nonzero net charge because proton and electron counts differ; a neutral atom/molecule has net charge zero."
+    },
+    {
+      "distinction": "cation_vs_anion",
+      "meaning": "Cations have fewer electrons than protons; anions have more electrons than protons."
+    },
+    {
+      "distinction": "monatomic_vs_polyatomic",
+      "meaning": "The distinction concerns number of constituent atoms, independent of charge sign."
+    },
+    {
+      "distinction": "net_charge_vs_oxidation_state",
+      "meaning": "Net ionic charge and formal oxidation state are not interchangeable for general polyatomic systems."
+    },
+    {
+      "distinction": "spectroscopic_roman_numeral_vs_oxidation_state",
+      "meaning": "The source explicitly distinguishes spectroscopic Fe I/II/III nomenclature from oxidation-state notation."
+    },
+    {
+      "distinction": "ionization_vs_dissolution",
+      "meaning": "Ionization concerns formation of charged species by electron gain/loss; dissolution releases ions from an ionic solid into a solvent."
+    },
+    {
+      "distinction": "aqueous_solvation_vs_nonpolar_self_solvation",
+      "meaning": "Water can directly form solvation shells; the source describes a distinct amphiphile-mediated mechanism in nonpolar liquids."
+    },
+    {
+      "distinction": "ion_pair_vs_individual_ion",
+      "meaning": "An ion pair is a coupled product of a physical ionization event, while an individual ion is a charged chemical entity."
+    },
+    {
+      "distinction": "ionizing_radiation_vs_electrochemical_ionization",
+      "meaning": "Radiation can generate ion pairs in gases, whereas electrochemical processes can create or move ions through conducting media."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ion",
+      "label": "Ion",
+      "node_type": "chemical_entity",
+      "description": "An atom or molecule with a net electrical charge because its total number of electrons is unequal to its total number of protons.",
+      "semantic_definition": "net electric charge is nonzero",
+      "charge_definition": "Q/e = N_protons - N_electrons",
+      "canonical_examples": [
+        "Li+",
+        "F−",
+        "Na+",
+        "Cl−"
+      ],
+      "source_claims": [
+        "c_definition",
+        "c_charge_formula"
+      ]
+    },
+    {
+      "id": "electric_charge",
+      "label": "Electric charge",
+      "node_type": "physical_quantity",
+      "description": "Electrical property whose conventional signs assign negative charge to electrons and positive charge to protons.",
+      "source_claims": []
+    },
+    {
+      "id": "electron",
+      "label": "Electron",
+      "node_type": "subatomic_particle",
+      "description": "Negatively charged subatomic particle.",
+      "source_claims": []
+    },
+    {
+      "id": "proton",
+      "label": "Proton",
+      "node_type": "subatomic_particle",
+      "description": "Positively charged subatomic particle.",
+      "source_claims": []
+    },
+    {
+      "id": "elementary_charge",
+      "label": "Elementary charge",
+      "node_type": "physical_constant",
+      "description": "Magnitude of the charge carried by a proton and by an electron with opposite sign.",
+      "source_claims": []
+    },
+    {
+      "id": "atom",
+      "label": "Atom",
+      "node_type": "chemical_entity",
+      "description": "Chemical entity whose ionic state can result from electron gain or loss.",
+      "source_claims": []
+    },
+    {
+      "id": "molecule",
+      "label": "Molecule",
+      "node_type": "chemical_entity",
+      "description": "Chemical entity that can acquire a net charge and become a molecular/polyatomic ion.",
+      "source_claims": []
+    },
+    {
+      "id": "neutral_atom_or_molecule",
+      "label": "Neutral atom or molecule",
+      "node_type": "chemical_state",
+      "description": "State in which the total positive and negative charge sums to zero.",
+      "source_claims": []
+    },
+    {
+      "id": "cation",
+      "label": "Cation",
+      "node_type": "ion_subclass",
+      "description": "Ion with fewer electrons than protons and therefore positive net charge.",
+      "source_claims": [
+        "c_subclasses",
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "anion",
+      "label": "Anion",
+      "node_type": "ion_subclass",
+      "description": "Ion with more electrons than protons and therefore negative net charge.",
+      "source_claims": [
+        "c_subclasses",
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "monatomic_ion",
+      "label": "Monatomic ion",
+      "node_type": "ion_subclass",
+      "description": "Ion consisting of a single atom; also called atomic ion or simple ion.",
+      "source_claims": [
+        "c_subclasses"
+      ]
+    },
+    {
+      "id": "polyatomic_ion",
+      "label": "Polyatomic ion",
+      "node_type": "ion_subclass",
+      "description": "Ion consisting of two or more atoms; also called molecular ion.",
+      "source_claims": [
+        "c_subclasses"
+      ]
+    },
+    {
+      "id": "radical_ion",
+      "label": "Radical ion",
+      "node_type": "ion_subclass",
+      "description": "Ion containing unpaired electrons; generally highly reactive.",
+      "source_claims": []
+    },
+    {
+      "id": "zwitterion",
+      "label": "Zwitterion",
+      "node_type": "chemical_entity",
+      "description": "Neutral molecule carrying positive and negative charges at different locations.",
+      "source_claims": []
+    },
+    {
+      "id": "oxyanion",
+      "label": "Oxyanion",
+      "node_type": "polyatomic_ion_subclass",
+      "description": "Polyatomic ion containing oxygen.",
+      "source_claims": []
+    },
+    {
+      "id": "organic_ion",
+      "label": "Organic ion",
+      "node_type": "polyatomic_ion_subclass",
+      "description": "Molecular ion containing at least one carbon–hydrogen bond.",
+      "source_claims": []
+    },
+    {
+      "id": "carbocation",
+      "label": "Carbocation",
+      "node_type": "organic_ion_subclass",
+      "description": "Positively charged organic ion in which the formal charge is centered on carbon.",
+      "source_claims": []
+    },
+    {
+      "id": "carbanion",
+      "label": "Carbanion",
+      "node_type": "organic_ion_subclass",
+      "description": "Negatively charged organic ion in which the formal charge is centered on carbon.",
+      "source_claims": []
+    },
+    {
+      "id": "dianion",
+      "label": "Dianion",
+      "node_type": "charge_class",
+      "description": "Ion with net charge −2.",
+      "source_claims": []
+    },
+    {
+      "id": "dication",
+      "label": "Dication",
+      "node_type": "charge_class",
+      "description": "Ion with net charge +2.",
+      "source_claims": []
+    },
+    {
+      "id": "trication",
+      "label": "Trication",
+      "node_type": "charge_class",
+      "description": "Ion with net charge +3.",
+      "source_claims": []
+    },
+    {
+      "id": "ion_pair",
+      "label": "Ion pair",
+      "node_type": "ionic_species",
+      "description": "Pair produced in physical ionization of a fluid, consisting of a free electron and a positive ion.",
+      "source_claims": [
+        "c_physical_ionization"
+      ]
+    },
+    {
+      "id": "solvated_ion",
+      "label": "Solvated ion",
+      "node_type": "solution_species",
+      "description": "Ion stabilized in a liquid by a surrounding solvation shell.",
+      "source_claims": [
+        "c_solvation"
+      ]
+    },
+    {
+      "id": "solvation_shell",
+      "label": "Solvation shell",
+      "node_type": "solvation_structure",
+      "description": "Layer of solvent or surrounding molecules organized around an ion and contributing to its stabilization.",
+      "source_claims": [
+        "c_solvation"
+      ]
+    },
+    {
+      "id": "ionic_lattice",
+      "label": "Ionic lattice",
+      "node_type": "solid_structure",
+      "description": "Solid-state arrangement in which oppositely charged ions occupy a crystal lattice.",
+      "source_claims": [
+        "c_ionic_bond"
+      ]
+    },
+    {
+      "id": "ionic_compound",
+      "label": "Ionic compound",
+      "node_type": "chemical_compound",
+      "description": "Compound formed through electrostatic attraction of oppositely charged ions, typically organized as a crystal lattice.",
+      "source_claims": [
+        "c_ionic_bond"
+      ]
+    },
+    {
+      "id": "ionic_bond",
+      "label": "Ionic bond",
+      "node_type": "chemical_bond",
+      "description": "Chemical bonding arising from mutual electrostatic attraction between oppositely charged ions.",
+      "source_claims": [
+        "c_ionic_bond"
+      ]
+    },
+    {
+      "id": "electrostatic_force",
+      "label": "Electrostatic force",
+      "node_type": "physical_interaction",
+      "description": "Attractive force between opposite charges and repulsive force between like charges.",
+      "source_claims": [
+        "c_fields"
+      ]
+    },
+    {
+      "id": "electric_field",
+      "label": "Electric field",
+      "node_type": "physical_field",
+      "source_claims": [
+        "c_fields"
+      ]
+    },
+    {
+      "id": "magnetic_field",
+      "label": "Magnetic field",
+      "node_type": "physical_field",
+      "source_claims": [
+        "c_fields"
+      ]
+    },
+    {
+      "id": "electrode",
+      "label": "Electrode",
+      "node_type": "electrochemical_component",
+      "source_claims": []
+    },
+    {
+      "id": "anode",
+      "label": "Anode",
+      "node_type": "electrode",
+      "description": "Electrode toward which anions move during electrolysis in the terminology described by the source.",
+      "source_claims": [
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "cathode",
+      "label": "Cathode",
+      "node_type": "electrode",
+      "description": "Electrode toward which cations move during electrolysis in the terminology described by the source.",
+      "source_claims": [
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "electrolysis",
+      "label": "Electrolysis",
+      "node_type": "electrochemical_process",
+      "source_claims": []
+    },
+    {
+      "id": "conducting_solution",
+      "label": "Conducting solution",
+      "node_type": "chemical_system",
+      "source_claims": []
+    },
+    {
+      "id": "salt_dissolution",
+      "label": "Dissolution of a salt",
+      "node_type": "chemical_process",
+      "source_claims": []
+    },
+    {
+      "id": "ionization",
+      "label": "Ionization",
+      "node_type": "chemical_process",
+      "description": "Gain or loss of electrons from a neutral atom or molecule; the source also uses ionization for physical generation of charged species.",
+      "source_claims": [
+        "c_ionization"
+      ]
+    },
+    {
+      "id": "electron_transfer",
+      "label": "Electron transfer",
+      "node_type": "chemical_process",
+      "source_claims": []
+    },
+    {
+      "id": "valence_shell",
+      "label": "Valence shell",
+      "node_type": "electronic_structure",
+      "source_claims": [
+        "c_ionization"
+      ]
+    },
+    {
+      "id": "closed_shell_configuration",
+      "label": "Closed-shell electronic configuration",
+      "node_type": "electronic_structure",
+      "description": "Stable filled-shell arrangement used in the source to explain common ion formation.",
+      "source_claims": [
+        "c_ionization"
+      ]
+    },
+    {
+      "id": "ionization_energy",
+      "label": "Ionization energy / ionization potential",
+      "node_type": "energetic_property",
+      "description": "Energy required to detach an electron in its lowest energy state from an atom or molecule of a gas with less net electric charge.",
+      "source_claims": [
+        "c_ionization_energy"
+      ]
+    },
+    {
+      "id": "nth_ionization_energy",
+      "label": "Nth ionization energy",
+      "node_type": "energetic_property",
+      "description": "Energy required to detach the nth electron after the preceding n−1 electrons have already been detached.",
+      "source_claims": [
+        "c_ionization_energy"
+      ]
+    },
+    {
+      "id": "electron_cloud",
+      "label": "Electron cloud",
+      "node_type": "electronic_structure",
+      "description": "Spatial electron distribution whose extent contributes to atomic and ionic size.",
+      "source_claims": [
+        "c_size"
+      ]
+    },
+    {
+      "id": "ionic_radius",
+      "label": "Ionic radius",
+      "node_type": "structural_property",
+      "description": "Characteristic radius used to compare ionic size; depends on the electron cloud and ionic state.",
+      "source_claims": [
+        "c_size"
+      ]
+    },
+    {
+      "id": "atomic_radius",
+      "label": "Atomic radius",
+      "node_type": "structural_property",
+      "source_claims": []
+    },
+    {
+      "id": "molecular_radius",
+      "label": "Molecular radius",
+      "node_type": "structural_property",
+      "source_claims": []
+    },
+    {
+      "id": "electropositivity",
+      "label": "Electropositivity",
+      "node_type": "chemical_property",
+      "description": "Tendency of metals to lose electrons toward stable configurations.",
+      "source_claims": []
+    },
+    {
+      "id": "electronegativity",
+      "label": "Electronegativity",
+      "node_type": "chemical_property",
+      "description": "Tendency of nonmetals to gain electrons toward stable configurations.",
+      "source_claims": []
+    },
+    {
+      "id": "solvent",
+      "label": "Solvent",
+      "node_type": "chemical_environment",
+      "source_claims": []
+    },
+    {
+      "id": "water",
+      "label": "Water",
+      "node_type": "solvent",
+      "description": "Polar solvent described as forming a well-developed solvating layer around ions.",
+      "source_claims": [
+        "c_solvation"
+      ]
+    },
+    {
+      "id": "nonpolar_liquid",
+      "label": "Nonpolar liquid",
+      "node_type": "solvent_class",
+      "description": "Liquid with low dielectric constant in which ionization and conductivity can occur under specialized amphiphilic conditions.",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "dielectric_constant",
+      "label": "Dielectric constant",
+      "node_type": "material_property",
+      "source_claims": []
+    },
+    {
+      "id": "amphiphile",
+      "label": "Amphiphile",
+      "node_type": "chemical_entity",
+      "description": "Molecule containing a hydrophobic tail and polar head; described as enabling ion formation and self-solvation in nonpolar liquids.",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "hydrophobic_tail",
+      "label": "Hydrophobic tail",
+      "node_type": "molecular_substructure",
+      "source_claims": []
+    },
+    {
+      "id": "polar_head",
+      "label": "Polar head",
+      "node_type": "molecular_substructure",
+      "source_claims": []
+    },
+    {
+      "id": "inverse_micelle",
+      "label": "Charged inverse micelle",
+      "node_type": "solution_structure",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "conductivity",
+      "label": "Electrical conductivity",
+      "node_type": "physical_property",
+      "source_claims": []
+    },
+    {
+      "id": "ion_pair_conductivity_theory",
+      "label": "Ion-pair conductivity theory",
+      "node_type": "scientific_theory",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "ionosphere",
+      "label": "Earth's ionosphere",
+      "node_type": "natural_system",
+      "source_claims": [
+        "c_natural"
+      ]
+    },
+    {
+      "id": "seawater",
+      "label": "Seawater",
+      "node_type": "natural_system",
+      "source_claims": [
+        "c_natural"
+      ]
+    },
+    {
+      "id": "total_dissolved_solids",
+      "label": "Total dissolved solids",
+      "node_type": "environmental_measure",
+      "source_claims": []
+    },
+    {
+      "id": "water_quality",
+      "label": "Water quality",
+      "node_type": "environmental_property",
+      "source_claims": []
+    },
+    {
+      "id": "ion_source",
+      "label": "Ion source",
+      "node_type": "instrument_component",
+      "description": "Technology for preparing ions, commonly using high voltage or temperature.",
+      "source_claims": [
+        "c_technology"
+      ]
+    },
+    {
+      "id": "mass_spectrometer",
+      "label": "Mass spectrometer",
+      "node_type": "scientific_instrument",
+      "source_claims": [
+        "c_technology"
+      ]
+    },
+    {
+      "id": "optical_emission_spectrometer",
+      "label": "Optical emission spectrometer",
+      "node_type": "scientific_instrument",
+      "source_claims": []
+    },
+    {
+      "id": "particle_accelerator",
+      "label": "Particle accelerator",
+      "node_type": "scientific_instrument",
+      "source_claims": []
+    },
+    {
+      "id": "ion_implanter",
+      "label": "Ion implanter",
+      "node_type": "scientific_instrument",
+      "source_claims": []
+    },
+    {
+      "id": "ion_engine",
+      "label": "Ion engine",
+      "node_type": "propulsion_technology",
+      "source_claims": [
+        "c_technology"
+      ]
+    },
+    {
+      "id": "air_purification",
+      "label": "Ion-based air purification",
+      "node_type": "technology",
+      "source_claims": []
+    },
+    {
+      "id": "smoke_detector",
+      "label": "Smoke detector",
+      "node_type": "technology",
+      "source_claims": []
+    },
+    {
+      "id": "ion_channel",
+      "label": "Ion channel",
+      "node_type": "biological_structure",
+      "source_claims": [
+        "c_biology"
+      ]
+    },
+    {
+      "id": "gramicidin",
+      "label": "Gramicidin",
+      "node_type": "biological_agent",
+      "source_claims": [
+        "c_biology"
+      ]
+    },
+    {
+      "id": "amphotericin",
+      "label": "Amphotericin",
+      "node_type": "biological_agent",
+      "source_claims": [
+        "c_biology"
+      ]
+    },
+    {
+      "id": "ion_gradient",
+      "label": "Ionic gradient across membranes",
+      "node_type": "biological_phenomenon",
+      "source_claims": [
+        "c_biology"
+      ]
+    },
+    {
+      "id": "ionizing_radiation",
+      "label": "Ionizing radiation",
+      "node_type": "physical_process",
+      "description": "Radiation capable of producing ionization; source discusses alpha, beta, gamma and X-rays.",
+      "source_claims": [
+        "c_radiation"
+      ]
+    },
+    {
+      "id": "ion_chamber",
+      "label": "Ionization chamber",
+      "node_type": "radiation_detector",
+      "description": "Detector that collects charges created by direct ionization in a gas under an electric field.",
+      "source_claims": [
+        "c_radiation"
+      ]
+    },
+    {
+      "id": "geiger_muller_tube",
+      "label": "Geiger–Müller tube",
+      "node_type": "radiation_detector",
+      "source_claims": [
+        "c_radiation"
+      ]
+    },
+    {
+      "id": "proportional_counter",
+      "label": "Proportional counter",
+      "node_type": "radiation_detector",
+      "source_claims": [
+        "c_radiation"
+      ]
+    },
+    {
+      "id": "townsend_avalanche",
+      "label": "Townsend avalanche",
+      "node_type": "gas_ionization_process",
+      "description": "Cascade multiplication in which accelerated electrons produce additional ionization by collisions.",
+      "source_claims": [
+        "c_radiation"
+      ]
+    },
+    {
+      "id": "free_electron",
+      "label": "Free electron",
+      "node_type": "subatomic_particle",
+      "source_claims": []
+    },
+    {
+      "id": "gas",
+      "label": "Gas",
+      "node_type": "phase",
+      "source_claims": []
+    },
+    {
+      "id": "liquid",
+      "label": "Liquid",
+      "node_type": "phase",
+      "source_claims": []
+    },
+    {
+      "id": "solid",
+      "label": "Solid",
+      "node_type": "phase",
+      "source_claims": []
+    },
+    {
+      "id": "protonation",
+      "label": "Protonation",
+      "node_type": "chemical_process",
+      "description": "Addition of a proton to a neutral molecule, such as conversion of NH3 to NH4+.",
+      "source_claims": [
+        "c_polyatomic"
+      ]
+    },
+    {
+      "id": "deprotonation",
+      "label": "Deprotonation",
+      "node_type": "chemical_process",
+      "source_claims": []
+    },
+    {
+      "id": "oxidation_state",
+      "label": "Oxidation state",
+      "node_type": "chemical_descriptor",
+      "source_claims": [
+        "c_oxidation_notation"
+      ]
+    },
+    {
+      "id": "spectroscopic_ion_notation",
+      "label": "Spectroscopic Roman-numeral ion notation",
+      "node_type": "notation_system",
+      "source_claims": [
+        "c_oxidation_notation"
+      ]
+    },
+    {
+      "id": "chemical_formula_charge_notation",
+      "label": "Chemical-formula charge notation",
+      "node_type": "notation_system",
+      "source_claims": [
+        "c_charge_notation"
+      ]
+    },
+    {
+      "id": "formal_charge",
+      "label": "Formal charge",
+      "node_type": "chemical_descriptor",
+      "source_claims": []
+    },
+    {
+      "id": "radiation_detection",
+      "label": "Ionizing-radiation detection",
+      "node_type": "measurement_domain",
+      "source_claims": []
+    },
+    {
+      "id": "luminescence",
+      "label": "Luminescence",
+      "node_type": "physical_phenomenon",
+      "source_claims": []
+    },
+    {
+      "id": "gemstone_color",
+      "label": "Gemstone color from metal ions",
+      "node_type": "chemical_phenomenon",
+      "source_claims": [
+        "c_natural"
+      ]
+    },
+    {
+      "id": "ion_beam",
+      "label": "Ion beam",
+      "node_type": "technology",
+      "source_claims": []
+    },
+    {
+      "id": "ion_exchange",
+      "label": "Ion exchange",
+      "node_type": "chemical_process",
+      "source_claims": []
+    },
+    {
+      "id": "ionizing_detector",
+      "label": "Ionizing detector",
+      "node_type": "instrument_class",
+      "source_claims": []
+    },
+    {
+      "id": "stopping_power",
+      "label": "Stopping power of radiation particles",
+      "node_type": "physical_property",
+      "source_claims": []
+    },
+    {
+      "id": "ioliomics",
+      "label": "Ioliomics",
+      "node_type": "research_topic",
+      "source_claims": []
+    },
+    {
+      "id": "electrolyte",
+      "label": "Electrolyte",
+      "node_type": "chemical_system",
+      "source_claims": []
+    },
+    {
+      "id": "charge_carrier",
+      "label": "Charge carrier",
+      "node_type": "physical_entity",
+      "source_claims": []
+    },
+    {
+      "id": "william_whewell",
+      "label": "William Whewell",
+      "node_type": "person",
+      "source_claims": [
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "michael_faraday",
+      "label": "Michael Faraday",
+      "node_type": "person",
+      "source_claims": [
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "svante_arrhenius",
+      "label": "Svante Arrhenius",
+      "node_type": "person",
+      "source_claims": [
+        "c_arrhenius"
+      ]
+    },
+    {
+      "id": "lars_onsager",
+      "label": "Lars Onsager",
+      "node_type": "person",
+      "source_claims": []
+    },
+    {
+      "id": "raymond_fuoss",
+      "label": "R. M. Fuoss",
+      "node_type": "person",
+      "source_claims": []
+    },
+    {
+      "id": "charles_kraus",
+      "label": "C. A. Kraus",
+      "node_type": "person",
+      "source_claims": []
+    },
+    {
+      "id": "a_s_dukh​​in",
+      "label": "A. S. Dukhin",
+      "node_type": "person",
+      "source_claims": []
+    },
+    {
+      "id": "s_parlia",
+      "label": "S. Parlia",
+      "node_type": "person",
+      "source_claims": []
+    },
+    {
+      "id": "i_d_morrison",
+      "label": "I. D. Morrison",
+      "node_type": "person",
+      "source_claims": []
+    },
+    {
+      "id": "faraday_correspondence_1832_1840",
+      "label": "The Correspondence of Michael Faraday, Vol. 2: 1832–1840",
+      "node_type": "historical_publication",
+      "source_claims": []
+    },
+    {
+      "id": "arrhenius_1884_dissertation",
+      "label": "Svante Arrhenius 1884 dissertation",
+      "node_type": "historical_publication",
+      "source_claims": [
+        "c_arrhenius"
+      ]
+    },
+    {
+      "id": "nobel_chemistry_1903",
+      "label": "Nobel Prize in Chemistry 1903",
+      "node_type": "award_record",
+      "source_claims": []
+    },
+    {
+      "id": "onsager_1927_paper",
+      "label": "Report on revision of the conductivity theory (1927)",
+      "node_type": "scientific_publication",
+      "doi": "10.1039/tf9272300341",
+      "source_claims": []
+    },
+    {
+      "id": "fuoss_kraus_1933_paper",
+      "label": "Properties of electrolytic solutions. III. The dissociation constant (1933)",
+      "node_type": "scientific_publication",
+      "doi": "10.1021/ja01330a023",
+      "source_claims": []
+    },
+    {
+      "id": "dukh​​in_parlia_2015_paper",
+      "label": "Ion-pair conductivity theory fitting measured data for various alcohol-toluene mixtures across entire concentration range (2015)",
+      "node_type": "scientific_publication",
+      "doi": "10.1149/2.0761504jes",
+      "source_claims": []
+    },
+    {
+      "id": "dukh​​in_parlia_2018_paper",
+      "label": "Ion-Pair conductivity theory V: Critical ion size and range of ion-pair existence (2018)",
+      "node_type": "scientific_publication",
+      "doi": "10.1149/2.0821814jes",
+      "source_claims": []
+    },
+    {
+      "id": "morrison_1993_paper",
+      "label": "Electrical charges in non-aqueous media (1993)",
+      "node_type": "scientific_publication",
+      "doi": "10.1016/0927-7757(93)80026-B",
+      "source_claims": []
+    },
+    {
+      "id": "sodium_cation",
+      "label": "Sodium cation",
+      "node_type": "specific_ion",
+      "chemical_formula": "Na+",
+      "net_charge": 1,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions",
+        "c_na_cl"
+      ]
+    },
+    {
+      "id": "potassium_cation",
+      "label": "Potassium cation",
+      "node_type": "specific_ion",
+      "chemical_formula": "K+",
+      "net_charge": 1,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "lithium_cation",
+      "label": "Lithium cation",
+      "node_type": "specific_ion",
+      "chemical_formula": "Li+",
+      "net_charge": 1,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "rubidium_cation",
+      "label": "Rubidium cation",
+      "node_type": "specific_ion",
+      "chemical_formula": "Rb+",
+      "net_charge": 1,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "caesium_cation",
+      "label": "Caesium cation",
+      "node_type": "specific_ion",
+      "chemical_formula": "Cs+",
+      "net_charge": 1,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "beryllium_cation",
+      "label": "Beryllium cation",
+      "node_type": "specific_ion",
+      "chemical_formula": "Be2+",
+      "net_charge": 2,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "magnesium_cation",
+      "label": "Magnesium cation",
+      "node_type": "specific_ion",
+      "chemical_formula": "Mg2+",
+      "net_charge": 2,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "calcium_cation",
+      "label": "Calcium cation",
+      "node_type": "specific_ion",
+      "chemical_formula": "Ca2+",
+      "net_charge": 2,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "strontium_cation",
+      "label": "Strontium cation",
+      "node_type": "specific_ion",
+      "chemical_formula": "Sr2+",
+      "net_charge": 2,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "barium_cation",
+      "label": "Barium cation",
+      "node_type": "specific_ion",
+      "chemical_formula": "Ba2+",
+      "net_charge": 2,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "chromium_III",
+      "label": "Chromium(III) ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Cr3+",
+      "net_charge": 3,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "copper_I",
+      "label": "Copper(I) ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Cu+",
+      "net_charge": 1,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "copper_II",
+      "label": "Copper(II) ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Cu2+",
+      "net_charge": 2,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "gold_I",
+      "label": "Gold(I) ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Au+",
+      "net_charge": 1,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "gold_III",
+      "label": "Gold(III) ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Au3+",
+      "net_charge": 3,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "iron_II",
+      "label": "Iron(II) ion / ferrous ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Fe2+",
+      "net_charge": 2,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "iron_III",
+      "label": "Iron(III) ion / ferric ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Fe3+",
+      "net_charge": 3,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "manganese_II",
+      "label": "Manganese(II) ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Mn2+",
+      "net_charge": 2,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "manganese_III",
+      "label": "Manganese(III) ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Mn3+",
+      "net_charge": 3,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "manganese_IV",
+      "label": "Manganese(IV) ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Mn4+",
+      "net_charge": 4,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "mercury_II",
+      "label": "Mercury(II) ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Hg2+",
+      "net_charge": 2,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "silver_I",
+      "label": "Silver ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Ag+",
+      "net_charge": 1,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "zinc_II",
+      "label": "Zinc ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Zn2+",
+      "net_charge": 2,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "aluminium_III",
+      "label": "Aluminium ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Al3+",
+      "net_charge": 3,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "hydron",
+      "label": "Hydron / H+",
+      "node_type": "specific_ion",
+      "chemical_formula": "H+",
+      "net_charge": 1,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "lead_II",
+      "label": "Lead(II) ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Pb2+",
+      "net_charge": 2,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "lead_IV",
+      "label": "Lead(IV) ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Pb4+",
+      "net_charge": 4,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "tin_II",
+      "label": "Tin(II) ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Sn2+",
+      "net_charge": 2,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "tin_IV",
+      "label": "Tin(IV) ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Sn4+",
+      "net_charge": 4,
+      "ion_class": "monatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "ammonium",
+      "label": "Ammonium ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "NH4+",
+      "net_charge": 1,
+      "ion_class": "polyatomic cation",
+      "source_claims": [
+        "c_common_ions",
+        "c_polyatomic"
+      ]
+    },
+    {
+      "id": "hydronium",
+      "label": "Hydronium ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "H3O+",
+      "net_charge": 1,
+      "ion_class": "polyatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "mercury_I",
+      "label": "Mercury(I) ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Hg22+",
+      "net_charge": 2,
+      "ion_class": "polyatomic cation",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "fluoride",
+      "label": "Fluoride ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "F−",
+      "net_charge": -1,
+      "ion_class": "monatomic anion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "chloride",
+      "label": "Chloride ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Cl−",
+      "net_charge": -1,
+      "ion_class": "monatomic anion",
+      "source_claims": [
+        "c_common_ions",
+        "c_na_cl"
+      ]
+    },
+    {
+      "id": "bromide",
+      "label": "Bromide ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Br−",
+      "net_charge": -1,
+      "ion_class": "monatomic anion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "iodide",
+      "label": "Iodide ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "I−",
+      "net_charge": -1,
+      "ion_class": "monatomic anion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "oxide",
+      "label": "Oxide ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "O2−",
+      "net_charge": -2,
+      "ion_class": "monatomic anion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "sulfide",
+      "label": "Sulfide ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "S2−",
+      "net_charge": -2,
+      "ion_class": "monatomic anion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "selenide",
+      "label": "Selenide ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Se2−",
+      "net_charge": -2,
+      "ion_class": "monatomic anion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "nitride",
+      "label": "Nitride ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "N3−",
+      "net_charge": -3,
+      "ion_class": "monatomic anion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "phosphide",
+      "label": "Phosphide ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "P3−",
+      "net_charge": -3,
+      "ion_class": "monatomic anion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "carbide",
+      "label": "Carbide ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "C22−",
+      "net_charge": -2,
+      "ion_class": "monatomic anion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "hydride",
+      "label": "Hydride ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "H−",
+      "net_charge": -1,
+      "ion_class": "monatomic anion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "azide",
+      "label": "Azide ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "N3−",
+      "net_charge": -1,
+      "ion_class": "polyatomic anion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "peroxide",
+      "label": "Peroxide ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "O22−",
+      "net_charge": -2,
+      "ion_class": "polyatomic anion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "triiodide",
+      "label": "Triiodide ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "I3−",
+      "net_charge": -1,
+      "ion_class": "polyatomic anion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "carbonate",
+      "label": "Carbonate ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "CO32−",
+      "net_charge": -2,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "chlorate",
+      "label": "Chlorate ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "ClO3−",
+      "net_charge": -1,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "chromate",
+      "label": "Chromate ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "CrO42−",
+      "net_charge": -2,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "dichromate",
+      "label": "Dichromate ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "Cr2O72−",
+      "net_charge": -2,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "dihydrogen_phosphate",
+      "label": "Dihydrogen phosphate ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "H2PO4−",
+      "net_charge": -1,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "hydrogen_carbonate",
+      "label": "Hydrogen carbonate / bicarbonate",
+      "node_type": "specific_ion",
+      "chemical_formula": "HCO3−",
+      "net_charge": -1,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "hydrogen_sulfate",
+      "label": "Hydrogen sulfate / bisulfate",
+      "node_type": "specific_ion",
+      "chemical_formula": "HSO4−",
+      "net_charge": -1,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "hydrogen_sulfite",
+      "label": "Hydrogen sulfite / bisulfite",
+      "node_type": "specific_ion",
+      "chemical_formula": "HSO3−",
+      "net_charge": -1,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "hydroxide",
+      "label": "Hydroxide ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "OH−",
+      "net_charge": -1,
+      "ion_class": "polyatomic anion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "hypochlorite",
+      "label": "Hypochlorite ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "ClO−",
+      "net_charge": -1,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "monohydrogen_phosphate",
+      "label": "Monohydrogen phosphate ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "HPO42−",
+      "net_charge": -2,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "nitrate",
+      "label": "Nitrate ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "NO3−",
+      "net_charge": -1,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "nitrite",
+      "label": "Nitrite ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "NO2−",
+      "net_charge": -1,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "perchlorate",
+      "label": "Perchlorate ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "ClO4−",
+      "net_charge": -1,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "permanganate",
+      "label": "Permanganate ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "MnO4−",
+      "net_charge": -1,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "phosphate",
+      "label": "Phosphate ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "PO43−",
+      "net_charge": -3,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "sulfate",
+      "label": "Sulfate ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "SO42−",
+      "net_charge": -2,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "sulfite",
+      "label": "Sulfite ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "SO32−",
+      "net_charge": -2,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "superoxide",
+      "label": "Superoxide ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "O2−",
+      "net_charge": -1,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "thiosulfate",
+      "label": "Thiosulfate ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "S2O32−",
+      "net_charge": -2,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "silicate",
+      "label": "Silicate ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "SiO44−",
+      "net_charge": -4,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "metasilicate",
+      "label": "Metasilicate ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "SiO32−",
+      "net_charge": -2,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "aluminium_silicate",
+      "label": "Aluminium silicate ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "AlSiO4−",
+      "net_charge": -1,
+      "ion_class": "oxyanion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "acetate",
+      "label": "Acetate / ethanoate ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "CH3COO−",
+      "net_charge": -1,
+      "ion_class": "organic_anion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "formate",
+      "label": "Formate / methanoate ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "HCOO−",
+      "net_charge": -1,
+      "ion_class": "organic_anion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "oxalate",
+      "label": "Oxalate / ethanedioate ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "C2O42−",
+      "net_charge": -2,
+      "ion_class": "organic_anion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "cyanide",
+      "label": "Cyanide ion",
+      "node_type": "specific_ion",
+      "chemical_formula": "CN−",
+      "net_charge": -1,
+      "ion_class": "organic_anion",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "sodium_atom",
+      "label": "Sodium atom",
+      "node_type": "specific_atom",
+      "chemical_formula": "Na",
+      "source_claims": [
+        "c_na_cl"
+      ]
+    },
+    {
+      "id": "chlorine_atom",
+      "label": "Chlorine atom",
+      "node_type": "specific_atom",
+      "chemical_formula": "Cl",
+      "source_claims": [
+        "c_na_cl"
+      ]
+    },
+    {
+      "id": "sodium_chloride",
+      "label": "Sodium chloride",
+      "node_type": "chemical_compound",
+      "chemical_formula": "NaCl",
+      "source_claims": [
+        "c_na_cl"
+      ]
+    },
+    {
+      "id": "ammonia",
+      "label": "Ammonia",
+      "node_type": "chemical_entity",
+      "chemical_formula": "NH3",
+      "source_claims": [
+        "c_polyatomic"
+      ]
+    },
+    {
+      "id": "radical_ammonia_cation",
+      "label": "Ammonia radical cation",
+      "node_type": "radical_ion",
+      "chemical_formula": "NH3+",
+      "source_claims": [
+        "c_polyatomic"
+      ]
+    },
+    {
+      "id": "chemical_entity",
+      "label": "Chemical Entity",
+      "node_type": "referenced_entity",
+      "description": "Semantic entity referenced by the source-derived graph; retained so no relationship endpoint is dangling.",
+      "source_claims": []
+    }
+  ],
+  "claims": [
+    {
+      "id": "c_definition",
+      "claim_type": "definition",
+      "statement": "An ion is an atom or molecule with a net electrical charge because its total number of electrons is unequal to its total number of protons.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L67-L70",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_charge_formula",
+      "claim_type": "formal_relation",
+      "statement": "Net ionic charge in units of elementary charge equals the number of protons minus the number of electrons.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L92-L96",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_subclasses",
+      "claim_type": "classification",
+      "statement": "Ions are divided into cations/anions and monatomic/polyatomic ions according to charge and atomic composition.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L70-L72",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_charge_notation",
+      "claim_type": "notation",
+      "statement": "Ion charge is written as a superscript to the right of the chemical formula; magnitude is written before sign for charges greater than one and omitted for singly charged species.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L72-L72",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_physical_ionization",
+      "claim_type": "formation",
+      "statement": "Physical ionization in a fluid can create an ion pair consisting of a free electron and a positive ion.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L74-L74",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_faraday_term",
+      "claim_type": "history",
+      "statement": "The term ion was introduced by Michael Faraday in 1834 after William Whewell suggested terminology; the names reflect motion toward oppositely charged electrodes.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L76-L79",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_arrhenius",
+      "claim_type": "history",
+      "statement": "Arrhenius proposed that crystalline salts dissociate into charged particles in solution and that free ions exist even without an applied electric current.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L79-L79",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_solvation",
+      "claim_type": "solvation",
+      "statement": "Ions in liquids or released from solids can acquire solvation shells; solvent interaction stabilizes separated ions through combined energy and entropy effects.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L81-L82",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_fields",
+      "claim_type": "electrodynamics",
+      "statement": "Charged ions are attracted to opposite charges, repelled by like charges, and can have trajectories deflected by electric and magnetic fields.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L84-L84",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_size",
+      "claim_type": "structure",
+      "statement": "Electron-cloud differences make anions larger and cations smaller than their corresponding neutral atoms or molecules; H+ is a bare proton.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L86-L91",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_natural",
+      "claim_type": "natural_occurrence",
+      "statement": "Ions occur widely in nature, including seawater and the ionosphere, and metal ions can influence gemstone color through light absorption.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L104-L105",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_technology",
+      "claim_type": "technology",
+      "statement": "Ion sources and ions are used in mass spectrometry, optical emission spectroscopy, particle acceleration, ion implantation, ion propulsion and other technologies.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L107-L110",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_biology",
+      "claim_type": "biology",
+      "statement": "Ionic gradients across biological membranes participate in signaling and metabolism; disruption can contribute to cell death.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L110-L114",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_radiation",
+      "claim_type": "radiation_detection",
+      "statement": "Ionization of gas by alpha, beta, gamma and X-ray radiation produces ion pairs that can be detected with ionization chambers and amplified with avalanche detectors.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L116-L123",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_oxidation_notation",
+      "claim_type": "notation",
+      "statement": "Roman numerals in chemical oxidation-state notation and spectroscopic ion notation do not have the same semantics; spectroscopic Fe I denotes neutral Fe while Fe II denotes Fe+.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L134-L137",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_ionization",
+      "claim_type": "formation",
+      "statement": "Monatomic ions form by gain or loss of valence-shell electrons; inner-shell electrons generally do not participate in ordinary chemical ion formation.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L143-L146",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_na_cl",
+      "claim_type": "mechanism",
+      "statement": "Sodium tends to lose its valence electron and chlorine tends to gain one, producing Na+ and Cl−; opposite charges then form NaCl.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L148-L156",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_polyatomic",
+      "claim_type": "formation",
+      "statement": "Polyatomic ions commonly form by gaining or losing elemental ions such as H+; protonation of NH3 produces NH4+.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L159-L164",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_nonpolar",
+      "claim_type": "special_case",
+      "statement": "Ionization in low-dielectric nonpolar liquids can occur when amphiphilic solutes provide both a polar head for dissociation and a hydrophobic tail for solubility; neutral solute molecules can form a self-solvation layer.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L166-L171",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_ionization_energy",
+      "claim_type": "energetics",
+      "statement": "Ionization energy is the energy needed to remove an electron, and successive ionization energies rise markedly after an orbital block is exhausted.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L173-L177",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_ionic_bond",
+      "claim_type": "bonding",
+      "statement": "Ionic bonding results from attraction of oppositely charged ions, which generally form ionic compounds and crystal lattices rather than existing independently.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L179-L183",
+        "source_kind": "user_provided_source"
+      }
+    },
+    {
+      "id": "c_common_ions",
+      "claim_type": "examples",
+      "statement": "The source enumerates common monatomic cations, polyatomic cations, monatomic anions and polyatomic/oxo/organic-acid anions.",
+      "provenance": {
+        "source_file": "Pasted text(20261007-042138).txt",
+        "source_lines": "L185-L277",
+        "source_kind": "user_provided_source"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_0001_ion_has_property_electric_charge",
+      "source": "ion",
+      "target": "electric_charge",
+      "relationship": "has_property",
+      "source_claims": []
+    },
+    {
+      "id": "e_0002_electron_carries_negative_electric_charge",
+      "source": "electron",
+      "target": "electric_charge",
+      "relationship": "carries_negative",
+      "source_claims": []
+    },
+    {
+      "id": "e_0003_proton_carries_positive_electric_charge",
+      "source": "proton",
+      "target": "electric_charge",
+      "relationship": "carries_positive",
+      "source_claims": []
+    },
+    {
+      "id": "e_0004_ion_contains_electron",
+      "source": "ion",
+      "target": "electron",
+      "relationship": "contains",
+      "source_claims": []
+    },
+    {
+      "id": "e_0005_ion_contains_proton",
+      "source": "ion",
+      "target": "proton",
+      "relationship": "contains",
+      "source_claims": []
+    },
+    {
+      "id": "e_0006_ion_can_be_atom",
+      "source": "ion",
+      "target": "atom",
+      "relationship": "can_be",
+      "source_claims": []
+    },
+    {
+      "id": "e_0007_ion_can_be_molecule",
+      "source": "ion",
+      "target": "molecule",
+      "relationship": "can_be",
+      "source_claims": []
+    },
+    {
+      "id": "e_0008_cation_subclass_of_ion",
+      "source": "cation",
+      "target": "ion",
+      "relationship": "subclass_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0009_anion_subclass_of_ion",
+      "source": "anion",
+      "target": "ion",
+      "relationship": "subclass_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0010_monatomic_ion_subclass_of_ion",
+      "source": "monatomic_ion",
+      "target": "ion",
+      "relationship": "subclass_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0011_polyatomic_ion_subclass_of_ion",
+      "source": "polyatomic_ion",
+      "target": "ion",
+      "relationship": "subclass_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0012_radical_ion_subclass_of_ion",
+      "source": "radical_ion",
+      "target": "ion",
+      "relationship": "subclass_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0013_dianion_subclass_of_ion",
+      "source": "dianion",
+      "target": "ion",
+      "relationship": "subclass_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0014_dication_subclass_of_ion",
+      "source": "dication",
+      "target": "ion",
+      "relationship": "subclass_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0015_trication_subclass_of_ion",
+      "source": "trication",
+      "target": "ion",
+      "relationship": "subclass_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0016_zwitterion_is_a_chemical_entity",
+      "source": "zwitterion",
+      "target": "chemical_entity",
+      "relationship": "is_a",
+      "source_claims": []
+    },
+    {
+      "id": "e_0017_oxyanion_subclass_of_polyatomic_ion",
+      "source": "oxyanion",
+      "target": "polyatomic_ion",
+      "relationship": "subclass_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0018_organic_ion_subclass_of_polyatomic_ion",
+      "source": "organic_ion",
+      "target": "polyatomic_ion",
+      "relationship": "subclass_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0019_carbocation_subclass_of_organic_ion",
+      "source": "carbocation",
+      "target": "organic_ion",
+      "relationship": "subclass_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0020_carbanion_subclass_of_organic_ion",
+      "source": "carbanion",
+      "target": "organic_ion",
+      "relationship": "subclass_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0021_cation_has_fewer_than_electron",
+      "source": "cation",
+      "target": "electron",
+      "relationship": "has_fewer_than",
+      "source_claims": []
+    },
+    {
+      "id": "e_0022_anion_has_more_than_electron",
+      "source": "anion",
+      "target": "electron",
+      "relationship": "has_more_than",
+      "source_claims": []
+    },
+    {
+      "id": "e_0023_cation_has_more_protons_than_electrons_proton",
+      "source": "cation",
+      "target": "proton",
+      "relationship": "has_more_protons_than_electrons",
+      "source_claims": []
+    },
+    {
+      "id": "e_0024_anion_has_fewer_protons_than_electrons_proton",
+      "source": "anion",
+      "target": "proton",
+      "relationship": "has_fewer_protons_than_electrons",
+      "source_claims": []
+    },
+    {
+      "id": "e_0025_ion_charge_measured_in_units_of_elementary_charge",
+      "source": "ion",
+      "target": "elementary_charge",
+      "relationship": "charge_measured_in_units_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0026_ion_is_charge_carrier",
+      "source": "ion",
+      "target": "charge_carrier",
+      "relationship": "is",
+      "source_claims": []
+    },
+    {
+      "id": "e_0027_ion_experiences_electrostatic_force",
+      "source": "ion",
+      "target": "electrostatic_force",
+      "relationship": "experiences",
+      "source_claims": []
+    },
+    {
+      "id": "e_0028_ion_trajectory_can_be_deflected_by_electric_field",
+      "source": "ion",
+      "target": "electric_field",
+      "relationship": "trajectory_can_be_deflected_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0029_ion_trajectory_can_be_deflected_by_magnetic_field",
+      "source": "ion",
+      "target": "magnetic_field",
+      "relationship": "trajectory_can_be_deflected_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0030_cation_attracts_anion",
+      "source": "cation",
+      "target": "anion",
+      "relationship": "attracts",
+      "source_claims": []
+    },
+    {
+      "id": "e_0031_anion_attracts_cation",
+      "source": "anion",
+      "target": "cation",
+      "relationship": "attracts",
+      "source_claims": []
+    },
+    {
+      "id": "e_0032_cation_repels_cation",
+      "source": "cation",
+      "target": "cation",
+      "relationship": "repels",
+      "source_claims": []
+    },
+    {
+      "id": "e_0033_anion_repels_anion",
+      "source": "anion",
+      "target": "anion",
+      "relationship": "repels",
+      "source_claims": []
+    },
+    {
+      "id": "e_0034_cation_participates_in_ionic_bond",
+      "source": "cation",
+      "target": "ionic_bond",
+      "relationship": "participates_in",
+      "source_claims": []
+    },
+    {
+      "id": "e_0035_anion_participates_in_ionic_bond",
+      "source": "anion",
+      "target": "ionic_bond",
+      "relationship": "participates_in",
+      "source_claims": []
+    },
+    {
+      "id": "e_0036_ionic_bond_holds_together_ionic_compound",
+      "source": "ionic_bond",
+      "target": "ionic_compound",
+      "relationship": "holds_together",
+      "source_claims": []
+    },
+    {
+      "id": "e_0037_ionic_compound_forms_ionic_lattice",
+      "source": "ionic_compound",
+      "target": "ionic_lattice",
+      "relationship": "forms",
+      "source_claims": []
+    },
+    {
+      "id": "e_0038_ion_can_occupy_ionic_lattice",
+      "source": "ion",
+      "target": "ionic_lattice",
+      "relationship": "can_occupy",
+      "source_claims": []
+    },
+    {
+      "id": "e_0039_ion_has_ionic_radius",
+      "source": "ion",
+      "target": "ionic_radius",
+      "relationship": "has",
+      "source_claims": []
+    },
+    {
+      "id": "e_0040_ion_has_electron_cloud",
+      "source": "ion",
+      "target": "electron_cloud",
+      "relationship": "has",
+      "source_claims": []
+    },
+    {
+      "id": "e_0041_electron_cloud_determines_ionic_radius",
+      "source": "electron_cloud",
+      "target": "ionic_radius",
+      "relationship": "determines",
+      "source_claims": []
+    },
+    {
+      "id": "e_0042_anion_expanded_by_excess_electrons_electron_cloud",
+      "source": "anion",
+      "target": "electron_cloud",
+      "relationship": "expanded_by_excess_electrons",
+      "source_claims": []
+    },
+    {
+      "id": "e_0043_cation_contracted_relative_to_parent_electron_cloud",
+      "source": "cation",
+      "target": "electron_cloud",
+      "relationship": "contracted_relative_to_parent",
+      "source_claims": []
+    },
+    {
+      "id": "e_0044_ionization_produces_ion",
+      "source": "ionization",
+      "target": "ion",
+      "relationship": "produces",
+      "source_claims": []
+    },
+    {
+      "id": "e_0045_ionization_can_release_electron",
+      "source": "ionization",
+      "target": "electron",
+      "relationship": "can_release",
+      "source_claims": []
+    },
+    {
+      "id": "e_0046_electron_transfer_can_cause_ionization",
+      "source": "electron_transfer",
+      "target": "ionization",
+      "relationship": "can_cause",
+      "source_claims": []
+    },
+    {
+      "id": "e_0047_valence_shell_contains_electron",
+      "source": "valence_shell",
+      "target": "electron",
+      "relationship": "contains",
+      "source_claims": []
+    },
+    {
+      "id": "e_0048_closed_shell_configuration_drives_common_formation_pattern_ionization",
+      "source": "closed_shell_configuration",
+      "target": "ionization",
+      "relationship": "drives_common_formation_pattern",
+      "source_claims": []
+    },
+    {
+      "id": "e_0049_ionization_energy_energetic_requirement_for_ionization",
+      "source": "ionization_energy",
+      "target": "ionization",
+      "relationship": "energetic_requirement_for",
+      "source_claims": []
+    },
+    {
+      "id": "e_0050_nth_ionization_energy_is_ordered_form_of_ionization_energy",
+      "source": "nth_ionization_energy",
+      "target": "ionization_energy",
+      "relationship": "is_ordered_form_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0051_ionization_energy_is_property_relevant_to_ion",
+      "source": "ionization_energy",
+      "target": "ion",
+      "relationship": "is_property_relevant_to",
+      "source_claims": []
+    },
+    {
+      "id": "e_0052_electropositivity_favors_formation_of_cation",
+      "source": "electropositivity",
+      "target": "cation",
+      "relationship": "favors_formation_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0053_electronegativity_favors_formation_of_anion",
+      "source": "electronegativity",
+      "target": "anion",
+      "relationship": "favors_formation_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0054_ion_formation_depends_on_valence_shell",
+      "source": "ion",
+      "target": "valence_shell",
+      "relationship": "formation_depends_on",
+      "source_claims": []
+    },
+    {
+      "id": "e_0055_ion_pair_consists_of_ion",
+      "source": "ion_pair",
+      "target": "ion",
+      "relationship": "consists_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0056_ion_pair_contains_free_electron",
+      "source": "ion_pair",
+      "target": "free_electron",
+      "relationship": "contains",
+      "source_claims": []
+    },
+    {
+      "id": "e_0057_ion_pair_contains_cation",
+      "source": "ion_pair",
+      "target": "cation",
+      "relationship": "contains",
+      "source_claims": []
+    },
+    {
+      "id": "e_0058_ionization_can_produce_ion_pair",
+      "source": "ionization",
+      "target": "ion_pair",
+      "relationship": "can_produce",
+      "source_claims": []
+    },
+    {
+      "id": "e_0059_ion_can_exist_as_solvated_ion",
+      "source": "ion",
+      "target": "solvated_ion",
+      "relationship": "can_exist_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0060_solvated_ion_surrounded_by_solvation_shell",
+      "source": "solvated_ion",
+      "target": "solvation_shell",
+      "relationship": "surrounded_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0061_water_forms_solvation_shell",
+      "source": "water",
+      "target": "solvation_shell",
+      "relationship": "forms",
+      "source_claims": []
+    },
+    {
+      "id": "e_0062_solvent_can_form_solvation_shell",
+      "source": "solvent",
+      "target": "solvation_shell",
+      "relationship": "can_form",
+      "source_claims": []
+    },
+    {
+      "id": "e_0063_solvated_ion_stabilized_form_of_ion",
+      "source": "solvated_ion",
+      "target": "ion",
+      "relationship": "stabilized_form_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0064_salt_dissolution_breaks_into_ions_from_ionic_lattice",
+      "source": "salt_dissolution",
+      "target": "ionic_lattice",
+      "relationship": "breaks_into_ions_from",
+      "source_claims": []
+    },
+    {
+      "id": "e_0065_salt_dissolution_can_produce_solvated_ion",
+      "source": "salt_dissolution",
+      "target": "solvated_ion",
+      "relationship": "can_produce",
+      "source_claims": []
+    },
+    {
+      "id": "e_0066_electrolysis_operates_through_conducting_solution",
+      "source": "electrolysis",
+      "target": "conducting_solution",
+      "relationship": "operates_through",
+      "source_claims": []
+    },
+    {
+      "id": "e_0067_electrolysis_uses_anode",
+      "source": "electrolysis",
+      "target": "anode",
+      "relationship": "uses",
+      "source_claims": []
+    },
+    {
+      "id": "e_0068_electrolysis_uses_cathode",
+      "source": "electrolysis",
+      "target": "cathode",
+      "relationship": "uses",
+      "source_claims": []
+    },
+    {
+      "id": "e_0069_anion_moves_toward_anode",
+      "source": "anion",
+      "target": "anode",
+      "relationship": "moves_toward",
+      "source_claims": []
+    },
+    {
+      "id": "e_0070_cation_moves_toward_cathode",
+      "source": "cation",
+      "target": "cathode",
+      "relationship": "moves_toward",
+      "source_claims": []
+    },
+    {
+      "id": "e_0071_anode_subclass_of_electrode",
+      "source": "anode",
+      "target": "electrode",
+      "relationship": "subclass_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0072_cathode_subclass_of_electrode",
+      "source": "cathode",
+      "target": "electrode",
+      "relationship": "subclass_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0073_conducting_solution_can_be_electrolyte",
+      "source": "conducting_solution",
+      "target": "electrolyte",
+      "relationship": "can_be",
+      "source_claims": []
+    },
+    {
+      "id": "e_0074_electrolyte_contains_mobile_ion",
+      "source": "electrolyte",
+      "target": "ion",
+      "relationship": "contains_mobile",
+      "source_claims": []
+    },
+    {
+      "id": "e_0075_nonpolar_liquid_characterized_by_dielectric_constant",
+      "source": "nonpolar_liquid",
+      "target": "dielectric_constant",
+      "relationship": "characterized_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0076_nonpolar_liquid_supports_under_special_conditions_ionization",
+      "source": "nonpolar_liquid",
+      "target": "ionization",
+      "relationship": "supports_under_special_conditions",
+      "source_claims": []
+    },
+    {
+      "id": "e_0077_amphiphile_contains_hydrophobic_tail",
+      "source": "amphiphile",
+      "target": "hydrophobic_tail",
+      "relationship": "contains",
+      "source_claims": []
+    },
+    {
+      "id": "e_0078_amphiphile_contains_polar_head",
+      "source": "amphiphile",
+      "target": "polar_head",
+      "relationship": "contains",
+      "source_claims": []
+    },
+    {
+      "id": "e_0079_amphiphile_enables_ionization",
+      "source": "amphiphile",
+      "target": "ionization",
+      "relationship": "enables",
+      "source_claims": []
+    },
+    {
+      "id": "e_0080_polar_head_provides_source_for_ionization",
+      "source": "polar_head",
+      "target": "ionization",
+      "relationship": "provides_source_for",
+      "source_claims": []
+    },
+    {
+      "id": "e_0081_hydrophobic_tail_supports_solubility_in_nonpolar_liquid",
+      "source": "hydrophobic_tail",
+      "target": "nonpolar_liquid",
+      "relationship": "supports_solubility_in",
+      "source_claims": []
+    },
+    {
+      "id": "e_0082_ion_can_appear_as_inverse_micelle",
+      "source": "ion",
+      "target": "inverse_micelle",
+      "relationship": "can_appear_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0083_inverse_micelle_resembles_solvation_shell",
+      "source": "inverse_micelle",
+      "target": "solvation_shell",
+      "relationship": "resembles",
+      "source_claims": []
+    },
+    {
+      "id": "e_0084_ion_pair_conductivity_theory_explains_conductivity",
+      "source": "ion_pair_conductivity_theory",
+      "target": "conductivity",
+      "relationship": "explains",
+      "source_claims": []
+    },
+    {
+      "id": "e_0085_lars_onsager_contributed_to_ion_pair_conductivity_theory",
+      "source": "lars_onsager",
+      "target": "ion_pair_conductivity_theory",
+      "relationship": "contributed_to",
+      "source_claims": []
+    },
+    {
+      "id": "e_0086_raymond_fuoss_contributed_to_ion_pair_conductivity_theory",
+      "source": "raymond_fuoss",
+      "target": "ion_pair_conductivity_theory",
+      "relationship": "contributed_to",
+      "source_claims": []
+    },
+    {
+      "id": "e_0087_charles_kraus_contributed_to_ion_pair_conductivity_theory",
+      "source": "charles_kraus",
+      "target": "ion_pair_conductivity_theory",
+      "relationship": "contributed_to",
+      "source_claims": []
+    },
+    {
+      "id": "e_0088_a_s_dukh​​in_developed_ion_pair_conductivity_theory",
+      "source": "a_s_dukh​​in",
+      "target": "ion_pair_conductivity_theory",
+      "relationship": "developed",
+      "source_claims": []
+    },
+    {
+      "id": "e_0089_s_parlia_developed_ion_pair_conductivity_theory",
+      "source": "s_parlia",
+      "target": "ion_pair_conductivity_theory",
+      "relationship": "developed",
+      "source_claims": []
+    },
+    {
+      "id": "e_0090_i_d_morrison_studied_ion_pair_conductivity_theory",
+      "source": "i_d_morrison",
+      "target": "ion_pair_conductivity_theory",
+      "relationship": "studied",
+      "source_claims": []
+    },
+    {
+      "id": "e_0091_ion_pair_conductivity_theory_models_nonpolar_liquid",
+      "source": "ion_pair_conductivity_theory",
+      "target": "nonpolar_liquid",
+      "relationship": "models",
+      "source_claims": []
+    },
+    {
+      "id": "e_0092_ion_pair_conductivity_theory_fits_experimental_data_for_conductivity",
+      "source": "ion_pair_conductivity_theory",
+      "target": "conductivity",
+      "relationship": "fits_experimental_data_for",
+      "source_claims": []
+    },
+    {
+      "id": "e_0093_ion_generated_by_ion_source",
+      "source": "ion",
+      "target": "ion_source",
+      "relationship": "generated_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0094_ion_source_supplies_mass_spectrometer",
+      "source": "ion_source",
+      "target": "mass_spectrometer",
+      "relationship": "supplies",
+      "source_claims": []
+    },
+    {
+      "id": "e_0095_ion_source_supplies_optical_emission_spectrometer",
+      "source": "ion_source",
+      "target": "optical_emission_spectrometer",
+      "relationship": "supplies",
+      "source_claims": []
+    },
+    {
+      "id": "e_0096_ion_source_supplies_particle_accelerator",
+      "source": "ion_source",
+      "target": "particle_accelerator",
+      "relationship": "supplies",
+      "source_claims": []
+    },
+    {
+      "id": "e_0097_ion_source_supplies_ion_implanter",
+      "source": "ion_source",
+      "target": "ion_implanter",
+      "relationship": "supplies",
+      "source_claims": []
+    },
+    {
+      "id": "e_0098_ion_source_supplies_ion_engine",
+      "source": "ion_source",
+      "target": "ion_engine",
+      "relationship": "supplies",
+      "source_claims": []
+    },
+    {
+      "id": "e_0099_ion_used_in_mass_spectrometer",
+      "source": "ion",
+      "target": "mass_spectrometer",
+      "relationship": "used_in",
+      "source_claims": []
+    },
+    {
+      "id": "e_0100_ion_used_in_optical_emission_spectrometer",
+      "source": "ion",
+      "target": "optical_emission_spectrometer",
+      "relationship": "used_in",
+      "source_claims": []
+    },
+    {
+      "id": "e_0101_ion_used_in_particle_accelerator",
+      "source": "ion",
+      "target": "particle_accelerator",
+      "relationship": "used_in",
+      "source_claims": []
+    },
+    {
+      "id": "e_0102_ion_used_in_ion_implanter",
+      "source": "ion",
+      "target": "ion_implanter",
+      "relationship": "used_in",
+      "source_claims": []
+    },
+    {
+      "id": "e_0103_ion_used_in_ion_engine",
+      "source": "ion",
+      "target": "ion_engine",
+      "relationship": "used_in",
+      "source_claims": []
+    },
+    {
+      "id": "e_0104_ion_used_in_air_purification",
+      "source": "ion",
+      "target": "air_purification",
+      "relationship": "used_in",
+      "source_claims": []
+    },
+    {
+      "id": "e_0105_ion_used_in_smoke_detector",
+      "source": "ion",
+      "target": "smoke_detector",
+      "relationship": "used_in",
+      "source_claims": []
+    },
+    {
+      "id": "e_0106_ion_gradient_depends_on_ion",
+      "source": "ion_gradient",
+      "target": "ion",
+      "relationship": "depends_on",
+      "source_claims": []
+    },
+    {
+      "id": "e_0107_ion_gradient_regulated_by_ion_channel",
+      "source": "ion_gradient",
+      "target": "ion_channel",
+      "relationship": "regulated_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0108_gramicidin_is_related_to_ion_channel",
+      "source": "gramicidin",
+      "target": "ion_channel",
+      "relationship": "is_related_to",
+      "source_claims": []
+    },
+    {
+      "id": "e_0109_amphotericin_is_related_to_ion_channel",
+      "source": "amphotericin",
+      "target": "ion_channel",
+      "relationship": "is_related_to",
+      "source_claims": []
+    },
+    {
+      "id": "e_0110_ion_gradient_supports_biological_signaling_ion",
+      "source": "ion_gradient",
+      "target": "ion",
+      "relationship": "supports_biological_signaling",
+      "source_claims": []
+    },
+    {
+      "id": "e_0111_ion_gradient_supports_metabolism_ion",
+      "source": "ion_gradient",
+      "target": "ion",
+      "relationship": "supports_metabolism",
+      "source_claims": []
+    },
+    {
+      "id": "e_0112_ion_gradient_disruption_has_biological_consequences_ion",
+      "source": "ion_gradient",
+      "target": "ion",
+      "relationship": "disruption_has_biological_consequences",
+      "source_claims": []
+    },
+    {
+      "id": "e_0113_ionizing_radiation_causes_ionization",
+      "source": "ionizing_radiation",
+      "target": "ionization",
+      "relationship": "causes",
+      "source_claims": []
+    },
+    {
+      "id": "e_0114_ionizing_radiation_produces_ion_pair",
+      "source": "ionizing_radiation",
+      "target": "ion_pair",
+      "relationship": "produces",
+      "source_claims": []
+    },
+    {
+      "id": "e_0115_ion_chamber_detects_ion_pair",
+      "source": "ion_chamber",
+      "target": "ion_pair",
+      "relationship": "detects",
+      "source_claims": []
+    },
+    {
+      "id": "e_0116_ion_chamber_uses_electric_field",
+      "source": "ion_chamber",
+      "target": "electric_field",
+      "relationship": "uses",
+      "source_claims": []
+    },
+    {
+      "id": "e_0117_geiger_muller_tube_uses_townsend_avalanche",
+      "source": "geiger_muller_tube",
+      "target": "townsend_avalanche",
+      "relationship": "uses",
+      "source_claims": []
+    },
+    {
+      "id": "e_0118_proportional_counter_uses_townsend_avalanche",
+      "source": "proportional_counter",
+      "target": "townsend_avalanche",
+      "relationship": "uses",
+      "source_claims": []
+    },
+    {
+      "id": "e_0119_townsend_avalanche_multiplies_free_electron",
+      "source": "townsend_avalanche",
+      "target": "free_electron",
+      "relationship": "multiplies",
+      "source_claims": []
+    },
+    {
+      "id": "e_0120_free_electron_causes_by_collision_ionization",
+      "source": "free_electron",
+      "target": "ionization",
+      "relationship": "causes_by_collision",
+      "source_claims": []
+    },
+    {
+      "id": "e_0121_ionizing_radiation_detected_by_ion_chamber",
+      "source": "ionizing_radiation",
+      "target": "ion_chamber",
+      "relationship": "detected_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0122_ionizing_radiation_detected_by_geiger_muller_tube",
+      "source": "ionizing_radiation",
+      "target": "geiger_muller_tube",
+      "relationship": "detected_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0123_ionizing_radiation_detected_by_proportional_counter",
+      "source": "ionizing_radiation",
+      "target": "proportional_counter",
+      "relationship": "detected_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0124_ionizing_radiation_application_ion_chamber",
+      "source": "ionizing_radiation",
+      "target": "ion_chamber",
+      "relationship": "application",
+      "source_claims": []
+    },
+    {
+      "id": "e_0125_spectroscopic_ion_notation_must_be_distinguished_from_oxidation_state",
+      "source": "spectroscopic_ion_notation",
+      "target": "oxidation_state",
+      "relationship": "must_be_distinguished_from",
+      "source_claims": []
+    },
+    {
+      "id": "e_0126_chemical_formula_charge_notation_expresses_formal_charge",
+      "source": "chemical_formula_charge_notation",
+      "target": "formal_charge",
+      "relationship": "expresses",
+      "source_claims": []
+    },
+    {
+      "id": "e_0127_protonation_forms_polyatomic_ion",
+      "source": "protonation",
+      "target": "polyatomic_ion",
+      "relationship": "forms",
+      "source_claims": []
+    },
+    {
+      "id": "e_0128_protonation_example_is_polyatomic_ion",
+      "source": "protonation",
+      "target": "polyatomic_ion",
+      "relationship": "example_is",
+      "source_claims": []
+    },
+    {
+      "id": "e_0129_ion_contrasts_with_neutral_atom_or_molecule",
+      "source": "ion",
+      "target": "neutral_atom_or_molecule",
+      "relationship": "contrasts_with",
+      "source_claims": []
+    },
+    {
+      "id": "e_0130_sodium_cation_instance_of_cation",
+      "source": "sodium_cation",
+      "target": "cation",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0131_sodium_cation_instance_of_ion",
+      "source": "sodium_cation",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0132_sodium_cation_classified_as_cation",
+      "source": "sodium_cation",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0133_sodium_cation_represented_by_chemical_formula_charge_notation",
+      "source": "sodium_cation",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0134_potassium_cation_instance_of_ion",
+      "source": "potassium_cation",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0135_potassium_cation_classified_as_cation",
+      "source": "potassium_cation",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0136_potassium_cation_represented_by_chemical_formula_charge_notation",
+      "source": "potassium_cation",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0137_lithium_cation_instance_of_ion",
+      "source": "lithium_cation",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0138_lithium_cation_classified_as_cation",
+      "source": "lithium_cation",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0139_lithium_cation_represented_by_chemical_formula_charge_notation",
+      "source": "lithium_cation",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0140_rubidium_cation_instance_of_ion",
+      "source": "rubidium_cation",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0141_rubidium_cation_classified_as_cation",
+      "source": "rubidium_cation",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0142_rubidium_cation_represented_by_chemical_formula_charge_notation",
+      "source": "rubidium_cation",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0143_caesium_cation_instance_of_ion",
+      "source": "caesium_cation",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0144_caesium_cation_classified_as_cation",
+      "source": "caesium_cation",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0145_caesium_cation_represented_by_chemical_formula_charge_notation",
+      "source": "caesium_cation",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0146_beryllium_cation_instance_of_ion",
+      "source": "beryllium_cation",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0147_beryllium_cation_classified_as_cation",
+      "source": "beryllium_cation",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0148_beryllium_cation_represented_by_chemical_formula_charge_notation",
+      "source": "beryllium_cation",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0149_magnesium_cation_instance_of_ion",
+      "source": "magnesium_cation",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0150_magnesium_cation_classified_as_cation",
+      "source": "magnesium_cation",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0151_magnesium_cation_represented_by_chemical_formula_charge_notation",
+      "source": "magnesium_cation",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0152_calcium_cation_instance_of_ion",
+      "source": "calcium_cation",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0153_calcium_cation_classified_as_cation",
+      "source": "calcium_cation",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0154_calcium_cation_represented_by_chemical_formula_charge_notation",
+      "source": "calcium_cation",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0155_strontium_cation_instance_of_ion",
+      "source": "strontium_cation",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0156_strontium_cation_classified_as_cation",
+      "source": "strontium_cation",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0157_strontium_cation_represented_by_chemical_formula_charge_notation",
+      "source": "strontium_cation",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0158_barium_cation_instance_of_ion",
+      "source": "barium_cation",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0159_barium_cation_classified_as_cation",
+      "source": "barium_cation",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0160_barium_cation_represented_by_chemical_formula_charge_notation",
+      "source": "barium_cation",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0161_chromium_III_instance_of_ion",
+      "source": "chromium_III",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0162_chromium_III_classified_as_cation",
+      "source": "chromium_III",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0163_chromium_III_represented_by_chemical_formula_charge_notation",
+      "source": "chromium_III",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0164_copper_I_instance_of_ion",
+      "source": "copper_I",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0165_copper_I_classified_as_cation",
+      "source": "copper_I",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0166_copper_I_represented_by_chemical_formula_charge_notation",
+      "source": "copper_I",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0167_copper_II_instance_of_ion",
+      "source": "copper_II",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0168_copper_II_classified_as_cation",
+      "source": "copper_II",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0169_copper_II_represented_by_chemical_formula_charge_notation",
+      "source": "copper_II",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0170_gold_I_instance_of_ion",
+      "source": "gold_I",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0171_gold_I_classified_as_cation",
+      "source": "gold_I",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0172_gold_I_represented_by_chemical_formula_charge_notation",
+      "source": "gold_I",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0173_gold_III_instance_of_ion",
+      "source": "gold_III",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0174_gold_III_classified_as_cation",
+      "source": "gold_III",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0175_gold_III_represented_by_chemical_formula_charge_notation",
+      "source": "gold_III",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0176_iron_II_instance_of_ion",
+      "source": "iron_II",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0177_iron_II_classified_as_cation",
+      "source": "iron_II",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0178_iron_II_represented_by_chemical_formula_charge_notation",
+      "source": "iron_II",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0179_iron_III_instance_of_ion",
+      "source": "iron_III",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0180_iron_III_classified_as_cation",
+      "source": "iron_III",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0181_iron_III_represented_by_chemical_formula_charge_notation",
+      "source": "iron_III",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0182_manganese_II_instance_of_ion",
+      "source": "manganese_II",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0183_manganese_II_classified_as_cation",
+      "source": "manganese_II",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0184_manganese_II_represented_by_chemical_formula_charge_notation",
+      "source": "manganese_II",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0185_manganese_III_instance_of_ion",
+      "source": "manganese_III",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0186_manganese_III_classified_as_cation",
+      "source": "manganese_III",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0187_manganese_III_represented_by_chemical_formula_charge_notation",
+      "source": "manganese_III",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0188_manganese_IV_instance_of_ion",
+      "source": "manganese_IV",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0189_manganese_IV_classified_as_cation",
+      "source": "manganese_IV",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0190_manganese_IV_represented_by_chemical_formula_charge_notation",
+      "source": "manganese_IV",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0191_mercury_II_instance_of_ion",
+      "source": "mercury_II",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0192_mercury_II_classified_as_cation",
+      "source": "mercury_II",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0193_mercury_II_represented_by_chemical_formula_charge_notation",
+      "source": "mercury_II",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0194_silver_I_instance_of_ion",
+      "source": "silver_I",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0195_silver_I_classified_as_cation",
+      "source": "silver_I",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0196_silver_I_represented_by_chemical_formula_charge_notation",
+      "source": "silver_I",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0197_zinc_II_instance_of_ion",
+      "source": "zinc_II",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0198_zinc_II_classified_as_cation",
+      "source": "zinc_II",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0199_zinc_II_represented_by_chemical_formula_charge_notation",
+      "source": "zinc_II",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0200_aluminium_III_instance_of_ion",
+      "source": "aluminium_III",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0201_aluminium_III_classified_as_cation",
+      "source": "aluminium_III",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0202_aluminium_III_represented_by_chemical_formula_charge_notation",
+      "source": "aluminium_III",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0203_hydron_instance_of_ion",
+      "source": "hydron",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0204_hydron_classified_as_cation",
+      "source": "hydron",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0205_hydron_represented_by_chemical_formula_charge_notation",
+      "source": "hydron",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0206_lead_II_instance_of_ion",
+      "source": "lead_II",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0207_lead_II_classified_as_cation",
+      "source": "lead_II",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0208_lead_II_represented_by_chemical_formula_charge_notation",
+      "source": "lead_II",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0209_lead_IV_instance_of_ion",
+      "source": "lead_IV",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0210_lead_IV_classified_as_cation",
+      "source": "lead_IV",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0211_lead_IV_represented_by_chemical_formula_charge_notation",
+      "source": "lead_IV",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0212_tin_II_instance_of_ion",
+      "source": "tin_II",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0213_tin_II_classified_as_cation",
+      "source": "tin_II",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0214_tin_II_represented_by_chemical_formula_charge_notation",
+      "source": "tin_II",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0215_tin_IV_instance_of_ion",
+      "source": "tin_IV",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0216_tin_IV_classified_as_cation",
+      "source": "tin_IV",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0217_tin_IV_represented_by_chemical_formula_charge_notation",
+      "source": "tin_IV",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0218_ammonium_instance_of_ion",
+      "source": "ammonium",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0219_ammonium_classified_as_cation",
+      "source": "ammonium",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0220_ammonium_represented_by_chemical_formula_charge_notation",
+      "source": "ammonium",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0221_hydronium_instance_of_ion",
+      "source": "hydronium",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0222_hydronium_classified_as_cation",
+      "source": "hydronium",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0223_hydronium_represented_by_chemical_formula_charge_notation",
+      "source": "hydronium",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0224_mercury_I_instance_of_ion",
+      "source": "mercury_I",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0225_mercury_I_classified_as_cation",
+      "source": "mercury_I",
+      "target": "cation",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0226_mercury_I_represented_by_chemical_formula_charge_notation",
+      "source": "mercury_I",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0227_fluoride_instance_of_ion",
+      "source": "fluoride",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0228_fluoride_classified_as_anion",
+      "source": "fluoride",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0229_fluoride_represented_by_chemical_formula_charge_notation",
+      "source": "fluoride",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0230_chloride_instance_of_ion",
+      "source": "chloride",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0231_chloride_classified_as_anion",
+      "source": "chloride",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0232_chloride_represented_by_chemical_formula_charge_notation",
+      "source": "chloride",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0233_bromide_instance_of_ion",
+      "source": "bromide",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0234_bromide_classified_as_anion",
+      "source": "bromide",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0235_bromide_represented_by_chemical_formula_charge_notation",
+      "source": "bromide",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0236_iodide_instance_of_ion",
+      "source": "iodide",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0237_iodide_classified_as_anion",
+      "source": "iodide",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0238_iodide_represented_by_chemical_formula_charge_notation",
+      "source": "iodide",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0239_oxide_instance_of_ion",
+      "source": "oxide",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0240_oxide_classified_as_anion",
+      "source": "oxide",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0241_oxide_represented_by_chemical_formula_charge_notation",
+      "source": "oxide",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0242_sulfide_instance_of_ion",
+      "source": "sulfide",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0243_sulfide_classified_as_anion",
+      "source": "sulfide",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0244_sulfide_represented_by_chemical_formula_charge_notation",
+      "source": "sulfide",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0245_selenide_instance_of_ion",
+      "source": "selenide",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0246_selenide_classified_as_anion",
+      "source": "selenide",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0247_selenide_represented_by_chemical_formula_charge_notation",
+      "source": "selenide",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0248_nitride_instance_of_ion",
+      "source": "nitride",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0249_nitride_classified_as_anion",
+      "source": "nitride",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0250_nitride_represented_by_chemical_formula_charge_notation",
+      "source": "nitride",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0251_phosphide_instance_of_ion",
+      "source": "phosphide",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0252_phosphide_classified_as_anion",
+      "source": "phosphide",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0253_phosphide_represented_by_chemical_formula_charge_notation",
+      "source": "phosphide",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0254_carbide_instance_of_ion",
+      "source": "carbide",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0255_carbide_classified_as_anion",
+      "source": "carbide",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0256_carbide_represented_by_chemical_formula_charge_notation",
+      "source": "carbide",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0257_hydride_instance_of_ion",
+      "source": "hydride",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0258_hydride_classified_as_anion",
+      "source": "hydride",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0259_hydride_represented_by_chemical_formula_charge_notation",
+      "source": "hydride",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0260_azide_instance_of_ion",
+      "source": "azide",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0261_azide_classified_as_anion",
+      "source": "azide",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0262_azide_represented_by_chemical_formula_charge_notation",
+      "source": "azide",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0263_peroxide_instance_of_ion",
+      "source": "peroxide",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0264_peroxide_classified_as_anion",
+      "source": "peroxide",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0265_peroxide_represented_by_chemical_formula_charge_notation",
+      "source": "peroxide",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0266_triiodide_instance_of_ion",
+      "source": "triiodide",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0267_triiodide_classified_as_anion",
+      "source": "triiodide",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0268_triiodide_represented_by_chemical_formula_charge_notation",
+      "source": "triiodide",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0269_carbonate_instance_of_ion",
+      "source": "carbonate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0270_carbonate_classified_as_oxyanion",
+      "source": "carbonate",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0271_carbonate_represented_by_chemical_formula_charge_notation",
+      "source": "carbonate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0272_chlorate_instance_of_ion",
+      "source": "chlorate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0273_chlorate_classified_as_oxyanion",
+      "source": "chlorate",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0274_chlorate_represented_by_chemical_formula_charge_notation",
+      "source": "chlorate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0275_chromate_instance_of_ion",
+      "source": "chromate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0276_chromate_classified_as_oxyanion",
+      "source": "chromate",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0277_chromate_represented_by_chemical_formula_charge_notation",
+      "source": "chromate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0278_dichromate_instance_of_ion",
+      "source": "dichromate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0279_dichromate_classified_as_oxyanion",
+      "source": "dichromate",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0280_dichromate_represented_by_chemical_formula_charge_notation",
+      "source": "dichromate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0281_dihydrogen_phosphate_instance_of_ion",
+      "source": "dihydrogen_phosphate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0282_dihydrogen_phosphate_classified_as_oxyanion",
+      "source": "dihydrogen_phosphate",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0283_dihydrogen_phosphate_represented_by_chemical_formula_charge_notation",
+      "source": "dihydrogen_phosphate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0284_hydrogen_carbonate_instance_of_ion",
+      "source": "hydrogen_carbonate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0285_hydrogen_carbonate_classified_as_oxyanion",
+      "source": "hydrogen_carbonate",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0286_hydrogen_carbonate_represented_by_chemical_formula_charge_notation",
+      "source": "hydrogen_carbonate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0287_hydrogen_sulfate_instance_of_ion",
+      "source": "hydrogen_sulfate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0288_hydrogen_sulfate_classified_as_oxyanion",
+      "source": "hydrogen_sulfate",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0289_hydrogen_sulfate_represented_by_chemical_formula_charge_notation",
+      "source": "hydrogen_sulfate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0290_hydrogen_sulfite_instance_of_ion",
+      "source": "hydrogen_sulfite",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0291_hydrogen_sulfite_classified_as_oxyanion",
+      "source": "hydrogen_sulfite",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0292_hydrogen_sulfite_represented_by_chemical_formula_charge_notation",
+      "source": "hydrogen_sulfite",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0293_hydroxide_instance_of_ion",
+      "source": "hydroxide",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0294_hydroxide_classified_as_anion",
+      "source": "hydroxide",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0295_hydroxide_represented_by_chemical_formula_charge_notation",
+      "source": "hydroxide",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0296_hypochlorite_instance_of_ion",
+      "source": "hypochlorite",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0297_hypochlorite_classified_as_oxyanion",
+      "source": "hypochlorite",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0298_hypochlorite_represented_by_chemical_formula_charge_notation",
+      "source": "hypochlorite",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0299_monohydrogen_phosphate_instance_of_ion",
+      "source": "monohydrogen_phosphate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0300_monohydrogen_phosphate_classified_as_oxyanion",
+      "source": "monohydrogen_phosphate",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0301_monohydrogen_phosphate_represented_by_chemical_formula_charge_notation",
+      "source": "monohydrogen_phosphate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0302_nitrate_instance_of_ion",
+      "source": "nitrate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0303_nitrate_classified_as_oxyanion",
+      "source": "nitrate",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0304_nitrate_represented_by_chemical_formula_charge_notation",
+      "source": "nitrate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0305_nitrite_instance_of_ion",
+      "source": "nitrite",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0306_nitrite_classified_as_oxyanion",
+      "source": "nitrite",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0307_nitrite_represented_by_chemical_formula_charge_notation",
+      "source": "nitrite",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0308_perchlorate_instance_of_ion",
+      "source": "perchlorate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0309_perchlorate_classified_as_oxyanion",
+      "source": "perchlorate",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0310_perchlorate_represented_by_chemical_formula_charge_notation",
+      "source": "perchlorate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0311_permanganate_instance_of_ion",
+      "source": "permanganate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0312_permanganate_classified_as_oxyanion",
+      "source": "permanganate",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0313_permanganate_represented_by_chemical_formula_charge_notation",
+      "source": "permanganate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0314_phosphate_instance_of_ion",
+      "source": "phosphate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0315_phosphate_classified_as_oxyanion",
+      "source": "phosphate",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0316_phosphate_represented_by_chemical_formula_charge_notation",
+      "source": "phosphate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0317_sulfate_instance_of_ion",
+      "source": "sulfate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0318_sulfate_classified_as_oxyanion",
+      "source": "sulfate",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0319_sulfate_represented_by_chemical_formula_charge_notation",
+      "source": "sulfate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0320_sulfite_instance_of_ion",
+      "source": "sulfite",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0321_sulfite_classified_as_oxyanion",
+      "source": "sulfite",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0322_sulfite_represented_by_chemical_formula_charge_notation",
+      "source": "sulfite",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0323_superoxide_instance_of_ion",
+      "source": "superoxide",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0324_superoxide_classified_as_oxyanion",
+      "source": "superoxide",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0325_superoxide_represented_by_chemical_formula_charge_notation",
+      "source": "superoxide",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0326_thiosulfate_instance_of_ion",
+      "source": "thiosulfate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0327_thiosulfate_classified_as_oxyanion",
+      "source": "thiosulfate",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0328_thiosulfate_represented_by_chemical_formula_charge_notation",
+      "source": "thiosulfate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0329_silicate_instance_of_ion",
+      "source": "silicate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0330_silicate_classified_as_oxyanion",
+      "source": "silicate",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0331_silicate_represented_by_chemical_formula_charge_notation",
+      "source": "silicate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0332_metasilicate_instance_of_ion",
+      "source": "metasilicate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0333_metasilicate_classified_as_oxyanion",
+      "source": "metasilicate",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0334_metasilicate_represented_by_chemical_formula_charge_notation",
+      "source": "metasilicate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0335_aluminium_silicate_instance_of_ion",
+      "source": "aluminium_silicate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0336_aluminium_silicate_classified_as_oxyanion",
+      "source": "aluminium_silicate",
+      "target": "oxyanion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0337_aluminium_silicate_represented_by_chemical_formula_charge_notation",
+      "source": "aluminium_silicate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0338_acetate_instance_of_ion",
+      "source": "acetate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0339_acetate_classified_as_anion",
+      "source": "acetate",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0340_acetate_represented_by_chemical_formula_charge_notation",
+      "source": "acetate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0341_formate_instance_of_ion",
+      "source": "formate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0342_formate_classified_as_anion",
+      "source": "formate",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0343_formate_represented_by_chemical_formula_charge_notation",
+      "source": "formate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0344_oxalate_instance_of_ion",
+      "source": "oxalate",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0345_oxalate_classified_as_anion",
+      "source": "oxalate",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0346_oxalate_represented_by_chemical_formula_charge_notation",
+      "source": "oxalate",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0347_cyanide_instance_of_ion",
+      "source": "cyanide",
+      "target": "ion",
+      "relationship": "instance_of",
+      "source_claims": []
+    },
+    {
+      "id": "e_0348_cyanide_classified_as_anion",
+      "source": "cyanide",
+      "target": "anion",
+      "relationship": "classified_as",
+      "source_claims": []
+    },
+    {
+      "id": "e_0349_cyanide_represented_by_chemical_formula_charge_notation",
+      "source": "cyanide",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "represented_by",
+      "source_claims": []
+    },
+    {
+      "id": "e_0350_sodium_cation_subclass_membership_cation",
+      "source": "sodium_cation",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0351_potassium_cation_subclass_membership_cation",
+      "source": "potassium_cation",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0352_lithium_cation_subclass_membership_cation",
+      "source": "lithium_cation",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0353_rubidium_cation_subclass_membership_cation",
+      "source": "rubidium_cation",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0354_caesium_cation_subclass_membership_cation",
+      "source": "caesium_cation",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0355_beryllium_cation_subclass_membership_cation",
+      "source": "beryllium_cation",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0356_magnesium_cation_subclass_membership_cation",
+      "source": "magnesium_cation",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0357_calcium_cation_subclass_membership_cation",
+      "source": "calcium_cation",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0358_strontium_cation_subclass_membership_cation",
+      "source": "strontium_cation",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0359_barium_cation_subclass_membership_cation",
+      "source": "barium_cation",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0360_chromium_III_subclass_membership_cation",
+      "source": "chromium_III",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0361_copper_I_subclass_membership_cation",
+      "source": "copper_I",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0362_copper_II_subclass_membership_cation",
+      "source": "copper_II",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0363_gold_I_subclass_membership_cation",
+      "source": "gold_I",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0364_gold_III_subclass_membership_cation",
+      "source": "gold_III",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0365_iron_II_subclass_membership_cation",
+      "source": "iron_II",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0366_iron_III_subclass_membership_cation",
+      "source": "iron_III",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0367_manganese_II_subclass_membership_cation",
+      "source": "manganese_II",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0368_manganese_III_subclass_membership_cation",
+      "source": "manganese_III",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0369_manganese_IV_subclass_membership_cation",
+      "source": "manganese_IV",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0370_mercury_II_subclass_membership_cation",
+      "source": "mercury_II",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0371_silver_I_subclass_membership_cation",
+      "source": "silver_I",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0372_zinc_II_subclass_membership_cation",
+      "source": "zinc_II",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0373_aluminium_III_subclass_membership_cation",
+      "source": "aluminium_III",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0374_hydron_subclass_membership_cation",
+      "source": "hydron",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0375_lead_II_subclass_membership_cation",
+      "source": "lead_II",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0376_lead_IV_subclass_membership_cation",
+      "source": "lead_IV",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0377_tin_II_subclass_membership_cation",
+      "source": "tin_II",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0378_tin_IV_subclass_membership_cation",
+      "source": "tin_IV",
+      "target": "cation",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0379_ammonium_subclass_membership_polyatomic_ion",
+      "source": "ammonium",
+      "target": "polyatomic_ion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0380_hydronium_subclass_membership_polyatomic_ion",
+      "source": "hydronium",
+      "target": "polyatomic_ion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0381_mercury_I_subclass_membership_polyatomic_ion",
+      "source": "mercury_I",
+      "target": "polyatomic_ion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0382_fluoride_subclass_membership_anion",
+      "source": "fluoride",
+      "target": "anion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0383_chloride_subclass_membership_anion",
+      "source": "chloride",
+      "target": "anion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0384_bromide_subclass_membership_anion",
+      "source": "bromide",
+      "target": "anion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0385_iodide_subclass_membership_anion",
+      "source": "iodide",
+      "target": "anion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0386_oxide_subclass_membership_anion",
+      "source": "oxide",
+      "target": "anion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0387_sulfide_subclass_membership_anion",
+      "source": "sulfide",
+      "target": "anion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0388_selenide_subclass_membership_anion",
+      "source": "selenide",
+      "target": "anion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0389_nitride_subclass_membership_anion",
+      "source": "nitride",
+      "target": "anion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0390_phosphide_subclass_membership_anion",
+      "source": "phosphide",
+      "target": "anion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0391_carbide_subclass_membership_anion",
+      "source": "carbide",
+      "target": "anion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0392_hydride_subclass_membership_anion",
+      "source": "hydride",
+      "target": "anion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0393_azide_subclass_membership_polyatomic_ion",
+      "source": "azide",
+      "target": "polyatomic_ion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0394_peroxide_subclass_membership_polyatomic_ion",
+      "source": "peroxide",
+      "target": "polyatomic_ion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0395_triiodide_subclass_membership_polyatomic_ion",
+      "source": "triiodide",
+      "target": "polyatomic_ion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0396_carbonate_subclass_membership_oxyanion",
+      "source": "carbonate",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0397_chlorate_subclass_membership_oxyanion",
+      "source": "chlorate",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0398_chromate_subclass_membership_oxyanion",
+      "source": "chromate",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0399_dichromate_subclass_membership_oxyanion",
+      "source": "dichromate",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0400_dihydrogen_phosphate_subclass_membership_oxyanion",
+      "source": "dihydrogen_phosphate",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0401_hydrogen_carbonate_subclass_membership_oxyanion",
+      "source": "hydrogen_carbonate",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0402_hydrogen_sulfate_subclass_membership_oxyanion",
+      "source": "hydrogen_sulfate",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0403_hydrogen_sulfite_subclass_membership_oxyanion",
+      "source": "hydrogen_sulfite",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0404_hydroxide_subclass_membership_polyatomic_ion",
+      "source": "hydroxide",
+      "target": "polyatomic_ion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0405_hypochlorite_subclass_membership_oxyanion",
+      "source": "hypochlorite",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0406_monohydrogen_phosphate_subclass_membership_oxyanion",
+      "source": "monohydrogen_phosphate",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0407_nitrate_subclass_membership_oxyanion",
+      "source": "nitrate",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0408_nitrite_subclass_membership_oxyanion",
+      "source": "nitrite",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0409_perchlorate_subclass_membership_oxyanion",
+      "source": "perchlorate",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0410_permanganate_subclass_membership_oxyanion",
+      "source": "permanganate",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0411_phosphate_subclass_membership_oxyanion",
+      "source": "phosphate",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0412_sulfate_subclass_membership_oxyanion",
+      "source": "sulfate",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0413_sulfite_subclass_membership_oxyanion",
+      "source": "sulfite",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0414_superoxide_subclass_membership_oxyanion",
+      "source": "superoxide",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0415_thiosulfate_subclass_membership_oxyanion",
+      "source": "thiosulfate",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0416_silicate_subclass_membership_oxyanion",
+      "source": "silicate",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0417_metasilicate_subclass_membership_oxyanion",
+      "source": "metasilicate",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0418_aluminium_silicate_subclass_membership_oxyanion",
+      "source": "aluminium_silicate",
+      "target": "oxyanion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0419_acetate_subclass_membership_organic_ion",
+      "source": "acetate",
+      "target": "organic_ion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0420_formate_subclass_membership_organic_ion",
+      "source": "formate",
+      "target": "organic_ion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0421_oxalate_subclass_membership_organic_ion",
+      "source": "oxalate",
+      "target": "organic_ion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0422_cyanide_subclass_membership_organic_ion",
+      "source": "cyanide",
+      "target": "organic_ion",
+      "relationship": "subclass_membership",
+      "source_claims": []
+    },
+    {
+      "id": "e_0423_sodium_atom_loses_electron_to_form_sodium_cation",
+      "source": "sodium_atom",
+      "target": "sodium_cation",
+      "relationship": "loses_electron_to_form",
+      "source_claims": [
+        "c_na_cl"
+      ]
+    },
+    {
+      "id": "e_0424_chlorine_atom_gains_electron_to_form_chloride",
+      "source": "chlorine_atom",
+      "target": "chloride",
+      "relationship": "gains_electron_to_form",
+      "source_claims": [
+        "c_na_cl"
+      ]
+    },
+    {
+      "id": "e_0425_sodium_cation_electrostatically_attracts_chloride",
+      "source": "sodium_cation",
+      "target": "chloride",
+      "relationship": "electrostatically_attracts",
+      "source_claims": [
+        "c_na_cl"
+      ]
+    },
+    {
+      "id": "e_0426_sodium_cation_combines_to_form_sodium_chloride",
+      "source": "sodium_cation",
+      "target": "sodium_chloride",
+      "relationship": "combines_to_form",
+      "source_claims": [
+        "c_na_cl"
+      ]
+    },
+    {
+      "id": "e_0427_chloride_combines_to_form_sodium_chloride",
+      "source": "chloride",
+      "target": "sodium_chloride",
+      "relationship": "combines_to_form",
+      "source_claims": [
+        "c_na_cl"
+      ]
+    },
+    {
+      "id": "e_0428_ammonia_undergoes_protonation",
+      "source": "ammonia",
+      "target": "protonation",
+      "relationship": "undergoes",
+      "source_claims": [
+        "c_polyatomic"
+      ]
+    },
+    {
+      "id": "e_0429_protonation_produces_ammonium",
+      "source": "protonation",
+      "target": "ammonium",
+      "relationship": "produces",
+      "source_claims": [
+        "c_polyatomic"
+      ]
+    },
+    {
+      "id": "e_0430_ammonia_can_lose_electron_to_form_radical_ammonia_cation",
+      "source": "ammonia",
+      "target": "radical_ammonia_cation",
+      "relationship": "can_lose_electron_to_form",
+      "source_claims": [
+        "c_polyatomic"
+      ]
+    },
+    {
+      "id": "e_0431_radical_ammonia_cation_instance_of_radical_ion",
+      "source": "radical_ammonia_cation",
+      "target": "radical_ion",
+      "relationship": "instance_of",
+      "source_claims": [
+        "c_polyatomic"
+      ]
+    },
+    {
+      "id": "e_0432_michael_faraday_coined_term_for_ion",
+      "source": "michael_faraday",
+      "target": "ion",
+      "relationship": "coined_term_for",
+      "source_claims": [
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "e_0433_william_whewell_suggested_terminology_to_michael_faraday",
+      "source": "william_whewell",
+      "target": "michael_faraday",
+      "relationship": "suggested_terminology_to",
+      "source_claims": [
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "e_0434_michael_faraday_coined_term_anode",
+      "source": "michael_faraday",
+      "target": "anode",
+      "relationship": "coined_term",
+      "source_claims": [
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "e_0435_michael_faraday_coined_term_cathode",
+      "source": "michael_faraday",
+      "target": "cathode",
+      "relationship": "coined_term",
+      "source_claims": [
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "e_0436_michael_faraday_coined_term_anion",
+      "source": "michael_faraday",
+      "target": "anion",
+      "relationship": "coined_term",
+      "source_claims": [
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "e_0437_michael_faraday_coined_term_cation",
+      "source": "michael_faraday",
+      "target": "cation",
+      "relationship": "coined_term",
+      "source_claims": [
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "e_0438_svante_arrhenius_authored_arrhenius_1884_dissertation",
+      "source": "svante_arrhenius",
+      "target": "arrhenius_1884_dissertation",
+      "relationship": "authored",
+      "source_claims": [
+        "c_arrhenius"
+      ]
+    },
+    {
+      "id": "e_0439_svante_arrhenius_explained_solution_dissociation_ion",
+      "source": "svante_arrhenius",
+      "target": "ion",
+      "relationship": "explained_solution_dissociation",
+      "source_claims": [
+        "c_arrhenius"
+      ]
+    },
+    {
+      "id": "e_0440_svante_arrhenius_received_nobel_chemistry_1903",
+      "source": "svante_arrhenius",
+      "target": "nobel_chemistry_1903",
+      "relationship": "received",
+      "source_claims": [
+        "c_arrhenius"
+      ]
+    },
+    {
+      "id": "e_0441_michael_faraday_appears_in_faraday_correspondence_1832_1840",
+      "source": "michael_faraday",
+      "target": "faraday_correspondence_1832_1840",
+      "relationship": "appears_in",
+      "source_claims": [
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "e_0442_lars_onsager_authored_onsager_1927_paper",
+      "source": "lars_onsager",
+      "target": "onsager_1927_paper",
+      "relationship": "authored",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "e_0443_raymond_fuoss_coauthored_fuoss_kraus_1933_paper",
+      "source": "raymond_fuoss",
+      "target": "fuoss_kraus_1933_paper",
+      "relationship": "coauthored",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "e_0444_charles_kraus_coauthored_fuoss_kraus_1933_paper",
+      "source": "charles_kraus",
+      "target": "fuoss_kraus_1933_paper",
+      "relationship": "coauthored",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "e_0445_a_s_dukh​​in_coauthored_dukh​​in_parlia_2015_paper",
+      "source": "a_s_dukh​​in",
+      "target": "dukh​​in_parlia_2015_paper",
+      "relationship": "coauthored",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "e_0446_s_parlia_coauthored_dukh​​in_parlia_2015_paper",
+      "source": "s_parlia",
+      "target": "dukh​​in_parlia_2015_paper",
+      "relationship": "coauthored",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "e_0447_a_s_dukh​​in_coauthored_dukh​​in_parlia_2018_paper",
+      "source": "a_s_dukh​​in",
+      "target": "dukh​​in_parlia_2018_paper",
+      "relationship": "coauthored",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "e_0448_s_parlia_coauthored_dukh​​in_parlia_2018_paper",
+      "source": "s_parlia",
+      "target": "dukh​​in_parlia_2018_paper",
+      "relationship": "coauthored",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "e_0449_i_d_morrison_authored_morrison_1993_paper",
+      "source": "i_d_morrison",
+      "target": "morrison_1993_paper",
+      "relationship": "authored",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "e_0450_onsager_1927_paper_contributes_to_or_documents_ion_pair_conductivity_theory",
+      "source": "onsager_1927_paper",
+      "target": "ion_pair_conductivity_theory",
+      "relationship": "contributes_to_or_documents",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "e_0451_fuoss_kraus_1933_paper_contributes_to_or_documents_ion_pair_conductivity_theory",
+      "source": "fuoss_kraus_1933_paper",
+      "target": "ion_pair_conductivity_theory",
+      "relationship": "contributes_to_or_documents",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "e_0452_dukh​​in_parlia_2015_paper_contributes_to_or_documents_ion_pair_conductivity_theory",
+      "source": "dukh​​in_parlia_2015_paper",
+      "target": "ion_pair_conductivity_theory",
+      "relationship": "contributes_to_or_documents",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "e_0453_dukh​​in_parlia_2018_paper_contributes_to_or_documents_ion_pair_conductivity_theory",
+      "source": "dukh​​in_parlia_2018_paper",
+      "target": "ion_pair_conductivity_theory",
+      "relationship": "contributes_to_or_documents",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "e_0454_morrison_1993_paper_contributes_to_or_documents_ion_pair_conductivity_theory",
+      "source": "morrison_1993_paper",
+      "target": "ion_pair_conductivity_theory",
+      "relationship": "contributes_to_or_documents",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "e_0455_c_definition_supports_statement_about_ion",
+      "source": "c_definition",
+      "target": "ion",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_definition"
+      ]
+    },
+    {
+      "id": "e_0456_c_charge_formula_supports_statement_about_ion",
+      "source": "c_charge_formula",
+      "target": "ion",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_charge_formula"
+      ]
+    },
+    {
+      "id": "e_0457_c_subclasses_supports_statement_about_cation",
+      "source": "c_subclasses",
+      "target": "cation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_subclasses"
+      ]
+    },
+    {
+      "id": "e_0458_c_subclasses_supports_statement_about_anion",
+      "source": "c_subclasses",
+      "target": "anion",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_subclasses"
+      ]
+    },
+    {
+      "id": "e_0459_c_subclasses_supports_statement_about_monatomic_ion",
+      "source": "c_subclasses",
+      "target": "monatomic_ion",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_subclasses"
+      ]
+    },
+    {
+      "id": "e_0460_c_subclasses_supports_statement_about_polyatomic_ion",
+      "source": "c_subclasses",
+      "target": "polyatomic_ion",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_subclasses"
+      ]
+    },
+    {
+      "id": "e_0461_c_charge_notation_supports_statement_about_chemical_formula_charge_notation",
+      "source": "c_charge_notation",
+      "target": "chemical_formula_charge_notation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_charge_notation"
+      ]
+    },
+    {
+      "id": "e_0462_c_physical_ionization_supports_statement_about_ion_pair",
+      "source": "c_physical_ionization",
+      "target": "ion_pair",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_physical_ionization"
+      ]
+    },
+    {
+      "id": "e_0463_c_faraday_term_supports_statement_about_michael_faraday",
+      "source": "c_faraday_term",
+      "target": "michael_faraday",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "e_0464_c_faraday_term_supports_statement_about_william_whewell",
+      "source": "c_faraday_term",
+      "target": "william_whewell",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "e_0465_c_faraday_term_supports_statement_about_anode",
+      "source": "c_faraday_term",
+      "target": "anode",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "e_0466_c_faraday_term_supports_statement_about_cathode",
+      "source": "c_faraday_term",
+      "target": "cathode",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "e_0467_c_faraday_term_supports_statement_about_anion",
+      "source": "c_faraday_term",
+      "target": "anion",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "e_0468_c_faraday_term_supports_statement_about_cation",
+      "source": "c_faraday_term",
+      "target": "cation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_faraday_term"
+      ]
+    },
+    {
+      "id": "e_0469_c_arrhenius_supports_statement_about_svante_arrhenius",
+      "source": "c_arrhenius",
+      "target": "svante_arrhenius",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_arrhenius"
+      ]
+    },
+    {
+      "id": "e_0470_c_arrhenius_supports_statement_about_arrhenius_1884_dissertation",
+      "source": "c_arrhenius",
+      "target": "arrhenius_1884_dissertation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_arrhenius"
+      ]
+    },
+    {
+      "id": "e_0471_c_solvation_supports_statement_about_solvated_ion",
+      "source": "c_solvation",
+      "target": "solvated_ion",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_solvation"
+      ]
+    },
+    {
+      "id": "e_0472_c_solvation_supports_statement_about_solvation_shell",
+      "source": "c_solvation",
+      "target": "solvation_shell",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_solvation"
+      ]
+    },
+    {
+      "id": "e_0473_c_solvation_supports_statement_about_water",
+      "source": "c_solvation",
+      "target": "water",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_solvation"
+      ]
+    },
+    {
+      "id": "e_0474_c_fields_supports_statement_about_electrostatic_force",
+      "source": "c_fields",
+      "target": "electrostatic_force",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_fields"
+      ]
+    },
+    {
+      "id": "e_0475_c_fields_supports_statement_about_electric_field",
+      "source": "c_fields",
+      "target": "electric_field",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_fields"
+      ]
+    },
+    {
+      "id": "e_0476_c_fields_supports_statement_about_magnetic_field",
+      "source": "c_fields",
+      "target": "magnetic_field",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_fields"
+      ]
+    },
+    {
+      "id": "e_0477_c_size_supports_statement_about_ionic_radius",
+      "source": "c_size",
+      "target": "ionic_radius",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_size"
+      ]
+    },
+    {
+      "id": "e_0478_c_size_supports_statement_about_electron_cloud",
+      "source": "c_size",
+      "target": "electron_cloud",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_size"
+      ]
+    },
+    {
+      "id": "e_0479_c_natural_supports_statement_about_ionosphere",
+      "source": "c_natural",
+      "target": "ionosphere",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_natural"
+      ]
+    },
+    {
+      "id": "e_0480_c_natural_supports_statement_about_seawater",
+      "source": "c_natural",
+      "target": "seawater",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_natural"
+      ]
+    },
+    {
+      "id": "e_0481_c_natural_supports_statement_about_gemstone_color",
+      "source": "c_natural",
+      "target": "gemstone_color",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_natural"
+      ]
+    },
+    {
+      "id": "e_0482_c_technology_supports_statement_about_ion_source",
+      "source": "c_technology",
+      "target": "ion_source",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_technology"
+      ]
+    },
+    {
+      "id": "e_0483_c_technology_supports_statement_about_mass_spectrometer",
+      "source": "c_technology",
+      "target": "mass_spectrometer",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_technology"
+      ]
+    },
+    {
+      "id": "e_0484_c_technology_supports_statement_about_ion_engine",
+      "source": "c_technology",
+      "target": "ion_engine",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_technology"
+      ]
+    },
+    {
+      "id": "e_0485_c_biology_supports_statement_about_ion_gradient",
+      "source": "c_biology",
+      "target": "ion_gradient",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_biology"
+      ]
+    },
+    {
+      "id": "e_0486_c_biology_supports_statement_about_ion_channel",
+      "source": "c_biology",
+      "target": "ion_channel",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_biology"
+      ]
+    },
+    {
+      "id": "e_0487_c_biology_supports_statement_about_gramicidin",
+      "source": "c_biology",
+      "target": "gramicidin",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_biology"
+      ]
+    },
+    {
+      "id": "e_0488_c_biology_supports_statement_about_amphotericin",
+      "source": "c_biology",
+      "target": "amphotericin",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_biology"
+      ]
+    },
+    {
+      "id": "e_0489_c_radiation_supports_statement_about_ionizing_radiation",
+      "source": "c_radiation",
+      "target": "ionizing_radiation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_radiation"
+      ]
+    },
+    {
+      "id": "e_0490_c_radiation_supports_statement_about_ion_chamber",
+      "source": "c_radiation",
+      "target": "ion_chamber",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_radiation"
+      ]
+    },
+    {
+      "id": "e_0491_c_radiation_supports_statement_about_geiger_muller_tube",
+      "source": "c_radiation",
+      "target": "geiger_muller_tube",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_radiation"
+      ]
+    },
+    {
+      "id": "e_0492_c_radiation_supports_statement_about_proportional_counter",
+      "source": "c_radiation",
+      "target": "proportional_counter",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_radiation"
+      ]
+    },
+    {
+      "id": "e_0493_c_radiation_supports_statement_about_townsend_avalanche",
+      "source": "c_radiation",
+      "target": "townsend_avalanche",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_radiation"
+      ]
+    },
+    {
+      "id": "e_0494_c_oxidation_notation_supports_statement_about_oxidation_state",
+      "source": "c_oxidation_notation",
+      "target": "oxidation_state",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_oxidation_notation"
+      ]
+    },
+    {
+      "id": "e_0495_c_oxidation_notation_supports_statement_about_spectroscopic_ion_notation",
+      "source": "c_oxidation_notation",
+      "target": "spectroscopic_ion_notation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_oxidation_notation"
+      ]
+    },
+    {
+      "id": "e_0496_c_ionization_supports_statement_about_ionization",
+      "source": "c_ionization",
+      "target": "ionization",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_ionization"
+      ]
+    },
+    {
+      "id": "e_0497_c_ionization_supports_statement_about_valence_shell",
+      "source": "c_ionization",
+      "target": "valence_shell",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_ionization"
+      ]
+    },
+    {
+      "id": "e_0498_c_ionization_supports_statement_about_closed_shell_configuration",
+      "source": "c_ionization",
+      "target": "closed_shell_configuration",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_ionization"
+      ]
+    },
+    {
+      "id": "e_0499_c_na_cl_supports_statement_about_sodium_atom",
+      "source": "c_na_cl",
+      "target": "sodium_atom",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_na_cl"
+      ]
+    },
+    {
+      "id": "e_0500_c_na_cl_supports_statement_about_chlorine_atom",
+      "source": "c_na_cl",
+      "target": "chlorine_atom",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_na_cl"
+      ]
+    },
+    {
+      "id": "e_0501_c_na_cl_supports_statement_about_sodium_cation",
+      "source": "c_na_cl",
+      "target": "sodium_cation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_na_cl"
+      ]
+    },
+    {
+      "id": "e_0502_c_na_cl_supports_statement_about_chloride",
+      "source": "c_na_cl",
+      "target": "chloride",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_na_cl"
+      ]
+    },
+    {
+      "id": "e_0503_c_na_cl_supports_statement_about_sodium_chloride",
+      "source": "c_na_cl",
+      "target": "sodium_chloride",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_na_cl"
+      ]
+    },
+    {
+      "id": "e_0504_c_polyatomic_supports_statement_about_protonation",
+      "source": "c_polyatomic",
+      "target": "protonation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_polyatomic"
+      ]
+    },
+    {
+      "id": "e_0505_c_polyatomic_supports_statement_about_ammonium",
+      "source": "c_polyatomic",
+      "target": "ammonium",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_polyatomic"
+      ]
+    },
+    {
+      "id": "e_0506_c_polyatomic_supports_statement_about_radical_ammonia_cation",
+      "source": "c_polyatomic",
+      "target": "radical_ammonia_cation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_polyatomic"
+      ]
+    },
+    {
+      "id": "e_0507_c_nonpolar_supports_statement_about_nonpolar_liquid",
+      "source": "c_nonpolar",
+      "target": "nonpolar_liquid",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "e_0508_c_nonpolar_supports_statement_about_amphiphile",
+      "source": "c_nonpolar",
+      "target": "amphiphile",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "e_0509_c_nonpolar_supports_statement_about_inverse_micelle",
+      "source": "c_nonpolar",
+      "target": "inverse_micelle",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "e_0510_c_nonpolar_supports_statement_about_ion_pair_conductivity_theory",
+      "source": "c_nonpolar",
+      "target": "ion_pair_conductivity_theory",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_nonpolar"
+      ]
+    },
+    {
+      "id": "e_0511_c_ionization_energy_supports_statement_about_ionization_energy",
+      "source": "c_ionization_energy",
+      "target": "ionization_energy",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_ionization_energy"
+      ]
+    },
+    {
+      "id": "e_0512_c_ionization_energy_supports_statement_about_nth_ionization_energy",
+      "source": "c_ionization_energy",
+      "target": "nth_ionization_energy",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_ionization_energy"
+      ]
+    },
+    {
+      "id": "e_0513_c_ionic_bond_supports_statement_about_ionic_bond",
+      "source": "c_ionic_bond",
+      "target": "ionic_bond",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_ionic_bond"
+      ]
+    },
+    {
+      "id": "e_0514_c_ionic_bond_supports_statement_about_ionic_compound",
+      "source": "c_ionic_bond",
+      "target": "ionic_compound",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_ionic_bond"
+      ]
+    },
+    {
+      "id": "e_0515_c_ionic_bond_supports_statement_about_ionic_lattice",
+      "source": "c_ionic_bond",
+      "target": "ionic_lattice",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_ionic_bond"
+      ]
+    },
+    {
+      "id": "e_0516_c_common_ions_supports_statement_about_sodium_cation",
+      "source": "c_common_ions",
+      "target": "sodium_cation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0517_c_common_ions_supports_statement_about_potassium_cation",
+      "source": "c_common_ions",
+      "target": "potassium_cation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0518_c_common_ions_supports_statement_about_lithium_cation",
+      "source": "c_common_ions",
+      "target": "lithium_cation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0519_c_common_ions_supports_statement_about_rubidium_cation",
+      "source": "c_common_ions",
+      "target": "rubidium_cation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0520_c_common_ions_supports_statement_about_caesium_cation",
+      "source": "c_common_ions",
+      "target": "caesium_cation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0521_c_common_ions_supports_statement_about_beryllium_cation",
+      "source": "c_common_ions",
+      "target": "beryllium_cation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0522_c_common_ions_supports_statement_about_magnesium_cation",
+      "source": "c_common_ions",
+      "target": "magnesium_cation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0523_c_common_ions_supports_statement_about_calcium_cation",
+      "source": "c_common_ions",
+      "target": "calcium_cation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0524_c_common_ions_supports_statement_about_strontium_cation",
+      "source": "c_common_ions",
+      "target": "strontium_cation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0525_c_common_ions_supports_statement_about_barium_cation",
+      "source": "c_common_ions",
+      "target": "barium_cation",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0526_c_common_ions_supports_statement_about_chromium_III",
+      "source": "c_common_ions",
+      "target": "chromium_III",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0527_c_common_ions_supports_statement_about_copper_I",
+      "source": "c_common_ions",
+      "target": "copper_I",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0528_c_common_ions_supports_statement_about_copper_II",
+      "source": "c_common_ions",
+      "target": "copper_II",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0529_c_common_ions_supports_statement_about_gold_I",
+      "source": "c_common_ions",
+      "target": "gold_I",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0530_c_common_ions_supports_statement_about_gold_III",
+      "source": "c_common_ions",
+      "target": "gold_III",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0531_c_common_ions_supports_statement_about_iron_II",
+      "source": "c_common_ions",
+      "target": "iron_II",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0532_c_common_ions_supports_statement_about_iron_III",
+      "source": "c_common_ions",
+      "target": "iron_III",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0533_c_common_ions_supports_statement_about_manganese_II",
+      "source": "c_common_ions",
+      "target": "manganese_II",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0534_c_common_ions_supports_statement_about_manganese_III",
+      "source": "c_common_ions",
+      "target": "manganese_III",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0535_c_common_ions_supports_statement_about_manganese_IV",
+      "source": "c_common_ions",
+      "target": "manganese_IV",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0536_c_common_ions_supports_statement_about_mercury_II",
+      "source": "c_common_ions",
+      "target": "mercury_II",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0537_c_common_ions_supports_statement_about_silver_I",
+      "source": "c_common_ions",
+      "target": "silver_I",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0538_c_common_ions_supports_statement_about_zinc_II",
+      "source": "c_common_ions",
+      "target": "zinc_II",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0539_c_common_ions_supports_statement_about_aluminium_III",
+      "source": "c_common_ions",
+      "target": "aluminium_III",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0540_c_common_ions_supports_statement_about_hydron",
+      "source": "c_common_ions",
+      "target": "hydron",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0541_c_common_ions_supports_statement_about_lead_II",
+      "source": "c_common_ions",
+      "target": "lead_II",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0542_c_common_ions_supports_statement_about_lead_IV",
+      "source": "c_common_ions",
+      "target": "lead_IV",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0543_c_common_ions_supports_statement_about_tin_II",
+      "source": "c_common_ions",
+      "target": "tin_II",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0544_c_common_ions_supports_statement_about_tin_IV",
+      "source": "c_common_ions",
+      "target": "tin_IV",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0545_c_common_ions_supports_statement_about_ammonium",
+      "source": "c_common_ions",
+      "target": "ammonium",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0546_c_common_ions_supports_statement_about_hydronium",
+      "source": "c_common_ions",
+      "target": "hydronium",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0547_c_common_ions_supports_statement_about_mercury_I",
+      "source": "c_common_ions",
+      "target": "mercury_I",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0548_c_common_ions_supports_statement_about_fluoride",
+      "source": "c_common_ions",
+      "target": "fluoride",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0549_c_common_ions_supports_statement_about_chloride",
+      "source": "c_common_ions",
+      "target": "chloride",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0550_c_common_ions_supports_statement_about_bromide",
+      "source": "c_common_ions",
+      "target": "bromide",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0551_c_common_ions_supports_statement_about_iodide",
+      "source": "c_common_ions",
+      "target": "iodide",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0552_c_common_ions_supports_statement_about_oxide",
+      "source": "c_common_ions",
+      "target": "oxide",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0553_c_common_ions_supports_statement_about_sulfide",
+      "source": "c_common_ions",
+      "target": "sulfide",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0554_c_common_ions_supports_statement_about_selenide",
+      "source": "c_common_ions",
+      "target": "selenide",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0555_c_common_ions_supports_statement_about_nitride",
+      "source": "c_common_ions",
+      "target": "nitride",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0556_c_common_ions_supports_statement_about_phosphide",
+      "source": "c_common_ions",
+      "target": "phosphide",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0557_c_common_ions_supports_statement_about_carbide",
+      "source": "c_common_ions",
+      "target": "carbide",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0558_c_common_ions_supports_statement_about_hydride",
+      "source": "c_common_ions",
+      "target": "hydride",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0559_c_common_ions_supports_statement_about_azide",
+      "source": "c_common_ions",
+      "target": "azide",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0560_c_common_ions_supports_statement_about_peroxide",
+      "source": "c_common_ions",
+      "target": "peroxide",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0561_c_common_ions_supports_statement_about_triiodide",
+      "source": "c_common_ions",
+      "target": "triiodide",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0562_c_common_ions_supports_statement_about_carbonate",
+      "source": "c_common_ions",
+      "target": "carbonate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0563_c_common_ions_supports_statement_about_chlorate",
+      "source": "c_common_ions",
+      "target": "chlorate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0564_c_common_ions_supports_statement_about_chromate",
+      "source": "c_common_ions",
+      "target": "chromate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0565_c_common_ions_supports_statement_about_dichromate",
+      "source": "c_common_ions",
+      "target": "dichromate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0566_c_common_ions_supports_statement_about_dihydrogen_phosphate",
+      "source": "c_common_ions",
+      "target": "dihydrogen_phosphate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0567_c_common_ions_supports_statement_about_hydrogen_carbonate",
+      "source": "c_common_ions",
+      "target": "hydrogen_carbonate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0568_c_common_ions_supports_statement_about_hydrogen_sulfate",
+      "source": "c_common_ions",
+      "target": "hydrogen_sulfate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0569_c_common_ions_supports_statement_about_hydrogen_sulfite",
+      "source": "c_common_ions",
+      "target": "hydrogen_sulfite",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0570_c_common_ions_supports_statement_about_hydroxide",
+      "source": "c_common_ions",
+      "target": "hydroxide",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0571_c_common_ions_supports_statement_about_hypochlorite",
+      "source": "c_common_ions",
+      "target": "hypochlorite",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0572_c_common_ions_supports_statement_about_monohydrogen_phosphate",
+      "source": "c_common_ions",
+      "target": "monohydrogen_phosphate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0573_c_common_ions_supports_statement_about_nitrate",
+      "source": "c_common_ions",
+      "target": "nitrate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0574_c_common_ions_supports_statement_about_nitrite",
+      "source": "c_common_ions",
+      "target": "nitrite",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0575_c_common_ions_supports_statement_about_perchlorate",
+      "source": "c_common_ions",
+      "target": "perchlorate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0576_c_common_ions_supports_statement_about_permanganate",
+      "source": "c_common_ions",
+      "target": "permanganate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0577_c_common_ions_supports_statement_about_phosphate",
+      "source": "c_common_ions",
+      "target": "phosphate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0578_c_common_ions_supports_statement_about_sulfate",
+      "source": "c_common_ions",
+      "target": "sulfate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0579_c_common_ions_supports_statement_about_sulfite",
+      "source": "c_common_ions",
+      "target": "sulfite",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0580_c_common_ions_supports_statement_about_superoxide",
+      "source": "c_common_ions",
+      "target": "superoxide",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0581_c_common_ions_supports_statement_about_thiosulfate",
+      "source": "c_common_ions",
+      "target": "thiosulfate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0582_c_common_ions_supports_statement_about_silicate",
+      "source": "c_common_ions",
+      "target": "silicate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0583_c_common_ions_supports_statement_about_metasilicate",
+      "source": "c_common_ions",
+      "target": "metasilicate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0584_c_common_ions_supports_statement_about_aluminium_silicate",
+      "source": "c_common_ions",
+      "target": "aluminium_silicate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0585_c_common_ions_supports_statement_about_acetate",
+      "source": "c_common_ions",
+      "target": "acetate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0586_c_common_ions_supports_statement_about_formate",
+      "source": "c_common_ions",
+      "target": "formate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0587_c_common_ions_supports_statement_about_oxalate",
+      "source": "c_common_ions",
+      "target": "oxalate",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    },
+    {
+      "id": "e_0588_c_common_ions_supports_statement_about_cyanide",
+      "source": "c_common_ions",
+      "target": "cyanide",
+      "relationship": "supports_statement_about",
+      "source_claims": [
+        "c_common_ions"
+      ]
+    }
+  ],
+  "statistics": {
+    "node_count": 195,
+    "edge_count": 588,
+    "claim_count": 22,
+    "specific_ion_count": 73,
+    "historical_person_count": 9,
+    "validation": "failed"
+  },
+  "validation": {
+    "all_edge_endpoints_exist": true,
+    "all_edge_claim_references_exist": true,
+    "all_node_claim_references_exist": true,
+    "duplicate_node_ids": true,
+    "duplicate_claim_ids": true,
+    "dangling_endpoint_count": 0
+  },
+  "expansion_targets": [
+    "formal electrostatic potential and Coulomb-law semantics",
+    "activity coefficients and ionic strength",
+    "Debye-Hückel theory and extensions",
+    "electrochemical potential and chemical potential",
+    "Nernst equation and ion activity",
+    "Poisson-Boltzmann descriptions",
+    "Born solvation model",
+    "hydration free energy",
+    "ion mobility and electrophoretic transport",
+    "conductivity and molar conductivity",
+    "Kohlrausch law",
+    "Debye-Falkenhagen and Wien effects",
+    "ion pairing equilibria",
+    "acid-base speciation",
+    "Lewis/Brønsted acid-base semantics",
+    "redox and electron-transfer theory",
+    "electrode potentials",
+    "Galvani and Volta potentials",
+    "double-layer structure",
+    "electrochemical kinetics",
+    "mass spectrometric ion formation and detection",
+    "plasma ionization and recombination",
+    "ion channels and membrane electrochemical gradients",
+    "specific ion examples with experimentally grounded properties",
+    "full bibliography metadata and primary-source identifiers"
+  ]
+}
