@@ -1,4 +1,4 @@
-const state = { atlas: null, byId: new Map(), edgesById: new Map(), searchText: new Map(), selected: 'force', featuredEdge: null, topic: 'all', query: '', catalogQuery: '', catalogLimit: 36, route: null, routeStep: 0 };
+const state = { atlas: null, byId: new Map(), edgesById: new Map(), searchText: new Map(), selected: null, featuredEdge: null, topic: 'all', query: '', catalogQuery: '', catalogLimit: 36, route: null, routeStep: 0 };
 const $ = selector => document.querySelector(selector);
 const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 const humanize = value => String(value || '').replaceAll('_', ' ').replace(/\b\w/g, letter => letter.toUpperCase());
@@ -41,12 +41,11 @@ function selectConcept(id, { scroll = false } = {}) {
 
 function clearSelection({ fit = false } = {}) {
   if (!state.selected && !fit) return;
-  const wasFocused = Boolean(state.featuredEdge);
-  state.selected = 'force';
+  state.selected = null;
   state.featuredEdge = null;
   $('#edge-evidence').hidden = true;
-  if (fit || wasFocused) network.fit();
   renderMap();
+  if (fit) network.fit();
   renderPreview();
   renderInspector();
   const url = new URL(location.href);
@@ -93,7 +92,7 @@ function renderMap() {
   network?.topic(state.topic);
   $('#details-jump').hidden = !state.selected;
   $('#map-mode').textContent = state.selected ? `FOCUS / ${state.byId.get(state.selected).label.toUpperCase()}` : 'CONNECTED CORE / 2+ NEIGHBORS';
-  $('#map-count').textContent = `${state.atlas.nodes.length.toLocaleString()} nodes · ${state.atlas.edges.length.toLocaleString()} links${state.selected ? ` · ${network?.counts().connected || 0} concept neighbors available` : ` · ${state.atlas.summary.hiddenConcepts.toLocaleString()} low-connectivity records archived`}`;
+  $('#map-count').textContent = `${state.atlas.nodes.length.toLocaleString()} nodes · ${state.atlas.edges.length.toLocaleString()} links${state.selected ? ` · ${network?.counts().connected || 0} distinct neighbors highlighted` : ` · ${state.atlas.summary.hiddenConcepts.toLocaleString()} low-connectivity records archived`}`;
   const directed = state.edgesById.get(state.selected) || [];
   state.featuredEdge = directed.find(edge => edge.record?.teaching_addition && edge.source === 'net_force') || directed.find(edge => window.PhysicsMapKey.classify(edge).id === 'causal') || directed[0] || null;
   renderLensControls();
@@ -290,7 +289,7 @@ async function init() {
       }
     });
     const initial = new URL(location.href).searchParams.get('concept');
-    selectConcept(initial || 'force');
+    if (initial) selectConcept(initial);
   } catch (error) {
     $('#inspector').innerHTML = `<div class="inspector-empty"><h3>Atlas unavailable</h3><p>${escapeHtml(error.message)}. Serve this folder over HTTP so the JSON can load.</p></div>`;
     $('#map-mode').textContent = 'ATLAS UNAVAILABLE';
@@ -300,12 +299,20 @@ async function init() {
 init();
 
 function showEdge(edge) {
- const host=document.querySelector('#edge-evidence');host.hidden=false;host.innerHTML='<h3>'+escapeHtml(state.byId.get(edge.source).label)+' → '+escapeHtml(state.byId.get(edge.target).label)+'</h3><b>'+escapeHtml(edge.relation.replaceAll('_',' '))+' · '+escapeHtml(edge.kind)+'</b><p>'+escapeHtml(edge.scope||'Scope not specified by original source')+'</p><p>'+escapeHtml(edge.record.mathematical_form||'')+'</p><details open><summary>Evidence · '+edge.claimCount+' source records</summary>'+displayValue(edge.provenance)+'</details>';
+  network.focusEdge(edge.id);
+  const host = $('#edge-evidence');
+  host.hidden = false;
+  host.innerHTML = '<h3>'+escapeHtml(state.byId.get(edge.source).label)+' → '+escapeHtml(state.byId.get(edge.target).label)+'</h3><b>'+escapeHtml(humanize(edge.relation))+' · '+escapeHtml(edge.kind)+'</b><p>'+escapeHtml(edge.scope || 'Scope not specified by original source')+'</p>'+renderFields(edge.fields || [])+'<details open><summary>Evidence · '+edge.claimCount+' aggregated source records</summary>'+displayValue(edge.provenance)+'</details>'+edge.evidence.map(renderClaim).join('');
 }
-function renderLensControls(){
- const snap=network?.snapshot();if(!snap)return;
- const host=document.querySelector('#lens-controls');host.innerHTML='<p>Arrowheads point from subject to object. Causal predicates assert causation; definitions, sums and dependencies are not causal inverses. Select a node to recenter; select an arrow label for its conditions.</p><p class="mechanics-scope">Newtonian example: external forces sum to net force. A nonzero net force causes acceleration for constant positive mass in an inertial frame: a = F_net / m.</p><button id="more-neighbors" type="button">Next connections ('+(network.counts().offset<0?'overview':(network.counts().offset+1)+'–'+Math.min(network.counts().connected,network.counts().offset+snap.limit))+' of '+network.counts().connected+')</button><div class="lens-accessible">'+snap.nodes.map(n=>'<button data-lens-node="'+escapeHtml(n.id)+'">'+escapeHtml(state.byId.get(n.id).label)+'</button>').join('')+'</div>';
- host.querySelector('#more-neighbors').onclick=()=>{network.next();renderLensControls();};host.querySelectorAll('[data-lens-node]').forEach(b=>b.onclick=()=>selectConcept(b.dataset.lensNode));
- document.querySelector('#lens-edges').innerHTML=snap.edges.map(e=>'<button data-lens-edge="'+e.id+'">'+escapeHtml(state.byId.get(e.source).label)+' → '+escapeHtml(e.relation.replaceAll('_',' '))+' → '+escapeHtml(state.byId.get(e.target).label)+'</button>').join('');
- document.querySelectorAll('[data-lens-edge]').forEach(b=>b.onclick=()=>showEdge(snap.edges.find(e=>e.id===b.dataset.lensEdge)));
+function renderLensControls() {
+  const snap = network?.snapshot();
+  if (!snap) return;
+  const host = $('#lens-controls');
+  const peers = new Set(snap.focusedEdges.map(e => e.source === state.selected ? e.target : e.source));
+  const concepts = state.selected ? [state.byId.get(state.selected), ...[...peers].map(id => state.byId.get(id))] : ['physics','force','energy','thermodynamics','quantum_mechanics','special_relativity','matter','ion','astrophysics'].map(id => state.byId.get(id)).filter(Boolean);
+  host.innerHTML = '<p>'+(state.selected ? 'All incoming and outgoing relationships are highlighted on the same global map. Other concepts remain visible. Exact predicates below include every focused claim, even when a crowded canvas caption is hidden.' : 'The complete connected physics core. Domain colors and broad hub labels reveal its structure; zoom for more labels, or search/select an idea to trace its incoming and outgoing connections.')+'</p><p>Arrowheads follow recorded source → target predicates, not necessarily physical causes. Filled heads = source-asserted causation; open heads = other relationships.</p>'+(state.selected && ['force','net_force','acceleration'].includes(state.selected) ? '<p class="mechanics-scope">Newtonian example: external forces sum to net force. A nonzero net force causes acceleration for constant positive mass in an inertial frame: a = F_net / m.</p>' : '')+'<div class="lens-accessible" aria-label="'+(state.selected ? 'Selected concept and all direct neighbors' : 'Explore broad physics domains')+'">'+concepts.map(n => '<button data-lens-node="'+escapeHtml(n.id)+'">'+escapeHtml(n.label)+'</button>').join('')+'</div>';
+  host.querySelectorAll('[data-lens-node]').forEach(b => b.onclick = () => selectConcept(b.dataset.lensNode));
+  $('#lens-edges').hidden = !state.selected;
+  $('#lens-edges').innerHTML = snap.focusedEdges.map(e => '<button data-lens-edge="'+escapeHtml(e.id)+'">'+(e.source === state.selected ? 'Outgoing: ' : 'Incoming: ')+escapeHtml(state.byId.get(e.source).label)+' → '+escapeHtml(e.relation.replaceAll('_',' '))+' → '+escapeHtml(state.byId.get(e.target).label)+'</button>').join('');
+  $('#lens-edges').querySelectorAll('[data-lens-edge]').forEach(b => b.onclick = () => showEdge(snap.focusedEdges.find(e => e.id === b.dataset.lensEdge)));
 }
